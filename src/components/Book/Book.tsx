@@ -12,25 +12,42 @@ import {
     SubTitle,
     Title,
 } from "./styles";
-type BookProps = {};
 
-export const Book: React.FunctionComponent<BookProps> = props => {
+export type BookBaseProps = {
+    publisher: string;
+    title: string;
+    subTitle: string;
+    price: string;
+    priceUnit: string;
+};
+
+export type BookComponentProps = React.HtmlHTMLAttributes<HTMLDivElement> &
+    BookBaseProps;
+
+export const Book: React.FunctionComponent<Partial<BookComponentProps>> = ({
+    price = "price",
+    priceUnit = "price Unit",
+    publisher = "Publisher",
+    subTitle = "Sub title",
+    title = "title",
+    ...restProps
+}) => {
     return (
-        <Box>
+        <Box {...restProps}>
             <Header>
-                <Publisher>Publisher</Publisher>
+                <Publisher>{publisher}</Publisher>
                 <Dropdown>Dropdown</Dropdown>
             </Header>
 
             <Image />
 
             <Content>
-                <Title>Title</Title>
-                <SubTitle>SubTitle</SubTitle>
+                <Title>{title}</Title>
+                <SubTitle>{subTitle}</SubTitle>
 
                 <PriceBox>
-                    <Price>Price</Price>
-                    <PriceUnit>Price Unit</PriceUnit>
+                    <Price>{price}</Price>
+                    <PriceUnit>{priceUnit}</PriceUnit>
                 </PriceBox>
             </Content>
         </Box>
