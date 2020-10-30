@@ -1,9 +1,19 @@
-import NProgress, { NProgressOptions } from "nprogress";
+import NProgress, {
+    NProgressOptions,
+    NProgress as NProgressInstanceInterface,
+} from "nprogress";
+
 import "nprogress/nprogress.css";
 
-const NprogressConfig: Partial<NProgressOptions> = {
-    showSpinner: true,
+const applyNprogressConfig = (
+    NProgressInstance: NProgressInstanceInterface
+) => {
+    const NprogressConfig: Partial<NProgressOptions> = {
+        showSpinner: false,
+    };
+    NProgressInstance.configure(NprogressConfig);
 };
 
-NProgress.configure(NprogressConfig);
+applyNprogressConfig(NProgress);
+
 export { NProgress };
