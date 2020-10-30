@@ -19,6 +19,7 @@
     "babel-plugin-macros": "^2.8.0",
     "lodash": "^4.17.20",
     "nprogress": "^0.2.0",
+    "postcss": "^8.1.4",
     "postcss-cli": "^8.2.0",
     "qs": "^6.9.4",
     "react": "^17.0.1",
@@ -38,7 +39,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write src",
-    "build:style": "postcss src/assets/styles/tailwind.css -o src/assets/styles/main.css"
+    "build:styles": "postcss src/assets/styles/tailwind.css -o src/assets/styles/main.css"
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +61,7 @@
   },
   "devDependencies": {
     "prettier": "^2.1.2",
+    "tailwindcss": "^1.9.6",
     "webpackbar": "^4.0.0"
   }
 }
