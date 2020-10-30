@@ -1,7 +1,11 @@
+// babel-plugin-macros.config.js
 module.exports = {
-    tailwind: {
-        plugins: ["macros"],
+    twin: {
         config: "./src/services/theme/tailwind.config.js",
-        format: "auto",
+        preset: "styled-components",
+        autoCssProp: true,
+        debugProp: true,
+        debugPlugins: false,
+        debug: false,
     },
 };
