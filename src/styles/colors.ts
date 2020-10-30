@@ -1,4 +1,8 @@
 const __COLORS__ = {
+    transparent: "transparent",
+    current: "currentColor",
+    black: "#000",
+    white: "#fff",
     grey: {
         100: "#F9F9F9",
         200: "#D5D8DA",
