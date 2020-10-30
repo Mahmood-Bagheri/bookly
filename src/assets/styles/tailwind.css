@@ -3,3 +3,10 @@
 @tailwind components;
 
 @tailwind utilities;
+
+
+
+body { 
+    font-family: 'Quicksand', dana ,sans-serif;
+    font-weight: 400;
+}

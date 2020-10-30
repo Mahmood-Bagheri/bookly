@@ -18858,6 +18858,11 @@ video {
   animation: bounce 1s infinite;
 }
 
+body {
+  font-family: 'Quicksand', dana ,sans-serif;
+  font-weight: 400;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
