@@ -1,5 +1,6 @@
 import React from "react";
+import { Book } from "components/Book";
 
 export default function App() {
-    return <div>hello world!</div>;
+    return <Book />;
 }
