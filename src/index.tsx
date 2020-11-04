@@ -6,13 +6,11 @@ import ReactDOM from "react-dom";
 import App from "App";
 
 // * main style
-import "assets/styles/main.css";
 import "assets/fonts/dana/fontiran.css";
 
 /* recoil service */
 import { RecoilService } from "services/recoil/recoilService";
 import { ReactQueryService } from "services/react-query/reactQueryService";
-import { ThemeService } from "services/theme/themeService";
 
 const MOUNT_NODE = document.getElementById("root") as HTMLElement;
 
@@ -23,9 +21,7 @@ const ConnectedApp = ({ Component }: Props) => (
     <React.StrictMode>
         <RecoilService>
             <ReactQueryService>
-                <ThemeService>
-                    <Component />
-                </ThemeService>
+                <Component />
             </ReactQueryService>
         </RecoilService>
     </React.StrictMode>
