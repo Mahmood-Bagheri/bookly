@@ -1,17 +1,17 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
 // * these are the base custom button props
-type ButtonSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+type ButtonSizeType = "xs" | "sm" | "md" | "lg" | "xl";
 type ButtonTypeType =
-    | 'primary'
-    | 'info'
-    | 'light-info'
-    | 'warning'
-    | 'danger'
-    | 'success'
-    | 'dark-info'
-    | 'default';
+    | "primary"
+    | "info"
+    | "light-info"
+    | "warning"
+    | "danger"
+    | "success"
+    | "dark-info"
+    | "default";
 
 type ButtonProps = {
     size: ButtonSizeType;
@@ -30,8 +30,8 @@ type ButtonComponentProps = Omit<
 export const Button: React.FC<ButtonComponentProps> = props => {
     // * destruct needed props
     const {
-        size = 'sm',
-        type = 'default',
+        size = "sm",
+        type = "default",
         block = false,
         rounded = true,
         className: nativeClassName,
@@ -43,8 +43,8 @@ export const Button: React.FC<ButtonComponentProps> = props => {
     let typeClassname = makeType(type);
 
     // * check if our button is fullwidth or rounded
-    let blockClassname = block ? 'w-full' : '';
-    let roundedClassname = rounded ? 'rounded-full' : '';
+    let blockClassname = block ? "w-full" : "";
+    let roundedClassname = rounded ? "rounded-full" : "";
 
     const classNames = [
         nativeClassName,
@@ -60,56 +60,56 @@ export const Button: React.FC<ButtonComponentProps> = props => {
 
 function makeSize(size: ButtonSizeType) {
     switch (size) {
-        case 'xs':
-            return ['px-4', 'py-1', 'text-xs'];
+        case "xs":
+            return ["px-4", "py-1", "text-xs"];
 
-        case 'sm':
-            return ['px-6', 'py-2', 'text-sm'];
+        case "sm":
+            return ["px-6", "py-2", "text-sm"];
 
-        case 'md':
-            return ['px-8', 'py-3', 'text-md'];
+        case "md":
+            return ["px-8", "py-3", "text-md"];
 
-        case 'lg':
-            return ['px-10', 'py-4', 'text-lg'];
+        case "lg":
+            return ["px-10", "py-4", "text-lg"];
 
-        case 'xl':
-            return ['px-12', 'py-5', 'text-xl'];
+        case "xl":
+            return ["px-12", "py-5", "text-xl"];
 
         // sm by default
         default:
-            return ['p-4', 'py-2', 'text-sm'];
+            return ["p-4", "py-2", "text-sm"];
     }
 }
 
 function makeType(type: ButtonTypeType) {
     switch (type) {
-        case 'default':
-            return ['bg-white', 'text-black'];
+        case "default":
+            return ["bg-white", "text-black"];
 
-        case 'danger':
-            return ['text-white', 'bg-red'];
+        case "danger":
+            return ["text-white", "bg-red"];
 
-        case 'info':
-            return ['text-white', 'bg-mid-blue'];
+        case "info":
+            return ["text-white", "bg-mid-blue"];
 
-        case 'light-info':
-            return ['text-black', 'bg-light-blue'];
+        case "light-info":
+            return ["text-black", "bg-light-blue"];
 
-        case 'primary':
-            return ['text-white', 'bg-blue'];
+        case "primary":
+            return ["text-white", "bg-blue"];
 
-        case 'success':
-            return ['text-white', 'bg-green'];
+        case "success":
+            return ["text-white", "bg-green"];
 
-        case 'warning':
-            return ['text-white', 'bg-orange'];
+        case "warning":
+            return ["text-white", "bg-orange"];
 
-        case 'dark-info':
-            return ['text-white', 'bg-dark-blue'];
+        case "dark-info":
+            return ["text-white", "bg-dark-blue"];
 
         // default button type, the most simple 🎈
 
         default:
-            return ['bg-white', 'text-black'];
+            return ["bg-white", "text-black"];
     }
 }
