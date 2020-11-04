@@ -1,17 +1,17 @@
 .commentBoxBodyWrap {
     display: flex;
-    align-items: flex-end;
     margin-top: 10px;
+    justify-content: space-between;
 }
 
 .body {
     font-weight: 500;
     color: #000;
-    width: 80%;
+    width: 75%;
 }
 
 .showMore {
     font-weight: 300;
-    font-size: 13px;
+    font-size: 12px;
     cursor: pointer;
 }

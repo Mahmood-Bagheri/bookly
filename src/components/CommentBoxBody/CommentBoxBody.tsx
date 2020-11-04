@@ -8,11 +8,14 @@ export const CommentBoxBody: FunctionComponent<CommentBoxBodyComponentProps> = p
     const togleShowMore = () => {
         setShowMore(previousShowMoreState => !previousShowMoreState);
     };
-    const showMoreText = showMore ? "نمایش بیشتر" : "نمایش کمتر";
-    const bodyClsx = classnames({ truncate: showMore }, s.body);
+    const showMoreText = !showMore ? "نمایش بیشتر" : "نمایش کمتر";
+    const bodyClsx = classnames(
+        { truncate: !showMore, fullWidth: showMore },
+        s.body
+    );
     const wrapClsx = classnames(
-        { "align-items-center": showMore },
-        { "align-items-end": !showMore },
+        { "align-items-center": !showMore },
+        { "flex-column": showMore },
         s.commentBoxBodyWrap
     );
     return (
