@@ -67,7 +67,6 @@
     ]
   },
   "devDependencies": {
-    "css-modules": "0.3.0",
     "plop": "2.7.4",
     "prettier": "^2.1.2",
     "tailwindcss": "^1.9.6",
