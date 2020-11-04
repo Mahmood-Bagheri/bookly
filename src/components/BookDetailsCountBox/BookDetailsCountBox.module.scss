@@ -1,0 +1,22 @@
+.box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon {
+    margin-left: 20px;
+    height: 33px;
+    width: 33px;
+}
+
+.count {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.description {
+    opacity: 0.5;
+    font-weight: 300;
+    font-size: 14px;
+}
