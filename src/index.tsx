@@ -8,6 +8,7 @@ import App from "App";
 // * main style
 import "assets/fonts/dana/fontiran.css";
 import "assets/styles/global.scss";
+import "bootstrap/dist/css/bootstrap-grid.css";
 
 /* recoil service */
 import { RecoilService } from "services/recoil/recoilService";
