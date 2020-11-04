@@ -70,6 +70,7 @@
     "plop": "2.7.4",
     "prettier": "^2.1.2",
     "tailwindcss": "^1.9.6",
+    "tailwindcss-rtl": "0.6.0",
     "webpackbar": "^4.0.0"
   }
 }
