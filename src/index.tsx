@@ -7,6 +7,7 @@ import App from "App";
 
 // * main style
 import "assets/fonts/dana/fontiran.css";
+import "assets/styles/global.scss";
 
 /* recoil service */
 import { RecoilService } from "services/recoil/recoilService";
