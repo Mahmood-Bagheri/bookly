@@ -1,0 +1,26 @@
+import React, { FunctionComponent, useState } from "react";
+import classnames from "classnames";
+import { CommentBoxBodyComponentProps } from "./CommentBoxBody.types";
+import s from "./CommentBoxBody.module.scss";
+
+export const CommentBoxBody: FunctionComponent<CommentBoxBodyComponentProps> = props => {
+    const [showMore, setShowMore] = useState(false);
+    const togleShowMore = () => {
+        setShowMore(previousShowMoreState => !previousShowMoreState);
+    };
+    const showMoreText = showMore ? "نمایش کمتر" : "نمایش بیشتر";
+    const bodyClsx = classnames({ truncate: showMore }, s.body);
+    const wrapClsx = classnames(
+        { "align-items-center": showMore },
+        { "align-items-end": !showMore },
+        s.commentBoxBodyWrap
+    );
+    return (
+        <div className={wrapClsx}>
+            <div className={bodyClsx}>{props.children}</div>
+            <span className={s.showMore} onClick={togleShowMore}>
+                {showMoreText}
+            </span>
+        </div>
+    );
+};
