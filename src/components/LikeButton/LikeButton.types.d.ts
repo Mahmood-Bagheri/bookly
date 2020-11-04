@@ -1,5 +1,5 @@
 export type BaseLikeButtonProps = {
-    onLikeStateChange: (likedState: boolean) => void;
+    onLikeStateChange: (likeState: boolean) => void;
 };
 
 export type LikeButtonComponentProps = React.HtmlHTMLAttributes<
