@@ -44,7 +44,7 @@
     "eject": "react-scripts eject",
     "format": "prettier --write src",
     "build:styles": "postcss src/assets/styles/tailwind.css -o src/assets/styles/main.css",
-    "start:docs":"cd docs && yarn start"
+    "start:docs": "cd docs && yarn start"
   },
   "eslintConfig": {
     "extends": [
@@ -65,6 +65,7 @@
     ]
   },
   "devDependencies": {
+    "plop": "2.7.4",
     "prettier": "^2.1.2",
     "tailwindcss": "^1.9.6",
     "webpackbar": "^4.0.0"
