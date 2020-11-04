@@ -44,7 +44,8 @@
     "eject": "react-scripts eject",
     "format": "prettier --write src",
     "build:styles": "postcss src/assets/styles/tailwind.css -o src/assets/styles/main.css",
-    "start:docs": "cd docs && yarn start"
+    "start:docs": "cd docs && yarn start",
+    "generate": "plop"
   },
   "eslintConfig": {
     "extends": [
