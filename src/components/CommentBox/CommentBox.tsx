@@ -3,6 +3,7 @@ import { DeleteButton } from "components/DeleteButton";
 import { CommentBoxComponentProps } from "./CommentBox.types";
 import Image from "assets/images/book.jpg";
 import s from "./CommentBox.module.scss";
+import { CommentBoxBody } from "components/CommentBoxBody";
 
 export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => {
     return (
@@ -14,9 +15,11 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
                 <div className={s.time}>دیروز</div>
             </div>
 
-            <div className={s.body}>
-                سلام وقت به خیر من خیلی وقته سفارش دادم هنوز به دستم نرسیده
-            </div>
+            <CommentBoxBody>
+                سلام من قبلا این کتاب رو خریدم و به یکی دیگه هم هدیه دادم و
+                انقدر خوب بود به دوستام هدیه دادمش بازم میخوام بخرم ممنون از
+                نویسنده.
+            </CommentBoxBody>
 
             <div className={s.actions}>
                 <DeleteButton />
