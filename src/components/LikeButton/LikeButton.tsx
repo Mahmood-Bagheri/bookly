@@ -4,19 +4,21 @@ import { LikeButtonComponentProps } from "./LikeButton.types";
 import s from "./LikeButton.module.scss";
 
 export const LikeButton: FunctionComponent<LikeButtonComponentProps> = props => {
-    const [likeState, setLikeState] = useState(false);
     const {
         onLikeStateChange = defaultOnLikeStateChange,
+        initialLikeState = false,
         ...restProps
     } = props;
-
+    const [likeState, setLikeState] = useState(initialLikeState);
     const svgColor = classnames(s.like, { [s.black]: likeState });
 
     const toggleLike = () => {
         setLikeState(previousLikeState => !previousLikeState);
     };
 
-    useEffect(() => onLikeStateChange(likeState), [likeState]);
+    useEffect(() => {
+        onLikeStateChange(likeState!);
+    }, [likeState]);
 
     return (
         <svg
@@ -24,11 +26,11 @@ export const LikeButton: FunctionComponent<LikeButtonComponentProps> = props => 
             xmlns="http://www.w3.org/2000/svg"
             className={svgColor}
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="#2c3e50"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             onClick={toggleLike}
         >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />

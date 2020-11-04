@@ -6,8 +6,16 @@ import { BookmarkButton } from "components/BookmarkButton";
 import s from "./BookBox.module.scss";
 
 export const BookBox: FunctionComponent<BookBoxComponentProps> = props => {
+    const {
+        onBookmarkStateChange,
+        onLikeStateChange,
+        initialBookmarkState,
+        initialLikeState,
+        ...restProps
+    } = props;
+
     return (
-        <div className={s.box}>
+        <div className={s.box} {...restProps}>
             <img className={s.image} src={BookImage} />
             <div className={s.content}>
                 <div>
@@ -20,8 +28,14 @@ export const BookBox: FunctionComponent<BookBoxComponentProps> = props => {
                 </div>
             </div>
             <div className={s.actions}>
-                <LikeButton />
-                <BookmarkButton />
+                <LikeButton
+                    onLikeStateChange={onLikeStateChange}
+                    initialLikeState={initialLikeState}
+                />
+                <BookmarkButton
+                    onBookmarkStateChange={onBookmarkStateChange}
+                    initialBookmarkState={initialBookmarkState}
+                />
             </div>
         </div>
     );

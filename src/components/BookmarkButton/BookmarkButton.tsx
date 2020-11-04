@@ -4,13 +4,14 @@ import s from "./BookmarkButton.module.scss";
 import classnames from "classnames";
 
 export const BookmarkButton: FunctionComponent<BookmarkButtonComponentProps> = props => {
-    const [bookmarkState, setBookmarkState] = useState(false);
     const {
         onBookmarkStateChange = defaultOnBookmarkStateChange,
+        initialBookmarkState = false,
         ...restProps
     } = props;
 
-    const svgColor = classnames(s.like, { [s.black]: bookmarkState });
+    const [bookmarkState, setBookmarkState] = useState(initialBookmarkState);
+    const svgColor = classnames(s.bookmark, { [s.black]: bookmarkState });
 
     const toggleBookmark = () => {
         setBookmarkState(previousLikeState => !previousLikeState);
@@ -23,11 +24,11 @@ export const BookmarkButton: FunctionComponent<BookmarkButtonComponentProps> = p
             xmlns="http://www.w3.org/2000/svg"
             className={svgColor}
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="#2c3e50"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             onClick={toggleBookmark}
         >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
