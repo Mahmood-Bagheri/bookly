@@ -11,7 +11,7 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
             <div className={s.profileImage} />
 
             <div className={s.header}>
-                <div className={s.description}>محمود باقری میگه</div>
+                <div className={s.description}>شهرزاد میگه</div>
                 <div className={s.time}>دیروز</div>
             </div>
 
