@@ -51,16 +51,6 @@ module.exports = plop => {
                 // Handlebars template used to generate content of new file
                 templateFile: "internals/plop-templates/component/index.ts.hbs",
             },
-            {
-                // Add a new file
-                type: "add",
-                // Path for the new file
-                path:
-                    "src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx",
-                // Handlebars template used to generate content of new file
-                templateFile:
-                    "internals/plop-templates/component/component.test.tsx.hbs",
-            },
         ],
     });
     plop.setGenerator("hook", {
