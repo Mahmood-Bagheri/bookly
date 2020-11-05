@@ -1,13 +1,14 @@
 import React, { FunctionComponent } from "react";
-import { StyledSelect } from "./styles";
+import { Select as AntDesignSelect } from "antd";
 import { SelectComponentProps } from "./Select.types";
-const { Option } = StyledSelect;
+import s from "./Select.module.scss";
+const { Option } = AntDesignSelect;
 
 export const Select: FunctionComponent<SelectComponentProps> = props => {
     const { options = [] } = props;
 
     return (
-        <StyledSelect>
+        <AntDesignSelect className={s.select}>
             {options.map(option => (
                 <Option
                     key={option?.value}
@@ -16,6 +17,6 @@ export const Select: FunctionComponent<SelectComponentProps> = props => {
                     {option?.label}
                 </Option>
             ))}
-        </StyledSelect>
+        </AntDesignSelect>
     );
 };
