@@ -5,15 +5,22 @@ import ReactDOM from "react-dom";
 // * main app component
 import App from "App";
 
+// * modules
+import relativeTime from "dayjs/plugin/relativeTime";
+import dayJs from "dayjs";
+
 // * main style
 import "assets/fonts/dana/fontiran.css";
 import "assets/styles/global.scss";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
+import "dayjs/locale/fa";
 
 /* recoil service */
 import { RecoilService } from "services/recoil/recoilService";
 import { ReactQueryService } from "services/react-query/reactQueryService";
 
+dayJs.extend(relativeTime);
+dayJs.locale("fa");
 const MOUNT_NODE = document.getElementById("root") as HTMLElement;
 
 interface Props {
