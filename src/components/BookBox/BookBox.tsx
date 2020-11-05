@@ -20,7 +20,6 @@ export const BookBox: FunctionComponent<BookBoxComponentProps> = props => {
             <div className={s.content}>
                 <div>
                     <div className={s.title}>جز از کل</div>
-                    <div className={s.code}>aq-128</div>
                 </div>
                 <div>
                     <div className={s.author}>استیو تولتز</div>
