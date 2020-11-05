@@ -3,5 +3,7 @@ import { ImageComponentProps } from "./Image.types";
 import s from "./Image.module.scss";
 
 export const Image: FunctionComponent<ImageComponentProps> = props => {
-    return <div></div>;
+    const defaultAltText = "This image is related to the website :/";
+    const { alt = defaultAltText, ...restProps } = props;
+    return <img alt={alt} {...restProps} />;
 };
