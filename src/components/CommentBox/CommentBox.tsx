@@ -8,8 +8,9 @@ import { randomDate } from "helpers/randomDate";
 import s from "./CommentBox.module.scss";
 
 export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => {
-    const randomFakeDate = randomDate(new Date("2020/1/1"));
-    const relativeFakeTime = dayJs().from(randomFakeDate, true);
+    const { body, date, username } = props;
+
+    const relativeFakeTime = dayJs().from(date, true);
 
     return (
         <div className={s.box}>
@@ -17,17 +18,13 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
 
             <div className={s.header}>
                 <div className={s.description}>
-                    شهرزاد
+                    {username}
                     {"  "}
                     {relativeFakeTime} پیش گفته
                 </div>
             </div>
 
-            <CommentBoxBody>
-                سلام من قبلا این کتاب رو خریدم و به یکی دیگه هم هدیه دادم و
-                انقدر خوب بود به دوستام هدیه دادمش بازم میخوام بخرم ممنون از
-                نویسنده.
-            </CommentBoxBody>
+            <CommentBoxBody>{body}</CommentBoxBody>
 
             <div className={s.actions}>
                 <DeleteButton />
