@@ -2,36 +2,38 @@ import React from "react";
 import reportWebVitals from "./reportWebVitals";
 import ReactDOM from "react-dom";
 
-// * main app component
 import App from "App";
 
-// * modules
 import relativeTime from "dayjs/plugin/relativeTime";
 import dayJs from "dayjs";
 
-// * main style
 import "assets/fonts/dana/fontiran.css";
+import "antd/dist/antd.css";
 import "assets/styles/global.scss";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "dayjs/locale/fa";
 import "swiper/swiper.scss";
 
-/* recoil service */
 import { RecoilService } from "services/recoil/recoilService";
 import { ReactQueryService } from "services/react-query/reactQueryService";
+import { ConfigProvider } from "antd";
 
 dayJs.extend(relativeTime);
 dayJs.locale("fa");
+
 const MOUNT_NODE = document.getElementById("root") as HTMLElement;
 
 interface Props {
     Component: typeof App;
 }
+
 const ConnectedApp = ({ Component }: Props) => (
     <React.StrictMode>
         <RecoilService>
             <ReactQueryService>
-                <Component />
+                <ConfigProvider direction="rtl">
+                    <Component />
+                </ConfigProvider>
             </ReactQueryService>
         </RecoilService>
     </React.StrictMode>
