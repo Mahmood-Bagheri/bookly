@@ -7,8 +7,8 @@ export const BookDetailsBox: FunctionComponent<BookDetailsBoxComponentProps> = p
     return (
         <div className={s.box}>
             <div className="p-3">
-                <p className={s.title}>کتاب جز از کل نوشته استیو تولتز</p>
-                <div className={s.code}>GCP-11299</div>
+                <p className={s.title}>کتاب جز از کل </p>
+                <div className={s.author}>استیو تولتز</div>
             </div>
             <BooksCarousel />
         </div>
