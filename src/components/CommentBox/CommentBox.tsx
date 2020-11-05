@@ -2,17 +2,25 @@ import React, { FunctionComponent } from "react";
 import { DeleteButton } from "components/DeleteButton";
 import { CommentBoxComponentProps } from "./CommentBox.types";
 import Image from "assets/images/book.jpg";
-import s from "./CommentBox.module.scss";
 import { CommentBoxBody } from "components/CommentBoxBody";
+import dayJs from "dayjs";
+import { randomDate } from "helpers/randomDate";
+import s from "./CommentBox.module.scss";
 
 export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => {
+    const randomFakeDate = randomDate(new Date("2020/1/1"));
+    const relativeFakeTime = dayJs().from(randomFakeDate, true);
+
     return (
         <div className={s.box}>
-            <div className={s.profileImage} />
+            <img className={s.profileImage} src={Image} />
 
             <div className={s.header}>
-                <div className={s.description}>شهرزاد میگه</div>
-                <div className={s.time}>دیروز</div>
+                <div className={s.description}>
+                    شهرزاد
+                    {"  "}
+                    {relativeFakeTime} پیش گفته
+                </div>
             </div>
 
             <CommentBoxBody>
@@ -23,7 +31,6 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
 
             <div className={s.actions}>
                 <DeleteButton />
-                <div className={s.reply}>پاسخ دادن</div>
             </div>
         </div>
     );
