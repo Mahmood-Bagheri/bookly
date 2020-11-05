@@ -12,7 +12,7 @@ SwiperCore.use([Autoplay]);
 
 export const BooksCarousel: FunctionComponent<BooksCarouselComponentProps> = props => {
     const swiperProps = {
-        spaceBetween: 30,
+        spaceBetween: 10,
         slidesPerView: 1.45,
         loop: true,
         autoplay: {
