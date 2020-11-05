@@ -1,8 +1,12 @@
 import React, { FunctionComponent } from "react";
-import { BookBoxComponentProps } from "./BookBox.types";
-import BookImage from "assets/images/book.jpg";
+/* components */
 import { LikeButton } from "components/LikeButton";
 import { BookmarkButton } from "components/BookmarkButton";
+/* assets */
+import BookImage from "assets/images/book.jpg";
+/* types */
+import { BookBoxComponentProps } from "./BookBox.types";
+/* styles */
 import s from "./BookBox.module.scss";
 
 export const BookBox: FunctionComponent<BookBoxComponentProps> = props => {

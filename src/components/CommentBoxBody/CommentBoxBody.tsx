@@ -1,6 +1,9 @@
 import React, { FunctionComponent, useState } from "react";
+/* modules */
 import classnames from "classnames";
+/* types */
 import { CommentBoxBodyComponentProps } from "./CommentBoxBody.types";
+/* styles */
 import s from "./CommentBoxBody.module.scss";
 
 export const CommentBoxBody: FunctionComponent<CommentBoxBodyComponentProps> = props => {

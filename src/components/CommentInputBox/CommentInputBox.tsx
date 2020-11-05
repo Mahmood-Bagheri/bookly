@@ -1,7 +1,10 @@
 import React, { FunctionComponent } from "react";
+/* components */
 import { Input } from "components/Input";
-import { CommentInputBoxComponentProps } from "./CommentInputBox.types";
 import { Button } from "components/Button";
+/* types */
+import { CommentInputBoxComponentProps } from "./CommentInputBox.types";
+/* styles */
 import s from "./CommentInputBox.module.scss";
 
 export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> = props => {

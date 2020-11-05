@@ -1,5 +1,7 @@
 import React from "react";
+/* modules */
 import classnames from "classnames";
+/* styles */
 import s from "./Button.module.scss";
 
 // * these are the base custom button props

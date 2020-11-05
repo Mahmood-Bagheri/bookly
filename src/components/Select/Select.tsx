@@ -1,7 +1,11 @@
 import React, { FunctionComponent } from "react";
+/* components */
 import { Select as AntDesignSelect } from "antd";
+/* types */
 import { SelectComponentProps } from "./Select.types";
+/* styles */
 import s from "./Select.module.scss";
+
 const { Option } = AntDesignSelect;
 
 export const Select: FunctionComponent<SelectComponentProps> = props => {

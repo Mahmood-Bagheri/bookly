@@ -1,5 +1,7 @@
 import React, { FunctionComponent } from "react";
+/* types */
 import { BookDescriptionTextComponentProps } from "./BookDescriptionText.types";
+/* styles */
 import s from "./BookDescriptionText.module.scss";
 
 export const BookDescriptionText: FunctionComponent<BookDescriptionTextComponentProps> = props => {

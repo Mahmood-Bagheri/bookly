@@ -1,10 +1,14 @@
 import React, { FunctionComponent } from "react";
+/* components */
 import { DeleteButton } from "components/DeleteButton";
-import { CommentBoxComponentProps } from "./CommentBox.types";
-import Image from "assets/images/book.jpg";
 import { CommentBoxBody } from "components/CommentBoxBody";
+/* modules */
 import dayJs from "dayjs";
-import { randomDate } from "helpers/randomDate";
+/* assets */
+import Image from "assets/images/book.jpg";
+/* types */
+import { CommentBoxComponentProps } from "./CommentBox.types";
+/* styles */
 import s from "./CommentBox.module.scss";
 
 export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => {

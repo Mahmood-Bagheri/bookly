@@ -1,6 +1,9 @@
 import React, { FunctionComponent } from "react";
+/* components */
 import { BooksCarousel } from "components/BooksCarousel";
+/* types */
 import { BookDetailsBoxComponentProps } from "./BookDetailsBox.types";
+/* styles */
 import s from "./BookDetailsBox.module.scss";
 
 export const BookDetailsBox: FunctionComponent<BookDetailsBoxComponentProps> = props => {

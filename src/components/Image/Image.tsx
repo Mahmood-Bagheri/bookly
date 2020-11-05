@@ -1,5 +1,7 @@
 import React, { FunctionComponent } from "react";
+/* types */
 import { ImageComponentProps } from "./Image.types";
+/* styles */
 import s from "./Image.module.scss";
 
 export const Image: FunctionComponent<ImageComponentProps> = props => {

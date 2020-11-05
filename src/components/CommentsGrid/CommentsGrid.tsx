@@ -1,7 +1,11 @@
 import React, { FunctionComponent } from "react";
+/* components */
 import { CommentBox } from "components/CommentBox";
+/* helpers */
 import { randomDate } from "helpers/randomDate";
+/* types */
 import { CommentsGridComponentProps } from "./CommentsGrid.types";
+/* styles */
 import s from "./CommentsGrid.module.scss";
 
 export const CommentsGrid: FunctionComponent<CommentsGridComponentProps> = props => {

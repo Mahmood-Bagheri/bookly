@@ -1,6 +1,9 @@
 import React, { FunctionComponent } from "react";
+/* assets */
 import { ReactComponent as ImaegIcon } from "assets/icons/image.svg";
+/* types */
 import { BookImageDropBoxComponentProps } from "./BookImageDropBox.types";
+/* styles */
 import s from "./BookImageDropBox.module.scss";
 
 export const BookImageDropBox: FunctionComponent<BookImageDropBoxComponentProps> = props => {

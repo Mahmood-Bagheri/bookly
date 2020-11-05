@@ -1,7 +1,10 @@
 import React, { FunctionComponent } from "react";
-import { BooksGridComponentProps } from "./BooksGrid.types";
+/* components */
 import { BookBox } from "components/BookBox";
+/* helpers */
 import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
+/* types */
+import { BooksGridComponentProps } from "./BooksGrid.types";
 
 export const BooksGrid: FunctionComponent<BooksGridComponentProps> = props => {
     return <div className="row">{fakeArrayGenerator(12).map(renderBooks)}</div>;
