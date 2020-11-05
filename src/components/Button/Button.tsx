@@ -1,5 +1,6 @@
 import React from "react";
 import classnames from "classnames";
+import s from "./Button.module.scss";
 
 // * these are the base custom button props
 type ButtonSizeType = "xs" | "sm" | "md" | "lg" | "xl";
@@ -55,19 +56,21 @@ export const Button: React.FC<ButtonComponentProps> = props => {
     ];
 
     // * render the button 🔥
-    return <button className={classnames(classNames)} {...restProps} />;
+    return (
+        <button className={classnames(s.button, classNames)} {...restProps} />
+    );
 };
 
 function makeSize(size: ButtonSizeType) {
     switch (size) {
         case "xs":
-            return ["px-4", "py-1", "text-xs"];
+            return ["px-2", "py-1", "text-xs"];
 
         case "sm":
-            return ["px-6", "py-2", "text-sm"];
+            return ["px-3", "py-2", "text-sm"];
 
         case "md":
-            return ["px-8", "py-3", "text-md"];
+            return ["px-4", "py-3", "text-md"];
 
         case "lg":
             return ["px-10", "py-4", "text-lg"];
@@ -96,7 +99,7 @@ function makeType(type: ButtonTypeType) {
             return ["text-black", "bg-light-blue"];
 
         case "primary":
-            return ["text-white", "bg-blue"];
+            return ["text-white", "bg-black"];
 
         case "success":
             return ["text-white", "bg-green"];
