@@ -3,6 +3,20 @@ body {
     font-size: 1rem;
 }
 
+button, input , textarea {
+    font-family: dana;
+}
+
+::selection {
+    background: #000;
+    color: #fff;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    outline: none;
+}
+
 p { 
     padding: 0;
     margin: 0;
@@ -16,4 +30,13 @@ p {
 
 .fullWidth {
     width: 100% !important;
+}
+
+
+.bg-black {
+    background: #000;
+}
+
+.text-white {
+    color: #fff;
 }
