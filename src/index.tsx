@@ -14,6 +14,7 @@ import "assets/fonts/dana/fontiran.css";
 import "assets/styles/global.scss";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "dayjs/locale/fa";
+import "swiper/swiper.scss";
 
 /* recoil service */
 import { RecoilService } from "services/recoil/recoilService";

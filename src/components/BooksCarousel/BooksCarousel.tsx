@@ -1,19 +1,17 @@
 import React, { FunctionComponent } from "react";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Image from "assets/images/book.jpg";
+import Book from "assets/images/book.jpg";
 import { BooksCarouselComponentProps } from "./BooksCarousel.types";
 import s from "./BooksCarousel.module.scss";
-
-import "swiper/swiper.scss";
-import "swiper/components/pagination/pagination.scss";
+import { Image } from "components/Image";
 
 SwiperCore.use([Autoplay]);
 
 export const BooksCarousel: FunctionComponent<BooksCarouselComponentProps> = props => {
     const swiperProps = {
         spaceBetween: 10,
-        slidesPerView: 1.45,
+        slidesPerView: 1.1,
         loop: true,
         autoplay: {
             delay: 2000,
@@ -24,25 +22,25 @@ export const BooksCarousel: FunctionComponent<BooksCarouselComponentProps> = pro
     return (
         <Swiper {...swiperProps}>
             <SwiperSlide>
-                <img src={Image} className={s.imageSlide} alt="" />
+                <Image src={Book} className={s.imageSlide} />
             </SwiperSlide>
             <SwiperSlide>
-                <img src={Image} className={s.imageSlide} alt="" />
+                <Image src={Book} className={s.imageSlide} />
             </SwiperSlide>
             <SwiperSlide>
-                <img src={Image} className={s.imageSlide} alt="" />
+                <Image src={Book} className={s.imageSlide} />
             </SwiperSlide>
             <SwiperSlide>
-                <img src={Image} className={s.imageSlide} alt="" />
+                <Image src={Book} className={s.imageSlide} />
             </SwiperSlide>
             <SwiperSlide>
-                <img src={Image} className={s.imageSlide} alt="" />
+                <Image src={Book} className={s.imageSlide} />
             </SwiperSlide>
             <SwiperSlide>
-                <img src={Image} className={s.imageSlide} alt="" />
+                <Image src={Book} className={s.imageSlide} />
             </SwiperSlide>
             <SwiperSlide>
-                <img src={Image} className={s.imageSlide} alt="" />
+                <Image src={Book} className={s.imageSlide} />
             </SwiperSlide>
         </Swiper>
     );
