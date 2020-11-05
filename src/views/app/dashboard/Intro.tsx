@@ -6,7 +6,9 @@ export default function App() {
         <div className="container ">
             <div className="row">
                 <div className="col-6 col-xl-4">
-                    <BookDetailsBox />
+                    {/* <BookDetailsBox /> */}
+                    looking for something? contact{" "}
+                    <a href="https://gogolecom">me</a>
                 </div>
             </div>
         </div>
