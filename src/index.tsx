@@ -8,7 +8,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import dayJs from "dayjs";
 
 import "assets/fonts/dana/fontiran.css";
-import "antd/dist/antd.css";
+import "antd/dist/antd.less";
 import "assets/styles/global.scss";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "dayjs/locale/fa";
