@@ -1,7 +1,15 @@
 import React, { FunctionComponent } from "react";
-import { PublishersGridComponentProps } from "./PublishersGrid.types";
-import s from "./PublishersGrid.module.scss";
+/* components */
+/* modules */
+import clsx from 'classnames';
+/* helpers */
+/* assets */
+/* types */
+import { PublishersGridComponentProps } from './PublishersGrid.types'
+/* styles */
+import s from './PublishersGrid.module.scss'
 
 export const PublishersGrid: FunctionComponent<PublishersGridComponentProps> = props => {
-    return <div></div>;
-};
+    const {className, ...restProps} = props;
+    return <div className={clsx(s.box, className)}></div>;
+    };
