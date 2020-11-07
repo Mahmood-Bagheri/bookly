@@ -1,6 +1,5 @@
 .box {
     padding: 10px;
-    text-align: center;
     background: var(--white);
     border-radius: 10px;
 }
@@ -15,9 +14,11 @@
 }
 
 .title {
+    text-align: center;
 }
 
 .description {
+    text-align: center;
     opacity: 0.5;
     margin-top: 5px;
     font-weight: 300;
