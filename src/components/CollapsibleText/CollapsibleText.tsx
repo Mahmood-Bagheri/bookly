@@ -1,28 +1,30 @@
 import React, { FunctionComponent, useState } from "react";
+/* components */
 /* modules */
-import classnames from "classnames";
+import clsx from "classnames";
+/* helpers */
+/* assets */
 /* types */
-import { CommentBoxBodyComponentProps } from "./CommentBoxBody.types";
+import { CollapsibleTextComponentProps } from "./CollapsibleText.types";
 /* styles */
-import s from "./CommentBoxBody.module.scss";
+import s from "./CollapsibleText.module.scss";
 
-export const CommentBoxBody: FunctionComponent<CommentBoxBodyComponentProps> = props => {
+export const CollapsibleText: FunctionComponent<CollapsibleTextComponentProps> = props => {
+    const { className, ...restProps } = props;
     const [showMore, setShowMore] = useState(false);
     const togleShowMore = () => {
         setShowMore(previousShowMoreState => !previousShowMoreState);
     };
     const showMoreText = !showMore ? "نمایش بیشتر" : "نمایش کمتر";
-    const bodyClsx = classnames(
-        { truncate: !showMore, fullWidth: showMore },
-        s.body
-    );
-    const wrapClsx = classnames(
+    const bodyClsx = clsx({ truncate: !showMore, fullWidth: showMore }, s.body);
+    const wrapClsx = clsx(
         { "align-items-center": !showMore },
         { "flex-column": showMore },
-        s.commentBoxBodyWrap
+        s.commentBoxBodyWrap,
+        className
     );
     return (
-        <div className={wrapClsx}>
+        <div className={wrapClsx} {...restProps}>
             <div className={bodyClsx}>{props.children}</div>
             <span className={s.showMore} onClick={togleShowMore}>
                 {showMoreText}

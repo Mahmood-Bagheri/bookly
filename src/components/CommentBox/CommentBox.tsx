@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { DeleteButton } from "components/DeleteButton";
-import { CommentBoxBody } from "components/CommentBoxBody";
+import { CollapsibleText } from "components/CollapsibleText";
 /* modules */
 import dayJs from "dayjs";
 /* assets */
@@ -28,7 +28,7 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
                 </div>
             </div>
 
-            <CommentBoxBody>{body}</CommentBoxBody>
+            <CollapsibleText>{body}</CollapsibleText>
 
             <div className={s.actions}>
                 <DeleteButton />
