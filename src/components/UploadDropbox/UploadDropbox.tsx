@@ -6,13 +6,13 @@ import clsx from "classnames";
 /* assets */
 import { ReactComponent as ImageIcon } from "assets/icons/image.svg";
 /* types */
-import { BookImageDropBoxComponentProps } from "./BookImageDropBox.types";
+import { UploadDropboxComponentProps } from "./UploadDropbox.types";
 /* styles */
-import s from "./BookImageDropBox.module.scss";
+import s from "./UploadDropbox.module.scss";
 
 const { Dragger } = Upload;
 
-export const BookImageDropBox: FunctionComponent<BookImageDropBoxComponentProps> = props => {
+export const UploadDropbox: FunctionComponent<UploadDropboxComponentProps> = props => {
     const {
         className,
         title = "تصویر را اینجا وِل کنید",
