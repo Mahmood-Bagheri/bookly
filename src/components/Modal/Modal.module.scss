@@ -1,0 +1,8 @@
+.modal {
+    :global {
+        .ant-modal-header,
+        .ant-modal-footer {
+            border: none;
+        }
+    }
+}
