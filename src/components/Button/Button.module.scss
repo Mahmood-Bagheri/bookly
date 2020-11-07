@@ -1,5 +1,5 @@
-.button {
-    border: none;
-    border-radius: 9999px;
-    cursor: pointer;
+:global {
+    .ant-btn {
+        border-radius: 9999px;
+    }
 }
