@@ -11,14 +11,22 @@ export const Input: FunctionComponent<InputComponentProps> = props => {
     const clsx = classnames(s.input, className);
 
     if ("rows" in props) {
-        return <textarea {...props} className={clsx} />;
+        return (
+            <textarea
+                className={clsx}
+                {...(restProps as React.DetailedHTMLProps<
+                    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+                    HTMLTextAreaElement
+                >)}
+            />
+        );
     }
 
     return (
         <input
             type="text"
             className={clsx}
-            {...(props as React.DetailedHTMLProps<
+            {...(restProps as React.DetailedHTMLProps<
                 React.InputHTMLAttributes<HTMLInputElement>,
                 HTMLInputElement
             >)}

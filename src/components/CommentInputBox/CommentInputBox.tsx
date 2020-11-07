@@ -2,6 +2,8 @@ import React, { FunctionComponent } from "react";
 /* components */
 import { Input } from "components/Input";
 import { Button } from "components/Button";
+/* modules */
+import clsx from "classnames";
 /* types */
 import { CommentInputBoxComponentProps } from "./CommentInputBox.types";
 /* styles */
@@ -9,7 +11,7 @@ import s from "./CommentInputBox.module.scss";
 
 export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> = props => {
     return (
-        <div className={s.box}>
+        <div className={clsx(s.box, `shadow`)}>
             <p className={s.title}>نظرتون در مورد این پست چیه؟</p>
             <Input
                 rows={7}

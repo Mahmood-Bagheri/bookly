@@ -27,7 +27,7 @@
     top: 0;
     right: -50px;
     background: #f5f5f5;
-    border: 3px solid #fff;
+    border: 3px solid var(--white);
 }
 
 .header {
@@ -37,12 +37,12 @@
 }
 
 .description {
-    color: #6b777c;
+    color: var(--gray-500);
     font-size: 14px;
 }
 
 .time {
-    color: #6b777c;
+    color: var(--gray-500);
     font-size: 14px;
     font-weight: 300;
 }
@@ -50,7 +50,7 @@
 .body {
     margin-top: 10px;
     font-weight: 500;
-    color: #000;
+    color: var(--black);
 }
 
 .actions {
@@ -62,6 +62,6 @@
 
 .reply {
     font-size: 14px;
-    color: #24363d;
+    color: var(--gray-700);
     cursor: pointer;
 }

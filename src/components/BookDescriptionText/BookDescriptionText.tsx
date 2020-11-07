@@ -1,4 +1,6 @@
 import React, { FunctionComponent } from "react";
+/* modules */
+import clsx from "classnames";
 /* types */
 import { BookDescriptionTextComponentProps } from "./BookDescriptionText.types";
 /* styles */
@@ -6,7 +8,7 @@ import s from "./BookDescriptionText.module.scss";
 
 export const BookDescriptionText: FunctionComponent<BookDescriptionTextComponentProps> = props => {
     return (
-        <div className={s.box}>
+        <div className={clsx(s.box, `shadow`)}>
             <p className={s.title}>مشخصات کتاب</p>
             <p className={s.body}>
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با

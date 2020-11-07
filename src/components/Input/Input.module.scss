@@ -2,12 +2,14 @@
     margin-top: 25px;
     width: 100%;
     border: none;
-    background: #f9f9f9;
+    background: var(--gray-100);
     border-radius: 20px;
     padding: 10px;
+    font-size: 14px;
 
     &::placeholder {
-        color: #b2b8ba;
+        color: var(--gray-300);
         font-weight: 300;
+        font-size: 14px;
     }
 }
