@@ -1,7 +1,15 @@
 import React, { FunctionComponent } from "react";
-import { MenuBarComponentProps } from "./MenuBar.types";
-import s from "./MenuBar.module.scss";
+/* components */
+/* modules */
+import clsx from 'classnames';
+/* helpers */
+/* assets */
+/* types */
+import { MenuBarComponentProps } from './MenuBar.types'
+/* styles */
+import s from './MenuBar.module.scss'
 
 export const MenuBar: FunctionComponent<MenuBarComponentProps> = props => {
-    return <div></div>;
-};
+    const {className, ...restProps} = props;
+    return <div className={clsx(s.box, className)}></div>;
+    };
