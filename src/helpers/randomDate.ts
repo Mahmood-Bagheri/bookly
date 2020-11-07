@@ -1,4 +1,4 @@
-type RandomDateGeneratorFn = (start: Date, end: Date) => Date;
+type RandomDateGeneratorFn = (start: Date, end?: Date) => Date;
 /**
  * @param description This utility generates a random date between the given start and end date
  * @param start the start date
