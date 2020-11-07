@@ -1,2 +1,2 @@
-export * from "./PublisherBox";
-export * from "./PublisherBox.types.d";
+export * from './PublisherBox'
+export * from './PublisherBox.types.d'

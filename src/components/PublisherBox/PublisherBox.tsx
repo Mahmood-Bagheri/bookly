@@ -1,7 +1,15 @@
 import React, { FunctionComponent } from "react";
-import { PublisherBoxComponentProps } from "./PublisherBox.types";
-import s from "./PublisherBox.module.scss";
+/* components */
+/* modules */
+import clsx from 'classnames';
+/* helpers */
+/* assets */
+/* types */
+import { PublisherBoxComponentProps } from './PublisherBox.types'
+/* styles */
+import s from './PublisherBox.module.scss'
 
 export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props => {
-    return <div></div>;
-};
+    const {className, ...restProps} = props;
+    return <div className={clsx(s.box, className)}></div>;
+    };
