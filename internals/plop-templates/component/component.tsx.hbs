@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 /* components */
 /* modules */
+import clsx from 'classnames';
 /* helpers */
 /* assets */
 /* types */
@@ -9,5 +10,6 @@ import { {{properCase name}}ComponentProps } from './{{properCase name}}.types'
 import s from './{{properCase name}}.module.scss'
 
 export const {{properCase name}}: FunctionComponent<{{properCase name}}ComponentProps> = props => {
-    return <div className={s.box}></div>;
+    const {className, ...restProps} = props;
+    return <div className={clsx(s.box, className)}></div>;
     };

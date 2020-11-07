@@ -1,1 +1,4 @@
-export type {{properCase name}}ComponentProps = {};
+export type {{properCase name}}Props = {};
+
+export type {{properCase name}}ComponentProps = React.HtmlHTMLAttributes< HTMLDivElement> &
+    Partial<{{properCase name}}Props>;
