@@ -1,4 +1,7 @@
-export type MenuBarProps = {};
+import { MenuItem } from "components/MenuBarItem";
+export type MenuBarProps = {
+    menu: MenuItem[];
+};
 
-export type MenuBarComponentProps = React.HtmlHTMLAttributes< HTMLDivElement> &
+export type MenuBarComponentProps = React.HtmlHTMLAttributes<HTMLDivElement> &
     Partial<MenuBarProps>;
