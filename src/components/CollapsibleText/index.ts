@@ -1,2 +1,2 @@
-export * from './CollapsibleText'
-export * from './CollapsibleText.types.d'
+export * from "./CollapsibleText";
+export * from "./CollapsibleText.types.d";

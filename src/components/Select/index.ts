@@ -1,2 +1,2 @@
-export * from './Select'
-export * from './Select.types.d'
+export * from "./Select";
+export * from "./Select.types.d";

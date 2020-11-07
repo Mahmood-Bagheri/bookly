@@ -1,2 +1,2 @@
-export * from './BookmarkButton'
-export * from './BookmarkButton.types.d'
+export * from "./BookmarkButton";
+export * from "./BookmarkButton.types.d";
