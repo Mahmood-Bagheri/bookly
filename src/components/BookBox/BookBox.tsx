@@ -35,10 +35,10 @@ export const BookBox: BookBoxComponentType = props => {
                     onLikeStateChange={onLikeStateChange}
                     initialLikeState={initialLikeState}
                 />
-                <BookmarkButton
+                {/* <BookmarkButton
                     onBookmarkStateChange={onBookmarkStateChange}
                     initialBookmarkState={initialBookmarkState}
-                />
+                /> */}
             </div>
         </div>
     );
