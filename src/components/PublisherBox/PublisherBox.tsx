@@ -30,7 +30,7 @@ export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props
             <span className={s.description}>{description}</span>
             <Button
                 type={initialFollowingState ? "dashed" : "primary"}
-                className="mt-2"
+                className="mt-4"
                 danger={initialFollowingState}
                 block
                 size="large"
