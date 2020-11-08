@@ -1,1 +1,1 @@
-export * from "./AuthorBooksGrid";
+export { default } from "./AuthorBooksGrid";

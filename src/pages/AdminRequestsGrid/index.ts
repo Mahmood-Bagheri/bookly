@@ -1,1 +1,1 @@
-export * from "./AdminRequestsGrid";
+export { default } from "./AdminRequestsGrid";

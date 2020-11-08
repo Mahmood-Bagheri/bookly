@@ -1,1 +1,1 @@
-export * from "./AdminUsersGrid";
+export { default } from "./AdminUsersGrid";

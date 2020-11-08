@@ -1,1 +1,1 @@
-export * from "./AdminPublishersGrid";
+export { default } from "./AdminPublishersGrid";

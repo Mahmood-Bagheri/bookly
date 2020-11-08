@@ -1,1 +1,1 @@
-export * from "./AdminPublisherSubmission";
+export { default } from "./AdminPublisherSubmission";

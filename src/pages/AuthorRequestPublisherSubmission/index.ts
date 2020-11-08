@@ -1,1 +1,1 @@
-export * from "./AuthorRequestPublisherSubmission";
+export { default } from "./AuthorRequestPublisherSubmission";

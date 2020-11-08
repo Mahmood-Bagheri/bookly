@@ -1,1 +1,1 @@
-export * from "./UserProfileLikedBooks";
+export { default } from "./UserProfileLikedBooks";

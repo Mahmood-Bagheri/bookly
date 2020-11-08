@@ -1,1 +1,1 @@
-export * from "./ProfileComments";
+export { default } from "./ProfileComments";

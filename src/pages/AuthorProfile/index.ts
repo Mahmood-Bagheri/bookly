@@ -1,1 +1,1 @@
-export * from "./AuthorProfile";
+export { default } from "./AuthorProfile";
