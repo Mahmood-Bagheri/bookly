@@ -1,5 +1,5 @@
 const __API_URLS__ = {
-    posts: "/posts",
+    book: "/book",
 };
 
 export default __API_URLS__;
