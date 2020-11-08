@@ -7,7 +7,7 @@ import { applyErrorHandler } from "./interceptors/errorHandler";
 import { applyResponseNormalizer } from "./interceptors/responseNormalizer";
 
 const apiService = axios.create({
-    baseURL: process.env.REACT_APP_BASE_URL,
+    baseURL: process.env.REACT_APP_API_URL,
 });
 
 // * applying interceptors
