@@ -33,6 +33,11 @@ button, input , textarea {
     color:var(--white);
 }
 
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 *, *:before, *:after {
     box-sizing: border-box;
     outline: none;

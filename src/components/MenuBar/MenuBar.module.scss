@@ -1,1 +1,22 @@
-.box {}
+.box {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: auto;
+    padding: 0 0 10px 0;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: fixed;
+        left: 0;
+        right: 80%;
+        top: 0;
+        bottom: 0;
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 0.3)
+        );
+    }
+}
