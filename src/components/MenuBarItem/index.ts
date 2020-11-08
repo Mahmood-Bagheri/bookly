@@ -1,2 +1,2 @@
-export * from './MenuBarItem'
-export * from './MenuBarItem.types.d'
+export * from "./MenuBarItem";
+export * from "./MenuBarItem.types.d";

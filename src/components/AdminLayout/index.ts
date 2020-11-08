@@ -1,2 +1,2 @@
-export * from './AdminLayout'
-export * from './AdminLayout.types.d'
+export * from "./AdminLayout";
+export * from "./AdminLayout.types.d";

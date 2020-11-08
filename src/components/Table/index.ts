@@ -1,2 +1,2 @@
-export * from './Table'
-export * from './Table.types.d'
+export * from "./Table";
+export * from "./Table.types.d";

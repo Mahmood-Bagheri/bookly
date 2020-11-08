@@ -1,2 +1,2 @@
-export * from './LoginForm'
-export * from './LoginForm.types.d'
+export * from "./LoginForm";
+export * from "./LoginForm.types.d";

@@ -1,4 +1,6 @@
 export type GuestLayoutProps = {};
 
-export type GuestLayoutComponentProps = React.HtmlHTMLAttributes< HTMLDivElement> &
+export type GuestLayoutComponentProps = React.HtmlHTMLAttributes<
+    HTMLDivElement
+> &
     Partial<GuestLayoutProps>;
