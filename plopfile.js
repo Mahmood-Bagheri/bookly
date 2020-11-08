@@ -1,5 +1,5 @@
 module.exports = plop => {
-    /* plop.setGenerator("component", {
+    plop.setGenerator("component", {
         description: "Create a component",
         prompts: [
             {
@@ -36,7 +36,7 @@ module.exports = plop => {
                 templateFile: "internals/plop-templates/component/index.ts.hbs",
             },
         ],
-    }); */
+    });
     /*  plop.setGenerator("hook", {
         description: "Create a hook",
         prompts: [
@@ -57,8 +57,7 @@ module.exports = plop => {
             },
         ],
     }); */
-
-    plop.setGenerator("page", {
+    /* plop.setGenerator("page", {
         description: "Create a page",
         prompts: [
             {
@@ -75,9 +74,9 @@ module.exports = plop => {
             },
             {
                 type: "add",
-                path: "src/pages/{{pascalCase name}}/index.ts",
-                templateFile: "internals/plop-templates/page/index.ts.hbs",
+                path: "src/pages/{{pascalCase name}}/index.tsx",
+                templateFile: "internals/plop-templates/page/index.tsx.hbs",
             },
         ],
-    });
+    }); */
 };
