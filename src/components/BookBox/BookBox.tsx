@@ -30,16 +30,16 @@ export const BookBox: BookBoxComponentType = props => {
                     <div className={s.authorTitle}>نویسنده</div>
                 </div>
             </div>
-            <div className={s.actions}>
+            {/* <div className={s.actions}>
                 <LikeButton
                     onLikeStateChange={onLikeStateChange}
                     initialLikeState={initialLikeState}
                 />
-                {/* <BookmarkButton
+                <BookmarkButton
                     onBookmarkStateChange={onBookmarkStateChange}
                     initialBookmarkState={initialBookmarkState}
-                /> */}
-            </div>
+                />
+            </div> */}
         </div>
     );
 };
