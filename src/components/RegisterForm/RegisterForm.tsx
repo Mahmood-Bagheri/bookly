@@ -60,6 +60,7 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
                                     size="large"
                                     type="primary"
                                     htmlType="submit"
+                                    className="mt-4"
                                 >
                                     ثبت نام
                                 </Button>
