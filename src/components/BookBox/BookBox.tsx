@@ -15,8 +15,29 @@ export const BookBox: BookBoxComponentType = props => {
         onLikeStateChange,
         initialBookmarkState,
         initialLikeState,
+        canLike,
         ...restProps
     } = props;
+
+    const renderLikeButton = () => {
+        if (canLike) {
+            return (
+                <div className={s.actions}>
+                    {canLike && (
+                        <LikeButton
+                            onLikeStateChange={onLikeStateChange}
+                            initialLikeState={initialLikeState}
+                        />
+                    )}
+                    {/*  <BookmarkButton
+                        onBookmarkStateChange={onBookmarkStateChange}
+                        initialBookmarkState={initialBookmarkState}
+                    /> */}
+                </div>
+            );
+        }
+        return null;
+    };
 
     return (
         <div className={`${s.box} shadow`} {...restProps}>
@@ -30,16 +51,7 @@ export const BookBox: BookBoxComponentType = props => {
                     <div className={s.authorTitle}>نویسنده</div>
                 </div>
             </div>
-            {/* <div className={s.actions}>
-                <LikeButton
-                    onLikeStateChange={onLikeStateChange}
-                    initialLikeState={initialLikeState}
-                />
-                <BookmarkButton
-                    onBookmarkStateChange={onBookmarkStateChange}
-                    initialBookmarkState={initialBookmarkState}
-                />
-            </div> */}
+            {renderLikeButton()}
         </div>
     );
 };
