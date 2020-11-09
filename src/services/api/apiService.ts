@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// * interceptors
 import { applyAuthInterceptor } from "./interceptors/auth";
 import { applyAccessTokenRevalidator } from "./interceptors/tokenRevalidator";
 import { applyErrorHandler } from "./interceptors/errorHandler";
@@ -10,7 +9,6 @@ const apiService = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
 });
 
-// * applying interceptors
 applyAuthInterceptor(apiService);
 applyAccessTokenRevalidator(apiService);
 applyErrorHandler(apiService);
