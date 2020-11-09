@@ -1,9 +1,3 @@
-export type InputComponentProps =
-    | React.DetailedHTMLProps<
-          React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-          HTMLTextAreaElement
-      >
-    | React.DetailedHTMLProps<
-          React.InputHTMLAttributes<HTMLInputElement>,
-          HTMLInputElement
-      >;
+import { TextAreaProps } from "antd/lib/input";
+
+export type InputComponentProps = InputProps;

@@ -1,35 +1,18 @@
 import React, { FunctionComponent } from "react";
-/* types */
-import { InputComponentProps } from "./Input.types";
+/* components */
+import { Input as AntDesignInput } from "antd";
 /* modules */
-import classnames from "classnames";
+import clsx from "classnames";
 /* styles */
 import s from "./Input.module.scss";
+/* types */
+import { InputComponentProps } from "./Input.types";
 
-export const Input: FunctionComponent<InputComponentProps> = props => {
-    const { className = "", ...restProps } = props;
-    const clsx = classnames(s.input, className);
-
-    if ("rows" in props) {
-        return (
-            <textarea
-                className={clsx}
-                {...(restProps as React.DetailedHTMLProps<
-                    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-                    HTMLTextAreaElement
-                >)}
-            />
-        );
-    }
-
+export const Input: FunctionComponent<InputComponentProps> = ({
+    className,
+    ...restProps
+}) => {
     return (
-        <input
-            type="text"
-            className={clsx}
-            {...(restProps as React.DetailedHTMLProps<
-                React.InputHTMLAttributes<HTMLInputElement>,
-                HTMLInputElement
-            >)}
-        />
+        <AntDesignInput className={clsx(s.input, className)} {...restProps} />
     );
 };
