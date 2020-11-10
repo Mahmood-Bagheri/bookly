@@ -1,1 +1,3 @@
-export type BookDescriptionTextComponentProps = {};
+export type BookDescriptionTextComponentProps = {
+    description: string;
+};
