@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 /* components */
-import { Input } from "components/Input";
+import { Textarea } from "components/Textarea";
 import { Button } from "components/Button";
 /* modules */
 import clsx from "classnames";
@@ -13,11 +13,14 @@ export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> =
     return (
         <div className={clsx(s.box, `shadow`)}>
             <p className={s.title}>نظرتون در مورد این پست چیه؟</p>
-            <Input
+            <Textarea
+                className="mt-2"
                 rows={7}
                 placeholder="مثلا: من این کتاب رو خیلی دوست دارم :)"
             />
-            <Button type="primary">ارسال نظر</Button>
+            <Button className="mt-3" type="primary">
+                ارسال نظر
+            </Button>
         </div>
     );
 };
