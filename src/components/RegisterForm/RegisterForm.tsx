@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 /* components */
-import { Input } from "components/Input";
 import { Form } from "antd";
 import { Container } from "components/Container";
+import { Input } from "components/Input";
 import { Button } from "components/Button";
 /* modules */
 import clsx from "classnames";
@@ -49,6 +49,18 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
                                     {
                                         required: true,
                                         message: "رمز عبور را وارد کنید",
+                                    },
+                                ]}
+                            >
+                                <Input />
+                            </Form.Item>
+                            <Form.Item
+                                label="تکرار رمز عبور"
+                                name="password"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: "تکرار رمز عبور را وارد کنید",
                                     },
                                 ]}
                             >
