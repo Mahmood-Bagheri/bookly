@@ -35,7 +35,7 @@ const Book: FC = props => {
                 در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
                                       "
                     />
-                    <CommentsGrid comments={comments} />
+                    <CommentsGrid loading={false} comments={comments} />
                 </div>
             </div>
         </Container>
