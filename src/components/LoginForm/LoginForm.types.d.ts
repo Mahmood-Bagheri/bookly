@@ -1,4 +1,5 @@
-export type LoginFormProps = {};
+export type LoginFormProps = {
+    onSubmit: (values: object) => void;
+};
 
-export type LoginFormComponentProps = React.HtmlHTMLAttributes<HTMLDivElement> &
-    Partial<LoginFormProps>;
+export type LoginFormComponentProps = LoginFormProps;
