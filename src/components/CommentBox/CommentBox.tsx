@@ -1,9 +1,10 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { DeleteButton } from "components/DeleteButton";
-import { CollapsibleText } from "components/CollapsibleText";
 /* modules */
 import dayJs from "dayjs";
+import { rbacRender } from "services/rbac/conditionalRender";
+
 /* assets */
 import Image from "assets/images/book.jpg";
 /* types */
@@ -12,7 +13,14 @@ import { CommentBoxComponentProps } from "./CommentBox.types";
 import s from "./CommentBox.module.scss";
 
 export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => {
-    const { body, date, username } = props;
+    const {
+        id: commentId,
+        body,
+        date,
+        username,
+        canDelete = false,
+        onDelete = defaultOnDelete,
+    } = props;
 
     const relativeFakeTime = dayJs().from(date, true);
 
@@ -26,12 +34,17 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
                     {"  "}
                     {relativeFakeTime} پیش گفته
                 </div>
-                <DeleteButton />
+                {rbacRender({
+                    component: (
+                        <DeleteButton onClick={() => onDelete(commentId)} />
+                    ),
+                    canDo: canDelete,
+                })}
             </div>
 
-            {/* todo -> make this collapsible :/ */}
-            {/* <CollapsibleText>{body}</CollapsibleText> */}
             <p className={s.body}>{body}</p>
         </div>
     );
 };
+
+const defaultOnDelete = () => {};
