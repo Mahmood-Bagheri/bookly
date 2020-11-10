@@ -1,6 +1,7 @@
 .box {
     background: var(--white);
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .title {
@@ -11,4 +12,8 @@
     opacity: 0.5;
     font-weight: 400;
     font-size: 14px;
+}
+
+.image {
+    border-radius: 10px;
 }
