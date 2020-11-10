@@ -1,0 +1,20 @@
+.box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    opacity: 0.3;
+}
+.title {
+    font-weight: 300;
+    opacity: 0.5;
+    font-size: 14px;
+}
