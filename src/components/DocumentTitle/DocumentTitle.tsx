@@ -6,6 +6,6 @@ export const DocumentTitle: FunctionComponent<DocumentTitleComponentProps> = ({
     title,
     ...restProps
 }) => {
-    const dcTitle = `Bookly 📚 | ${title}`;
+    const dcTitle = `${title} | Bookly 📚`;
     return <Helmet title={dcTitle} {...restProps} />;
 };
