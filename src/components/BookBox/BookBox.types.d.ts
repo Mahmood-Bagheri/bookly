@@ -9,6 +9,9 @@ export type BaseBookBoxProps = {
     onBookmarkStateChange: (bookmarkState: boolean) => void;
     initialLikeState: boolean;
     initialBookmarkState: boolean;
+    title: string;
+    author: string;
+    imageSrc?: string;
 };
 
 export type BookBoxComponentProps = Partial<BaseBookBoxProps> &

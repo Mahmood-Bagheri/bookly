@@ -1,7 +1,6 @@
 import React from "react";
 /* components */
 import { LikeButton } from "components/LikeButton";
-import { BookmarkButton } from "components/BookmarkButton";
 /* assets */
 import BookImage from "assets/images/book.jpg";
 /* types */
@@ -16,6 +15,9 @@ export const BookBox: BookBoxComponentType = props => {
         initialBookmarkState,
         initialLikeState,
         canLike,
+        title,
+        author,
+        imageSrc = BookImage,
         ...restProps
     } = props;
 
@@ -29,10 +31,6 @@ export const BookBox: BookBoxComponentType = props => {
                             initialLikeState={initialLikeState}
                         />
                     )}
-                    {/*  <BookmarkButton
-                        onBookmarkStateChange={onBookmarkStateChange}
-                        initialBookmarkState={initialBookmarkState}
-                    /> */}
                 </div>
             );
         }
@@ -44,10 +42,10 @@ export const BookBox: BookBoxComponentType = props => {
             <img className={s.image} src={BookImage} />
             <div className={s.content}>
                 <div>
-                    <div className={s.title}>جز از کل</div>
+                    <div className={s.title}>{title}</div>
                 </div>
                 <div>
-                    <div className={s.author}>استیو تولتز</div>
+                    <div className={s.author}>{author}</div>
                     <div className={s.authorTitle}>نویسنده</div>
                 </div>
             </div>
