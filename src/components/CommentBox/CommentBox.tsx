@@ -3,9 +3,7 @@ import React, { FunctionComponent } from "react";
 import { DeleteButton } from "components/DeleteButton";
 /* modules */
 import dayJs from "dayjs";
-import { rbacRender } from "services/rbac/conditionalRender";
-import { usePermissions } from "services/rbac/usePermissions";
-import { get } from "lodash";
+import { rbacRender } from "services/rbac";
 /* assets */
 import Image from "assets/images/book.jpg";
 /* types */
@@ -23,7 +21,6 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
     } = props;
 
     const relativeFakeTime = dayJs().from(date, true);
-    const { permissions, role } = usePermissions();
 
     return (
         <div className={s.box}>
@@ -35,11 +32,9 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
                     {"  "}
                     {relativeFakeTime} پیش گفته
                 </div>
+                {/* {rbacRender( <DeleteButton onClick={() => onDelete(commentId)} />, `comments.delete` )} */}
 
-                {rbacRender(
-                    <DeleteButton onClick={() => onDelete(commentId)} />,
-                    get(permissions, `${role}.comments.delete`)
-                )}
+                {rbacRender(<DeleteButton />, `comments.delete`)}
             </div>
 
             <p className={s.body}>{body}</p>

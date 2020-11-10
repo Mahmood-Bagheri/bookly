@@ -5,20 +5,15 @@ import { Button } from "components/Button";
 import { Form } from "antd";
 /* modules */
 import clsx from "classnames";
-import { usePermissions } from "services/rbac/usePermissions";
-import { get } from "lodash";
-
 /* types */
 import { CommentInputBoxComponentProps } from "./CommentInputBox.types";
 /* styles */
 import s from "./CommentInputBox.module.scss";
-import { rbacRender } from "services/rbac/conditionalRender";
 
 export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> = ({
     onSubmit,
 }) => {
-    const { permissions, role } = usePermissions();
-    const content = (
+    return (
         <div className={clsx(s.box, `shadow`)}>
             <p className={s.title}>نظرتون در مورد این پست چیه؟</p>
             <Form
@@ -48,5 +43,4 @@ export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> =
             </Form>
         </div>
     );
-    return rbacRender(content, get(permissions, `${role}.comments.create`));
 };
