@@ -9,7 +9,7 @@ export const permissions = {
         },
         comments: {
             read: true,
-            create: false,
+            create: true,
             update: false,
             delete: true,
         },
