@@ -31,7 +31,7 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
 
 const renderBooks = (item: unknown) => (
     <div className="col-lg-6 col-xl-3 mb-3">
-        <Link to={routeTo("bookIntro", { id: "Salam" })}>
+        <Link to={routeTo("error", { id: "Salam" })}>
             <BookBox
                 title="جز از کل"
                 author="استیو تولتز"
