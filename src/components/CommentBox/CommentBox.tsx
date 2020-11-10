@@ -26,13 +26,12 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
                     {"  "}
                     {relativeFakeTime} پیش گفته
                 </div>
-            </div>
-
-            <CollapsibleText>{body}</CollapsibleText>
-
-            <div className={s.actions}>
                 <DeleteButton />
             </div>
+
+            {/* todo -> make this collapsible :/ */}
+            {/* <CollapsibleText>{body}</CollapsibleText> */}
+            <p className={s.body}>{body}</p>
         </div>
     );
 };

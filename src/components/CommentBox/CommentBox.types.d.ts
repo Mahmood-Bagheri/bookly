@@ -1,6 +1,6 @@
-export type BaseCommentBoxProps = {
+export type CommentBoxProps = {
     username: string;
     date: Date;
     body: string;
 };
-export type CommentBoxComponentProps = BaseCommentBoxProps & {};
+export type CommentBoxComponentProps = CommentBoxProps & {};
