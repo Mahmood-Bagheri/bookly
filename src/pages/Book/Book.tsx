@@ -7,6 +7,7 @@ import { CommentInputBox } from "components/CommentInputBox";
 import { Container } from "components/Container";
 /* modules */
 import { randomDate } from "helpers/randomDate";
+import { rbacRender } from "services/rbac";
 
 const Book: FC = props => {
     const comments = [
@@ -17,6 +18,9 @@ const Book: FC = props => {
             body: "خیلی خوب بود :)",
         },
     ];
+    const description = `لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+    استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
+    در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد`;
     return (
         <Container>
             <div className="row">
@@ -25,18 +29,20 @@ const Book: FC = props => {
                         title="کتاب جز از کل"
                         author="استیو تولتز"
                     />
-                    <CommentInputBox
-                        onSubmit={comment => console.log(comment)}
-                    />
+                    {rbacRender(
+                        <CommentInputBox
+                            onSubmit={comment => console.log(comment)}
+                        />,
+                        `comments.create`
+                    )}
                 </div>
                 <div className="col-xl-8 mt-3 mt-xl-0">
-                    <BookDescriptionText
-                        description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                                      "
-                    />
-                    <CommentsGrid loading={false} comments={comments} />
+                    <BookDescriptionText description={description} />
+
+                    {rbacRender(
+                        <CommentsGrid loading={false} comments={comments} />,
+                        `comments.read`
+                    )}
                 </div>
             </div>
         </Container>
