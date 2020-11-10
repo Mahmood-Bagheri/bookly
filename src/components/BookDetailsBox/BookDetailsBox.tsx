@@ -11,7 +11,7 @@ import s from "./BookDetailsBox.module.scss";
 export const BookDetailsBox: FunctionComponent<BookDetailsBoxComponentProps> = props => {
     return (
         <div className={clsx(s.box, `shadow`)}>
-            <div className="p-3">
+            <div className="d-flex justify-content-between align-items-center p-3">
                 <p className={s.title}>کتاب جز از کل </p>
                 <div className={s.author}>استیو تولتز</div>
             </div>
