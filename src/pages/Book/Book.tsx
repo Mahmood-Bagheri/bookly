@@ -11,6 +11,7 @@ import { randomDate } from "helpers/randomDate";
 const Book: FC = props => {
     const comments = [
         {
+            id: "123",
             username: "سمیه",
             date: randomDate(new Date("2020/1/1")),
             body: "خیلی خوب بود :)",
