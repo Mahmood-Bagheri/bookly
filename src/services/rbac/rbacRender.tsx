@@ -1,6 +1,4 @@
 /* eslint-disable */
-
-// import { permissions } from "./permissions";
 import { get } from "lodash";
 import { usePermissions } from "./usePermissions";
 
