@@ -10,6 +10,7 @@ import Image from "assets/images/book.jpg";
 import { CommentBoxComponentProps } from "./CommentBox.types";
 /* styles */
 import s from "./CommentBox.module.scss";
+import { RbacRender } from "components/RbacRender";
 
 export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => {
     const {
@@ -24,7 +25,9 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
 
     return (
         <div className={s.box}>
-            <img className={s.profileImage} src={Image} />
+            <RbacRender permission="comments.delete">
+                <img className={s.profileImage} src={Image} />
+            </RbacRender>
 
             <div className={s.header}>
                 <div className={s.description}>
