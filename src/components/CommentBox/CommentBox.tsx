@@ -11,6 +11,10 @@ import Image from "assets/images/book.jpg";
 import { CommentBoxComponentProps } from "./CommentBox.types";
 /* styles */
 import s from "./CommentBox.module.scss";
+import { usePermissions } from "services/rbac/usePermissions";
+import { useRecoilState } from "recoil";
+import { roleState } from "services/recoil/user/atoms";
+import { get } from "lodash";
 
 export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => {
     const {
@@ -18,11 +22,13 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
         body,
         date,
         username,
-        canDelete = false,
         onDelete = defaultOnDelete,
     } = props;
 
     const relativeFakeTime = dayJs().from(date, true);
+
+    const [role] = useRecoilState(roleState);
+    const { permissions } = usePermissions();
 
     return (
         <div className={s.box}>
@@ -34,12 +40,11 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
                     {"  "}
                     {relativeFakeTime} پیش گفته
                 </div>
-                {rbacRender({
-                    component: (
-                        <DeleteButton onClick={() => onDelete(commentId)} />
-                    ),
-                    canDo: canDelete,
-                })}
+
+                {rbacRender(
+                    <DeleteButton onClick={() => onDelete(commentId)} />,
+                    get(permissions, `${role}.comments.delete`)
+                )}
             </div>
 
             <p className={s.body}>{body}</p>
