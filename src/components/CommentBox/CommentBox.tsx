@@ -3,14 +3,13 @@ import React, { FunctionComponent } from "react";
 import { DeleteButton } from "components/DeleteButton";
 /* modules */
 import dayJs from "dayjs";
-import { rbacRender } from "services/rbac";
 /* assets */
 import Image from "assets/images/book.jpg";
 /* types */
 import { CommentBoxComponentProps } from "./CommentBox.types";
 /* styles */
 import s from "./CommentBox.module.scss";
-import { RbacRender } from "components/RbacRender";
+import { RbacRender } from "services/rbac";
 
 export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => {
     const {
@@ -35,9 +34,10 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
                     {"  "}
                     {relativeFakeTime} پیش گفته
                 </div>
-                {/* {rbacRender( <DeleteButton onClick={() => onDelete(commentId)} />, `comments.delete` )} */}
 
-                {rbacRender(<DeleteButton />, `comments.delete`)}
+                <RbacRender permission="comments.delete">
+                    <DeleteButton onClick={() => onDelete(commentId)} />
+                </RbacRender>
             </div>
 
             <p className={s.body}>{body}</p>

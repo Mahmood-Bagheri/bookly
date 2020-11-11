@@ -5,9 +5,10 @@ import { BookDescriptionText } from "components/BookDescriptionText";
 import { CommentsGrid } from "components/CommentsGrid";
 import { CommentInputBox } from "components/CommentInputBox";
 import { Container } from "components/Container";
+import { RbacRender } from "services/rbac";
+
 /* modules */
 import { randomDate } from "helpers/randomDate";
-import { rbacRender } from "services/rbac";
 
 const Book: FC = props => {
     const comments = [
@@ -29,20 +30,18 @@ const Book: FC = props => {
                         title="کتاب جز از کل"
                         author="استیو تولتز"
                     />
-                    {rbacRender(
+                    <RbacRender permission="comments.create">
                         <CommentInputBox
                             onSubmit={comment => console.log(comment)}
-                        />,
-                        `comments.create`
-                    )}
+                        />
+                    </RbacRender>
                 </div>
                 <div className="col-xl-8 mt-3 mt-xl-0">
                     <BookDescriptionText description={description} />
 
-                    {rbacRender(
-                        <CommentsGrid loading={false} comments={comments} />,
-                        `comments.read`
-                    )}
+                    <RbacRender permission="comments.read">
+                        <CommentsGrid loading={false} comments={comments} />
+                    </RbacRender>
                 </div>
             </div>
         </Container>

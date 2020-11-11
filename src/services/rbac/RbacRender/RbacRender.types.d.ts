@@ -7,6 +7,6 @@ type RbacRenderComponent = ({
     children,
 }: {
     permission: string;
-    children: any;
+    children: JSX.Element;
 }) => ReactElement;
 export type RbacRenderComponentProps = RbacRenderProps;
