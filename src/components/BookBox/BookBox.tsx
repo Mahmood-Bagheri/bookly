@@ -1,12 +1,15 @@
 import React from "react";
 /* components */
 import { LikeButton } from "components/LikeButton";
+import { Image } from "components/Image";
+
 /* assets */
 import BookImage from "assets/images/book.jpg";
 /* types */
 import { BookBoxComponentType } from "./BookBox.types";
 /* styles */
 import s from "./BookBox.module.scss";
+import { AclService } from "services/rbac";
 
 export const BookBox: BookBoxComponentType = props => {
     const {
@@ -21,25 +24,9 @@ export const BookBox: BookBoxComponentType = props => {
         ...restProps
     } = props;
 
-    const renderLikeButton = () => {
-        if (canLike) {
-            return (
-                <div className={s.actions}>
-                    {canLike && (
-                        <LikeButton
-                            onLikeStateChange={onLikeStateChange}
-                            initialLikeState={initialLikeState}
-                        />
-                    )}
-                </div>
-            );
-        }
-        return null;
-    };
-
     return (
         <div className={`${s.box} shadow`} {...restProps}>
-            <img className={s.image} src={BookImage} />
+            <Image className={s.image} src={imageSrc} />
             <div className={s.content}>
                 <div>
                     <div className={s.title}>{title}</div>
@@ -49,7 +36,14 @@ export const BookBox: BookBoxComponentType = props => {
                     <div className={s.authorTitle}>نویسنده</div>
                 </div>
             </div>
-            {renderLikeButton()}
+            <div className={s.actions}>
+                <AclService permission="book.like">
+                    <LikeButton
+                        onLikeStateChange={onLikeStateChange}
+                        initialLikeState={initialLikeState}
+                    />
+                </AclService>
+            </div>
         </div>
     );
 };
