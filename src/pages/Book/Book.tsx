@@ -28,7 +28,7 @@ const Book: FC = props => {
     return (
         <Container>
             <Row>
-                <Col xl="4">
+                <Col xl={4}>
                     <BookDetailsBox
                         title="کتاب جز از کل"
                         author="استیو تولتز"
@@ -40,7 +40,7 @@ const Book: FC = props => {
                     </AclService>
                 </Col>
 
-                <Col xl="8" className="mt-3 mt-xl-0">
+                <Col xl={8} className="mt-3 mt-xl-0">
                     <BookDescriptionText description={description} />
 
                     <AclService permission="comments.read">
