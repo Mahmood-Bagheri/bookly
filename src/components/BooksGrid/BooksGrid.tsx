@@ -11,6 +11,7 @@ import { BooksGridComponentProps } from "./BooksGrid.types";
 import s from "./BooksGrid.module.scss";
 import { Link } from "react-router-dom";
 import { routeTo } from "helpers/routeTo";
+import { Col } from "components/Col";
 
 export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     title = "کتاب ها",
@@ -29,18 +30,18 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     );
 };
 
-const renderBooks = (item: unknown) => (
-    <div className="col-lg-6 col-xl-3 mb-3">
+const renderBooks = (item: unknown, index: number) => (
+    <Col lg={6} xl={3} className="mb-3">
         <Link to={routeTo("error", { id: "Salam" })}>
             <BookBox
                 title="جز از کل"
                 author="استیو تولتز"
-                imageSrc={BookImage}
+                imageSrc={`https://source.unsplash.com/200x200/?book&sig=${index}`}
                 canLike={false}
                 onBookmarkStateChange={() => {}}
                 onLikeStateChange={() => {}}
                 initialLikeState={false}
             />
         </Link>
-    </div>
+    </Col>
 );
