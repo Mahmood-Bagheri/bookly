@@ -5,15 +5,17 @@ import NProgress, {
 
 import "nprogress/nprogress.css";
 
-const applyNprogressConfig = (
-    NProgressInstance: NProgressInstanceInterface
-) => {
-    const NprogressConfig: Partial<NProgressOptions> = {
-        showSpinner: false,
-    };
-    NProgressInstance.configure(NprogressConfig);
+const NprogressConfig = {
+    showSpinner: false,
 };
 
-applyNprogressConfig(NProgress);
+const applyNprogressConfig = (
+    NProgressInstance: NProgressInstanceInterface,
+    config: Partial<NProgressOptions>
+) => {
+    NProgressInstance.configure(config);
+};
+
+applyNprogressConfig(NProgress, NprogressConfig);
 
 export { NProgress };
