@@ -20,6 +20,7 @@ export const CommentsGrid: FunctionComponent<CommentsGridComponentProps> = props
 const renderComments = (comment: CommentBoxProps) => {
     return (
         <CommentBox
+            key={comment.id}
             id={comment.id}
             username={comment.username}
             date={comment.date}
