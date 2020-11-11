@@ -6,6 +6,8 @@ import { CommentsGrid } from "components/CommentsGrid";
 import { CommentInputBox } from "components/CommentInputBox";
 import { Container } from "components/Container";
 import { AclService } from "services/rbac";
+import { Col } from "components/Col";
+import { Row } from "components/Row";
 
 /* modules */
 import { randomDate } from "helpers/randomDate";
@@ -25,8 +27,8 @@ const Book: FC = props => {
 
     return (
         <Container>
-            <div className="row">
-                <div className="col-xl-4">
+            <Row>
+                <Col xl="4">
                     <BookDetailsBox
                         title="کتاب جز از کل"
                         author="استیو تولتز"
@@ -36,15 +38,16 @@ const Book: FC = props => {
                             onSubmit={comment => console.log(comment)}
                         />
                     </AclService>
-                </div>
-                <div className="col-xl-8 mt-3 mt-xl-0">
+                </Col>
+
+                <Col xl="8" className="mt-3 mt-xl-0">
                     <BookDescriptionText description={description} />
 
                     <AclService permission="comments.read">
                         <CommentsGrid loading={false} comments={comments} />
                     </AclService>
-                </div>
-            </div>
+                </Col>
+            </Row>
         </Container>
     );
 };
