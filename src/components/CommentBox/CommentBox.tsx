@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { DeleteButton } from "components/DeleteButton";
+import { AclService } from "services/rbac";
+
 /* modules */
 import dayJs from "dayjs";
 /* assets */
@@ -9,7 +11,6 @@ import Image from "assets/images/book.jpg";
 import { CommentBoxComponentProps } from "./CommentBox.types";
 /* styles */
 import s from "./CommentBox.module.scss";
-import { RbacRender } from "services/rbac";
 
 export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => {
     const {
@@ -24,9 +25,9 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
 
     return (
         <div className={s.box}>
-            <RbacRender permission="comments.delete">
+            <AclService permission="comments.delete">
                 <img className={s.profileImage} src={Image} />
-            </RbacRender>
+            </AclService>
 
             <div className={s.header}>
                 <div className={s.description}>
@@ -35,9 +36,9 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
                     {relativeFakeTime} پیش گفته
                 </div>
 
-                <RbacRender permission="comments.delete">
+                <AclService permission="comments.delete">
                     <DeleteButton onClick={() => onDelete(commentId)} />
-                </RbacRender>
+                </AclService>
             </div>
 
             <p className={s.body}>{body}</p>

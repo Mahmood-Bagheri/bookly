@@ -1,11 +1,11 @@
-import React, { FC, Fragment } from "react";
+import React, { FC } from "react";
 /* components */
 import { BookDetailsBox } from "components/BookDetailsBox";
 import { BookDescriptionText } from "components/BookDescriptionText";
 import { CommentsGrid } from "components/CommentsGrid";
 import { CommentInputBox } from "components/CommentInputBox";
 import { Container } from "components/Container";
-import { RbacRender } from "services/rbac";
+import { AclService } from "services/rbac";
 
 /* modules */
 import { randomDate } from "helpers/randomDate";
@@ -31,18 +31,18 @@ const Book: FC = props => {
                         title="کتاب جز از کل"
                         author="استیو تولتز"
                     />
-                    <RbacRender permission="comments.create">
+                    <AclService permission="comments.create">
                         <CommentInputBox
                             onSubmit={comment => console.log(comment)}
                         />
-                    </RbacRender>
+                    </AclService>
                 </div>
                 <div className="col-xl-8 mt-3 mt-xl-0">
                     <BookDescriptionText description={description} />
 
-                    <RbacRender permission="comments.read">
+                    <AclService permission="comments.read">
                         <CommentsGrid loading={false} comments={comments} />
-                    </RbacRender>
+                    </AclService>
                 </div>
             </div>
         </Container>

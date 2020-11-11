@@ -1,12 +1,8 @@
-/* modules */
 import { usePermissions } from "services/rbac";
 import { get } from "lodash";
-/* helpers */
-/* assets */
-/* types */
-import { RbacRenderComponent } from "./RbacRender.types.d";
+import { AclComponentProps } from "./Acl.types.d";
 
-export const RbacRender: RbacRenderComponent = ({ permission, children }) => {
+export const AclService: AclComponentProps = ({ permission, children }) => {
     const { role, permissions } = usePermissions();
     const canPerform = get(permissions, `${role}.${permission}`);
     return canPerform ? children : null;
