@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 /* components */
 import { DeleteButton } from "components/DeleteButton";
 import { AclService } from "services/rbac";
+import { PopConfirm } from "components/PopConfirm";
 
 /* modules */
 import dayJs from "dayjs";
@@ -37,7 +38,12 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
                 </div>
 
                 <AclService permission="comments.delete">
-                    <DeleteButton onClick={() => onDelete(commentId)} />
+                    <PopConfirm
+                        onConfirm={() => onDelete(commentId)}
+                        title="برای حذف کردن این نظر مطمئن هستید؟"
+                    >
+                        <DeleteButton />
+                    </PopConfirm>
                 </AclService>
             </div>
 
