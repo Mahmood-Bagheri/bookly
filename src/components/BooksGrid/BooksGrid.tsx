@@ -36,7 +36,7 @@ const renderBooks = (item: unknown, index: number) => (
             <BookBox
                 title="جز از کل"
                 author="استیو تولتز"
-                imageSrc={`https://source.unsplash.com/200x200/?book&sig=${index}`}
+                imageSrc={`https://source.unsplash.com/500x500/?book&sig=${index}`}
                 canLike={false}
                 onBookmarkStateChange={() => {}}
                 onLikeStateChange={() => {}}
