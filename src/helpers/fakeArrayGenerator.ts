@@ -1,7 +1,6 @@
-type FakeArrayGeneratorFn = (count: number) => ArrayConstructor[];
 /**
  * @param count the length of our empty array
  */
-export const fakeArrayGenerator: FakeArrayGeneratorFn = count => {
+export const fakeArrayGenerator = (count: number): ArrayConstructor[] => {
     return [...Array(count)];
 };
