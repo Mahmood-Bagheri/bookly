@@ -2,10 +2,10 @@ export const permissions = {
     guest: {
         books: {
             read: true,
-            create: false,
-            update: false,
-            delete: false,
-            like: false,
+            create: true,
+            update: true,
+            delete: true,
+            like: true,
         },
         comments: {
             read: true,
