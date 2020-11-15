@@ -27,12 +27,13 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
 
 const renderBooks = (item: unknown, index: number) => (
     <BookBox
+        id="StringIdPassedFromRenderBooks"
         title="جز از کل"
         author="استیو تولتز"
         imageSrc={`https://source.unsplash.com/500x500/?book&sig=${index}`}
         canLike={false}
-        onBookmarkStateChange={() => {}}
         onLikeStateChange={() => {}}
+        onDeleteBook={bookId => console.log(bookId, "logged from renderBooks")}
         initialLikeState={false}
     />
 );
