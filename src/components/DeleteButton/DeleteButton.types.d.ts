@@ -1,3 +1,3 @@
-export type DeleteButtonComponentProps = React.HtmlHTMLAttributes<
-    HTMLOrSVGElement
->;
+import { PopconfirmProps } from "antd/lib/popconfirm";
+
+export type DeleteButtonComponentProps = PopconfirmProps;
