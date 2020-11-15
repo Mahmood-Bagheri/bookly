@@ -28,7 +28,7 @@ export const BookBox: BookBoxComponentType = props => {
     } = props;
 
     return (
-        <Col lg={6} xl={3} className="mb-3">
+        <Col xl={3} sm={6} className="mb-3">
             <Link to={routeTo("error", { id: "Salam" })}>
                 <div className={`${s.box} shadow`} {...restProps}>
                     <Image className={s.image} src={imageSrc} />

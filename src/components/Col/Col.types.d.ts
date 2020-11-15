@@ -16,6 +16,7 @@ export type ColProps = {
     xl?: ColValuesUnionType;
     lg?: ColValuesUnionType;
     md?: ColValuesUnionType;
+    sm?: ColValuesUnionType;
     col?: ColValuesUnionType;
     className?: string;
 };
