@@ -41,14 +41,14 @@ export const BookBox: BookBoxComponentType = props => {
                             <div className={s.authorTitle}>نویسنده</div>
                         </div>
                     </div>
-                    <div className={s.actions}>
-                        <AclService permission="book.like">
+                    <AclService permission="book.like">
+                        <div className={s.actions}>
                             <LikeButton
                                 onLikeStateChange={onLikeStateChange}
                                 initialLikeState={initialLikeState}
                             />
-                        </AclService>
-                    </div>
+                        </div>
+                    </AclService>
                 </div>
             </Link>
         </Col>
