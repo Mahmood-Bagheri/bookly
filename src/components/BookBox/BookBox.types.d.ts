@@ -6,16 +6,15 @@ export type BookBoxRoleTypes = {
 
 export type BaseBookBoxProps = {
     onLikeStateChange: (likeState: boolean) => void;
-    onBookmarkStateChange: (bookmarkState: boolean) => void;
+    onDeleteBook: (bookId: string) => void;
     initialLikeState: boolean;
-    initialBookmarkState: boolean;
     title: string;
     author: string;
     imageSrc?: string;
+    id: string;
 };
 
-export type BookBoxComponentProps = Partial<BaseBookBoxProps> &
-    BookBoxRoleTypes;
+export type BookBoxComponentProps = BaseBookBoxProps & BookBoxRoleTypes;
 
 export type BookBoxComponentType = (
     props: BookBoxComponentProps
