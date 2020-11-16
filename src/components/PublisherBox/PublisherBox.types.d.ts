@@ -1,8 +1,9 @@
 export type PublisherBoxProps = {
+    id: string;
     title: string;
     description?: string;
     imageSrc: string;
-    onFollow?: (id: number) => void;
+    onFollow?: (id: string) => void;
     initialFollowingState?: boolean;
 };
 
