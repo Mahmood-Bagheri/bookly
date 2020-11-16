@@ -3,13 +3,15 @@ import React, { FunctionComponent } from "react";
 import { BookBox } from "components/BookBox";
 import { Container } from "components/Container";
 import { LoadingIndicator } from "components/LoadingIndicator";
+import { Row } from "components/Row";
+import { TopBar } from "components/TopBar";
+
 /* types */
 import { BooksGridComponentProps } from "./BooksGrid.types";
 /* styles */
 import s from "./BooksGrid.module.scss";
 
 export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
-    title = "کتاب ها",
     loading = false,
     books,
 }) => {
@@ -19,8 +21,8 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
 
     return (
         <Container>
-            <h1 className={s.title}>{title}</h1>
-            <div className="row">{books.map(renderBooks)}</div>
+            <TopBar title="کتاب ها" />
+            <Row>{books.map(renderBooks)}</Row>
         </Container>
     );
 };
