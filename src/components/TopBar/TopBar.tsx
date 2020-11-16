@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from "react";
 /* components */
-import { MenuBar, MenuBarProps } from "components/MenuBar";
+import { MenuBar } from "components/MenuBar";
+import { MenuItem } from "components/MenuBarItem";
+
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -14,7 +16,7 @@ import __ROUTES__ from "constants/routes";
 export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     const { className, title, ...restProps } = props;
 
-    const menu: MenuBarProps["menu"] = [
+    const menu: MenuItem[] = [
         { title: "خانه", link: __ROUTES__.dashboardIntro },
         { title: "ثبت نام", link: __ROUTES__.login },
         { title: "ورود", link: __ROUTES__.user },
