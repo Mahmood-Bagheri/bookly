@@ -1,11 +1,10 @@
 import React, { FunctionComponent, useState } from "react";
 /* components */
 import { MenuBar } from "components/MenuBar";
-import { MenuBarItem, MenuItem } from "components/MenuBarItem";
+import { MenuItem } from "components/MenuBarItem";
 import { Container } from "components/Container";
 import { Row } from "components/Row";
 import { Col } from "components/Col";
-import { Drawer } from "components/Drawer";
 /* modules */
 import clsx from "classnames";
 import { useRecoilState } from "recoil";
@@ -19,6 +18,7 @@ import { ReactComponent as MenuIcon } from "assets/icons/menu.svg";
 import { TopBarComponentProps } from "./TopBar.types";
 /* styles */
 import s from "./TopBar.module.scss";
+import { MainDrawer } from "components/MainDrawer";
 
 export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     const { className, title, ...restProps } = props;
@@ -59,34 +59,11 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
                     </div>
                 </Col>
             </Row>
-            <Drawer
+            <MainDrawer
                 onClose={closeDrawer}
                 visible={drawerState}
                 closable={false}
-            >
-                <div className="d-flex flex-column">
-                    <MenuBarItem
-                        className="mb-3"
-                        title="کاربران"
-                        link="/path/to/somewhere"
-                    />
-                    <MenuBarItem
-                        className="mb-3"
-                        title="کتاب ها"
-                        link="/path/to/somewhere"
-                    />
-                    <MenuBarItem
-                        className="mb-3"
-                        title="کاربران"
-                        link="/path/to/somewhere"
-                    />
-                    <MenuBarItem
-                        className="mb-3"
-                        title="کاربران"
-                        link="/path/to/somewhere"
-                    />
-                </div>
-            </Drawer>
+            />
         </Container>
     );
 };
