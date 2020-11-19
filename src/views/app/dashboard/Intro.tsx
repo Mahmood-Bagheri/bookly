@@ -1,16 +1,22 @@
 import React from "react";
-import { BookDetailsBox } from "components/BookDetailsBox";
+import Home from "pages/Home/Home";
+import Book from "pages/Book/Book";
+import { PublishersGrid } from "components/PublishersGrid";
+import { BookCategoriesGrid } from "components/BookCategoriesGrid";
+import { TopBar } from "components/TopBar";
+import { LoginForm } from "components/LoginForm";
+import { RegisterForm } from "components/RegisterForm";
 
 export default function App() {
     return (
-        <div className="container ">
-            <div className="row">
-                <div className="col-6 col-xl-4">
-                    {/* <BookDetailsBox /> */}
-                    looking for something? contact{" "}
-                    <a href="https://gogolecom">me</a>
-                </div>
-            </div>
+        <div>
+            <TopBar title="دسته بندی کتاب ها" />
+            <PublishersGrid />
+            <Home />
+            <BookCategoriesGrid />
+            <Book />
+            <LoginForm onSubmit={() => {}} />
+            <RegisterForm onSubmit={() => {}} />
         </div>
     );
 }
