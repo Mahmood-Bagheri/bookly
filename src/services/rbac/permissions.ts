@@ -2,6 +2,8 @@ export const permissions = {
     guest: {
         drawer: {
             see: true,
+            users: false,
+            books: false,
         },
         books: {
             read: true,
