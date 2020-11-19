@@ -2,8 +2,16 @@ import React, { FunctionComponent, useState } from "react";
 /* components */
 import { MenuBar } from "components/MenuBar";
 import { MenuItem } from "components/MenuBarItem";
+import { Container } from "components/Container";
+import { Row } from "components/Row";
+import { Col } from "components/Col";
+import { Drawer } from "components/Drawer";
 /* modules */
 import clsx from "classnames";
+import { useRecoilState } from "recoil";
+import { roleState } from "services/recoil/user/atoms";
+import { AclService } from "services/rbac";
+import __ROUTES__ from "constants/routes";
 /* helpers */
 /* assets */
 import { ReactComponent as MenuIcon } from "assets/icons/menu.svg";
@@ -11,17 +19,13 @@ import { ReactComponent as MenuIcon } from "assets/icons/menu.svg";
 import { TopBarComponentProps } from "./TopBar.types";
 /* styles */
 import s from "./TopBar.module.scss";
-import __ROUTES__ from "constants/routes";
-import { Container } from "components/Container";
-import { Row } from "components/Row";
-import { Col } from "components/Col";
-import { Drawer } from "components/Drawer";
-import { AclService } from "services/rbac";
 
 export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     const { className, title, ...restProps } = props;
 
     const [drawerState, setDrawerState] = useState(false);
+    const [role] = useRecoilState(roleState);
+
     const openDrawer = () => {
         setDrawerState(true);
     };
@@ -29,10 +33,10 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     const closeDrawer = () => {
         setDrawerState(false);
     };
+
     const menu: MenuItem[] = [
-        { title: "خانه", link: __ROUTES__.dashboardIntro },
-        { title: "ثبت نام", link: __ROUTES__.login },
-        { title: "ورود", link: __ROUTES__.user },
+        { title: "دسته بندی ها", link: __ROUTES__.dashboardIntro },
+        { title: "کتاب ها", link: __ROUTES__.login },
     ];
 
     return (
