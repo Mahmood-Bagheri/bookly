@@ -7,13 +7,13 @@ import { DeleteButton } from "components/DeleteButton";
 /* modules */
 import { Link } from "react-router-dom";
 import { routeTo } from "helpers/routeTo";
+import { AclService } from "services/rbac";
 /* assets */
 import BookImage from "assets/images/book.jpg";
 /* types */
 import { BookBoxComponentType } from "./BookBox.types";
 /* styles */
 import s from "./BookBox.module.scss";
-import { AclService } from "services/rbac";
 
 export const BookBox: BookBoxComponentType = props => {
     const {
@@ -31,7 +31,7 @@ export const BookBox: BookBoxComponentType = props => {
     return (
         <Col xl={3} sm={6} className="mb-3">
             <div className={`${s.box} shadow`} {...restProps}>
-                <Link to={routeTo("error", { id: "Salam" })}>
+                <Link to={routeTo("error")}>
                     <Image className={s.image} src={imageSrc} />
                 </Link>
                 <div className={s.content}>
@@ -52,7 +52,7 @@ export const BookBox: BookBoxComponentType = props => {
                     </AclService>
                     <AclService permission="books.delete">
                         <DeleteButton
-                            title="برای حذف کردن این کتاب مطمئن هستید ؟ "
+                            title="برای حذف کردن این کتاب مطمئن هستید ؟"
                             onConfirm={() => onDeleteBook(bookId)}
                             className={s.deleteIcon}
                         />
