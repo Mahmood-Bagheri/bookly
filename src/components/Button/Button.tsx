@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { forwardRef } from "react";
 /* components */
 import { Button as AntDesignButton } from "antd";
 /* modules */
@@ -10,9 +10,13 @@ import { ButtonComponentProps } from "./Button.types";
 /* styles */
 import s from "./Button.module.scss";
 
-export const Button: FunctionComponent<ButtonComponentProps> = props => {
+export const Button = forwardRef<any, ButtonComponentProps>((props, ref) => {
     const { className, ...restProps } = props;
     return (
-        <AntDesignButton className={clsx(s.button, className)} {...restProps} />
+        <AntDesignButton
+            ref={ref}
+            className={clsx(s.button, className)}
+            {...restProps}
+        />
     );
-};
+});
