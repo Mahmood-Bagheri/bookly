@@ -35,8 +35,8 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     };
 
     const menu: MenuItem[] = [
-        { title: "دسته بندی ها", link: routeTo("home") },
-        { title: "کتاب ها", link: routeTo("home") },
+        { title: "ورود", link: routeTo("login") },
+        { title: "ثبت نام", link: routeTo("register") },
     ];
 
     return (
