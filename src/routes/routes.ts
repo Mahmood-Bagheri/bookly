@@ -1,7 +1,6 @@
-// prettier-ignore
-
 export const ROUTES = {
-  home:             "/",
-  login:             "/login",
-  error:            "/error"
+    home: "/",
+    login: "/login",
+    register: "/register",
+    error: "/error",
 };

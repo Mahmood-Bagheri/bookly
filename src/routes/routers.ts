@@ -2,6 +2,8 @@ import { ComponentType } from "react";
 import { ROUTES } from "./routes";
 
 import Home from "pages/Home";
+import Login from "pages/Login";
+import Register from "pages/Register";
 import ErrorPage from "pages/Error";
 
 type Router = {
@@ -21,7 +23,13 @@ export const routers: Router[] = [
     },
     {
         path: ROUTES.login,
-        component: Home,
+        component: Login,
+        exact: true,
+        requireAuth: true,
+    },
+    {
+        path: ROUTES.register,
+        component: Register,
         exact: true,
         requireAuth: true,
     },
