@@ -1,6 +1,7 @@
 import { useMutation } from "react-query";
 import apiService from "services/api/apiService";
 import __API_URLS__ from "constants/apiUrls";
+import { message } from "antd";
 
 type CreateCommentMutationTypes = {
     bookId: string;
@@ -14,4 +15,10 @@ export const createComment = ({
     return apiService.post(__API_URLS__.comment, { bookId, comment });
 };
 
-export const useCreateComment = () => useMutation(createComment);
+export const useCreateComment = () => {
+    return useMutation(createComment, {
+        onSuccess: newComment => {
+            message.success(`نظر شما با موفقیت ثبت شد`);
+        },
+    });
+};
