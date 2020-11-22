@@ -4,8 +4,10 @@ import apiService from "services/api/apiService";
 
 type DeleteBookType = {};
 
-export const deleteBook = (data: DeleteBookType) => {
-    return apiService.delete(__API_URLS__.book, data);
-};
+export const deleteBook = (data: DeleteBookType) =>
+    apiService.delete(__API_URLS__.book, data);
 
-export const useDeleteBook = () => useMutation(deleteBook);
+export const useDeleteBook = () =>
+    useMutation(deleteBook, {
+        onMutate: selectedBook => {},
+    });
