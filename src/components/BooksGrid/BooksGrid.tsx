@@ -21,7 +21,6 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
 
     return (
         <Container>
-            <TopBar title="کتاب ها" />
             <Row>{books.map(renderBooks)}</Row>
         </Container>
     );
