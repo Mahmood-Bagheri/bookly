@@ -19,7 +19,6 @@ export const BookBox: BookBoxComponentType = props => {
     const {
         onLikeStateChange,
         initialLikeState,
-        canLike,
         title,
         author,
         imageSrc = BookImage,

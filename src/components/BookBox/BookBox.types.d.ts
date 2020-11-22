@@ -1,12 +1,6 @@
 import { FunctionComponent, ReactElement } from "react";
 
-export type BookBoxRoleTypes = {
-    canLike: boolean;
-};
-
-export type BaseBookBoxProps = {
-    onLikeStateChange: (likeState: boolean) => void;
-    onDeleteBook: (bookId: string) => void;
+export type Book = {
     initialLikeState: boolean;
     title: string;
     author: string;
@@ -14,7 +8,12 @@ export type BaseBookBoxProps = {
     id: string;
 };
 
-export type BookBoxComponentProps = BaseBookBoxProps & BookBoxRoleTypes;
+export type BookBoxActions = {
+    onLikeStateChange: (likeState: boolean) => void;
+    onDeleteBook: (bookId: string) => void;
+};
+
+export type BookBoxComponentProps = BookBoxActions & Book;
 
 export type BookBoxComponentType = (
     props: BookBoxComponentProps

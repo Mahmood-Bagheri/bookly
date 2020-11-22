@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 /* components */
-import { BookBox } from "components/BookBox";
+import { Book, BookBox } from "components/BookBox";
 import { Container } from "components/Container";
 import { LoadingIndicator } from "components/LoadingIndicator";
 import { Row } from "components/Row";
@@ -27,15 +27,14 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     );
 };
 
-const renderBooks = (item: unknown, index: number) => (
+const renderBooks = (item: Book) => (
     <BookBox
-        id="StringIdPassedFromRenderBooks"
-        title="جز از کل"
-        author="استیو تولتز"
-        imageSrc={`https://source.unsplash.com/500x500/?book&sig=${index}`}
-        canLike={false}
+        id={item.id}
+        title={item.title}
+        author={item.author}
+        imageSrc={item.imageSrc}
+        initialLikeState={item.initialLikeState}
         onLikeStateChange={() => {}}
         onDeleteBook={bookId => console.log(bookId, "logged from renderBooks")}
-        initialLikeState={false}
     />
 );
