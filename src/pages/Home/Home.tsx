@@ -3,7 +3,6 @@ import React, { FC, Fragment } from "react";
 import { DocumentTitle } from "components/DocumentTitle";
 import { BooksGrid } from "components/BooksGrid";
 /* modules */
-import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
 import { Book } from "components/BookBox";
 
 const Home: FC = props => {
