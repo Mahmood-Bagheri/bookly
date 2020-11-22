@@ -4,15 +4,20 @@ import { BookDetailsBox } from "components/BookDetailsBox";
 import { BookDescriptionText } from "components/BookDescriptionText";
 import { CommentsGrid } from "components/CommentsGrid";
 import { CommentInputBox } from "components/CommentInputBox";
-import { Container } from "components/Container";
 import { AclService } from "services/rbac";
 import { Col } from "components/Col";
 import { Row } from "components/Row";
 
 /* modules */
 import { randomDate } from "helpers/randomDate";
+import { useParams } from "react-router-dom";
 
 const Book: FC = props => {
+    const { bookId } = useParams<{ bookId: string }>();
+    const handleSubmitComment = (comment: string) => {
+        console.log(`submitting comment: ${comment} from bookId`, bookId);
+    };
+
     const comments = [
         {
             id: "123",
@@ -30,9 +35,7 @@ const Book: FC = props => {
             <Col xl={4}>
                 <BookDetailsBox title="کتاب جز از کل" author="استیو تولتز" />
                 <AclService permission="comments.create">
-                    <CommentInputBox
-                        onSubmit={comment => console.log(comment)}
-                    />
+                    <CommentInputBox onSubmit={handleSubmitComment} />
                 </AclService>
             </Col>
 

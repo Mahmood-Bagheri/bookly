@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 /* components */
+import { Form } from "antd";
 import { Textarea } from "components/Textarea";
 import { Button } from "components/Button";
-import { Form } from "antd";
 /* modules */
 import clsx from "classnames";
 /* types */
@@ -13,13 +13,18 @@ import s from "./CommentInputBox.module.scss";
 export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> = ({
     onSubmit,
 }) => {
+    const [form] = Form.useForm();
+
     return (
         <div className={clsx(s.box, `shadow`)}>
             <p className={s.title}>نظرتون در مورد این پست چیه؟</p>
             <Form
+                form={form}
                 layout="vertical"
-                onFinish={v => onSubmit(v.comment)}
-                style={{ width: "100%" }}
+                onFinish={values => {
+                    onSubmit(values.comment);
+                    form.resetFields();
+                }}
             >
                 <Form.Item
                     name="comment"

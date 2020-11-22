@@ -8,11 +8,14 @@ import s from "./Input.module.scss";
 /* types */
 import { InputComponentProps } from "./Input.types";
 
-export const Input: FunctionComponent<InputComponentProps> = ({
-    className,
-    ...restProps
-}) => {
-    return (
-        <AntDesignInput className={clsx(s.input, className)} {...restProps} />
-    );
-};
+export const Input = React.forwardRef<any, InputComponentProps>(
+    ({ className, ...restProps }, ref) => {
+        return (
+            <AntDesignInput
+                ref={ref}
+                className={clsx(s.input, className)}
+                {...restProps}
+            />
+        );
+    }
+);

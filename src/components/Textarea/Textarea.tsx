@@ -8,11 +8,14 @@ import { TextareaComponentProps } from "./Textarea.types";
 /* styles */
 import s from "./Textarea.module.scss";
 
-export const Textarea: FunctionComponent<TextareaComponentProps> = ({
-    className,
-    ...restProps
-}) => {
-    return (
-        <Input.TextArea className={clsx(s.input, className)} {...restProps} />
-    );
-};
+export const Textarea = React.forwardRef<any, TextareaComponentProps>(
+    ({ className, ...restProps }, ref) => {
+        return (
+            <Input.TextArea
+                ref={ref}
+                className={clsx(s.input, className)}
+                {...restProps}
+            />
+        );
+    }
+);
