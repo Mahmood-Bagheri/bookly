@@ -9,6 +9,8 @@ import Book from "pages/Book";
 import Publisher from "pages/Publisher";
 import Publishers from "pages/Publishers";
 import Profile from "pages/Profile";
+import Users from "pages/Users";
+import User from "pages/User";
 
 type Router = {
     path: string;
@@ -58,6 +60,18 @@ export const routers: Router[] = [
     {
         path: ROUTES.profile,
         component: Profile,
+        exact: true,
+        requireAuth: true,
+    },
+    {
+        path: ROUTES.users,
+        component: Users,
+        exact: true,
+        requireAuth: true,
+    },
+    {
+        path: ROUTES.user,
+        component: User,
         exact: true,
         requireAuth: true,
     },

@@ -2,6 +2,7 @@ import React from "react";
 import { loadable } from "helpers/loadable";
 import { LoadingIndicator } from "components/LoadingIndicator";
 
-export default loadable(() => import("./AdminUsersGrid"), {
-    fallback: <LoadingIndicator />,
+export default loadable(() => import("./Users"), {
+fallback:
+<LoadingIndicator />,
 });

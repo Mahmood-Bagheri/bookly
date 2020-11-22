@@ -6,5 +6,7 @@ export const ROUTES = {
     publishers: "/publishers",
     publisher: "/publisher",
     profile: "/profile",
+    users: "/users",
+    user: "/users/:userId",
     error: "/error",
 };
