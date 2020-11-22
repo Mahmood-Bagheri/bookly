@@ -10,7 +10,6 @@ import clsx from "classnames";
 import { useRecoilState } from "recoil";
 import { roleState } from "services/recoil/user/atoms";
 import { AclService } from "services/rbac";
-import __ROUTES__ from "constants/routes";
 /* helpers */
 /* assets */
 import { ReactComponent as MenuIcon } from "assets/icons/menu.svg";
@@ -19,6 +18,7 @@ import { TopBarComponentProps } from "./TopBar.types";
 /* styles */
 import s from "./TopBar.module.scss";
 import { MainDrawer } from "components/MainDrawer";
+import { routeTo } from "helpers/routeTo";
 
 export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     const { className, title, ...restProps } = props;
@@ -35,8 +35,8 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     };
 
     const menu: MenuItem[] = [
-        { title: "دسته بندی ها", link: __ROUTES__.dashboardIntro },
-        { title: "کتاب ها", link: __ROUTES__.login },
+        { title: "دسته بندی ها", link: routeTo("home") },
+        { title: "کتاب ها", link: routeTo("home") },
     ];
 
     return (

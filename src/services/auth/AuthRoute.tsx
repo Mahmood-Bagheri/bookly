@@ -4,7 +4,7 @@ import React from "react";
 import { Redirect, RouteComponentProps } from "react-router-dom";
 import { Route } from "components/Route";
 import { FunctionComponent, ComponentType } from "react";
-import __ROUTES__ from "constants/routes";
+import { routeTo } from "helpers/routeTo";
 
 type AuthRouteProps = {
     path: string;
@@ -26,7 +26,7 @@ export const AuthRoute: FunctionComponent<AuthRouteProps> = ({
                 ) : (
                     <Redirect
                         to={{
-                            pathname: __ROUTES__.login,
+                            pathname: routeTo("error"),
                             state: { from: props.location },
                         }}
                     />
