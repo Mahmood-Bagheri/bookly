@@ -8,25 +8,28 @@ import { routeTo } from "helpers/routeTo";
 
 type AuthRouteProps = {
     path: string;
-    component: ComponentType<RouteComponentProps>;
+    component: ComponentType;
     authUser: boolean;
+    exact: boolean;
 };
 
 export const AuthRoute: FunctionComponent<AuthRouteProps> = ({
     component: Component,
     authUser,
+    exact,
     ...rest
 }) => {
     return (
         <Route
             {...rest}
+            exact={exact}
             render={props =>
                 authUser ? (
-                    <Component {...props} />
+                    <Component {...(props as any)} />
                 ) : (
                     <Redirect
                         to={{
-                            pathname: routeTo("error"),
+                            pathname: routeTo("login"),
                             state: { from: props.location },
                         }}
                     />
