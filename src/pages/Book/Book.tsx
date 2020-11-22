@@ -11,6 +11,7 @@ import { Row } from "components/Row";
 /* modules */
 import { randomDate } from "helpers/randomDate";
 import { useParams } from "react-router-dom";
+import { DocumentTitle } from "components/DocumentTitle";
 
 const Book: FC = props => {
     const { bookId } = useParams<{ bookId: string }>();
@@ -36,6 +37,7 @@ const Book: FC = props => {
 
     return (
         <Row>
+            <DocumentTitle title="کتاب" />
             <Col xl={4}>
                 <BookDetailsBox title="کتاب جز از کل" author="استیو تولتز" />
                 <AclService permission="comments.create">
@@ -45,10 +47,8 @@ const Book: FC = props => {
 
             <Col xl={8} className="mt-3 mt-xl-0">
                 <BookDescriptionText description={description} />
-
                 <AclService permission="comments.read">
                     <CommentsGrid
-                        loading={false}
                         onDelete={handleDeleteComment}
                         comments={comments}
                     />
