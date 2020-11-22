@@ -19,7 +19,7 @@ const Book: FC = props => {
         console.log(`submitting comment: ${comment} from bookId`, bookId);
     };
     const handleDeleteComment = (commentId: string) => {
-        console.log(`deleting comment: ${commentId} from `);
+        console.log(`deleting comment with the commentId: ${commentId} `);
     };
 
     const comments = [
