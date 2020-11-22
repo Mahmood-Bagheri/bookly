@@ -12,14 +12,24 @@ import { Row } from "components/Row";
 import { randomDate } from "helpers/randomDate";
 import { useParams } from "react-router-dom";
 import { DocumentTitle } from "components/DocumentTitle";
+import { useCreateComment, useDeleteComment } from "services/api/operations";
 
 const Book: FC = props => {
     const { bookId } = useParams<{ bookId: string }>();
 
+    /* initiating operations hooks */
+    const [createComment] = useCreateComment();
+    const [deleteComment] = useDeleteComment();
+
     const handleSubmitComment = (comment: string) => {
+        /* create comment api call */
+        createComment({ bookId, comment });
         console.log(`submitting comment: ${comment} from bookId`, bookId);
     };
+
     const handleDeleteComment = (commentId: string) => {
+        /* delete comment api call */
+        deleteComment({ commentId });
         console.log(`deleting comment with the commentId: ${commentId} `);
     };
 
