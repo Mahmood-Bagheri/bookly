@@ -16,7 +16,7 @@ export const Table: FunctionComponent<TableComponentProps> = props => {
 
     const defaultTableProps: TableProps<any> = {
         locale: {
-            emptyText: defaultEmptyText(),
+            emptyText: <DefaultEmptyText />,
         },
     };
 
@@ -29,7 +29,7 @@ export const Table: FunctionComponent<TableComponentProps> = props => {
     );
 };
 
-const defaultEmptyText = () => (
+const DefaultEmptyText = () => (
     <div className={s.emptyBox}>
         <DataIcon />
         <p>هیچ اطلاعاتی یافت نشد!</p>

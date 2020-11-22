@@ -1,15 +1,18 @@
 import apiService from "services/api/apiService";
-import __API_URLS__ from "constants/apiUrls";
+import API_URLS from "constants/apiUrls";
 import { useMutation } from "react-query";
 import { message } from "antd";
 
 export const deleteComment = ({ commentId }: { commentId: string }) => {
-    return apiService.delete(__API_URLS__.comment, { params: { commentId } });
+    return apiService.delete(API_URLS.comment, { params: { commentId } });
 };
 
 export const useDeleteComment = () =>
     useMutation(deleteComment, {
-        onSuccess: newComment => {
+        onSuccess: () => {
             message.success(`نظر با موفقت حذف شد!`);
+        },
+        onError: () => {
+            message.error(`مشکلی در حذف کردن نظر پیش آمد!`);
         },
     });

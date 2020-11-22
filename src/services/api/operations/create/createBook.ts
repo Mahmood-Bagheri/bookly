@@ -1,12 +1,12 @@
 import { message } from "antd";
-import __API_URLS__ from "constants/apiUrls";
+import API_URLS from "constants/apiUrls";
 import { useMutation } from "react-query";
 import apiService from "services/api/apiService";
 
 type CreateBookTypes = {};
 
 export const createBook = (data: CreateBookTypes) => {
-    return apiService.post(__API_URLS__.book, data);
+    return apiService.post(API_URLS.book, data);
 };
 
 export const useCreateBook = () =>

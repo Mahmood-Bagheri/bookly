@@ -1,4 +1,4 @@
-const __API_URLS__ = {
+const API_URLS = {
     book: "/book",
     comment: "/comment",
     user: "/user",
@@ -6,4 +6,4 @@ const __API_URLS__ = {
     register: "/auth/register",
 };
 
-export default __API_URLS__;
+export default API_URLS;

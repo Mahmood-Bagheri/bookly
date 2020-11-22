@@ -2,7 +2,6 @@ import React, { FunctionComponent, useState, Fragment } from "react";
 /* components */
 import { MenuBar } from "components/MenuBar";
 import { MenuItem } from "components/MenuBarItem";
-import { Container } from "components/Container";
 import { Row } from "components/Row";
 import { Col } from "components/Col";
 /* modules */
@@ -26,13 +25,8 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     const [drawerState, setDrawerState] = useState(false);
     const [role] = useRecoilState(roleState);
 
-    const openDrawer = () => {
-        setDrawerState(true);
-    };
-
-    const closeDrawer = () => {
-        setDrawerState(false);
-    };
+    const openDrawer = () => setDrawerState(true);
+    const closeDrawer = () => setDrawerState(false);
 
     const menu: MenuItem[] = [
         { title: "ورود", link: routeTo("login") },

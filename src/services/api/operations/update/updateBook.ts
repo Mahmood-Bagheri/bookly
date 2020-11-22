@@ -1,6 +1,12 @@
-import __API_URLS__ from "constants/apiUrls";
+import { useMutation } from "react-query";
+import API_URLS from "constants/apiUrls";
 import apiService from "services/api/apiService";
 
 type UpdateBookTypes = {};
-export const updateBook = (data: UpdateBookTypes) =>
-    apiService.patch(__API_URLS__.book, data);
+
+export const updateBook = async (book: UpdateBookTypes) => {
+    const { data } = await apiService.patch(API_URLS.book, book);
+    return data;
+};
+
+export const useUpdateBook = () => useMutation(updateBook);

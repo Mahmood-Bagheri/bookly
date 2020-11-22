@@ -9,7 +9,6 @@ import { ReactComponent as DeleteIcon } from "assets/icons/delete.svg";
 import classnames from "classnames";
 /* styles */
 import s from "./DeleteButton.module.scss";
-import { Tooltip } from "antd";
 
 export const DeleteButton: FunctionComponent<DeleteButtonComponentProps> = props => {
     const { className, ...restProps } = props;
