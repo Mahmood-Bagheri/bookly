@@ -26,29 +26,24 @@ const Book: FC = props => {
     در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد`;
 
     return (
-        <Container>
-            <Row>
-                <Col xl={4}>
-                    <BookDetailsBox
-                        title="کتاب جز از کل"
-                        author="استیو تولتز"
+        <Row>
+            <Col xl={4}>
+                <BookDetailsBox title="کتاب جز از کل" author="استیو تولتز" />
+                <AclService permission="comments.create">
+                    <CommentInputBox
+                        onSubmit={comment => console.log(comment)}
                     />
-                    <AclService permission="comments.create">
-                        <CommentInputBox
-                            onSubmit={comment => console.log(comment)}
-                        />
-                    </AclService>
-                </Col>
+                </AclService>
+            </Col>
 
-                <Col xl={8} className="mt-3 mt-xl-0">
-                    <BookDescriptionText description={description} />
+            <Col xl={8} className="mt-3 mt-xl-0">
+                <BookDescriptionText description={description} />
 
-                    <AclService permission="comments.read">
-                        <CommentsGrid loading={false} comments={comments} />
-                    </AclService>
-                </Col>
-            </Row>
-        </Container>
+                <AclService permission="comments.read">
+                    <CommentsGrid loading={false} comments={comments} />
+                </AclService>
+            </Col>
+        </Row>
     );
 };
 

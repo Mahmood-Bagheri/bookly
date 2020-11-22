@@ -17,56 +17,54 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = props => {
     const { onSubmit } = props;
 
     return (
-        <Container>
-            <div className="row justify-content-center">
-                <div className="col-xl-5">
-                    <div className={s.box}>
-                        <Form
-                            layout="vertical"
-                            name="basic"
-                            onFinish={onSubmit}
-                            style={{ width: "100%" }}
+        <div className="row justify-content-center">
+            <div className="col-xl-5">
+                <div className={s.box}>
+                    <Form
+                        layout="vertical"
+                        name="basic"
+                        onFinish={onSubmit}
+                        style={{ width: "100%" }}
+                    >
+                        <Form.Item
+                            label="نام کاربری"
+                            name="username"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: "نام کاربری را وارد کنید",
+                                },
+                            ]}
                         >
-                            <Form.Item
-                                label="نام کاربری"
-                                name="username"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: "نام کاربری را وارد کنید",
-                                    },
-                                ]}
-                            >
-                                <Input />
-                            </Form.Item>
+                            <Input />
+                        </Form.Item>
 
-                            <Form.Item
-                                label="رمز عبور"
-                                name="password"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: "رمز عبور را وارد کنید",
-                                    },
-                                ]}
-                            >
-                                <Input />
-                            </Form.Item>
+                        <Form.Item
+                            label="رمز عبور"
+                            name="password"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: "رمز عبور را وارد کنید",
+                                },
+                            ]}
+                        >
+                            <Input />
+                        </Form.Item>
 
-                            <Form.Item>
-                                <Button
-                                    size="large"
-                                    type="primary"
-                                    htmlType="submit"
-                                    className="mt-4"
-                                >
-                                    ورود
-                                </Button>
-                            </Form.Item>
-                        </Form>
-                    </div>
+                        <Form.Item>
+                            <Button
+                                size="large"
+                                type="primary"
+                                htmlType="submit"
+                                className="mt-4"
+                            >
+                                ورود
+                            </Button>
+                        </Form.Item>
+                    </Form>
                 </div>
             </div>
-        </Container>
+        </div>
     );
 };

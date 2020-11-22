@@ -15,11 +15,7 @@ import s from "./BookCategoriesGrid.module.scss";
 
 export const BookCategoriesGrid: FunctionComponent<BookCategoriesGridComponentProps> = props => {
     const { className, ...restProps } = props;
-    return (
-        <Container>
-            <Row>{fakeArrayGenerator(10).map(renderCategories)}</Row>
-        </Container>
-    );
+    return <Row>{fakeArrayGenerator(10).map(renderCategories)}</Row>;
 };
 
 const renderCategories = (category: any, index: number) => {

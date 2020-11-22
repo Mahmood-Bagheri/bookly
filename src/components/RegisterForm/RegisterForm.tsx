@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { Form } from "antd";
-import { Container } from "components/Container";
 import { Input } from "components/Input";
 import { Button } from "components/Button";
 /* modules */
@@ -19,69 +18,67 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
     const onFinish = (values: any) => onSubmit(values);
 
     return (
-        <Container>
-            <div className="row justify-content-center">
-                <div className="col-xl-5">
-                    <div className={clsx(s.box)}>
-                        <Form
-                            layout="vertical"
-                            name="basic"
-                            onFinish={onFinish}
-                            style={{ width: "100%" }}
+        <div className="row justify-content-center">
+            <div className="col-xl-5">
+                <div className={clsx(s.box)}>
+                    <Form
+                        layout="vertical"
+                        name="basic"
+                        onFinish={onFinish}
+                        style={{ width: "100%" }}
+                    >
+                        <Form.Item
+                            label="نام کاربری"
+                            name="username"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: "رمز عبور را وارد کنید",
+                                },
+                            ]}
                         >
-                            <Form.Item
-                                label="نام کاربری"
-                                name="username"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: "رمز عبور را وارد کنید",
-                                    },
-                                ]}
-                            >
-                                <Input />
-                            </Form.Item>
+                            <Input />
+                        </Form.Item>
 
-                            <Form.Item
-                                label="رمز عبور"
-                                name="password"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: "رمز عبور را وارد کنید",
-                                    },
-                                ]}
-                            >
-                                <Input />
-                            </Form.Item>
-                            <Form.Item
-                                label="تکرار رمز عبور"
-                                name="password"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: "تکرار رمز عبور را وارد کنید",
-                                    },
-                                ]}
-                            >
-                                <Input />
-                            </Form.Item>
+                        <Form.Item
+                            label="رمز عبور"
+                            name="password"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: "رمز عبور را وارد کنید",
+                                },
+                            ]}
+                        >
+                            <Input />
+                        </Form.Item>
+                        <Form.Item
+                            label="تکرار رمز عبور"
+                            name="password"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: "تکرار رمز عبور را وارد کنید",
+                                },
+                            ]}
+                        >
+                            <Input />
+                        </Form.Item>
 
-                            <Form.Item>
-                                <Button
-                                    size="large"
-                                    type="primary"
-                                    htmlType="submit"
-                                    className="mt-4"
-                                >
-                                    ثبت نام
-                                </Button>
-                            </Form.Item>
-                        </Form>
-                    </div>
+                        <Form.Item>
+                            <Button
+                                size="large"
+                                type="primary"
+                                htmlType="submit"
+                                className="mt-4"
+                            >
+                                ثبت نام
+                            </Button>
+                        </Form.Item>
+                    </Form>
                 </div>
             </div>
-        </Container>
+        </div>
     );
 };
 

@@ -1,5 +1,6 @@
 import React, { Suspense, FunctionComponent } from "react";
-
+/* components */
+import { Container } from "components/Container";
 // modules
 import { Router } from "react-router-dom";
 /* main routes */
@@ -11,7 +12,9 @@ const App: FunctionComponent = () => {
     return (
         <React.Fragment>
             <Router history={history}>
-                <Routes />
+                <Container>
+                    <Routes />
+                </Container>
             </Router>
         </React.Fragment>
     );

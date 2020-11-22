@@ -13,11 +13,7 @@ import { Row } from "components/Row";
 
 export const PublishersGrid: FunctionComponent<PublishersGridComponentProps> = props => {
     const { className, ...restProps } = props;
-    return (
-        <Container className={clsx(s.box, className)} {...restProps}>
-            <Row>{fakeArrayGenerator(10).map(renderPublisher)}</Row>
-        </Container>
-    );
+    return <Row>{fakeArrayGenerator(10).map(renderPublisher)}</Row>;
 };
 
 const renderPublisher = (item: unknown, index: number) => (

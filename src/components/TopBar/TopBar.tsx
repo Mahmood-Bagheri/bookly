@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState, Fragment } from "react";
 /* components */
 import { MenuBar } from "components/MenuBar";
 import { MenuItem } from "components/MenuBarItem";
@@ -40,7 +40,7 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     ];
 
     return (
-        <Container>
+        <Fragment>
             <Row>
                 <Col col={12}>
                     <div className={clsx(s.topbar, className)} {...restProps}>
@@ -64,6 +64,6 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
                 visible={drawerState}
                 closable={false}
             />
-        </Container>
+        </Fragment>
     );
 };

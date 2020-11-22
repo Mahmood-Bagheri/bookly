@@ -19,11 +19,7 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
         return <LoadingIndicator />;
     }
 
-    return (
-        <Container>
-            <Row>{books.map(renderBooks)}</Row>
-        </Container>
-    );
+    return <Row>{books.map(renderBooks)}</Row>;
 };
 
 const renderBooks = (item: Book) => (
