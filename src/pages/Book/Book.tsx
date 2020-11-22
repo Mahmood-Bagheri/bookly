@@ -14,8 +14,12 @@ import { useParams } from "react-router-dom";
 
 const Book: FC = props => {
     const { bookId } = useParams<{ bookId: string }>();
+
     const handleSubmitComment = (comment: string) => {
         console.log(`submitting comment: ${comment} from bookId`, bookId);
+    };
+    const handleDeleteComment = (commentId: string) => {
+        console.log(`deleting comment: ${commentId} from `);
     };
 
     const comments = [
@@ -43,7 +47,11 @@ const Book: FC = props => {
                 <BookDescriptionText description={description} />
 
                 <AclService permission="comments.read">
-                    <CommentsGrid loading={false} comments={comments} />
+                    <CommentsGrid
+                        loading={false}
+                        onDelete={handleDeleteComment}
+                        comments={comments}
+                    />
                 </AclService>
             </Col>
         </Row>

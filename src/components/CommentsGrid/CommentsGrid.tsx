@@ -8,27 +8,29 @@ import { CommentsGridComponentProps } from "./CommentsGrid.types";
 import s from "./CommentsGrid.module.scss";
 
 export const CommentsGrid: FunctionComponent<CommentsGridComponentProps> = props => {
-    const { comments, loading } = props;
+    const { comments, loading, onDelete } = props;
 
     if (loading) {
         return <LoadingIndicator />;
     }
 
-    return <div className={s.box}>{comments.map(renderComments)}</div>;
-};
-
-const renderComments = (comment: CommentBoxProps) => {
     return (
-        <CommentBox
-            key={comment.id}
-            id={comment.id}
-            username={comment.username}
-            date={comment.date}
-            body={comment.body}
-            onDelete={id =>
-                /* comment id is available here to delete or something like that  */
-                console.log(id)
-            }
-        />
+        <div className={s.box}>
+            {comments.map(comment => {
+                return (
+                    <CommentBox
+                        key={comment.id}
+                        id={comment.id}
+                        username={comment.username}
+                        date={comment.date}
+                        body={comment.body}
+                        onDelete={id =>
+                            /* comment id is available here to delete or something like that  */
+                            onDelete(id)
+                        }
+                    />
+                );
+            })}
+        </div>
     );
 };
