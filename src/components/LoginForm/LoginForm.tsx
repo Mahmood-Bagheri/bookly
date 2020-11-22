@@ -33,7 +33,7 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = props => {
                                 rules={[
                                     {
                                         required: true,
-                                        message: "رمز عبور را وارد کنید",
+                                        message: "نام کاربری را وارد کنید",
                                     },
                                 ]}
                             >

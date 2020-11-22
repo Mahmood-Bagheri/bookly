@@ -5,6 +5,7 @@ import Home from "pages/Home";
 import Login from "pages/Login";
 import Register from "pages/Register";
 import ErrorPage from "pages/Error";
+import Book from "pages/Book";
 
 type Router = {
     path: string;
@@ -25,13 +26,19 @@ export const routers: Router[] = [
         path: ROUTES.login,
         component: Login,
         exact: true,
-        requireAuth: true,
+        requireAuth: false,
     },
     {
         path: ROUTES.register,
         component: Register,
         exact: true,
-        requireAuth: true,
+        requireAuth: false,
+    },
+    {
+        path: ROUTES.book,
+        component: Book,
+        exact: true,
+        requireAuth: false,
     },
     {
         path: "*",
