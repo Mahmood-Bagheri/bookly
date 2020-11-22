@@ -15,18 +15,16 @@ import { BookBoxComponentType } from "./BookBox.types";
 /* styles */
 import s from "./BookBox.module.scss";
 
-export const BookBox: BookBoxComponentType = props => {
-    const {
-        onLikeStateChange,
-        initialLikeState,
-        title,
-        author,
-        imageSrc = BookImage,
-        onDeleteBook = defaultOnDeleteBook,
-        id: bookId,
-        ...restProps
-    } = props;
-
+export const BookBox: BookBoxComponentType = ({
+    onLikeStateChange,
+    initialLikeState,
+    title,
+    author,
+    imageSrc = BookImage,
+    onDeleteBook = defaultOnDeleteBook,
+    id: bookId,
+    ...restProps
+}) => {
     return (
         <Col xl={3} sm={6} className="mb-3">
             <div className={`${s.box} shadow`} {...restProps}>
