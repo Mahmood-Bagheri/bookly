@@ -1,2 +1,2 @@
-export * from './Col'
-export * from './Col.types.d'
+export * from "./Col";
+export * from "./Col.types.d";

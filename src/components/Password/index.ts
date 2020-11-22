@@ -1,2 +1,2 @@
-export * from './Password'
-export * from './Password.types.d'
+export * from "./Password";
+export * from "./Password.types.d";

@@ -1,2 +1,2 @@
-export * from './BookCategoryBox'
-export * from './BookCategoryBox.types.d'
+export * from "./BookCategoryBox";
+export * from "./BookCategoryBox.types.d";

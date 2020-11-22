@@ -3,6 +3,5 @@ import { loadable } from "helpers/loadable";
 import { LoadingIndicator } from "components/LoadingIndicator";
 
 export default loadable(() => import("./Error"), {
-fallback:
-<LoadingIndicator />,
+    fallback: <LoadingIndicator />,
 });

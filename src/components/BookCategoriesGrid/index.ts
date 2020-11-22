@@ -1,2 +1,2 @@
-export * from './BookCategoriesGrid'
-export * from './BookCategoriesGrid.types.d'
+export * from "./BookCategoriesGrid";
+export * from "./BookCategoriesGrid.types.d";
