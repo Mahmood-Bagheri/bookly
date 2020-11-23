@@ -2,7 +2,7 @@ import { useMutation } from "react-query";
 import API_URLS from "constants/apiUrls";
 import apiService from "services/api/apiService";
 
-type LoginCredentialsType = {
+export type LoginCredentialsType = {
     username: string;
     password: string;
 };
