@@ -1,3 +1,7 @@
 import { TableProps } from "antd/lib/table";
 
-export type UsersTableComponentProps = TableProps;
+type BaseUsersTableComponentProps = {
+    onDeleteUser: ({ userId: string }) => void;
+};
+export type UsersTableComponentProps = BaseUsersTableComponentProps &
+    TableProps;
