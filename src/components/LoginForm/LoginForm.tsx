@@ -1,13 +1,16 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { Form } from "antd";
-import { Container } from "components/Container";
 import { Input } from "components/Input";
 import { Button } from "components/Button";
+import { Row } from "components/Row";
+import { Col } from "components/Col";
 /* modules */
 import clsx from "classnames";
 /* helpers */
 /* assets */
+/* constants */
+import { LOGIN_FORM_VALIDATION_RULES } from "constants/validationRules";
 /* types */
 import { LoginFormComponentProps } from "./LoginForm.types";
 /* styles */
@@ -17,8 +20,8 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = props => {
     const { onSubmit } = props;
 
     return (
-        <div className="row justify-content-center">
-            <div className="col-xl-5">
+        <Row className="justify-content-center">
+            <Col xl={5}>
                 <div className={s.box}>
                     <Form
                         layout="vertical"
@@ -29,12 +32,7 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = props => {
                         <Form.Item
                             label="نام کاربری"
                             name="username"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: "نام کاربری را وارد کنید",
-                                },
-                            ]}
+                            rules={LOGIN_FORM_VALIDATION_RULES.username}
                         >
                             <Input />
                         </Form.Item>
@@ -42,12 +40,7 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = props => {
                         <Form.Item
                             label="رمز عبور"
                             name="password"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: "رمز عبور را وارد کنید",
-                                },
-                            ]}
+                            rules={LOGIN_FORM_VALIDATION_RULES.password}
                         >
                             <Input />
                         </Form.Item>
@@ -64,7 +57,7 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = props => {
                         </Form.Item>
                     </Form>
                 </div>
-            </div>
-        </div>
+            </Col>
+        </Row>
     );
 };

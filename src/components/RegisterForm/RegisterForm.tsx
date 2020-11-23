@@ -3,10 +3,14 @@ import React, { FunctionComponent } from "react";
 import { Form } from "antd";
 import { Input } from "components/Input";
 import { Button } from "components/Button";
+import { Row } from "components/Row";
+import { Col } from "components/Col";
 /* modules */
 import clsx from "classnames";
 /* helpers */
 /* assets */
+/* constants */
+import { REGISTER_FORM_VALIDATION_RULES } from "constants/validationRules";
 /* types */
 import { RegisterFormComponentProps } from "./RegisterForm.types";
 /* styles */
@@ -18,24 +22,18 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
     const onFinish = (values: any) => onSubmit(values);
 
     return (
-        <div className="row justify-content-center">
-            <div className="col-xl-5">
+        <Row className="justify-content-center">
+            <Col xl={5}>
                 <div className={clsx(s.box)}>
                     <Form
                         layout="vertical"
-                        name="basic"
                         onFinish={onFinish}
                         style={{ width: "100%" }}
                     >
                         <Form.Item
                             label="نام کاربری"
                             name="username"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: "رمز عبور را وارد کنید",
-                                },
-                            ]}
+                            rules={REGISTER_FORM_VALIDATION_RULES.username}
                         >
                             <Input />
                         </Form.Item>
@@ -43,24 +41,16 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
                         <Form.Item
                             label="رمز عبور"
                             name="password"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: "رمز عبور را وارد کنید",
-                                },
-                            ]}
+                            rules={REGISTER_FORM_VALIDATION_RULES.password}
                         >
                             <Input />
                         </Form.Item>
                         <Form.Item
                             label="تکرار رمز عبور"
                             name="password"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: "تکرار رمز عبور را وارد کنید",
-                                },
-                            ]}
+                            rules={
+                                REGISTER_FORM_VALIDATION_RULES.confirmPassword
+                            }
                         >
                             <Input />
                         </Form.Item>
@@ -77,8 +67,8 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
                         </Form.Item>
                     </Form>
                 </div>
-            </div>
-        </div>
+            </Col>
+        </Row>
     );
 };
 
