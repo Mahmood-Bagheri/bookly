@@ -6,11 +6,23 @@ const Error: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="Error" />
-            <div>
-                <span aria-label="img" role="img">
+            <div
+                style={{
+                    height: "100vh",
+                    width: "100vw",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                }}
+            >
+                <span aria-label="img" role="img" className="ml-2">
                     😑
                 </span>
-                Wrong place
+                <p>You are in a Wrong place</p>
+                <p style={{ fontWeight: 300, fontSize: "10px" }}>
+                    جای اشتباهی اومدی ...
+                </p>
             </div>
         </Fragment>
     );
