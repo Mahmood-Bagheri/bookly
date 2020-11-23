@@ -10,7 +10,7 @@ const Login: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="Login" />
-            <LoginForm onSubmit={() => {}} />
+            <LoginForm onSubmit={credentials => console.log(credentials)} />
         </Fragment>
     );
 };
