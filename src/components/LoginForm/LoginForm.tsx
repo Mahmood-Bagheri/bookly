@@ -5,6 +5,7 @@ import { Input } from "components/Input";
 import { Button } from "components/Button";
 import { Row } from "components/Row";
 import { Col } from "components/Col";
+import { Password } from "components/Password";
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -42,7 +43,7 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = props => {
                             name="password"
                             rules={LOGIN_FORM_VALIDATION_RULES.password}
                         >
-                            <Input />
+                            <Password />
                         </Form.Item>
 
                         <Form.Item>
