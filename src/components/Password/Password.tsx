@@ -1,5 +1,6 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 /* components */
+import { Input } from "antd";
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -7,8 +8,16 @@ import clsx from "classnames";
 /* types */
 import { PasswordComponentProps } from "./Password.types";
 /* styles */
-import { Input } from "antd";
+import s from "./Password.module.scss";
 
-export const Password: FunctionComponent<PasswordComponentProps> = props => {
-    return <Input.Password {...props} />;
-};
+export const Password = React.forwardRef<any, PasswordComponentProps>(
+    ({ className, ...restProps }, ref) => {
+        return (
+            <Input.Password
+                ref={ref}
+                className={clsx(s.input, className)}
+                {...restProps}
+            />
+        );
+    }
+);
