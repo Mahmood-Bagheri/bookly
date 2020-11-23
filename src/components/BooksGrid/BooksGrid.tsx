@@ -24,6 +24,7 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
 
 const renderBooks = (item: Book) => (
     <BookBox
+        key={item.id.toString()}
         id={item.id}
         title={item.title}
         author={item.author}
