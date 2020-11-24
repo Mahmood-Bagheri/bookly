@@ -1,6 +1,6 @@
 import { useMutation } from "react-query";
 import API_URLS from "constants/apiUrls";
-import apiService from "services/api/apiService";
+import apiService, { AxiosError } from "services/api/apiService";
 
 type RegisterCredentialsType = {
     username: string;

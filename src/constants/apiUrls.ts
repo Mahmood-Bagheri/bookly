@@ -1,6 +1,6 @@
 const API_URLS = {
     book: "/book",
-    comment: "/comment",
+    comments: "/comments",
     user: "/user",
     login: "/auth/login",
     register: "/auth/register",

@@ -12,13 +12,8 @@ import { BooksGridComponentProps } from "./BooksGrid.types";
 import s from "./BooksGrid.module.scss";
 
 export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
-    loading = false,
     books,
 }) => {
-    if (!books || loading) {
-        return <LoadingIndicator />;
-    }
-
     return <Row>{books.map(renderBooks)}</Row>;
 };
 

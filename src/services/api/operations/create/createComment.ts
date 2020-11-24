@@ -9,7 +9,7 @@ type CreateCommentMutationTypes = {
 };
 
 export const createComment = (comment: CreateCommentMutationTypes) => {
-    return apiService.post(API_URLS.comment, comment);
+    return apiService.post(API_URLS.comments, comment);
 };
 
 export const useCreateComment = () =>

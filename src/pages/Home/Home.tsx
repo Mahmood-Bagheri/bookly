@@ -2,10 +2,19 @@ import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
 import { BooksGrid } from "components/BooksGrid";
-/* modules */
+import { TopBar } from "components/TopBar";
+import { LoadingIndicator } from "components/LoadingIndicator";
 import { Book } from "components/BookBox";
+/* modules */
+import { useBooks } from "services/api/operations/read/readBooks";
 
 const Home: FC = props => {
+    const { isLoading, data } = useBooks();
+
+    if (isLoading) {
+        return <LoadingIndicator />;
+    }
+
     const books: Book[] = [
         {
             author: "محمود باقری",
@@ -19,6 +28,7 @@ const Home: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="homepage" />
+            <TopBar />
             <BooksGrid books={books} loading={false} />
         </Fragment>
     );

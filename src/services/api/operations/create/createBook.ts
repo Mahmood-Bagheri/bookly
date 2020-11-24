@@ -14,4 +14,7 @@ export const useCreateBook = () =>
         onSuccess: newComment => {
             message.success(`کتاب شما با موفقیت ثبت شد`);
         },
+        onError: () => {
+            message.error(`مشکلی در ثبت کردن کتاب پیش آمد!`);
+        },
     });

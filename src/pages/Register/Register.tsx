@@ -10,7 +10,7 @@ const Register: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="Register" />
-            <RegisterForm onSubmit={() => {}} />
+            <RegisterForm onSubmit={register} />
         </Fragment>
     );
 };

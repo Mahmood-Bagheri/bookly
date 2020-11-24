@@ -4,7 +4,7 @@ import { useMutation } from "react-query";
 import { message } from "antd";
 
 export const deleteComment = ({ commentId }: { commentId: string }) => {
-    return apiService.delete(API_URLS.comment, { params: { commentId } });
+    return apiService.delete(API_URLS.comments, { params: { commentId } });
 };
 
 export const useDeleteComment = () =>
