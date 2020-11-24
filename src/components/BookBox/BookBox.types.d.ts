@@ -6,6 +6,7 @@ export type Book = {
     author: string;
     imageSrc?: string;
     id: string;
+    likeLoading?: boolean;
 };
 
 export type BookBoxActions = {

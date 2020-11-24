@@ -23,6 +23,7 @@ export const BookBox: BookBoxComponentType = ({
     imageSrc = BookImage,
     onDeleteBook = defaultOnDeleteBook,
     id: bookId,
+    likeLoading = false,
     ...restProps
 }) => {
     return (
@@ -46,6 +47,7 @@ export const BookBox: BookBoxComponentType = ({
                             data-testid="likeButton"
                             onLikeStateChange={onLikeStateChange}
                             initialLikeState={initialLikeState}
+                            loading={likeLoading}
                         />
                     </AclService>
                     <AclService permission="books.delete">
