@@ -9,8 +9,8 @@ export const permissions = {
             read: true,
             create: true,
             update: true,
-            delete: false,
-            like: false,
+            delete: true,
+            like: true,
         },
         comments: {
             read: true,
