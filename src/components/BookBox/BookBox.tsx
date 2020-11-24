@@ -43,12 +43,14 @@ export const BookBox: BookBoxComponentType = ({
                 <div className={s.actions}>
                     <AclService permission="books.like">
                         <LikeButton
+                            data-testid="likeButton"
                             onLikeStateChange={onLikeStateChange}
                             initialLikeState={initialLikeState}
                         />
                     </AclService>
                     <AclService permission="books.delete">
                         <DeleteButton
+                            data-testid="deleteButton"
                             title="برای حذف کردن این کتاب مطمئن هستید ؟"
                             onConfirm={() => onDeleteBook(bookId)}
                             className={s.deleteIcon}
