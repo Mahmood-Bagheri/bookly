@@ -17,4 +17,7 @@ export const useCreateComment = () =>
         onSuccess: () => {
             message.success(`نظر شما با موفقیت ثبت شد`);
         },
+        onError: () => {
+            message.error(`مشکلی در ثبت کردن نظر پیش آمد!`);
+        },
     });
