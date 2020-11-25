@@ -8,5 +8,7 @@ export const ROUTES = {
     profile: "/profile",
     users: "/users",
     user: "/users/:userId",
+    categories: "/categories",
+    category: "/categories/:categoryId",
     error: "/error",
 };

@@ -11,6 +11,8 @@ import Publishers from "pages/Publishers";
 import Profile from "pages/Profile";
 import Users from "pages/Users";
 import User from "pages/User";
+import Categories from "pages/Categories";
+import Category from "pages/Category";
 
 type Router = {
     path: string;
@@ -74,6 +76,18 @@ export const routers: Router[] = [
         component: User,
         exact: true,
         requireAuth: true,
+    },
+    {
+        path: ROUTES.categories,
+        component: Categories,
+        exact: true,
+        requireAuth: false,
+    },
+    {
+        path: ROUTES.category,
+        component: Category,
+        exact: true,
+        requireAuth: false,
     },
     {
         path: "*",
