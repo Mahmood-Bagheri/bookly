@@ -1,8 +1,7 @@
 import React, { FunctionComponent } from "react";
 /* components */
-import { Container } from "components/Container";
 import { BookCategoryBox } from "components/BookCategoryBox";
-import { Row } from "components/Row";
+import { GenericGrid } from "components/GenericGrid";
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -15,7 +14,13 @@ import s from "./BookCategoriesGrid.module.scss";
 
 export const BookCategoriesGrid: FunctionComponent<BookCategoriesGridComponentProps> = props => {
     const { className, ...restProps } = props;
-    return <Row>{fakeArrayGenerator(10).map(renderCategories)}</Row>;
+    return (
+        <GenericGrid
+            withRow
+            items={fakeArrayGenerator(10)}
+            renderItem={renderCategories}
+        />
+    );
 };
 
 const renderCategories = (category: any, index: number) => {
