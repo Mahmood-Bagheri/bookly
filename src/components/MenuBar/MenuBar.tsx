@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { MenuBarItem, MenuItem } from "components/MenuBarItem";
+import { GenericGrid } from "components/GenericGrid";
 
 /* modules */
 import clsx from "classnames";
@@ -15,7 +16,11 @@ export const MenuBar: FunctionComponent<MenuBarComponentProps> = props => {
     const { className, menu, ...restProps } = props;
     return (
         <div className={clsx(s.box, className)} {...restProps}>
-            {menu?.map(renderMenuItem)}
+            <GenericGrid<MenuItem>
+                items={menu!}
+                renderItem={renderMenuItem}
+                withRow={false}
+            />
         </div>
     );
 };
