@@ -1,3 +1,4 @@
 import { ButtonProps } from "antd/lib/button";
 
-export type ButtonComponentProps = ButtonProps;
+type Props = ButtonProps;
+export type Ref = HTMLButtonElement;
