@@ -14,7 +14,7 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
 }) => {
     const [like, { isLoading }] = useLikeBook();
 
-    const renderBooks = (item: Book) => (
+    const allBooks = books.map((item: Book) => (
         <BookBox
             key={item.id.toString()}
             id={item.id}
@@ -30,7 +30,7 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
             }
             likeLoading={isLoading}
         />
-    );
+    ));
 
-    return <Row>{books.map(renderBooks)}</Row>;
+    return <Row>{allBooks}</Row>;
 };

@@ -13,12 +13,11 @@ import { Link } from "react-router-dom";
 import { routeTo } from "helpers/routeTo";
 
 export const BookCategoryBox: FunctionComponent<BookCategoryBoxComponentProps> = props => {
-    const { className, id, categoryTitle, ...restProps } = props;
+    const { className, id: categoryId, categoryTitle, ...restProps } = props;
 
     return (
         <Col xl={3} sm={6} className="mb-3">
-            {/* todo -> make some change to navigate to each page's path */}
-            <Link to={routeTo("error")}>
+            <Link to={routeTo("category", { categoryId })}>
                 <div
                     className={clsx(s.box, `shadow`, className)}
                     {...restProps}
@@ -30,7 +29,7 @@ export const BookCategoryBox: FunctionComponent<BookCategoryBoxComponentProps> =
                                 to left,
                                 rgba(0, 0, 0, 0.4),
                                 rgba(0, 0, 0, 0.4)
-                            ), url(https://source.unsplash.com/500x500/?book&sig=${id})`,
+                            ), url(https://source.unsplash.com/500x500/?book&sig=${categoryId})`,
                         }}
                     >
                         <span className={s.title}>{categoryTitle}</span>
