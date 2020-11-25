@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { Book, BookBox } from "components/BookBox";
-import { Row } from "components/Row";
 /* modules */
 import { useLikeBook } from "services/api/operations";
 /* types */
@@ -30,9 +29,5 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
             likeLoading={isLoading}
         />
     );
-    return (
-        <Row>
-            <GenericGrid<Book> items={books} renderItem={renderBooks} />
-        </Row>
-    );
+    return <GenericGrid<Book> withRow items={books} renderItem={renderBooks} />;
 };
