@@ -8,29 +8,31 @@ import { useLikeBook } from "services/api/operations";
 import { BooksGridComponentProps } from "./BooksGrid.types";
 /* styles */
 import s from "./BooksGrid.module.scss";
+import { GenericGrid } from "components/GenericGrid";
 
 export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     books,
 }) => {
     const [like, { isLoading }] = useLikeBook();
 
-    const allBooks = books.map((item: Book) => (
+    const renderBooks = (book: Book) => (
         <BookBox
-            key={item.id.toString()}
-            id={item.id}
-            title={item.title}
-            author={item.author}
-            imageSrc={item.imageSrc}
-            initialLikeState={item.initialLikeState}
+            key={book.id.toString()}
+            id={book.id}
+            title={book.title}
+            author={book.author}
+            imageSrc={book.imageSrc}
+            initialLikeState={book.initialLikeState}
             onLikeStateChange={likeState =>
-                like({ likeState: !likeState, bookId: item.id })
+                like({ likeState, bookId: book.id })
             }
-            onDeleteBook={bookId =>
-                console.log(bookId, "logged from renderBooks")
-            }
+            onDeleteBook={bookId => console.log(bookId)}
             likeLoading={isLoading}
         />
-    ));
-
-    return <Row>{allBooks}</Row>;
+    );
+    return (
+        <Row>
+            <GenericGrid items={books} renderItem={renderBooks} />
+        </Row>
+    );
 };
