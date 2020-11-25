@@ -1,8 +1,6 @@
 import { Rule } from "antd/lib/form";
 
-type ValidationRuleType = {
-    [key: string]: Rule[];
-};
+type ValidationRuleType = Record<string, Rule[]>;
 
 export const LOGIN_FORM_VALIDATION_RULES: ValidationRuleType = {
     username: [
