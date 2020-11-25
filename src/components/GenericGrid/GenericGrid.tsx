@@ -3,7 +3,7 @@ import { Row } from "components/Row";
 
 interface Props<T> {
     items: T[];
-    renderItem: (item: T) => React.ReactNode;
+    renderItem: (item: T, index: number) => React.ReactNode;
     withRow?: boolean;
 }
 
