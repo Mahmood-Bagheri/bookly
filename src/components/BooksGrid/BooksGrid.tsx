@@ -32,7 +32,7 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     );
     return (
         <Row>
-            <GenericGrid items={books} renderItem={renderBooks} />
+            <GenericGrid<Book> items={books} renderItem={renderBooks} />
         </Row>
     );
 };
