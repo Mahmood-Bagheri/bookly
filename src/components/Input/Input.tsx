@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, HtmlHTMLAttributes } from "react";
 /* components */
 import { Input as AntDesignInput } from "antd";
 /* modules */
@@ -19,3 +19,27 @@ export const Input = React.forwardRef<any, InputComponentProps>(
         );
     }
 );
+
+/* todo -> make the component general as well */
+type InputProps = React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+>;
+type TextareaProps = React.DetailedHTMLProps<
+    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+    HTMLTextAreaElement
+>;
+export const TextareaInputGeneralComponent = (
+    props: InputProps | TextareaProps
+) => {
+    if (isPropsForAnchorElement(props)) {
+        return <textarea {...props} />;
+    } else {
+        return <input {...props} />;
+    }
+}; // optionally use a custom type guard
+function isPropsForAnchorElement(
+    props: InputProps | TextareaProps
+): props is TextareaProps {
+    return "rows" in props;
+}
