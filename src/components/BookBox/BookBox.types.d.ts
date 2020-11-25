@@ -15,7 +15,3 @@ export type BookBoxActions = {
 };
 
 export type BookBoxComponentProps = BookBoxActions & Book;
-
-export type BookBoxComponentType = (
-    props: BookBoxComponentProps
-) => ReactElement;

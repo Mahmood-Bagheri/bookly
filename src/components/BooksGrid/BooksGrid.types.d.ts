@@ -1,7 +1,7 @@
-import { BaseBookBoxProps } from "components/BookBox";
+import { BaseBookBoxProps, BookBox } from "components/BookBox";
 
 export type BooksGridComponentProps = {
     title?: string;
-    loading?: boolean;
+    loading?: Props<typeof BookBox>["likeLoading"];
     books: BaseBookBoxProps[];
 };

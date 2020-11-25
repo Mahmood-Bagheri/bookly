@@ -11,11 +11,11 @@ import { AclService } from "services/rbac";
 /* assets */
 import BookImage from "assets/images/book.jpg";
 /* types */
-import { BookBoxComponentType } from "./BookBox.types";
+import { BookBoxComponentProps } from "./BookBox.types";
 /* styles */
 import s from "./BookBox.module.scss";
 
-export const BookBox: BookBoxComponentType = ({
+export const BookBox: React.FC<BookBoxComponentProps> = ({
     onLikeStateChange,
     initialLikeState,
     title,
