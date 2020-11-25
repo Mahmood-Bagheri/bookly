@@ -21,14 +21,9 @@ export const Input = React.forwardRef<any, InputComponentProps>(
 );
 
 /* todo -> make the component general as well */
-type InputProps = React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
->;
-type TextareaProps = React.DetailedHTMLProps<
-    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-    HTMLTextAreaElement
->;
+type InputProps = JSX.IntrinsicElements["input"];
+type TextareaProps = JSX.IntrinsicElements["textarea"];
+
 export const TextareaInputGeneralComponent = (
     props: InputProps | TextareaProps
 ) => {
