@@ -23,6 +23,13 @@ const Home: FC = props => {
             title: "به تو می اندیشم",
             imageSrc: "https://source.unsplash.com/500x500/?book&sig=1",
         },
+        {
+            author: "محمود باقری",
+            id: "2",
+            initialLikeState: false,
+            title: "به تو می اندیشم",
+            imageSrc: "https://source.unsplash.com/500x500/?book&sig=2",
+        },
     ];
 
     return (
