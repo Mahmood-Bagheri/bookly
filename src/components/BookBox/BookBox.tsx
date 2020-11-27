@@ -8,6 +8,7 @@ import { DeleteButton } from "components/DeleteButton";
 import { Link } from "react-router-dom";
 import { routeTo } from "helpers/routeTo";
 import { AclService } from "services/rbac";
+import { useLikeBook } from "services/api/operations";
 /* assets */
 import BookImage from "assets/images/book.jpg";
 /* types */
@@ -16,16 +17,20 @@ import { BookBoxComponentProps } from "./BookBox.types";
 import s from "./BookBox.module.scss";
 
 export const BookBox: React.FC<BookBoxComponentProps> = ({
-    onLikeStateChange,
     initialLikeState,
     title,
     author,
     imageSrc = BookImage,
     onDeleteBook = defaultOnDeleteBook,
     id: bookId,
-    likeLoading = false,
     ...restProps
 }) => {
+    const [like, { isLoading: likeIsLoading }] = useLikeBook();
+
+    const onLikeStateChange = (likeState: boolean, bookId: string) => {
+        like({ likeState, bookId });
+    };
+
     return (
         <Col xl={3} sm={6} className="mb-3">
             <div className={`${s.box} shadow`} {...restProps}>
@@ -33,21 +38,22 @@ export const BookBox: React.FC<BookBoxComponentProps> = ({
                     <Image className={s.image} src={imageSrc} />
                 </Link>
                 <div className={s.content}>
-                    <div>
-                        <div className={s.title}>{title}</div>
-                    </div>
+                    <div className={s.title}>{title}</div>
                     <div>
                         <div className={s.author}>{author}</div>
                         <div className={s.authorTitle}>نویسنده</div>
                     </div>
                 </div>
+
                 <div className={s.actions}>
                     <AclService permission="books.like">
                         <LikeButton
                             data-testid="likeButton"
-                            onLikeStateChange={onLikeStateChange}
+                            onLikeStateChange={likeState =>
+                                onLikeStateChange(likeState, bookId)
+                            }
                             initialLikeState={initialLikeState}
-                            loading={likeLoading}
+                            loading={likeIsLoading}
                         />
                     </AclService>
                     <AclService permission="books.delete">

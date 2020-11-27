@@ -24,8 +24,10 @@ export const BookCategoriesGrid: FunctionComponent<BookCategoriesGridComponentPr
 };
 
 const renderCategories = (category: any, index: number) => {
+    /* todo -> pick a uniq id for each category  */
     return (
         <BookCategoryBox
+            key={index.toString()}
             id={index.toString()}
             categoryTitle="عنوان دسته بندی"
         />
