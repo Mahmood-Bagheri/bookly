@@ -9,6 +9,7 @@ import clsx from "classnames";
 import { CommentInputBoxComponentProps } from "./CommentInputBox.types";
 /* styles */
 import s from "./CommentInputBox.module.scss";
+import { BOOK_COMMENT_VALIDATION_RULES } from "constants/validationRules";
 
 export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> = ({
     onSubmit,
@@ -28,12 +29,7 @@ export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> =
             >
                 <Form.Item
                     name="comment"
-                    rules={[
-                        {
-                            required: true,
-                            message: "متن نظر نمی تواند خالی باشد :(",
-                        },
-                    ]}
+                    rules={BOOK_COMMENT_VALIDATION_RULES.comment}
                 >
                     <Textarea
                         className="mt-2"

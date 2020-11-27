@@ -16,6 +16,7 @@ export const LOGIN_FORM_VALIDATION_RULES: ValidationRuleType = {
         },
     ],
 };
+
 export const REGISTER_FORM_VALIDATION_RULES = {
     username: [
         {
@@ -33,6 +34,15 @@ export const REGISTER_FORM_VALIDATION_RULES = {
         {
             required: true,
             message: "تکرار رمز عبور را وارد کنید",
+        },
+    ],
+};
+
+export const BOOK_COMMENT_VALIDATION_RULES: ValidationRuleType = {
+    comment: [
+        {
+            required: true,
+            message: "متن نظر نمی تواند خالی باشد :(",
         },
     ],
 };
