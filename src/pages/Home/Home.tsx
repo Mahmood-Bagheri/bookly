@@ -6,7 +6,7 @@ import { TopBar } from "components/TopBar";
 import { LoadingIndicator } from "components/LoadingIndicator";
 import { Book } from "components/BookBox";
 /* modules */
-import { useBooks } from "services/api/operations/read/readBooks";
+import { useBooks } from "hooks/operations/read/readBooks";
 
 const Home: FC = props => {
     const { isLoading, data } = useBooks();

@@ -8,7 +8,7 @@ import { DeleteButton } from "components/DeleteButton";
 import { Link } from "react-router-dom";
 import { routeTo } from "helpers/routeTo";
 import { AclService } from "services/rbac";
-import { useLikeBook } from "services/api/operations";
+import { useLikeBook } from "hooks/operations";
 /* assets */
 import BookImage from "assets/images/book.jpg";
 /* types */

@@ -12,7 +12,7 @@ import { Row } from "components/Row";
 import { randomDate } from "helpers/randomDate";
 import { useParams } from "react-router-dom";
 import { DocumentTitle } from "components/DocumentTitle";
-import { useCreateComment, useDeleteComment } from "services/api/operations";
+import { useCreateComment, useDeleteComment } from "hooks/operations";
 
 const Book: FC = props => {
     const { bookId } = useParams<{ bookId: string }>();

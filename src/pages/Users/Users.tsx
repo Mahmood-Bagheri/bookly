@@ -2,7 +2,7 @@ import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
 import { UsersTable } from "components/UsersTable";
-import { useDeleteUser } from "services/api/operations";
+import { useDeleteUser } from "hooks/operations";
 
 const Users: FC = props => {
     const [deleteUser] = useDeleteUser();

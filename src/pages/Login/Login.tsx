@@ -2,7 +2,7 @@ import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
 import { LoginForm } from "components/LoginForm";
-import { useLogin, LoginCredentialsType } from "services/api/operations";
+import { useLogin, LoginCredentialsType } from "hooks/operations";
 
 const Login: FC = props => {
     const [login] = useLogin();
