@@ -1,5 +1,5 @@
 import { ComponentType } from "react";
-import { ROUTES } from "./routes";
+import { ROUTES } from "constants/routes";
 
 import Home from "pages/Home";
 import Login from "pages/Login";

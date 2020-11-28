@@ -1,7 +1,7 @@
 import { generatePath } from "react-router-dom";
 import { stringify } from "qs";
 import get from "lodash/get";
-import { ROUTES } from "routes/routes";
+import { ROUTES } from "constants/routes";
 
 type PathType = keyof typeof ROUTES;
 type ParamsType = { [paramName: string]: string | number | boolean };
