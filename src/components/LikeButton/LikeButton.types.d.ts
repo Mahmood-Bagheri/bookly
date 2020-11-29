@@ -1,10 +1,14 @@
+import { HTMLProps, SVGProps } from "react";
+
 export type BaseLikeButtonProps = {
-    onLikeStateChange: (likeState: boolean) => void;
     initialLikeState: boolean;
     loading: boolean;
+    permission: string;
+    onChange: (likeState: boolean) => void;
 };
 
-export type LikeButtonComponentProps = React.HtmlHTMLAttributes<
-    HTMLOrSVGElement
+export type LikeButtonComponentProps = Omit<
+    React.SVGProps<SVGSVGElement>,
+    keyof BaseLikeButtonProps
 > &
-    Partial<BaseLikeButtonProps>;
+    BaseLikeButtonProps;

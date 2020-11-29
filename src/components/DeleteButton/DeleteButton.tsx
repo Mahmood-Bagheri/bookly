@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { PopConfirm } from "components/PopConfirm";
+import { AclService } from "services/rbac";
 /* types */
 import { DeleteButtonComponentProps } from "./DeleteButton.types";
 /* assets */
@@ -11,11 +12,13 @@ import classnames from "classnames";
 import s from "./DeleteButton.module.scss";
 
 export const DeleteButton: FunctionComponent<DeleteButtonComponentProps> = props => {
-    const { className, ...restProps } = props;
+    const { className, permission, ...restProps } = props;
     const clsx = classnames(className, s.icon);
     return (
-        <PopConfirm {...restProps}>
-            <DeleteIcon className={clsx} />
-        </PopConfirm>
+        <AclService permission={permission}>
+            <PopConfirm {...restProps}>
+                <DeleteIcon className={clsx} />
+            </PopConfirm>
+        </AclService>
     );
 };

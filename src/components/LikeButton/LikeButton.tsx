@@ -9,19 +9,20 @@ import { ReactComponent as LikeIcon } from "assets/icons/like.svg";
 import { LikeButtonComponentProps } from "./LikeButton.types";
 /* styles */
 import s from "./LikeButton.module.scss";
-import { SpinIndicator } from "antd/lib/spin";
+import { AclService } from "services/rbac";
 
 export const LikeButton: FunctionComponent<LikeButtonComponentProps> = props => {
     const {
-        onLikeStateChange = defaultOnLikeStateChange,
+        onChange,
         initialLikeState = false,
         loading,
+        permission,
         ...restProps
     } = props;
     const svgColor = classnames(s.like, { [s.black]: initialLikeState });
 
     const toggleLike = () => {
-        onLikeStateChange(initialLikeState);
+        onChange(initialLikeState);
     };
 
     if (loading) {
@@ -29,10 +30,12 @@ export const LikeButton: FunctionComponent<LikeButtonComponentProps> = props => 
     }
 
     return (
-        <LikeIcon {...restProps} className={svgColor} onClick={toggleLike} />
+        <AclService permission={permission}>
+            <LikeIcon
+                className={svgColor}
+                onClick={toggleLike}
+                {...restProps}
+            />
+        </AclService>
     );
-};
-
-const defaultOnLikeStateChange = () => {
-    console.log("defaultOnLikeStateChange fired");
 };

@@ -8,8 +8,7 @@ export type Book = {
     id: string;
 };
 
-export type BookBoxActions = {
+export type Functions = {
     onDeleteBook: (bookId: string) => void;
 };
-
-export type BookBoxComponentProps = BookBoxActions & Book;
+export type BookProps = Book & Functions;

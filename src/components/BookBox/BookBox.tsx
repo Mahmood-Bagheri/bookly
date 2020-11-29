@@ -7,27 +7,36 @@ import { DeleteButton } from "components/DeleteButton";
 /* modules */
 import { Link } from "react-router-dom";
 import { routeTo } from "helpers/routeTo";
-import { AclService } from "services/rbac";
 import { useLikeBook } from "hooks/operations";
+import { uniqueId } from "helpers/uniqueId";
 /* assets */
 import BookImage from "assets/images/book.jpg";
 /* types */
-import { BookBoxComponentProps } from "./BookBox.types";
+import { BookProps } from "./BookBox.types";
 /* styles */
 import s from "./BookBox.module.scss";
 
-export const BookBox: React.FC<BookBoxComponentProps> = ({
+const defaultProps: BookProps = {
+    id: uniqueId(),
+    title: "",
+    author: "",
+    imageSrc: BookImage,
+    initialLikeState: false,
+    onDeleteBook: bookId => console.log(`${bookId} deletetion`),
+};
+
+export const BookBox: React.FC<BookProps> = ({
     initialLikeState,
     title,
     author,
-    imageSrc = BookImage,
-    onDeleteBook = defaultOnDeleteBook,
+    imageSrc,
+    onDeleteBook,
     id: bookId,
     ...restProps
 }) => {
     const [like, { isLoading: likeIsLoading }] = useLikeBook();
 
-    const onLikeStateChange = (likeState: boolean, bookId: string) => {
+    const onLikeChange = (likeState: boolean, bookId: string) => {
         like({ likeState, bookId });
     };
 
@@ -46,30 +55,24 @@ export const BookBox: React.FC<BookBoxComponentProps> = ({
                 </div>
 
                 <div className={s.actions}>
-                    <AclService permission="books.like">
-                        <LikeButton
-                            data-testid="likeButton"
-                            onLikeStateChange={likeState =>
-                                onLikeStateChange(likeState, bookId)
-                            }
-                            initialLikeState={initialLikeState}
-                            loading={likeIsLoading}
-                        />
-                    </AclService>
-                    <AclService permission="books.delete">
-                        <DeleteButton
-                            data-testid="deleteButton"
-                            title="برای حذف کردن این کتاب مطمئن هستید ؟"
-                            onConfirm={() => onDeleteBook(bookId)}
-                            className={s.deleteIcon}
-                        />
-                    </AclService>
+                    <LikeButton
+                        permission="books.like"
+                        data-testid="likeButton"
+                        onChange={likeState => onLikeChange(likeState, bookId)}
+                        initialLikeState={initialLikeState}
+                        loading={likeIsLoading}
+                    />
+                    <DeleteButton
+                        permission="books.delete"
+                        data-testid="deleteButton"
+                        title="برای حذف کردن این کتاب مطمئن هستید ؟"
+                        onConfirm={() => onDeleteBook(bookId)}
+                        className={s.deleteIcon}
+                    />
                 </div>
             </div>
         </Col>
     );
 };
 
-const defaultOnDeleteBook = (bookId: string) => {
-    console.log(`${bookId} deleteion`);
-};
+BookBox.defaultProps = defaultProps;
