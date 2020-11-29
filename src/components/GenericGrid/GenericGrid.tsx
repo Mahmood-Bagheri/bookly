@@ -8,7 +8,14 @@ interface Props<T> {
 }
 
 export function GenericGrid<T>(props: Props<T>) {
-    const { items, renderItem, withRow = false } = props;
-    const RowPlaceholder = withRow ? Row : React.Fragment;
+    const {
+        items,
+        renderItem,
+        withRow: shouldAddRowTagBeforeGrid = false,
+    } = props;
+    if (!items || !renderItem) return null;
+
+    const RowPlaceholder = shouldAddRowTagBeforeGrid ? Row : React.Fragment;
+
     return <RowPlaceholder>{items.map(renderItem)}</RowPlaceholder>;
 }
