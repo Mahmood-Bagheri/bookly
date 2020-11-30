@@ -7,23 +7,12 @@ import { DeleteButton } from "components/DeleteButton";
 /* modules */
 import { Link } from "react-router-dom";
 import { routeTo } from "helpers/routeTo";
-import { useLikeBook } from "hooks/operations";
-import { uniqueId } from "helpers/uniqueId";
+import { useDeleteBook, useLikeBook } from "hooks/operations";
 /* assets */
-import BookImage from "assets/images/book.jpg";
 /* types */
 import { BookProps } from "./BookBox.types";
 /* styles */
 import s from "./BookBox.module.scss";
-
-const defaultProps: BookProps = {
-    id: uniqueId(),
-    title: "",
-    author: "",
-    imageSrc: BookImage,
-    initialLikeState: false,
-    onDeleteBook: bookId => console.log(`${bookId} deletetion`),
-};
 
 export const BookBox: React.FC<BookProps> = ({
     initialLikeState,
@@ -35,9 +24,14 @@ export const BookBox: React.FC<BookProps> = ({
     ...restProps
 }) => {
     const [like, { isLoading: likeIsLoading }] = useLikeBook();
+    const [deleteBook, { isLoading: deleteBookIsLoading }] = useDeleteBook();
 
-    const onLikeChange = (likeState: boolean, bookId: string) => {
+    const handleLikeChange = (likeState: boolean, bookId: string) => {
         like({ likeState, bookId });
+    };
+
+    const handleDeleteBook = (bookId: string) => {
+        deleteBook({ bookId });
     };
 
     return (
@@ -58,7 +52,9 @@ export const BookBox: React.FC<BookProps> = ({
                     <LikeButton
                         permission="books.like"
                         data-testid="likeButton"
-                        onChange={likeState => onLikeChange(likeState, bookId)}
+                        onChange={likeState =>
+                            handleLikeChange(likeState, bookId)
+                        }
                         initialLikeState={initialLikeState}
                         loading={likeIsLoading}
                     />
@@ -66,13 +62,12 @@ export const BookBox: React.FC<BookProps> = ({
                         permission="books.delete"
                         data-testid="deleteButton"
                         title="برای حذف کردن این کتاب مطمئن هستید ؟"
-                        onConfirm={() => onDeleteBook(bookId)}
+                        onConfirm={() => handleDeleteBook(bookId)}
                         className={s.deleteIcon}
+                        loading={deleteBookIsLoading}
                     />
                 </div>
             </div>
         </Col>
     );
 };
-
-BookBox.defaultProps = defaultProps;
