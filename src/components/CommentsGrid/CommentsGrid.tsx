@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { CommentBox, Comment } from "components/CommentBox";
-import { LoadingIndicator } from "components/LoadingIndicator";
 /* types */
 import { CommentsGridComponentProps } from "./CommentsGrid.types";
 /* styles */
