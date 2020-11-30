@@ -1,6 +1,6 @@
+import { HTMLProps } from "react";
+
 export type BookCategoriesGridProps = {};
 
-export type BookCategoriesGridComponentProps = React.HtmlHTMLAttributes<
-    HTMLDivElement
-> &
-    Partial<BookCategoriesGridProps>;
+export type BookCategoriesGridComponentProps = HTMLProps<HTMLDivElement> &
+    BookCategoriesGridProps;
