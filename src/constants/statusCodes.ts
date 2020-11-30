@@ -1,0 +1,8 @@
+export enum API_STATUS_CODES {
+    OK = 200,
+    CREATED = 201,
+    NO_CONTENT = 204,
+    UNAUTHORIZED_STATUS_CODE = 401,
+    FORBIDDEN = 403,
+    BAD_REQUEST = 400,
+}
