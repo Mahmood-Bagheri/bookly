@@ -10,6 +10,21 @@ import { SpinnerComponentProps } from "./Spinner.types";
 /* styles */
 import s from "./Spinner.module.scss";
 
-export const Spinner: FunctionComponent<SpinnerComponentProps> = props => {
-    return <Spin {...props} />;
+export const Spinner: FunctionComponent<SpinnerComponentProps> = ({
+    height = 20,
+    width = 20,
+}) => {
+    return (
+        <div
+            className={s["sk-chase"]}
+            style={{ height: `${height}px`, width: `${width}px` }}
+        >
+            <div className={s["sk-chase-dot"]}></div>
+            <div className={s["sk-chase-dot"]}></div>
+            <div className={s["sk-chase-dot"]}></div>
+            <div className={s["sk-chase-dot"]}></div>
+            <div className={s["sk-chase-dot"]}></div>
+            <div className={s["sk-chase-dot"]}></div>
+        </div>
+    );
 };

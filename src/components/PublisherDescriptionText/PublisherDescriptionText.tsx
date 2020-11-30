@@ -8,6 +8,7 @@ import clsx from "classnames";
 import { PublisherDescriptionTextComponentProps } from "./PublisherDescriptionText.types";
 /* styles */
 import s from "./PublisherDescriptionText.module.scss";
+import { Route, useParams } from "react-router-dom";
 
 export const PublisherDescriptionText: FunctionComponent<PublisherDescriptionTextComponentProps> = ({
     title,

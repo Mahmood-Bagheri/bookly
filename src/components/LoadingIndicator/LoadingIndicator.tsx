@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 /* components */
-import { Spin } from "antd";
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -9,12 +8,13 @@ import clsx from "classnames";
 import { LoadingIndicatorComponentProps } from "./LoadingIndicator.types";
 /* styles */
 import s from "./LoadingIndicator.module.scss";
+import { Spinner } from "components/Spinner";
 
 export const LoadingIndicator: FunctionComponent<LoadingIndicatorComponentProps> = props => {
     const { className, ...restProps } = props;
     return (
         <div className={clsx(s.box, className)}>
-            <Spin size="large" />
+            <Spinner height={50} width={50} />
         </div>
     );
 };
