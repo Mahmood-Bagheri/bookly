@@ -1,4 +1,1 @@
-export type ImageComponentProps = React.DetailedHTMLProps<
-    React.ImgHTMLAttributes<HTMLImageElement>,
-    HTMLImageElement
-> & {};
+export type ImageComponentProps = JSX.IntrinsicElements["image"];

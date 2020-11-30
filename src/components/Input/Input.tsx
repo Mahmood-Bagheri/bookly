@@ -23,18 +23,18 @@ export const Input = React.forwardRef<any, InputComponentProps>(
 /* todo -> make the component general as well */
 type InputProps = JSX.IntrinsicElements["input"];
 type TextareaProps = JSX.IntrinsicElements["textarea"];
+function isPropsForTextareaElement(
+    props: InputProps | TextareaProps
+): props is TextareaProps {
+    return "rows" in props;
+}
 
 export const TextareaInputGeneralComponent = (
     props: InputProps | TextareaProps
 ) => {
-    if (isPropsForAnchorElement(props)) {
+    if (isPropsForTextareaElement(props)) {
         return <textarea {...props} />;
     } else {
         return <input {...props} />;
     }
 }; // optionally use a custom type guard
-function isPropsForAnchorElement(
-    props: InputProps | TextareaProps
-): props is TextareaProps {
-    return "rows" in props;
-}
