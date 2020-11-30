@@ -3,10 +3,12 @@ import API_URLS from "constants/apiUrls";
 import apiService from "services/api/apiService";
 import { message } from "antd";
 
-type DeleteBookType = {};
+type DeleteBookType = {
+    bookId: string;
+};
 
-export const deleteBook = (data: DeleteBookType) =>
-    apiService.delete(API_URLS.book, data);
+export const deleteBook = ({ bookId }: DeleteBookType) =>
+    apiService.delete(API_URLS.book, { params: bookId });
 
 export const useDeleteBook = () =>
     useMutation(deleteBook, {
