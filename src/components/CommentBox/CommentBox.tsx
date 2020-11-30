@@ -1,33 +1,28 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { DeleteButton } from "components/DeleteButton";
-import { AclService } from "services/rbac";
-
+import { Image } from "components/Image";
 /* modules */
 import dayJs from "dayjs";
 /* assets */
-import Image from "assets/images/book.jpg";
+import BookImage from "assets/images/book.jpg";
 /* types */
 import { CommentBoxComponentProps } from "./CommentBox.types";
 /* styles */
 import s from "./CommentBox.module.scss";
 
-export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => {
-    const {
-        id: commentId,
-        body,
-        date,
-        username,
-        onDelete = defaultOnDelete,
-    } = props;
-
+export const CommentBox: FunctionComponent<CommentBoxComponentProps> = ({
+    id: commentId,
+    body,
+    date,
+    username,
+    onDelete = defaultOnDelete,
+}) => {
     const relativeFakeTime = dayJs().from(date, true);
 
     return (
         <div className={s.box}>
-            <AclService permission="comments.delete">
-                <img className={s.profileImage} src={Image} />
-            </AclService>
+            <Image className={s.profileImage} src={BookImage} />
 
             <div className={s.header}>
                 <div className={s.description}>
@@ -36,12 +31,11 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = props => 
                     {relativeFakeTime} پیش گفته
                 </div>
 
-                <AclService permission="comments.delete">
-                    <DeleteButton
-                        onConfirm={() => onDelete(commentId)}
-                        title="برای حذف کردن این نظر مطمئن هستید؟"
-                    />
-                </AclService>
+                <DeleteButton
+                    permission="comments.delete"
+                    onConfirm={() => onDelete(commentId)}
+                    title="برای حذف کردن این نظر مطمئن هستید؟"
+                />
             </div>
 
             <p className={s.body}>{body}</p>
