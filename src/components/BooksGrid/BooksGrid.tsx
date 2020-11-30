@@ -2,8 +2,6 @@ import React, { FunctionComponent } from "react";
 /* components */
 import { Book, BookBox } from "components/BookBox";
 import { GenericGrid } from "components/GenericGrid";
-/* modules */
-import { useLikeBook } from "services/api/operations";
 /* types */
 import { BooksGridComponentProps } from "./BooksGrid.types";
 /* styles */
