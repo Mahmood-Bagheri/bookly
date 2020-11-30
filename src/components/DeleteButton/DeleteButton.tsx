@@ -10,10 +10,16 @@ import { ReactComponent as DeleteIcon } from "assets/icons/delete.svg";
 import classnames from "classnames";
 /* styles */
 import s from "./DeleteButton.module.scss";
+import { Spinner } from "components/Spinner";
 
 export const DeleteButton: FunctionComponent<DeleteButtonComponentProps> = props => {
-    const { className, permission, ...restProps } = props;
+    const { className, permission, loading = false, ...restProps } = props;
     const clsx = classnames(className, s.icon);
+
+    if (loading) {
+        return <Spinner />;
+    }
+
     return (
         <AclService permission={permission}>
             <PopConfirm {...restProps}>
