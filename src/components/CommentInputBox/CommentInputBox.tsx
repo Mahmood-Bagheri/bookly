@@ -3,6 +3,7 @@ import React, { FunctionComponent } from "react";
 import { Form } from "antd";
 import { Textarea } from "components/Textarea";
 import { Button } from "components/Button";
+import { Text } from "components/Text";
 /* modules */
 import clsx from "classnames";
 /* types */
@@ -18,7 +19,7 @@ export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> =
 
     return (
         <div className={clsx(s.box, `shadow`)}>
-            <p className={s.title}>نظرتون در مورد این پست چیه؟</p>
+            <Text className={s.title}>نظرتون در مورد این پست چیه؟</Text>
             <Form
                 form={form}
                 layout="vertical"

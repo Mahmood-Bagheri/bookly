@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 /* components */
 import { DeleteButton } from "components/DeleteButton";
 import { Image } from "components/Image";
+import { Text } from "components/Text";
 /* modules */
 import dayJs from "dayjs";
 /* assets */
@@ -25,11 +26,11 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = ({
             <Image className={s.profileImage} src={BookImage} />
 
             <div className={s.header}>
-                <div className={s.description}>
+                <Text className={s.description}>
                     {username}
                     {"  "}
                     {relativeFakeTime} پیش گفته
-                </div>
+                </Text>
 
                 <DeleteButton
                     permission="comments.delete"
@@ -38,7 +39,7 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = ({
                 />
             </div>
 
-            <p className={s.body}>{body}</p>
+            <Text className={s.body}>{body}</Text>
         </div>
     );
 };

@@ -2,16 +2,17 @@ import React, { FunctionComponent } from "react";
 /* components */
 import { Image } from "components/Image";
 import { Button } from "components/Button";
+import { Text } from "components/Text";
 /* modules */
 import clsx from "classnames";
 /* helpers */
+import { conditionalText } from "helpers/conditionalText";
 /* assets */
 import PublisherImage from "assets/images/book.jpg";
 /* types */
 import { PublisherBoxComponentProps } from "./PublisherBox.types";
 /* styles */
 import s from "./PublisherBox.module.scss";
-import { conditionalText } from "helpers/conditionalText";
 
 export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props => {
     const {
@@ -25,12 +26,18 @@ export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props
         ...restProps
     } = props;
 
+    const SubscriptionTextButtonText = conditionalText(
+        initialFollowingState,
+        "لغو سابسکریپشن",
+        "دنبال کردن"
+    );
+
     return (
         <div className={clsx(s.box, `shadow`, className)} {...restProps}>
             <Image className={s.image} src={imageSrc} />
             <div className={s.content}>
-                <p className={s.title}>{title}</p>
-                <span className={s.description}>{description}</span>
+                <Text className={s.title}>{title}</Text>
+                <Text className={s.description}>{description}</Text>
                 <Button
                     type={initialFollowingState ? "dashed" : "primary"}
                     className="mt-4"
@@ -39,11 +46,7 @@ export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props
                     size="large"
                     onClick={() => onFollow(publisherId)}
                 >
-                    {conditionalText(
-                        initialFollowingState,
-                        "لغو سابسکریپشن",
-                        "دنبال کردن"
-                    )}
+                    {SubscriptionTextButtonText}
                 </Button>
             </div>
         </div>

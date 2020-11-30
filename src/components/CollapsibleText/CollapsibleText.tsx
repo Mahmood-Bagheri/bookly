@@ -8,6 +8,7 @@ import clsx from "classnames";
 import { CollapsibleTextComponentProps } from "./CollapsibleText.types";
 /* styles */
 import s from "./CollapsibleText.module.scss";
+import { Text } from "components/Text";
 
 export const CollapsibleText: FunctionComponent<CollapsibleTextComponentProps> = props => {
     const { className, ...restProps } = props;
@@ -26,9 +27,9 @@ export const CollapsibleText: FunctionComponent<CollapsibleTextComponentProps> =
     return (
         <div className={wrapClsx} {...restProps}>
             <div className={bodyClsx}>{props.children}</div>
-            <span className={s.showMore} onClick={togleShowMore}>
+            <Text className={s.showMore} onClick={togleShowMore}>
                 {showMoreText}
-            </span>
+            </Text>
         </div>
     );
 };

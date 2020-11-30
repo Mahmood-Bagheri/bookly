@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { Col } from "components/Col";
-import { Image } from "components/Image";
+import { Text } from "components/Text";
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -32,7 +32,7 @@ export const BookCategoryBox: FunctionComponent<BookCategoryBoxComponentProps> =
                             ), url(https://source.unsplash.com/500x500/?book&sig=${categoryId})`,
                         }}
                     >
-                        <span className={s.title}>{categoryTitle}</span>
+                        <Text className={s.title}>{categoryTitle}</Text>
                     </div>
                 </div>
             </Link>

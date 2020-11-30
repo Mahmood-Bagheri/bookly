@@ -13,7 +13,6 @@ export function GenericGrid<T>(props: Props<T>) {
         renderItem,
         withRow: shouldAddRowTagBeforeGrid = false,
     } = props;
-    if (!items || !renderItem) return null;
 
     const RowPlaceholder = shouldAddRowTagBeforeGrid ? Row : React.Fragment;
 
