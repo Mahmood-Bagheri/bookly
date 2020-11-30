@@ -4,6 +4,7 @@ import { LikeButton } from "components/LikeButton";
 import { Image } from "components/Image";
 import { Col } from "components/Col";
 import { DeleteButton } from "components/DeleteButton";
+import { Text } from "components/Text";
 /* modules */
 import { Link } from "react-router-dom";
 import { routeTo } from "helpers/routeTo";
@@ -40,11 +41,12 @@ export const BookBox: React.FC<BookProps> = ({
                 <Link to={routeTo("book", { bookId })}>
                     <Image className={s.image} src={imageSrc} />
                 </Link>
+
                 <div className={s.content}>
-                    <div className={s.title}>{title}</div>
+                    <Text className={s.title}>{title}</Text>
                     <div>
-                        <div className={s.author}>{author}</div>
-                        <div className={s.authorTitle}>نویسنده</div>
+                        <Text className={s.author}>{author}</Text>
+                        <Text className={s.authorTitle}>نویسنده</Text>
                     </div>
                 </div>
 
