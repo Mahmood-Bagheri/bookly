@@ -1,4 +1,6 @@
 import React, { FunctionComponent } from "react";
+/* components */
+import { Text } from "components/Text";
 /* modules */
 import clsx from "classnames";
 /* types */
@@ -12,8 +14,8 @@ export const BookDescriptionText: FunctionComponent<BookDescriptionTextComponent
 }) => {
     return (
         <div className={clsx(s.box, `shadow`)}>
-            <p className={s.title}>{title}</p>
-            <p className={s.body}>{description}</p>
+            <Text className={s.title}>{title}</Text>
+            <Text className={s.body}>{description}</Text>
         </div>
     );
 };
