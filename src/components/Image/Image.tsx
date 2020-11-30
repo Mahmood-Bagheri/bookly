@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, ReactComponentElement } from "react";
 /* components */
 import {
     LazyLoadImage,
