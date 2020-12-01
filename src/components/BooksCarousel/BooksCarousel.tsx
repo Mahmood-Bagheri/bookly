@@ -13,13 +13,16 @@ import { BooksCarouselComponentProps } from "./BooksCarousel.types";
 /* styles */
 import s from "./BooksCarousel.module.scss";
 import { uniqueId } from "helpers/uniqueId";
+import { BookBox } from "components/BookBox";
+import { Col } from "components/Col";
+import { Row } from "components/Row";
 
 SwiperCore.use([Autoplay]);
 
 export const BooksCarousel: FunctionComponent<BooksCarouselComponentProps> = props => {
     const swiperProps = {
         spaceBetween: 10,
-        slidesPerView: 1.1,
+        slidesPerView: 4.5,
         loop: true,
         autoplay: {
             delay: 2000,
@@ -34,11 +37,16 @@ export const BooksCarousel: FunctionComponent<BooksCarouselComponentProps> = pro
     );
 };
 
+const book = {
+    author: "محمود باقری",
+    id: uniqueId(),
+    initialLikeState: true,
+    title: "به تو می اندیشم",
+    imageSrc: `https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`,
+};
+
 const renderSwiperSlide = (item: unknown) => (
     <SwiperSlide>
-        <Image
-            src={`https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`}
-            className={s.imageSlide}
-        />
+        <BookBox {...book} onDeleteBook={() => {}} />
     </SwiperSlide>
 );

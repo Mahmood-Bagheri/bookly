@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 /* components */
 import { Image } from "components/Image";
 import { Text } from "components/Text";
+import { BookImageCarousel } from "components/BookImageCarousel";
 /* assets */
 import BookImage from "assets/images/book.jpg";
 /* modules */
@@ -23,7 +24,7 @@ export const BookDetailsBox: FunctionComponent<BookDetailsBoxComponentProps> = (
                 <Text className={s.title}>{title}</Text>
                 <Text className={s.author}>{author}</Text>
             </div>
-            <BooksCarousel />
+            <BookImageCarousel />
             {/* <Image className={s.image} src={imageSrc} /> */}
         </div>
     );

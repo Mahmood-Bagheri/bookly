@@ -36,40 +36,36 @@ export const BookBox: React.FC<BookProps> = ({
     };
 
     return (
-        <Col xl={3} sm={6} className="mb-3">
-            <div className={`${s.box} shadow`} {...restProps}>
-                <Link to={routeTo("book", { bookId })}>
-                    <Image className={s.image} src={imageSrc} />
-                </Link>
+        <div className={`${s.box} shadow`} {...restProps}>
+            <Link to={routeTo("book", { bookId })}>
+                <Image className={s.image} src={imageSrc} />
+            </Link>
 
-                <div className={s.content}>
-                    <Text className={s.title}>{title}</Text>
-                    <div>
-                        <Text className={s.author}>{author}</Text>
-                        <Text className={s.authorTitle}>نویسنده</Text>
-                    </div>
-                </div>
-
-                <div className={s.actions}>
-                    <LikeButton
-                        permission="books.like"
-                        data-testid="likeButton"
-                        onChange={likeState =>
-                            handleLikeChange(likeState, bookId)
-                        }
-                        initialLikeState={initialLikeState}
-                        loading={likeIsLoading}
-                    />
-                    <DeleteButton
-                        permission="books.delete"
-                        data-testid="deleteButton"
-                        title="برای حذف کردن این کتاب مطمئن هستید ؟"
-                        onConfirm={() => handleDeleteBook(bookId)}
-                        className={s.deleteIcon}
-                        loading={deleteBookIsLoading}
-                    />
+            <div className={s.content}>
+                <Text className={s.title}>{title}</Text>
+                <div>
+                    <Text className={s.author}>{author}</Text>
+                    <Text className={s.authorTitle}>نویسنده</Text>
                 </div>
             </div>
-        </Col>
+
+            <div className={s.actions}>
+                <LikeButton
+                    permission="books.like"
+                    data-testid="likeButton"
+                    onChange={likeState => handleLikeChange(likeState, bookId)}
+                    initialLikeState={initialLikeState}
+                    loading={likeIsLoading}
+                />
+                <DeleteButton
+                    permission="books.delete"
+                    data-testid="deleteButton"
+                    title="برای حذف کردن این کتاب مطمئن هستید ؟"
+                    onConfirm={() => handleDeleteBook(bookId)}
+                    className={s.deleteIcon}
+                    loading={deleteBookIsLoading}
+                />
+            </div>
+        </div>
     );
 };

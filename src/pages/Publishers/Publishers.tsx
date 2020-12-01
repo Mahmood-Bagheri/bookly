@@ -4,10 +4,10 @@ import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
 import { Publisher, PublisherBox } from "components/PublisherBox";
 import { uniqueId } from "helpers/uniqueId";
 import { Col } from "components/Col";
-import { useSinglePublisher } from "hooks/operations/read/readPublisher";
 import { usePublishers } from "hooks/operations/read/readPublishers";
 import { LoadingIndicator } from "components/LoadingIndicator";
 import { TopBar } from "components/TopBar";
+import { DocumentTitle } from "components/DocumentTitle";
 /* components */
 
 const Publishers: FC = props => {
@@ -23,6 +23,7 @@ const Publishers: FC = props => {
 
     return (
         <Fragment>
+            <DocumentTitle title="Publishers" />
             <TopBar />
             <GenericGrid<Publisher>
                 withRow
@@ -35,7 +36,7 @@ const Publishers: FC = props => {
 
 const renderPublisher = (publisher: Publisher, index: number) => {
     return (
-        <Col xl={3} lg={4} md={6}>
+        <Col xl={3} lg={4} md={6} className="mb-3">
             <PublisherBox
                 key={uniqueId()}
                 id={uniqueId()}
