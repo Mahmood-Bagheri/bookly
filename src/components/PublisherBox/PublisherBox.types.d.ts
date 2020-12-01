@@ -1,14 +1,17 @@
-export type PublisherBoxProps = {
+export type Publisher = {
     id: string;
     title: string;
     description?: string;
     imageSrc: string;
+};
+export type PublisherFunctions = {
     onFollow?: (id: string) => void;
     initialFollowingState?: boolean;
 };
 
 export type PublisherBoxComponentProps = Omit<
     React.HtmlHTMLAttributes<HTMLDivElement>,
-    keyof PublisherBoxProps
+    keyof PublisherFunctions
 > &
-    PublisherBoxProps;
+    PublisherFunctions &
+    Publisher;

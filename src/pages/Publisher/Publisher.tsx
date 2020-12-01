@@ -44,7 +44,7 @@ const Publisher: FC = props => {
         <Fragment>
             <TopBar />
             <Row>
-                <Col md={6} lg={3} className="mb-3">
+                <Col md={6} lg={3} className="mb-3 pr-0">
                     <PublisherBox
                         id={"1"}
                         imageSrc="https://source.unsplash.com/500x500/?book&sig=8"
