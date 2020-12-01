@@ -16,9 +16,9 @@ export const CommentsContainer = () => {
     const comments = [
         {
             id: "123",
-            username: "سمیه",
+            username: "آنشرلی",
             date: randomDate(new Date("2020/1/1")),
-            body: "خیلی خوب بود :)",
+            body: "خیلی کتاب خوبی بود، به دوستامم هدیه دادمش.",
         },
     ];
 
