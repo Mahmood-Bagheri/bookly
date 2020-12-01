@@ -6,13 +6,14 @@ import { GenericGrid } from "components/GenericGrid";
 import { BooksGridComponentProps } from "./BooksGrid.types";
 /* styles */
 import s from "./BooksGrid.module.scss";
+import { uniqueId } from "helpers/uniqueId";
 
 export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     books,
 }) => {
     const renderBooks = (book: Book) => (
         <BookBox
-            key={book.id.toString()}
+            key={uniqueId()}
             id={book.id}
             title={book.title}
             author={book.author}

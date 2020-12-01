@@ -1,39 +1,40 @@
 import React, { FC, Fragment } from "react";
 /* components */
-import { Row } from "antd";
+import { Row } from "components/Row";
 import { Col } from "components/Col";
 import { PublisherBox } from "components/PublisherBox";
 import { BooksGrid } from "components/BooksGrid";
 import { Book } from "components/BookBox";
 import { TopBar } from "components/TopBar";
 import { PublisherDescriptionText } from "components/PublisherDescriptionText";
+import { uniqueId } from "helpers/uniqueId";
 
 const Publisher: FC = props => {
     const books: Book[] = [
         {
             author: "محمود باقری",
-            id: "1",
+            id: uniqueId(),
             initialLikeState: false,
             title: "به تو می اندیشم",
             imageSrc: "https://source.unsplash.com/500x500/?book&sig=1",
         },
         {
             author: "محمود باقری",
-            id: "1",
+            id: uniqueId(),
             initialLikeState: false,
             title: "به تو می اندیشم",
             imageSrc: "https://source.unsplash.com/500x500/?book&sig=2",
         },
         {
             author: "محمود باقری",
-            id: "1",
+            id: uniqueId(),
             initialLikeState: false,
             title: "به تو می اندیشم",
             imageSrc: "https://source.unsplash.com/500x500/?book&sig=3",
         },
         {
             author: "محمود باقری",
-            id: "1",
+            id: uniqueId(),
             initialLikeState: false,
             title: "به تو می اندیشم",
             imageSrc: "https://source.unsplash.com/500x500/?book&sig=4",
@@ -43,10 +44,10 @@ const Publisher: FC = props => {
     return (
         <Fragment>
             <TopBar />
-            <Row>
-                <Col md={6} lg={3} className="mb-3 pr-0">
+            <Row className="mb-3">
+                <Col md={6} lg={3} className="mb-3 ">
                     <PublisherBox
-                        id={"1"}
+                        id={uniqueId()}
                         imageSrc="https://source.unsplash.com/500x500/?book&sig=8"
                         title="ققنوس"
                     />

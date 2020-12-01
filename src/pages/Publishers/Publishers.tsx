@@ -23,10 +23,17 @@ const renderPublisher = (publisher: Publisher, index: number) => {
     return (
         <Col xl={3} lg={4} md={6}>
             <PublisherBox
+                key={uniqueId()}
                 id={uniqueId()}
                 title="ققنوس"
                 imageSrc={`https://source.unsplash.com/500x500/?book&sig=1`}
                 description="توضیحات پابیشر"
+                onFollow={publisherId =>
+                    console.log(
+                        "following the publisher with id of ",
+                        publisherId
+                    )
+                }
             />
         </Col>
     );
