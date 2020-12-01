@@ -33,6 +33,7 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
         { title: "ثبت نام", link: routeTo("register") },
         { title: "دسته بندی ها", link: routeTo("categories") },
         { title: "ناشر ها", link: routeTo("publishers") },
+        { title: "خانه", link: routeTo("home") },
     ];
 
     return (

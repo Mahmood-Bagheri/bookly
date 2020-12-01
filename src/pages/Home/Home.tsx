@@ -7,6 +7,7 @@ import { LoadingIndicator } from "components/LoadingIndicator";
 import { Book } from "components/BookBox";
 /* modules */
 import { useBooks } from "hooks/operations/read/readBooks";
+import { uniqueId } from "helpers/uniqueId";
 
 const Home: FC = props => {
     const { isLoading, data } = useBooks();
@@ -18,17 +19,73 @@ const Home: FC = props => {
     const books: Book[] = [
         {
             author: "محمود باقری",
-            id: "1",
+            id: uniqueId(),
             initialLikeState: true,
             title: "به تو می اندیشم",
-            imageSrc: "https://source.unsplash.com/500x500/?book&sig=1",
+            imageSrc: `https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`,
         },
         {
             author: "محمود باقری",
-            id: "2",
+            id: uniqueId(),
             initialLikeState: false,
             title: "به تو می اندیشم",
-            imageSrc: "https://source.unsplash.com/500x500/?book&sig=2",
+            imageSrc: `https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`,
+        },
+        {
+            author: "محمود باقری",
+            id: uniqueId(),
+            initialLikeState: false,
+            title: "به تو می اندیشم",
+            imageSrc: `https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`,
+        },
+        {
+            author: "محمود باقری",
+            id: uniqueId(),
+            initialLikeState: false,
+            title: "به تو می اندیشم",
+            imageSrc: `https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`,
+        },
+        {
+            author: "محمود باقری",
+            id: uniqueId(),
+            initialLikeState: false,
+            title: "به تو می اندیشم",
+            imageSrc: `https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`,
+        },
+        {
+            author: "محمود باقری",
+            id: uniqueId(),
+            initialLikeState: false,
+            title: "به تو می اندیشم",
+            imageSrc: `https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`,
+        },
+        {
+            author: "محمود باقری",
+            id: uniqueId(),
+            initialLikeState: false,
+            title: "به تو می اندیشم",
+            imageSrc: `https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`,
+        },
+        {
+            author: "محمود باقری",
+            id: uniqueId(),
+            initialLikeState: false,
+            title: "به تو می اندیشم",
+            imageSrc: `https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`,
+        },
+        {
+            author: "محمود باقری",
+            id: uniqueId(),
+            initialLikeState: false,
+            title: "به تو می اندیشم",
+            imageSrc: `https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`,
+        },
+        {
+            author: "محمود باقری",
+            id: uniqueId(),
+            initialLikeState: false,
+            title: "به تو می اندیشم",
+            imageSrc: `https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`,
         },
     ];
 

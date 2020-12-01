@@ -14,7 +14,7 @@ export const MenuBarItem: FunctionComponent<MenuBarItemComponentProps> = props =
     const { className, title, link, ...restProps } = props;
     return (
         <span className={clsx(s.menuItem, className)} {...restProps}>
-            <NavLink activeClassName={s.activeMenuItem} to={link}>
+            <NavLink exact activeClassName={s.activeMenuItem} to={link}>
                 {title}
             </NavLink>
         </span>
