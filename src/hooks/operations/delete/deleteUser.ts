@@ -2,6 +2,7 @@ import apiService from "services/api/apiService";
 import API_URLS from "constants/apiUrls";
 import { useMutation } from "react-query";
 import { message } from "antd";
+import { API_RESPONSE_MESSAGES } from "constants/apiResponseMessages";
 
 export const deleteUser = ({ userId }: { userId: string }) => {
     return apiService.delete(API_URLS.user, { params: { userId } });
@@ -10,9 +11,9 @@ export const deleteUser = ({ userId }: { userId: string }) => {
 export const useDeleteUser = () =>
     useMutation(deleteUser, {
         onSuccess: () => {
-            message.success(`کاربر با موفقیت حذف شد!`);
+            message.success(API_RESPONSE_MESSAGES.user.delete.success);
         },
         onError: () => {
-            message.error(`مشکلی در حذف کردن کاربر پیش آمد!`);
+            message.error(API_RESPONSE_MESSAGES.user.delete.error);
         },
     });

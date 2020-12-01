@@ -1,4 +1,5 @@
 import { message } from "antd";
+import { API_RESPONSE_MESSAGES } from "constants/apiResponseMessages";
 import API_URLS from "constants/apiUrls";
 import { useMutation } from "react-query";
 import apiService from "services/api/apiService";
@@ -14,9 +15,9 @@ export const followPublisher = (data: FollowPublisherTypes) => {
 export const useFollowPublisher = () =>
     useMutation(followPublisher, {
         onSuccess: newComment => {
-            message.success(`ناشر با موفقیت فالو شد`);
+            message.success(API_RESPONSE_MESSAGES.publisher.follow.success);
         },
         onError: () => {
-            message.error(`مشکلی در دنبال کردن ناشر پیش آمد!`);
+            message.error(API_RESPONSE_MESSAGES.publisher.follow.error);
         },
     });

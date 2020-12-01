@@ -1,4 +1,5 @@
 import { message } from "antd";
+import { API_RESPONSE_MESSAGES } from "constants/apiResponseMessages";
 import API_URLS from "constants/apiUrls";
 import { useMutation } from "react-query";
 import apiService from "services/api/apiService";
@@ -11,10 +12,10 @@ export const createBook = (data: CreateBookTypes) => {
 
 export const useCreateBook = () =>
     useMutation(createBook, {
-        onSuccess: newComment => {
-            message.success(`کتاب شما با موفقیت ثبت شد`);
+        onSuccess: newBook => {
+            message.success(API_RESPONSE_MESSAGES.book.create.success);
         },
         onError: () => {
-            message.error(`مشکلی در ثبت کردن کتاب پیش آمد!`);
+            message.error(API_RESPONSE_MESSAGES.book.create.error);
         },
     });

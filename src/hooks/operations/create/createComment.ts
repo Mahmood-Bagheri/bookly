@@ -2,6 +2,7 @@ import { message } from "antd";
 import { useMutation } from "react-query";
 import apiService from "services/api/apiService";
 import API_URLS from "constants/apiUrls";
+import { API_RESPONSE_MESSAGES } from "constants/apiResponseMessages";
 
 type CreateCommentMutationTypes = {
     bookId: string;
@@ -15,9 +16,9 @@ export const createComment = (comment: CreateCommentMutationTypes) => {
 export const useCreateComment = () =>
     useMutation(createComment, {
         onSuccess: () => {
-            message.success(`نظر شما با موفقیت ثبت شد`);
+            message.success(API_RESPONSE_MESSAGES.comment.create.success);
         },
         onError: () => {
-            message.error(`مشکلی در ثبت کردن نظر پیش آمد!`);
+            message.error(API_RESPONSE_MESSAGES.book.create.error);
         },
     });
