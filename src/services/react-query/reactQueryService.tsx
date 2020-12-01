@@ -4,18 +4,25 @@ import { message } from "antd";
 /* modules */
 import { QueryCache, ReactQueryCacheProvider } from "react-query";
 
+const mutationConfig = {
+    mutations: {
+        /* TODO -> make this shit work in TS */
+        onError: (err: any) => {
+            message.error(err.message);
+        },
+    },
+};
+const queryConfig = {
+    // todo -> make retry true
+    queries: { retry: false, refetchOnWindowFocus: false },
+};
+
 export const ReactQueryService: FunctionComponent = props => {
     const { children } = props;
     const queryCache = new QueryCache({
         defaultConfig: {
-            // todo -> make retry true
-            queries: { retry: false },
-            mutations: {
-                /* TODO -> make this shit work in TS */
-                onError: (err: any) => {
-                    message.error(err.message);
-                },
-            },
+            ...queryConfig,
+            ...mutationConfig,
         },
     });
 
