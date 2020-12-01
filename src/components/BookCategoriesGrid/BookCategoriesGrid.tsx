@@ -11,6 +11,7 @@ import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
 import { BookCategoriesGridComponentProps } from "./BookCategoriesGrid.types";
 /* styles */
 import s from "./BookCategoriesGrid.module.scss";
+import { uniqueId } from "helpers/uniqueId";
 
 export const BookCategoriesGrid: FunctionComponent<BookCategoriesGridComponentProps> = props => {
     const { className, ...restProps } = props;
@@ -28,7 +29,7 @@ const renderCategories = (category: any, index: number) => {
     return (
         <BookCategoryBox
             key={index.toString()}
-            id={index.toString()}
+            id={uniqueId()}
             categoryTitle="عنوان دسته بندی"
         />
     );

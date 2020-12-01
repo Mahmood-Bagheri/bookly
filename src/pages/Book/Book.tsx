@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 /* components */
 import { Col } from "components/Col";
 import { Row } from "components/Row";
@@ -7,23 +7,28 @@ import { BookDescriptionContainer } from "containers/book/BookDescription";
 import { CommentsContainer } from "containers/book/Comments";
 import { LeaveCommentContainer } from "containers/book/LeaveComment";
 import { BookDetailsContainer } from "containers/book/BookDetails";
+import { TopBar } from "components/TopBar";
 
 /* modules */
 
 const Book: FC = () => {
     return (
-        <Row>
-            <DocumentTitle title="کتاب" />
-            <Col xl={4}>
-                <BookDetailsContainer />
-                <LeaveCommentContainer />
-            </Col>
+        <Fragment>
+            <TopBar />
 
-            <Col xl={8} className="mt-3 mt-xl-0">
-                <BookDescriptionContainer />
-                <CommentsContainer />
-            </Col>
-        </Row>
+            <Row>
+                <DocumentTitle title="کتاب" />
+                <Col xl={4}>
+                    <BookDetailsContainer />
+                    <LeaveCommentContainer />
+                </Col>
+
+                <Col xl={8} className="mt-3 mt-xl-0">
+                    <BookDescriptionContainer />
+                    <CommentsContainer />
+                </Col>
+            </Row>
+        </Fragment>
     );
 };
 

@@ -42,12 +42,12 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
                     <div className={clsx(s.topbar, className)} {...restProps}>
                         <div className="d-flex align-items-center justify-content-center">
                             <AclService permission="drawer.see">
-                                <MenuIcon
+                                {/* <MenuIcon
                                     onClick={openDrawer}
                                     height="30"
                                     width="30"
                                     className="ml-5"
-                                />
+                                /> */}
                             </AclService>
                             <h1 className={s.title}>{title}</h1>
                         </div>

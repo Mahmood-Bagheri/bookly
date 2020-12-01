@@ -11,6 +11,7 @@ import { BookCategoryBoxComponentProps } from "./BookCategoryBox.types";
 import s from "./BookCategoryBox.module.scss";
 import { Link } from "react-router-dom";
 import { routeTo } from "helpers/routeTo";
+import { uniqueId } from "helpers/uniqueId";
 
 export const BookCategoryBox: FunctionComponent<BookCategoryBoxComponentProps> = props => {
     const { className, id: categoryId, categoryTitle, ...restProps } = props;
@@ -27,9 +28,9 @@ export const BookCategoryBox: FunctionComponent<BookCategoryBoxComponentProps> =
                         style={{
                             background: `linear-gradient(
                                 to left,
-                                rgba(0, 0, 0, 0.4),
-                                rgba(0, 0, 0, 0.4)
-                            ), url(https://source.unsplash.com/500x500/?book&sig=${categoryId})`,
+                                rgba(0, 0, 0, 0.3),
+                                rgba(0, 0, 0, 0.3)
+                            ), url(https://source.unsplash.com/500x500/?book&sig=${uniqueId()})`,
                         }}
                     >
                         <Text className={s.title}>{categoryTitle}</Text>

@@ -15,6 +15,7 @@ import PublisherImage from "assets/images/book.jpg";
 import { PublisherBoxComponentProps } from "./PublisherBox.types";
 /* styles */
 import s from "./PublisherBox.module.scss";
+import { useFollowPublisher } from "hooks/operations/create/followPublisher";
 
 export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props => {
     const {
@@ -28,6 +29,10 @@ export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props
         ...restProps
     } = props;
 
+    const [
+        follow,
+        { isLoading: followPublisherIsLoading },
+    ] = useFollowPublisher();
     const SubscriptionTextButtonText = conditionalText(
         initialFollowingState,
         "لغو سابسکریپشن",
@@ -48,7 +53,8 @@ export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props
                     danger={initialFollowingState}
                     block
                     size="large"
-                    onClick={() => onFollow(publisherId)}
+                    onClick={() => follow({ publisherId })}
+                    loading={followPublisherIsLoading}
                 >
                     {SubscriptionTextButtonText}
                 </Button>

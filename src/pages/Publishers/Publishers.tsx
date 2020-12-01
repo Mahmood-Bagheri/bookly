@@ -40,7 +40,7 @@ const renderPublisher = (publisher: Publisher, index: number) => {
                 key={uniqueId()}
                 id={uniqueId()}
                 title="ققنوس"
-                imageSrc={`https://source.unsplash.com/500x500/?book&sig=1`}
+                imageSrc={`https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`}
                 description="توضیحات پابیشر"
                 onFollow={publisherId =>
                     console.log(
