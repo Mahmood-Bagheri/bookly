@@ -6,6 +6,7 @@ const API_URLS = {
     login: "/auth/login",
     register: "/auth/register",
     publishers: "/publishers",
+    publisher: "/publisher",
 };
 
 export default API_URLS;
