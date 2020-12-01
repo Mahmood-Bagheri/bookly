@@ -10,6 +10,7 @@ import clsx from "classnames";
 import { BookDetailsBoxComponentProps } from "./BookDetailsBox.types";
 /* styles */
 import s from "./BookDetailsBox.module.scss";
+import { BooksCarousel } from "components/BooksCarousel";
 
 export const BookDetailsBox: FunctionComponent<BookDetailsBoxComponentProps> = ({
     title,
@@ -22,7 +23,8 @@ export const BookDetailsBox: FunctionComponent<BookDetailsBoxComponentProps> = (
                 <Text className={s.title}>{title}</Text>
                 <Text className={s.author}>{author}</Text>
             </div>
-            <Image className={s.image} src={imageSrc} />
+            <BooksCarousel />
+            {/* <Image className={s.image} src={imageSrc} /> */}
         </div>
     );
 };

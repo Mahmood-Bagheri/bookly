@@ -12,6 +12,7 @@ import Book from "assets/images/book.jpg";
 import { BooksCarouselComponentProps } from "./BooksCarousel.types";
 /* styles */
 import s from "./BooksCarousel.module.scss";
+import { uniqueId } from "helpers/uniqueId";
 
 SwiperCore.use([Autoplay]);
 
@@ -35,6 +36,9 @@ export const BooksCarousel: FunctionComponent<BooksCarouselComponentProps> = pro
 
 const renderSwiperSlide = (item: unknown) => (
     <SwiperSlide>
-        <Image src={Book} className={s.imageSlide} />
+        <Image
+            src={`https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`}
+            className={s.imageSlide}
+        />
     </SwiperSlide>
 );
