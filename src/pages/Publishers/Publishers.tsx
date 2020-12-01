@@ -4,12 +4,26 @@ import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
 import { Publisher, PublisherBox } from "components/PublisherBox";
 import { uniqueId } from "helpers/uniqueId";
 import { Col } from "components/Col";
+import { useSinglePublisher } from "hooks/operations/read/readPublisher";
+import { usePublishers } from "hooks/operations/read/readPublishers";
+import { LoadingIndicator } from "components/LoadingIndicator";
+import { TopBar } from "components/TopBar";
 /* components */
 
 const Publishers: FC = props => {
     const publishers = fakeArrayGenerator(10);
+    const {
+        data: tempPublishers,
+        isLoading: publishersIsLoading,
+    } = usePublishers();
+
+    if (publishersIsLoading) {
+        return <LoadingIndicator />;
+    }
+
     return (
         <Fragment>
+            <TopBar />
             <GenericGrid<Publisher>
                 withRow
                 items={publishers as any}

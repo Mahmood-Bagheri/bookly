@@ -3,6 +3,7 @@ import React, { FC, Fragment } from "react";
 import { DocumentTitle } from "components/DocumentTitle";
 import { RegisterForm } from "components/RegisterForm";
 import { useRegister } from "hooks/operations";
+import { TopBar } from "components/TopBar";
 
 const Register: FC = props => {
     const [register] = useRegister();
@@ -10,6 +11,7 @@ const Register: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="Register" />
+            <TopBar />
             <RegisterForm onSubmit={register} />
         </Fragment>
     );

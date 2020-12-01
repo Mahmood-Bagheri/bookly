@@ -8,6 +8,8 @@ export const ReactQueryService: FunctionComponent = props => {
     const { children } = props;
     const queryCache = new QueryCache({
         defaultConfig: {
+            // todo -> make retry true
+            queries: { retry: false },
             mutations: {
                 /* TODO -> make this shit work in TS */
                 onError: (err: any) => {
