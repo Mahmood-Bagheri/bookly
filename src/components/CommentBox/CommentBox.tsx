@@ -23,14 +23,14 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = ({
 
     return (
         <div className={s.box}>
-            <Image className={s.profileImage} src={BookImage} />
+            <img className={s.profileImage} src={BookImage} />
 
             <div className={s.header}>
-                <Text className={s.description}>
+                <p className={s.description}>
                     {username}
                     {"  "}
                     {relativeFakeTime} پیش گفته
-                </Text>
+                </p>
 
                 <DeleteButton
                     permission="comments.delete"
