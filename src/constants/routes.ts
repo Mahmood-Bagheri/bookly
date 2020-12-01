@@ -4,7 +4,7 @@ export const ROUTES = {
     register: "/register",
     book: "/books/:bookId",
     publishers: "/publishers",
-    publisher: "/publisher",
+    publisher: "/publishers/:publisherId",
     profile: "/profile",
     users: "/users",
     user: "/users/:userId",
