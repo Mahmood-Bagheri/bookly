@@ -9,7 +9,8 @@ import { uniqueId } from "helpers/uniqueId";
 import { useSinglePublisher } from "hooks/operations/read/readPublisher";
 import { useParams } from "react-router-dom";
 import { LoadingIndicator } from "components/LoadingIndicator";
-import { books } from "mock/books";
+import { mock } from "helpers/mock";
+import { Book } from "components/BookBox";
 
 const Publisher: FC = props => {
     const { publisherId } = useParams<{ publisherId: string }>();
@@ -38,7 +39,7 @@ const Publisher: FC = props => {
                     />
                 </Col>
             </Row>
-            <BooksGrid books={books} />
+            <BooksGrid books={mock<Book>("books")} />
         </Fragment>
     );
 };

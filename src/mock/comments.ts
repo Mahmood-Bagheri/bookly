@@ -1,16 +1,29 @@
+import { Comment } from "components/CommentBox";
 import { randomDate } from "helpers/randomDate";
 import { uniqueId } from "helpers/uniqueId";
 
-export const comments = [
+export const comments: Comment[] = [
     {
         id: uniqueId(),
-        username: "آنشرلی",
+        username: "سمیه",
         date: randomDate(new Date("2020/1/1")),
         body: "خیلی کتاب خوبی بود، به دوستامم هدیه دادمش.",
     },
     {
         id: uniqueId(),
-        username: "آنشرلی",
+        username: "نسترن",
+        date: randomDate(new Date("2020/1/1")),
+        body: "خیلی کتاب خوبی بود، به دوستامم هدیه دادمش.",
+    },
+    {
+        id: uniqueId(),
+        username: "شیدا",
+        date: randomDate(new Date("2020/1/1")),
+        body: "خیلی کتاب خوبی بود، به دوستامم هدیه دادمش.",
+    },
+    {
+        id: uniqueId(),
+        username: "توکیو",
         date: randomDate(new Date("2020/1/1")),
         body: "خیلی کتاب خوبی بود، به دوستامم هدیه دادمش.",
     },

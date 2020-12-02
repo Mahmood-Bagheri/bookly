@@ -5,6 +5,7 @@ import { GenericGrid } from "components/GenericGrid";
 import { Col } from "components/Col";
 /* helpers */
 import { uniqueId } from "helpers/uniqueId";
+import { mock } from "helpers/mock";
 /* types */
 import { BooksGridComponentProps } from "./BooksGrid.types";
 /* styles */
@@ -26,5 +27,12 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
             />
         </Col>
     );
-    return <GenericGrid<Book> withRow items={books} renderItem={renderBooks} />;
+
+    return (
+        <GenericGrid
+            withRow
+            items={mock<Book>("books", 3)}
+            renderItem={renderBooks}
+        />
+    );
 };

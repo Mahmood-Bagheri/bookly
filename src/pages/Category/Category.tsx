@@ -3,9 +3,10 @@ import React, { FC, Fragment } from "react";
 import { DocumentTitle } from "components/DocumentTitle";
 import { BooksGrid } from "components/BooksGrid";
 /* mocks */
-import { books } from "mock/books";
+import { mock } from "helpers/mock";
 /* modules */
 import { useParams } from "react-router-dom";
+import { Book } from "components/BookBox";
 
 const Category: FC = props => {
     const { categoryId } = useParams<{ categoryId: string }>();
@@ -13,7 +14,7 @@ const Category: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="Category" />
-            <BooksGrid books={books} loading={false} />
+            <BooksGrid books={mock<Book>("books")} loading={false} />
         </Fragment>
     );
 };

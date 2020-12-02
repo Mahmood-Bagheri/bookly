@@ -3,6 +3,9 @@ export type Comment = {
     username: string;
     date: Date;
     body: string;
+};
+
+export type CommentsFunctions = {
     onDelete?: (id: string) => void;
 };
-export type CommentBoxComponentProps = Comment & {};
+export type CommentBoxComponentProps = Comment & CommentsFunctions;
