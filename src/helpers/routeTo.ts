@@ -6,6 +6,13 @@ import { ROUTES } from "constants/routes";
 type PathType = keyof typeof ROUTES;
 type ParamsType = { [paramName: string]: string | number | boolean };
 
+// todo -> provide needed descriptions
+/**
+ *
+ * @param path ]
+ * @param params
+ * @param queryString
+ */
 export const routeTo = (
     path: PathType,
     params?: ParamsType,

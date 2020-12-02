@@ -3,6 +3,12 @@ import React, { lazy, Suspense } from "react";
 interface Props {
     fallback?: React.ReactNode | null;
 }
+/**
+ *
+ * @param importFunc
+ * @param param1
+ * @description lazy loads the component
+ */
 export const loadable = <T extends React.ComponentType<any>>(
     importFunc: () => Promise<{ default: T }>,
     { fallback = null }: Props = { fallback: null }

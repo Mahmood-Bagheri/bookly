@@ -1,3 +1,6 @@
+/**
+ * @description generates a long unique id
+ */
 export const uniqueId = (): string => {
     const s4 = (): string =>
         Math.floor((1 + Math.random()) * 0x10000)
