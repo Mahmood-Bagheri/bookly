@@ -2,7 +2,7 @@ import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
 import { LoginForm } from "components/LoginForm";
-import { useLogin, LoginCredentialsType } from "hooks/operations";
+import { useLogin, LoginMutationVariables } from "hooks/operations";
 import { TopBar } from "components/TopBar";
 
 const Login: FC = props => {
@@ -15,7 +15,7 @@ const Login: FC = props => {
 
             <LoginForm
                 onSubmit={credentials =>
-                    login(credentials as LoginCredentialsType)
+                    login(credentials as LoginMutationVariables)
                 }
             />
         </Fragment>

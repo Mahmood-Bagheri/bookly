@@ -2,12 +2,12 @@ import { useMutation } from "react-query";
 import API_URLS from "constants/apiUrls";
 import apiService from "services/api/apiService";
 
-export type LoginCredentialsType = {
+export type LoginMutationVariables = {
     username: string;
     password: string;
 };
 
-export const login = (credentials: LoginCredentialsType) => {
+export const login = (credentials: LoginMutationVariables) => {
     return apiService.post(API_URLS.login, credentials);
 };
 

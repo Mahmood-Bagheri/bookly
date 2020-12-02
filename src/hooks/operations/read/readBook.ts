@@ -1,11 +1,12 @@
 import { useQuery } from "react-query";
 import API_URLS from "constants/apiUrls";
-import apiService from "services/api/apiService";
+import apiService, { AxiosRequestConfig } from "services/api/apiService";
 
 export const readBook = async (_: unknown, bookId: string) => {
-    const { data } = await apiService.get(API_URLS.book, {
+    const requestConfig: AxiosRequestConfig = {
         params: { bookId },
-    });
+    };
+    const { data } = await apiService.get(API_URLS.book, requestConfig);
     return data;
 };
 

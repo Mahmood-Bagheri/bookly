@@ -1,21 +1,26 @@
-import { message } from "antd";
-import { API_RESPONSE_MESSAGES } from "constants/apiResponseMessages";
+/* constants */
 import API_URLS from "constants/apiUrls";
+import { API_RESPONSE_MESSAGES } from "constants/apiResponseMessages";
+/* modules */
 import { useMutation } from "react-query";
+/* helpers */
+import * as notice from "helpers/notice";
+/* services */
 import apiService from "services/api/apiService";
 
-type CreateBookTypes = {};
+type CreateBookMutationVariables = {};
 
-export const createBook = (data: CreateBookTypes) => {
+export const createBook = (data: CreateBookMutationVariables) => {
     return apiService.post(API_URLS.book, data);
 };
 
 export const useCreateBook = () =>
     useMutation(createBook, {
-        onSuccess: newBook => {
-            message.success(API_RESPONSE_MESSAGES.book.create.success);
+        onSuccess: (_, newBook) => {
+            /* update cache and push new data to books */
+            notice.success(API_RESPONSE_MESSAGES.book.create.success);
         },
         onError: () => {
-            message.error(API_RESPONSE_MESSAGES.book.create.error);
+            notice.error(API_RESPONSE_MESSAGES.book.create.error);
         },
     });
