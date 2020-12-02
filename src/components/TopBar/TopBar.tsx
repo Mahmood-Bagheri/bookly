@@ -29,12 +29,33 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     const closeDrawer = () => setDrawerState(false);
 
     const menu: MenuItem[] = [
-        { title: "ورود", link: routeTo("login") },
-        { title: "ثبت نام", link: routeTo("register") },
-        { title: "دسته بندی ها", link: routeTo("categories") },
-        { title: "ناشر ها", link: routeTo("publishers") },
-        { title: "کاربران", link: routeTo("users") },
-        { title: "خانه", link: routeTo("home") },
+        { title: "ورود", link: routeTo("login"), permission: "routes.login" },
+
+        {
+            title: "ثبت نام",
+            link: routeTo("register"),
+            permission: "routes.register",
+        },
+        {
+            title: "دسته بندی ها",
+            link: routeTo("categories"),
+            permission: "routes.categories",
+        },
+        {
+            title: "ناشر ها",
+            link: routeTo("publishers"),
+            permission: "routes.publishers",
+        },
+        {
+            title: "کاربران",
+            link: routeTo("users"),
+            permission: "routes.users",
+        },
+        {
+            title: "خانه",
+            link: routeTo("home"),
+            permission: "routes.home",
+        },
     ];
 
     return (

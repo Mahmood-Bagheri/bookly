@@ -1,5 +1,24 @@
 import * as React from "react";
 import { NavLink, NavLinkProps } from "react-router-dom";
+import { AclService } from "services/rbac";
+
+type LinkProps = {
+    permission: string;
+};
+type RouterLinkProps = Omit<NavLinkProps, "href"> & LinkProps;
+
+export const Link = (props: LinkProps & RouterLinkProps) => {
+    return (
+        <AclService permission={props.permission}>
+            <NavLink {...(props as RouterLinkProps)} />
+        </AclService>
+    );
+};
+
+/* 
+
+import * as React from "react";
+import { NavLink, NavLinkProps } from "react-router-dom";
 
 interface LinkProps {}
 type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -24,3 +43,5 @@ const Usage = () => {
         </div>
     );
 };
+
+*/

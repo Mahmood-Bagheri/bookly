@@ -15,7 +15,7 @@ export const MainDrawer: FunctionComponent<MainDrawerComponentProps> = props => 
     return (
         <Drawer {...props}>
             <div className="d-flex flex-column">
-                <MenuBarItem
+                {/* <MenuBarItem
                     className="mb-3"
                     title="کاربران"
                     link="/path/to/somewhere"
@@ -34,7 +34,7 @@ export const MainDrawer: FunctionComponent<MainDrawerComponentProps> = props => 
                     className="mb-3"
                     title="کاربران"
                     link="/path/to/somewhere"
-                />
+                /> */}
             </div>
         </Drawer>
     );

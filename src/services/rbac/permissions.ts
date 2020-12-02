@@ -1,5 +1,18 @@
 export const permissions = {
     guest: {
+        routes: {
+            login: true,
+            register: true,
+            categories: true,
+            category: true,
+            publishers: true,
+            publisher: true,
+            home: true,
+            users: true,
+            book: true,
+            profile: false,
+            error: true,
+        },
         drawer: {
             see: true,
             users: false,

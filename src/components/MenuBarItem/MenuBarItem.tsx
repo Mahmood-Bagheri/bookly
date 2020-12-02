@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 /* components */
 /* modules */
-import { NavLink } from "react-router-dom";
+import { Link } from "components/Link";
 import clsx from "classnames";
 /* helpers */
 /* assets */
@@ -11,12 +11,17 @@ import { MenuBarItemComponentProps } from "./MenuBarItem.types";
 import s from "./MenuBarItem.module.scss";
 
 export const MenuBarItem: FunctionComponent<MenuBarItemComponentProps> = props => {
-    const { className, title, link, ...restProps } = props;
+    const { className, permission, title, link, ...restProps } = props;
     return (
         <span className={clsx(s.menuItem, className)} {...restProps}>
-            <NavLink exact activeClassName={s.activeMenuItem} to={link}>
+            <Link
+                permission={permission}
+                exact
+                activeClassName={s.activeMenuItem}
+                to={link}
+            >
                 {title}
-            </NavLink>
+            </Link>
         </span>
     );
 };

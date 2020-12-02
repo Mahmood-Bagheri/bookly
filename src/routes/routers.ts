@@ -20,6 +20,7 @@ type Router = {
     component: ComponentType;
     props?: object;
     requireAuth: boolean;
+    permissionKey: string;
 };
 
 export const routers: Router[] = [
@@ -28,71 +29,83 @@ export const routers: Router[] = [
         component: Home,
         exact: true,
         requireAuth: true,
+        permissionKey: "routes.home",
     },
     {
         path: ROUTES.login,
         component: Login,
         exact: true,
         requireAuth: false,
+        permissionKey: "routes.login",
     },
     {
         path: ROUTES.register,
         component: Register,
         exact: true,
         requireAuth: false,
+        permissionKey: "routes.register",
     },
     {
         path: ROUTES.book,
         component: Book,
         exact: true,
         requireAuth: false,
+        permissionKey: "routes.book",
     },
     {
         path: ROUTES.publisher,
         component: Publisher,
         exact: true,
         requireAuth: false,
+        permissionKey: "routes.publisher",
     },
     {
         path: ROUTES.publishers,
         component: Publishers,
         exact: true,
         requireAuth: false,
+        permissionKey: "routes.publishers",
     },
     {
         path: ROUTES.profile,
         component: Profile,
         exact: true,
         requireAuth: true,
+        permissionKey: "routes.profile",
     },
     {
         path: ROUTES.users,
         component: Users,
         exact: true,
         requireAuth: true,
+        permissionKey: "routes.users",
     },
     {
         path: ROUTES.user,
         component: User,
         exact: true,
         requireAuth: true,
+        permissionKey: "routes.user",
     },
     {
         path: ROUTES.categories,
         component: Categories,
         exact: true,
         requireAuth: false,
+        permissionKey: "routes.categories",
     },
     {
         path: ROUTES.category,
         component: Category,
         exact: true,
         requireAuth: false,
+        permissionKey: "routes.category",
     },
     {
         path: "*",
         component: ErrorPage,
         exact: true,
         requireAuth: false,
+        permissionKey: "routes.error",
     },
 ];

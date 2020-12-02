@@ -1,22 +1,20 @@
-import React, { FunctionComponent, useEffect } from "react";
+import React, { FunctionComponent } from "react";
 /* components */
-import { NProgress } from "components/NProgress";
 /* modules */
-import {
-    Route as ReactRouterRoute,
-    RouteProps,
-    useLocation,
-} from "react-router-dom";
+import { Route as ReactRouterRoute, RouteProps } from "react-router-dom";
+import { AclService } from "services/rbac";
 /* types */
-type RouteComponentProps = RouteProps;
+type RouteComponentProps = RouteProps & {
+    permissionKey: string;
+};
 
-export const Route: FunctionComponent<RouteComponentProps> = props => {
-    const location = useLocation();
-
-    useEffect(() => {
-        NProgress.start();
-        NProgress.done();
-    }, [location.pathname]);
-
-    return <ReactRouterRoute {...props} />;
+export const Route: FunctionComponent<RouteComponentProps> = ({
+    permissionKey,
+    ...restProps
+}) => {
+    return (
+        <AclService permission={permissionKey}>
+            <ReactRouterRoute {...restProps} />
+        </AclService>
+    );
 };

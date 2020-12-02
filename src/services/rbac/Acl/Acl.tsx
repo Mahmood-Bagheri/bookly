@@ -6,5 +6,5 @@ import { AclComponentProps } from "./Acl.types.d";
 export const AclService: FC<AclComponentProps> = ({ permission, children }) => {
     const { role, permissions } = usePermissions();
     const canPerform = get(permissions, `${role}.${permission}`);
-    return <Fragment>{canPerform ? children : null}</Fragment>;
+    return <Fragment>{canPerform ? children : false}</Fragment>;
 };

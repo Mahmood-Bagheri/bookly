@@ -25,6 +25,11 @@ export const MenuBar: FunctionComponent<MenuBarComponentProps> = props => {
     );
 };
 
-const renderMenuItem = ({ title, link }: MenuItem) => (
-    <MenuBarItem key={link.toString()} title={title} link={link} />
+const renderMenuItem = ({ title, link, permission }: MenuItem) => (
+    <MenuBarItem
+        permission={permission}
+        key={link.toString()}
+        title={title}
+        link={link}
+    />
 );

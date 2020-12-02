@@ -1,7 +1,7 @@
 import React from "react";
 
 // * modules
-import { Redirect, RouteComponentProps } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { Route } from "components/Route";
 import { FunctionComponent, ComponentType } from "react";
 import { routeTo } from "helpers/routeTo";
@@ -11,17 +11,20 @@ type AuthRouteProps = {
     component: ComponentType;
     authUser: boolean;
     exact: boolean;
+    permissionKey: string;
 };
 
 export const AuthRoute: FunctionComponent<AuthRouteProps> = ({
     component: Component,
     authUser,
     exact,
+    permissionKey,
     ...rest
 }) => {
     return (
         <Route
             {...rest}
+            permissionKey={permissionKey}
             exact={exact}
             render={props =>
                 authUser ? (
