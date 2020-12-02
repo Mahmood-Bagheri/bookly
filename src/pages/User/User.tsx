@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { CommentsGrid } from "components/CommentsGrid";
 import { useDeleteComment } from "hooks";
 import { mock } from "helpers/mock";
-import { Comment } from "components/CommentBox";
+import { Comment } from "types/comment";
 
 const User: FC = props => {
     const { userId } = useParams<{ userId: string }>();
@@ -16,7 +16,7 @@ const User: FC = props => {
             <DocumentTitle title="User" />
             <CommentsGrid
                 title={`نظرات داده شده توسط کاربر با آی دی ${userId}`}
-                comments={mock<Comment>("comments")}
+                comments={mock<Comment.Base>("comments")}
                 onDelete={commentId => {
                     deleteComment({ commentId });
                 }}

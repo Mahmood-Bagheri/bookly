@@ -1,8 +1,8 @@
-import { Comment } from "components/CommentBox";
+import { Comment } from "types/comment";
 import { randomDate } from "helpers/randomDate";
 import { uniqueId } from "helpers/uniqueId";
 
-export const comments: Comment[] = [
+export const comments: Comment.Base[] = [
     {
         id: uniqueId(),
         username: "سمیه",

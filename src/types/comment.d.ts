@@ -1,4 +1,4 @@
-declare namespace Comment {
+export declare namespace Comment {
     type Base = {
         id: string;
         username: string;
