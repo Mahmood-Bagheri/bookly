@@ -5,32 +5,30 @@ import { GenericGrid } from "components/GenericGrid";
 /* modules */
 import clsx from "classnames";
 /* helpers */
-import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
+import { mock } from "helpers/mock";
 /* assets */
 /* types */
 import { BookCategoriesGridComponentProps } from "./BookCategoriesGrid.types";
 /* styles */
 import s from "./BookCategoriesGrid.module.scss";
-import { uniqueId } from "helpers/uniqueId";
 
 export const BookCategoriesGrid: FunctionComponent<BookCategoriesGridComponentProps> = props => {
     const { className, ...restProps } = props;
     return (
-        <GenericGrid
+        <GenericGrid<Category.Base>
             withRow
-            items={fakeArrayGenerator(10)}
+            items={mock("categories")}
             renderItem={renderCategories}
         />
     );
 };
 
-const renderCategories = (category: any, index: number) => {
-    /* todo -> pick a uniq id for each category  */
+const renderCategories = (category: Category.Base, index: number) => {
     return (
         <BookCategoryBox
-            key={index.toString()}
-            id={uniqueId()}
-            categoryTitle="عنوان دسته بندی"
+            key={category.id}
+            id={category.id}
+            categoryTitle={category.title}
         />
     );
 };

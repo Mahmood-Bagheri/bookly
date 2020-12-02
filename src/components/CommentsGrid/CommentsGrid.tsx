@@ -8,8 +8,6 @@ import s from "./CommentsGrid.module.scss";
 import { GenericGrid } from "components/GenericGrid";
 import { Col } from "components/Col";
 import { Text } from "components/Text";
-import { mock } from "helpers/mock";
-import { Comment } from "types/comment";
 
 export const CommentsGrid: FunctionComponent<CommentsGridComponentProps> = props => {
     const { comments, onDelete, title = "نظرات کاربران" } = props;
@@ -29,7 +27,11 @@ export const CommentsGrid: FunctionComponent<CommentsGridComponentProps> = props
     return (
         <div className={s.box}>
             <Text className={s.title}>{title}</Text>
-            <GenericGrid items={comments} renderItem={renderComments} withRow />
+            <GenericGrid<Comment.Base>
+                items={comments}
+                renderItem={renderComments}
+                withRow
+            />
         </div>
     );
 };

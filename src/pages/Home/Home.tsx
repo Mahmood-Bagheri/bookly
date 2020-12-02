@@ -6,7 +6,6 @@ import { LoadingIndicator } from "components/LoadingIndicator";
 /* modules */
 import { useBooks } from "hooks/operations/read/readBooks";
 import { mock } from "helpers/mock";
-import { Book } from "components/BookBox";
 
 const Home: FC = props => {
     const { isLoading, data } = useBooks();
@@ -16,7 +15,7 @@ const Home: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="homepage" />
-            <BooksGrid books={mock<Book>("books")} loading={false} />
+            <BooksGrid books={mock<Book.Base>("books")} loading={false} />
         </Fragment>
     );
 };

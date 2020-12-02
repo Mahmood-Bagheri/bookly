@@ -6,7 +6,6 @@ import { BooksGrid } from "components/BooksGrid";
 import { mock } from "helpers/mock";
 /* modules */
 import { useParams } from "react-router-dom";
-import { Book } from "components/BookBox";
 
 const Category: FC = props => {
     const { categoryId } = useParams<{ categoryId: string }>();
@@ -14,7 +13,7 @@ const Category: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="Category" />
-            <BooksGrid books={mock<Book>("books")} loading={false} />
+            <BooksGrid books={mock<Book.Base>("books")} loading={false} />
         </Fragment>
     );
 };

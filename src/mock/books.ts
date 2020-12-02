@@ -1,7 +1,6 @@
-import { Book } from "components/BookBox";
 import { uniqueId } from "helpers/uniqueId";
 
-export const books: Book[] = [
+export const books: Book.Base[] = [
     {
         author: "محمود باقری",
         id: uniqueId(),

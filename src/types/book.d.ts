@@ -1,7 +1,11 @@
-import { AxiosResponse } from "axios";
-
 declare namespace Book {
-    type Base = {};
+    type Base = {
+        initialLikeState: boolean;
+        title: string;
+        author: string;
+        imageSrc?: string;
+        id: string;
+    };
 
     declare namespace Query {
         type Result = Array<{
@@ -21,13 +25,11 @@ declare namespace Book {
 
         declare namespace Create {
             type Variables = {};
-
             type Result = {};
         }
 
         declare namespace Update {
             type Variables = {};
-
             type REsult = {};
         }
 

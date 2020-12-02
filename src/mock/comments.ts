@@ -1,4 +1,3 @@
-import { Comment } from "types/comment";
 import { randomDate } from "helpers/randomDate";
 import { uniqueId } from "helpers/uniqueId";
 

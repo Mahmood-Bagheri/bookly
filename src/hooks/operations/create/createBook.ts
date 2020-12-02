@@ -7,7 +7,6 @@ import { useMutation } from "react-query";
 import * as notice from "helpers/notice";
 /* services */
 import apiService from "services/api/apiService";
-import { Book } from "types/book";
 
 export const createBook = (data: Book.Mutation.Create.Variables) => {
     return apiService.post(API_URLS.book, data);

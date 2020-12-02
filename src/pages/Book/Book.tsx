@@ -7,7 +7,6 @@ import { BookDescriptionContainer } from "containers/book/BookDescription";
 import { CommentsContainer } from "containers/book/Comments";
 import { LeaveCommentContainer } from "containers/book/LeaveComment";
 import { BookDetailsContainer } from "containers/book/BookDetails";
-import { TopBar } from "components/TopBar";
 import { useSingleBook } from "hooks";
 import { useParams } from "react-router-dom";
 

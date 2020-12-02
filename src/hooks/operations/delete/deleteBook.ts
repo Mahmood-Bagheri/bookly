@@ -7,8 +7,6 @@ import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
 import apiService, { ApiServiceError } from "services/api/apiService";
 /* helpers */
 import * as notice from "helpers/notice";
-/* types */
-import { Book } from "types/book";
 
 export const deleteBook = async ({
     bookId,
