@@ -55,7 +55,6 @@ const Publisher: FC = props => {
 
     return (
         <Fragment>
-            <TopBar />
             <Row className="mb-3">
                 <Col md={6} lg={3} className="mb-3 ">
                     <PublisherBox

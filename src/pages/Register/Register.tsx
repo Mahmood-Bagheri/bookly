@@ -11,7 +11,6 @@ const Register: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="Register" />
-            <TopBar />
             <RegisterForm onSubmit={register} />
         </Fragment>
     );

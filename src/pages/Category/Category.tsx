@@ -29,7 +29,6 @@ const Category: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="Category" />
-            <TopBar />
             <BooksGrid books={books} loading={false} />
         </Fragment>
     );

@@ -11,7 +11,6 @@ const Login: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="Login" />
-            <TopBar />
 
             <LoginForm
                 onSubmit={credentials =>

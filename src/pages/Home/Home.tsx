@@ -92,7 +92,6 @@ const Home: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="homepage" />
-            <TopBar />
             <BooksGrid books={books} loading={false} />
         </Fragment>
     );

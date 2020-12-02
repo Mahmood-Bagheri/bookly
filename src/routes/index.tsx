@@ -2,6 +2,7 @@ import React from "react";
 import { routers } from "./routers";
 import { Route, Switch, useLocation } from "react-router-dom";
 import { AuthRoute } from "services/auth/AuthRoute";
+import { Layout } from "components/Layout";
 
 const Router = () => {
     const location = useLocation();
@@ -29,7 +30,11 @@ const Router = () => {
             />
         );
     });
-    return <Switch location={location}>{pages}</Switch>;
+    return (
+        <Layout>
+            <Switch location={location}>{pages}</Switch>
+        </Layout>
+    );
 };
 
 export default Router;

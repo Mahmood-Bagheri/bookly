@@ -18,8 +18,6 @@ const Book: FC = () => {
     const { data, isLoading } = useSingleBook(bookId);
     return (
         <Fragment>
-            <TopBar />
-
             <Row>
                 <DocumentTitle title="کتاب" />
                 <Col xl={4}>

@@ -1,17 +1,20 @@
 import React, { Fragment, FunctionComponent } from "react";
 /* components */
 import { Table } from "components/Table";
+import { Button } from "components/Button";
+import { PopConfirm } from "components/PopConfirm";
+import { ColumnsType } from "antd/lib/table";
 /* modules */
 import clsx from "classnames";
 /* helpers */
+import { uniqueId } from "helpers/uniqueId";
 /* assets */
 /* types */
 import { UsersTableComponentProps } from "./UsersTable.types";
 /* styles */
 import s from "./UsersTable.module.scss";
-import { Button } from "components/Button";
-import { PopConfirm } from "components/PopConfirm";
-import { ColumnsType } from "antd/lib/table";
+import { Link } from "react-router-dom";
+import { routeTo } from "helpers/routeTo";
 
 type DataSourceType = {
     id: string;
@@ -21,13 +24,13 @@ type DataSourceType = {
 };
 const dataSource: DataSourceType[] = [
     {
-        id: "1",
+        id: uniqueId(),
         name: "محمود",
         username: "Mahmood",
         emailAddress: "محمود دات باقری ات ساین جیمیل دات کام",
     },
     {
-        id: "2",
+        id: uniqueId(),
         name: "مایک",
         username: "Mike",
         emailAddress: "مایک اسکل زاده ات ساین اوت لوک دات کام",
@@ -59,9 +62,11 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             key: "x",
             render: (row: DataSourceType) => (
                 <Fragment>
-                    <Button className="ml-2" type="primary">
-                        نمایش اطلاعات بیشتر!
-                    </Button>
+                    <Link to={routeTo("user", { userId: row.id })}>
+                        <Button className="ml-2" type="primary">
+                            نمایش اطلاعات بیشتر!
+                        </Button>
+                    </Link>
                     <PopConfirm
                         title="برای حذف این کاربر مطمئن هستید ؟ "
                         onConfirm={() => onDeleteUser({ userId: row.id })}
