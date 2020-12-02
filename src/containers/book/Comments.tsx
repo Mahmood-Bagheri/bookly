@@ -2,8 +2,7 @@ import React from "react";
 import { CommentsGrid } from "components/CommentsGrid";
 import { useDeleteComment } from "hooks";
 import { AclService } from "services/rbac";
-import { randomDate } from "helpers/randomDate";
-
+import { comments } from "mock/comments";
 export const CommentsContainer = () => {
     const [deleteComment] = useDeleteComment();
 
@@ -12,15 +11,6 @@ export const CommentsContainer = () => {
         deleteComment({ commentId });
         console.log(`deleting comment with the commentId: ${commentId} `);
     };
-
-    const comments = [
-        {
-            id: "123",
-            username: "آنشرلی",
-            date: randomDate(new Date("2020/1/1")),
-            body: "خیلی کتاب خوبی بود، به دوستامم هدیه دادمش.",
-        },
-    ];
 
     return (
         <AclService permission="comments.read">

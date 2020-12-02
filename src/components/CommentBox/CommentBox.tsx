@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { DeleteButton } from "components/DeleteButton";
-import { Image } from "components/Image";
 import { Text } from "components/Text";
 /* modules */
 import dayJs from "dayjs";
