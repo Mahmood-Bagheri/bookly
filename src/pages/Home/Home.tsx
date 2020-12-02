@@ -10,11 +10,9 @@ import { Book } from "components/BookBox";
 
 const Home: FC = props => {
     const { isLoading, data } = useBooks();
-
     if (isLoading) {
         return <LoadingIndicator />;
     }
-
     return (
         <Fragment>
             <DocumentTitle title="homepage" />

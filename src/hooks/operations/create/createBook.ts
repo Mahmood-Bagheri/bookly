@@ -1,6 +1,6 @@
 /* constants */
 import API_URLS from "constants/apiUrls";
-import { API_RESPONSE_MESSAGES } from "constants/apiResponseMessages";
+import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
 /* modules */
 import { useMutation } from "react-query";
 /* helpers */
@@ -8,9 +8,7 @@ import * as notice from "helpers/notice";
 /* services */
 import apiService from "services/api/apiService";
 
-type CreateBookMutationVariables = {};
-
-export const createBook = (data: CreateBookMutationVariables) => {
+export const createBook = (data: Book.CreateBookVariables) => {
     return apiService.post(API_URLS.book, data);
 };
 

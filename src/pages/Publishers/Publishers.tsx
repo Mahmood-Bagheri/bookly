@@ -1,4 +1,5 @@
 import React, { FC, Fragment } from "react";
+/* components */
 import { GenericGrid } from "components/GenericGrid";
 import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
 import { Publisher, PublisherBox } from "components/PublisherBox";
@@ -6,9 +7,7 @@ import { uniqueId } from "helpers/uniqueId";
 import { Col } from "components/Col";
 import { usePublishers } from "hooks/operations/read/readPublishers";
 import { LoadingIndicator } from "components/LoadingIndicator";
-import { TopBar } from "components/TopBar";
 import { DocumentTitle } from "components/DocumentTitle";
-/* components */
 
 const Publishers: FC = props => {
     const publishers = fakeArrayGenerator(10);

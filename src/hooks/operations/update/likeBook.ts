@@ -1,28 +1,26 @@
-import { MutationConfig, useMutation } from "react-query";
-import apiService from "services/api/apiService";
+import { useMutation } from "react-query";
+/* services */
+import apiService, { ApiServiceError } from "services/api/apiService";
+/* constants */
 import API_URLS from "constants/apiUrls";
-import { API_RESPONSE_MESSAGES } from "constants/apiResponseMessages";
+import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
 import * as notice from "helpers/notice";
+/* types */
+import { Book } from "types/book";
 
-type LikeBookMutationVariables = {
-    bookId: string;
-    likeState: boolean;
-};
-
-export const likeBook = ({ bookId, likeState }: LikeBookMutationVariables) => {
-    return apiService.patch(API_URLS.like, { bookId, likeState });
+export const likeBook = (data: Book.Mutation.Like.Variables) => {
+    return apiService.patch(API_URLS.like, data);
 };
 
 export const useLikeBook = () => {
-    const mutationConfig: MutationConfig<
-        unknown,
-        unknown,
-        LikeBookMutationVariables
-    > = {
+    return useMutation<
+        Book.Mutation.Like.Result,
+        ApiServiceError,
+        Book.Mutation.Like.Variables
+    >(likeBook, {
         onSuccess: (_, variables) => {},
         onError: () => {
             notice.error(API_RESPONSE_MESSAGES.book.like.error);
         },
-    };
-    return useMutation(likeBook, mutationConfig);
+    });
 };

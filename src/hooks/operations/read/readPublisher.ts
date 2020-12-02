@@ -6,8 +6,7 @@ export const readPublisher = async (_: unknown, publisherId: string) => {
     const requestConfig: AxiosRequestConfig = {
         params: { publisherId },
     };
-    const { data } = await apiService.get(API_URLS.publisher, requestConfig);
-    return data;
+    return await (await apiService.get(API_URLS.publisher, requestConfig)).data;
 };
 
 export const useSinglePublisher = (publisherId: string) => {

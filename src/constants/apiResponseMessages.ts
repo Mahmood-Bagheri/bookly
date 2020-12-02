@@ -1,4 +1,4 @@
-export const API_RESPONSE_MESSAGES = {
+const API_RESPONSE_MESSAGES = {
     user: {
         delete: {
             success: `کاربر با موفقیت حذف شد!`,
@@ -38,3 +38,5 @@ export const API_RESPONSE_MESSAGES = {
     },
     register: {},
 };
+
+export default API_RESPONSE_MESSAGES;
