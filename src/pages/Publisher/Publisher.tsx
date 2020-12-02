@@ -4,44 +4,12 @@ import { Row } from "components/Row";
 import { Col } from "components/Col";
 import { PublisherBox } from "components/PublisherBox";
 import { BooksGrid } from "components/BooksGrid";
-import { Book } from "components/BookBox";
-import { TopBar } from "components/TopBar";
 import { PublisherDescriptionText } from "components/PublisherDescriptionText";
 import { uniqueId } from "helpers/uniqueId";
 import { useSinglePublisher } from "hooks/operations/read/readPublisher";
 import { useParams } from "react-router-dom";
 import { LoadingIndicator } from "components/LoadingIndicator";
-
-const books: Book[] = [
-    {
-        author: "محمود باقری",
-        id: uniqueId(),
-        initialLikeState: false,
-        title: "به تو می اندیشم",
-        imageSrc: "https://source.unsplash.com/500x500/?book&sig=1",
-    },
-    {
-        author: "محمود باقری",
-        id: uniqueId(),
-        initialLikeState: false,
-        title: "به تو می اندیشم",
-        imageSrc: "https://source.unsplash.com/500x500/?book&sig=2",
-    },
-    {
-        author: "محمود باقری",
-        id: uniqueId(),
-        initialLikeState: false,
-        title: "به تو می اندیشم",
-        imageSrc: "https://source.unsplash.com/500x500/?book&sig=3",
-    },
-    {
-        author: "محمود باقری",
-        id: uniqueId(),
-        initialLikeState: false,
-        title: "به تو می اندیشم",
-        imageSrc: "https://source.unsplash.com/500x500/?book&sig=4",
-    },
-];
+import { books } from "mock/books";
 
 const Publisher: FC = props => {
     const { publisherId } = useParams<{ publisherId: string }>();
