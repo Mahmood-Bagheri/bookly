@@ -13,6 +13,7 @@ import Users from "pages/Users";
 import User from "pages/User";
 import Categories from "pages/Categories";
 import Category from "pages/Category";
+import Error from "pages/Error";
 
 type Router = {
     path: string;
@@ -21,6 +22,8 @@ type Router = {
     props?: object;
     requireAuth: boolean;
     permissionKey: string;
+    to?: string;
+    withLayout?: boolean;
 };
 
 export const routers: Router[] = [
@@ -102,10 +105,19 @@ export const routers: Router[] = [
         permissionKey: "routes.category",
     },
     {
+        path: ROUTES.error,
+        component: Error,
+        exact: true,
+        requireAuth: false,
+        permissionKey: "routes.category",
+        withLayout: false,
+    },
+    {
         path: "*",
-        component: ErrorPage,
+        component: Error,
         exact: true,
         requireAuth: false,
         permissionKey: "routes.error",
+        to: ROUTES.error,
     },
 ];

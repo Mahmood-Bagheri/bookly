@@ -1,15 +1,26 @@
 import React from "react";
 import { routers } from "./routers";
-import { Switch, useLocation } from "react-router-dom";
+import { Redirect, Switch, useLocation } from "react-router-dom";
 import { AuthRoute } from "services/auth/AuthRoute";
-import { Layout } from "components/Layout";
 import { Route } from "components/Route";
 
 const Router = () => {
     const location = useLocation();
 
     const pages = routers.map(route => {
-        const { component, exact, path, requireAuth, permissionKey } = route;
+        const {
+            component,
+            exact,
+            path,
+            requireAuth,
+            permissionKey,
+            to,
+            withLayout = true,
+        } = route;
+
+        if (to) {
+            return <Redirect from={path} to={to} />;
+        }
 
         if (requireAuth) {
             return (
@@ -30,14 +41,11 @@ const Router = () => {
                 path={path}
                 exact={exact}
                 component={component}
+                withLayout={withLayout}
             />
         );
     });
-    return (
-        <Layout>
-            <Switch location={location}>{pages}</Switch>
-        </Layout>
-    );
+    return <Switch location={location}>{pages}</Switch>;
 };
 
 export default Router;

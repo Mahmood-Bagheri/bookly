@@ -1,10 +1,8 @@
 import React, { FC, Fragment } from "react";
-import { usePermissions } from "services/rbac";
-import { get } from "lodash";
 import { AclComponentProps } from "./Acl.types.d";
+import { useCanPerform } from "hooks/useCanPerform";
 
 export const AclService: FC<AclComponentProps> = ({ permission, children }) => {
-    const { role, permissions } = usePermissions();
-    const canPerform = get(permissions, `${role}.${permission}`);
+    const canPerform = useCanPerform(permission);
     return <Fragment>{canPerform ? children : false}</Fragment>;
 };
