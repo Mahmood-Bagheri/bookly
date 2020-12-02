@@ -9,6 +9,7 @@ export const permissions = {
             publisher: true,
             home: true,
             users: true,
+            user: true,
             book: true,
             profile: false,
             error: true,
