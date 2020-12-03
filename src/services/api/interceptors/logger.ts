@@ -1,10 +1,10 @@
 import { AxiosInstance, AxiosResponse, AxiosError } from "axios";
-import { IS_PROD } from "constants/config";
+import { ENV_CONFIG } from "constants/config";
 
 export const applyLogger = (instance: AxiosInstance) => {
     // Add a response interceptor
-    if (!IS_PROD) {
-        /* if production it was mode */
+
+    if (!ENV_CONFIG.isProd) {
         return instance;
     }
     return instance.interceptors.response.use(
