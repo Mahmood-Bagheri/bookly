@@ -2,6 +2,7 @@ import React from "react";
 
 // * modules
 import classnames from "classnames";
+import { Tooltip } from "antd";
 
 // define all text types
 type VariantProps = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
@@ -17,6 +18,7 @@ type LineheightProps =
 type TextProps = {
     variant: VariantProps;
     lineheight: LineheightProps;
+    withTooltip?: boolean;
 };
 
 // main component props
@@ -26,23 +28,42 @@ type TextComponentProps = Omit<
 > &
     Partial<TextProps>;
 
-export const Text: React.FC<TextComponentProps> = props => {
-    const {
-        variant = "p",
-        lineheight = "normal",
-        className: nativeClassName,
-        children,
-        ...restProps
-    } = props;
+export const Text = React.forwardRef<HTMLParagraphElement, TextComponentProps>(
+    (props, ref) => {
+        const {
+            variant = "p",
+            lineheight = "normal",
+            className: nativeClassName,
+            children,
+            withTooltip,
+            ...restProps
+        } = props;
 
-    const className = classnames([
-        makeVariantClassName(variant),
-        makeLineheightClassName(lineheight),
-        nativeClassName,
-    ]);
+        const className = classnames([
+            makeVariantClassName(variant),
+            makeLineheightClassName(lineheight),
+            nativeClassName,
+        ]);
 
-    return React.createElement(variant, { className, ...restProps }, children);
-};
+        if (withTooltip) {
+            return (
+                <Tooltip title={children}>
+                    {React.createElement(
+                        variant,
+                        { className, ref, ...restProps },
+                        children
+                    )}
+                </Tooltip>
+            );
+        }
+
+        return React.createElement(
+            variant,
+            { className, ref, ...restProps },
+            children
+        );
+    }
+);
 
 // return some classnames conditionally based on the `variant` props
 function makeVariantClassName(variant: VariantProps): string[] {

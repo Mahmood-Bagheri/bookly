@@ -2,7 +2,6 @@ import React from "react";
 /* components */
 import { LikeButton } from "components/LikeButton";
 import { Image } from "components/Image";
-import { Col } from "components/Col";
 import { DeleteButton } from "components/DeleteButton";
 import { Text } from "components/Text";
 /* modules */
@@ -38,9 +37,9 @@ export const BookBox: React.FC<BookProps> = ({
     return (
         <div className={`${s.box} shadow`} {...restProps}>
             <div className={s.content}>
-                <Text className={s.title}>{title}</Text>
-                <div>
-                    <Text className={s.author}>{author}</Text>
+                <Text className={`${s.title} truncate`}>{title}</Text>
+                <div className={s.authorWrap}>
+                    <Text className={`${s.author} truncate`}>{author}</Text>
                     <Text className={s.authorTitle}>نویسنده</Text>
                 </div>
             </div>

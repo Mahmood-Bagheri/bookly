@@ -36,9 +36,13 @@
     opacity: 0.5;
 }
 
+.authorWrap {
+    max-width: 50%;
+}
 .author {
     font-weight: 600;
     font-size: 14px;
+    max-width: 100%;
 }
 
 .authorTitle {
