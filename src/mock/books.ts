@@ -5,7 +5,7 @@ export const books: Book.Base[] = [
         author: "يان مك كروري",
         id: uniqueId(),
         initialLikeState: true,
-        title: "آب آرام ماه نمایان",
+        title: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
         imageSrc: `https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`,
     },
     {
