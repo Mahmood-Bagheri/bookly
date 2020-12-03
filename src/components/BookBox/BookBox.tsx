@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 /* components */
 import { LikeButton } from "components/LikeButton";
 import { Image } from "components/Image";
@@ -8,6 +8,8 @@ import { Text } from "components/Text";
 import { Link } from "react-router-dom";
 import { routeTo } from "helpers/routeTo";
 import { useDeleteBook, useLikeBook } from "hooks/operations";
+import { useBooleanState } from "hooks/useBooleanState";
+import { useOverflow } from "hooks/useOverflow";
 /* assets */
 /* types */
 import { BookProps } from "./BookBox.types";
@@ -26,6 +28,7 @@ export const BookBox: React.FC<BookProps> = ({
     const [like, { isLoading: likeIsLoading }] = useLikeBook();
     const [deleteBook, { isLoading: deleteBookIsLoading }] = useDeleteBook();
 
+    const { toggleState } = useBooleanState();
     const handleLikeChange = (likeState: boolean, bookId: string) => {
         like({ likeState, bookId });
     };
@@ -34,13 +37,48 @@ export const BookBox: React.FC<BookProps> = ({
         deleteBook({ bookId });
     };
 
+    const titleRef = useRef<HTMLParagraphElement>(null!);
+    const authorRef = useRef<HTMLParagraphElement>(null!);
+    const authorSubtitleRef = useRef<HTMLParagraphElement>(null!);
+    const { refXOverflowing: titleIsOverflowing } = useOverflow(titleRef);
+    const { refXOverflowing: authorIsOverflowing } = useOverflow(authorRef);
+    const { refXOverflowing: authorSubtitleIsOverflowing } = useOverflow(
+        authorSubtitleRef
+    );
+
+    // todo -> find a better solution to initiate ref
+    useEffect(() => {
+        /*
+         * toggling a boolean state to make react recognize refs
+         */
+        toggleState();
+    }, []);
+
     return (
         <div className={`${s.box} shadow`} {...restProps}>
             <div className={s.content}>
-                <Text className={`${s.title} truncate`}>{title}</Text>
+                <Text
+                    ref={titleRef}
+                    withTooltip={titleIsOverflowing}
+                    className={`${s.title} truncate`}
+                >
+                    {title}
+                </Text>
                 <div className={s.authorWrap}>
-                    <Text className={`${s.author} truncate`}>{author}</Text>
-                    <Text className={s.authorTitle}>نویسنده</Text>
+                    <Text
+                        ref={authorRef}
+                        withTooltip={authorIsOverflowing}
+                        className={`${s.author} truncate`}
+                    >
+                        {author}
+                    </Text>
+                    <Text
+                        ref={authorSubtitleRef}
+                        withTooltip={authorSubtitleIsOverflowing}
+                        className={s.authorTitle}
+                    >
+                        نویسنده
+                    </Text>
                 </div>
             </div>
             <Link to={routeTo("book", { bookId })}>
