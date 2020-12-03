@@ -37,10 +37,6 @@ export const BookBox: React.FC<BookProps> = ({
 
     return (
         <div className={`${s.box} shadow`} {...restProps}>
-            <Link to={routeTo("book", { bookId })}>
-                <Image className={s.image} src={imageSrc} />
-            </Link>
-
             <div className={s.content}>
                 <Text className={s.title}>{title}</Text>
                 <div>
@@ -48,6 +44,9 @@ export const BookBox: React.FC<BookProps> = ({
                     <Text className={s.authorTitle}>نویسنده</Text>
                 </div>
             </div>
+            <Link to={routeTo("book", { bookId })}>
+                <Image className={s.image} src={imageSrc} />
+            </Link>
 
             <div className={s.actions}>
                 <LikeButton
