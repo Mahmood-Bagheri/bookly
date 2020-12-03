@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 /* components */
 import { LikeButton } from "components/LikeButton";
 import { Image } from "components/Image";
@@ -28,7 +28,6 @@ export const BookBox: React.FC<BookProps> = ({
     const [like, { isLoading: likeIsLoading }] = useLikeBook();
     const [deleteBook, { isLoading: deleteBookIsLoading }] = useDeleteBook();
 
-    const { toggleState } = useBooleanState();
     const handleLikeChange = (likeState: boolean, bookId: string) => {
         like({ likeState, bookId });
     };
@@ -45,14 +44,6 @@ export const BookBox: React.FC<BookProps> = ({
     const { refXOverflowing: authorSubtitleIsOverflowing } = useOverflow(
         authorSubtitleRef
     );
-
-    // todo -> find a better solution to initiate ref
-    useEffect(() => {
-        /*
-         * toggling a boolean state to make react recognize refs
-         */
-        toggleState();
-    }, []);
 
     return (
         <div className={`${s.box} shadow`} {...restProps}>
