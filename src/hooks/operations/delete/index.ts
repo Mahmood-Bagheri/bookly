@@ -1,3 +1,3 @@
-export * from "./deleteBook";
-export * from "./deleteComment";
-export * from "./deleteUser";
+export * from "./useDeleteBook";
+export * from "./useDeleteComment";
+export * from "./useDeleteUser";
