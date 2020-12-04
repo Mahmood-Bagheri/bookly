@@ -47,7 +47,7 @@ export const Text = React.forwardRef<HTMLParagraphElement, TextComponentProps>(
 
         if (withTooltip) {
             return (
-                <Tooltip title={children}>
+                <Tooltip title={children} placement="topRight">
                     {React.createElement(
                         variant,
                         { className, ref, ...restProps },
