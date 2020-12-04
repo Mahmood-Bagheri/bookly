@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useState, Fragment } from "react";
 /* components */
 import { MenuBar } from "components/MenuBar";
-import { MenuItem } from "components/MenuBarItem";
 import { Row } from "components/Row";
 import { Col } from "components/Col";
 /* modules */
@@ -12,12 +11,13 @@ import { AclService } from "services/rbac";
 /* helpers */
 /* assets */
 import { ReactComponent as MenuIcon } from "assets/icons/menu.svg";
+/* constants */
+import { MENU } from "constants/topbar";
 /* types */
 import { TopBarComponentProps } from "./TopBar.types";
 /* styles */
 import s from "./TopBar.module.scss";
 import { MainDrawer } from "components/MainDrawer";
-import { routeTo } from "helpers/routeTo";
 
 export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     const { className, title, ...restProps } = props;
@@ -27,36 +27,6 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
 
     const openDrawer = () => setDrawerState(true);
     const closeDrawer = () => setDrawerState(false);
-
-    const menu: MenuItem[] = [
-        { title: "ورود", link: routeTo("login"), permission: "routes.login" },
-
-        {
-            title: "ثبت نام",
-            link: routeTo("register"),
-            permission: "routes.register",
-        },
-        {
-            title: "دسته بندی ها",
-            link: routeTo("categories"),
-            permission: "routes.categories",
-        },
-        {
-            title: "ناشر ها",
-            link: routeTo("publishers"),
-            permission: "routes.publishers",
-        },
-        {
-            title: "کاربران",
-            link: routeTo("users"),
-            permission: "routes.users",
-        },
-        {
-            title: "خانه",
-            link: routeTo("home"),
-            permission: "routes.home",
-        },
-    ];
 
     return (
         <Fragment>
@@ -74,7 +44,7 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
                             </AclService>
                             <h1 className={s.title}>{title}</h1>
                         </div>
-                        <MenuBar menu={menu} />
+                        <MenuBar menu={MENU} />
                     </div>
                 </Col>
             </Row>
