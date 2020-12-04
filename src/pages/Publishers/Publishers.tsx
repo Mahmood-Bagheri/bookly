@@ -5,7 +5,7 @@ import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
 import { Publisher, PublisherBox } from "components/PublisherBox";
 import { uniqueId } from "helpers/uniqueId";
 import { Col } from "components/Col";
-import { usePublishers } from "hooks/operations/read/readPublishers";
+import { usePublishers } from "hooks";
 import { LoadingIndicator } from "components/LoadingIndicator";
 import { DocumentTitle } from "components/DocumentTitle";
 

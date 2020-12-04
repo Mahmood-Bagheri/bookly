@@ -15,7 +15,7 @@ import PublisherImage from "assets/images/book.jpg";
 import { PublisherBoxComponentProps } from "./PublisherBox.types";
 /* styles */
 import s from "./PublisherBox.module.scss";
-import { useFollowPublisher } from "hooks/operations/create/followPublisher";
+import { useFollowPublisher } from "hooks";
 
 export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props => {
     const {

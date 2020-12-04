@@ -1,2 +1,2 @@
-export * from "./updateBook";
-export * from "./likeBook";
+export * from "./useUpdateBook";
+export * from "./useLikeBook";

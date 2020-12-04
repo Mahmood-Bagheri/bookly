@@ -6,7 +6,7 @@ import { PublisherBox } from "components/PublisherBox";
 import { BooksGrid } from "components/BooksGrid";
 import { PublisherDescriptionText } from "components/PublisherDescriptionText";
 import { uniqueId } from "helpers/uniqueId";
-import { useSinglePublisher } from "hooks/operations/read/readPublisher";
+import { useSinglePublisher } from "hooks";
 import { useParams } from "react-router-dom";
 import { LoadingIndicator } from "components/LoadingIndicator";
 import { mock } from "helpers/mock";
