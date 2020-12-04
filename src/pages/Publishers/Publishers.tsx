@@ -17,7 +17,7 @@ const Publishers: FC = props => {
     } = usePublishers();
 
     if (publishersIsLoading) {
-        return <LoadingIndicator />;
+        return <PublisherBox.ShimmerGrid />;
     }
 
     return (
@@ -35,7 +35,7 @@ const Publishers: FC = props => {
 const renderPublisher = (publisher: Publisher, index: number) => {
     return (
         <Col xl={3} lg={4} md={6} className="mb-3">
-            <PublisherBox
+            <PublisherBox.Component
                 key={uniqueId()}
                 id={uniqueId()}
                 title="ققنوس"

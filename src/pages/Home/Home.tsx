@@ -2,7 +2,6 @@ import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
 import { BooksGrid } from "components/BooksGrid";
-import { LoadingIndicator } from "components/LoadingIndicator";
 /* modules */
 import { useBooks } from "hooks";
 import { mock } from "helpers/mock";

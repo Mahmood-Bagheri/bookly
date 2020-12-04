@@ -5,6 +5,7 @@ import { Col } from "components/Col";
 import { BookCategoryBoxShimmer } from "./BookCategoryBoxShimmer";
 /* helpers */
 import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
+import { SHIMMERS_CONFIG } from "constants/config";
 
 const renderShimmer = () => {
     return (
@@ -18,7 +19,7 @@ export const BookCategoryBoxShimmerGrid = () => {
     return (
         <GenericGrid<ArrayConstructor>
             withRow
-            items={fakeArrayGenerator(12)}
+            items={fakeArrayGenerator(SHIMMERS_CONFIG.categoriesCount)}
             renderItem={renderShimmer}
         />
     );

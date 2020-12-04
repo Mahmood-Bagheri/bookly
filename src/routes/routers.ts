@@ -4,7 +4,6 @@ import { ROUTES } from "constants/routes";
 import Home from "pages/Home";
 import Login from "pages/Login";
 import Register from "pages/Register";
-import ErrorPage from "pages/Error";
 import Book from "pages/Book";
 import Publisher from "pages/Publisher";
 import Publishers from "pages/Publishers";

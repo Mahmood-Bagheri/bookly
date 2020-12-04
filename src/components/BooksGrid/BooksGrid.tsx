@@ -3,7 +3,6 @@ import React, { FunctionComponent } from "react";
 import { BookBox } from "components/BookBox";
 import { GenericGrid } from "components/GenericGrid";
 import { Col } from "components/Col";
-import { BookBoxShimmerGrid } from "components/BookBox";
 /* helpers */
 import { uniqueId } from "helpers/uniqueId";
 import { mock } from "helpers/mock";
@@ -14,7 +13,7 @@ import s from "./BooksGrid.module.scss";
 
 const renderBooks = (book: Book.Base) => (
     <Col xl={3} sm={6} className="mb-3">
-        <BookBox
+        <BookBox.Component
             key={uniqueId()}
             id={book.id}
             title={book.title}
@@ -31,7 +30,7 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     loading,
 }) => {
     if (loading) {
-        return <BookBoxShimmerGrid />;
+        return <BookBox.ShimmerGrid />;
     }
 
     return (

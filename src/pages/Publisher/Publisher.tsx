@@ -25,7 +25,7 @@ const Publisher: FC = props => {
         <Fragment>
             <Row className="mb-3">
                 <Col md={6} lg={3} className="mb-3 ">
-                    <PublisherBox
+                    <PublisherBox.Component
                         id={uniqueId()}
                         imageSrc="https://source.unsplash.com/500x500/?book&sig=8"
                         title="ققنوس"

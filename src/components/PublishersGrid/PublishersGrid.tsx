@@ -22,7 +22,7 @@ export const PublishersGrid: FunctionComponent<PublishersGridComponentProps> = p
 };
 
 const renderPublisher = (item: any) => (
-    <PublisherBox
+    <PublisherBox.Component
         id="123"
         title="ققنوس"
         description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با

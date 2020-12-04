@@ -47,6 +47,6 @@ const book = {
 
 const renderSwiperSlide = (item: unknown) => (
     <SwiperSlide>
-        <BookBox {...book} onDeleteBook={() => {}} />
+        <BookBox.Component {...book} onDeleteBook={() => {}} />
     </SwiperSlide>
 );
