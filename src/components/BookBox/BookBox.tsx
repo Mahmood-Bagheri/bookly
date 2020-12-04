@@ -47,7 +47,11 @@ export const BookBox: React.FC<BookProps> = ({
 
     return (
         <div className={`${s.box} shadow`} {...restProps}>
-            <div className={s.content}>
+            <div
+                className={s.content}
+                id="content"
+                aria-details="contains the header of our bookbox"
+            >
                 <Text
                     ref={titleRef}
                     withTooltip={titleIsOverflowing}
@@ -78,7 +82,11 @@ export const BookBox: React.FC<BookProps> = ({
                 </Link>
             </div>
 
-            <div className={s.actions}>
+            <div
+                className={s.actions}
+                id="actions"
+                aria-details="like and delete button of bookbox"
+            >
                 <LikeButton
                     permission="books.like"
                     data-testid="likeButton"
