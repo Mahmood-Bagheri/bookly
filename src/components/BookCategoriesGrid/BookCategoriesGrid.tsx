@@ -1,6 +1,10 @@
 import React, { FunctionComponent } from "react";
 /* components */
-import { BookCategoryBox } from "components/BookCategoryBox";
+import {
+    BookCategoryBox,
+    BookCategoryBoxShimmer,
+    BookCategoryBoxShimmerGrid,
+} from "components/BookCategoryBox";
 import { GenericGrid } from "components/GenericGrid";
 /* modules */
 import clsx from "classnames";
@@ -13,7 +17,12 @@ import { BookCategoriesGridComponentProps } from "./BookCategoriesGrid.types";
 import s from "./BookCategoriesGrid.module.scss";
 
 export const BookCategoriesGrid: FunctionComponent<BookCategoriesGridComponentProps> = props => {
-    const { className, ...restProps } = props;
+    const { className, loading = false, ...restProps } = props;
+
+    if (loading) {
+        return <BookCategoryBoxShimmerGrid />;
+    }
+
     return (
         <GenericGrid<Category.Base>
             withRow

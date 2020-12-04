@@ -8,7 +8,7 @@ const Categories: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="Categories" />
-            <BookCategoriesGrid />
+            <BookCategoriesGrid loading />
         </Fragment>
     );
 };

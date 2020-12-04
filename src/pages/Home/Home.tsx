@@ -9,13 +9,11 @@ import { mock } from "helpers/mock";
 
 const Home: FC = props => {
     const { isLoading, data } = useBooks();
-    if (isLoading) {
-        return <LoadingIndicator />;
-    }
+
     return (
         <Fragment>
             <DocumentTitle title="homepage" />
-            <BooksGrid books={mock<Book.Base>("books")} loading={false} />
+            <BooksGrid books={mock<Book.Base>("books")} loading={isLoading} />
         </Fragment>
     );
 };
