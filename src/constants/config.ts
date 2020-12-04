@@ -7,4 +7,5 @@ export const SHIMMERS_CONFIG = {
     publisherBoxCount: 12,
     bookBoxCount: 12,
     categoriesCount: 12,
+    commentBoxCount: 3,
 };
