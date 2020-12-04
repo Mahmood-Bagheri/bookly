@@ -72,9 +72,11 @@ export const BookBox: React.FC<BookProps> = ({
                     </Text>
                 </div>
             </div>
-            <Link to={routeTo("book", { bookId })}>
-                <Image className={s.image} src={imageSrc} />
-            </Link>
+            <div className="p-1">
+                <Link to={routeTo("book", { bookId })}>
+                    <Image className={s.image} src={imageSrc} />
+                </Link>
+            </div>
 
             <div className={s.actions}>
                 <LikeButton

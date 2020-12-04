@@ -12,9 +12,8 @@ import { BooksGridComponentProps } from "./BooksGrid.types";
 import s from "./BooksGrid.module.scss";
 
 const renderBooks = (book: Book.Base) => (
-    <Col xl={3} sm={6} className="mb-3">
+    <Col xl={3} sm={6} className="mb-3" key={uniqueId()}>
         <BookBox.Component
-            key={uniqueId()}
             id={book.id}
             title={book.title}
             author={book.author}
@@ -33,11 +32,5 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
         return <BookBox.ShimmerGrid />;
     }
 
-    return (
-        <GenericGrid
-            withRow
-            items={mock<Book.Base>("books", 3)}
-            renderItem={renderBooks}
-        />
-    );
+    return <GenericGrid withRow items={books} renderItem={renderBooks} />;
 };
