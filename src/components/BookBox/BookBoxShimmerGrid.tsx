@@ -15,11 +15,17 @@ const renderShimmer = () => {
     );
 };
 
-export const BookBoxShimmerGrid = () => {
+type Props = {
+    count?: number;
+};
+
+export const BookBoxShimmerGrid = ({
+    count = SHIMMERS_CONFIG.bookBoxCount,
+}: Props) => {
     return (
         <GenericGrid<ArrayConstructor>
             withRow
-            items={fakeArrayGenerator(SHIMMERS_CONFIG.bookBoxCount)}
+            items={fakeArrayGenerator(count)}
             renderItem={renderShimmer}
         />
     );

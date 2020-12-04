@@ -1,0 +1,21 @@
+.box {
+    padding: 10px;
+    background: var(--white);
+    border-radius: 10px;
+}
+
+.title {
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    @extend .shimmer;
+}
+
+.body {
+    height: 250px;
+    margin-top: 10px;
+    border-radius: 10px;
+    @extend .shimmer;
+}
+
+@import "../../assets/styles/utils.scss";

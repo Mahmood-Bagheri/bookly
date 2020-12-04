@@ -5,7 +5,9 @@ import s from "./PublisherBoxShimmer.module.scss";
 export const PublisherBoxShimmer = () => {
     return (
         <div className={clsx(s.box, `shadow`)}>
-            <div className={s.image} />
+            <div className="p-1">
+                <div className={s.image} />
+            </div>
             <div className={s.content}>
                 <div className={s.title} />
                 <div className={s.description} />

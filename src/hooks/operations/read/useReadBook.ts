@@ -14,7 +14,7 @@ export const fakeApiCall = () =>
     new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve();
-        }, 2000);
+        }, 3000);
     });
 export const useSingleBook = (bookId: string) => {
     return useQuery([API_URLS.book, bookId], fakeApiCall);
