@@ -2,13 +2,22 @@ import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
 import { BookCategoriesGrid } from "components/BookCategoriesGrid";
-import { TopBar } from "components/TopBar";
+import { useQuery } from "react-query";
+
+export const apiCall = () =>
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+        }, 2000);
+    });
 
 const Categories: FC = props => {
+    const { isLoading } = useQuery("categories", apiCall);
+
     return (
         <Fragment>
             <DocumentTitle title="Categories" />
-            <BookCategoriesGrid loading />
+            <BookCategoriesGrid loading={isLoading} />
         </Fragment>
     );
 };
