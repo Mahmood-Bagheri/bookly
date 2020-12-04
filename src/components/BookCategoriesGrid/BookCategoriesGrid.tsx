@@ -2,7 +2,6 @@ import React, { FunctionComponent } from "react";
 /* components */
 import {
     BookCategoryBox,
-    BookCategoryBoxShimmer,
     BookCategoryBoxShimmerGrid,
 } from "components/BookCategoryBox";
 import { GenericGrid } from "components/GenericGrid";
