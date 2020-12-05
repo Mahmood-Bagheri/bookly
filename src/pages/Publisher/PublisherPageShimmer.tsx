@@ -16,7 +16,7 @@ export const PublisherPageShimmer = () => {
                     <PublisherDescriptionText.Shimmer />
                 </Col>
             </Row>
-            <BookBox.ShimmerGrid count={3} />
+            <BookBox.ShimmerGrid count={4} />
         </Fragment>
     );
 };

@@ -37,7 +37,7 @@ const Publisher: FC = props => {
                     />
                 </Col>
             </Row>
-            <BooksGrid books={mock<Book.Base>("books")} />
+            <BooksGrid books={mock<Book.Base>("books", 4)} />
         </Fragment>
     );
 };
