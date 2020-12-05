@@ -17,7 +17,7 @@ import Error from "pages/Error";
 type Router = {
     path: string;
     exact: boolean;
-    component: ComponentType;
+    component?: ComponentType;
     props?: object;
     requireAuth: boolean;
     permissionKey: string;
@@ -110,6 +110,13 @@ export const routers: Router[] = [
         requireAuth: false,
         permissionKey: "routes.category",
         withLayout: false,
+    },
+    {
+        path: "/",
+        to: ROUTES.home,
+        requireAuth: false,
+        permissionKey: "routes.home",
+        exact: true,
     },
     {
         path: "*",

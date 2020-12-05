@@ -3,6 +3,7 @@ import { routers } from "./routers";
 import { Redirect, Switch, useLocation } from "react-router-dom";
 import { AuthRoute } from "services/auth/AuthRoute";
 import { Route } from "components/Route";
+import { uniqueId } from "helpers/uniqueId";
 
 const Router = () => {
     const location = useLocation();
@@ -26,25 +27,27 @@ const Router = () => {
             return (
                 <AuthRoute
                     permissionKey={permissionKey}
-                    key={`${path.replace(/\//g, "_")}_${exact && "exact"}`}
+                    key={uniqueId()}
                     path={path}
                     exact={exact}
-                    component={component}
+                    component={component!}
                     authUser={true}
                 />
             );
         }
+
         return (
             <Route
                 permissionKey={permissionKey}
-                key={`${path.replace(/\//g, "_")}_${exact && "exact"}`}
+                key={uniqueId()}
                 path={path}
                 exact={exact}
-                component={component}
+                component={component!}
                 withLayout={withLayout}
             />
         );
     });
+
     return <Switch location={location}>{pages}</Switch>;
 };
 
