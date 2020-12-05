@@ -22,7 +22,7 @@ export const FeedFilterBox: FC<FeedFilterBoxProps> = ({
     const { location } = useHistory();
     const queryText = get(
         qs.parse(location.search, { ignoreQueryPrefix: true }),
-        QS_KEYS.feed
+        QS_KEYS.query
     );
 
     return (

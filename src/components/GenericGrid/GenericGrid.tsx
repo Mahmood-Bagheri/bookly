@@ -8,12 +8,15 @@ interface Props<T> {
     withRow?: boolean;
 }
 
+const defaultFilter = () => true;
+const defaultWithRow = false;
+
 export function GenericGrid<T>(props: Props<T>) {
     const {
         items,
         renderItem,
         filter = defaultFilter,
-        withRow: shouldAddRowTagBeforeGrid = false,
+        withRow: shouldAddRowTagBeforeGrid = defaultWithRow,
     } = props;
 
     const RowPlaceholder = shouldAddRowTagBeforeGrid ? Row : React.Fragment;
@@ -22,4 +25,3 @@ export function GenericGrid<T>(props: Props<T>) {
         <RowPlaceholder>{items.filter(filter).map(renderItem)}</RowPlaceholder>
     );
 }
-const defaultFilter = () => true;

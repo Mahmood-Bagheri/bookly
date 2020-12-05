@@ -5,11 +5,11 @@ import { GenericGrid } from "components/GenericGrid";
 import { Col } from "components/Col";
 /* helpers */
 import { uniqueId } from "helpers/uniqueId";
-import { mock } from "helpers/mock";
+import { useQueryString } from "hooks/useQueryString";
 /* types */
 import { BooksGridComponentProps } from "./BooksGrid.types";
 /* styles */
-import s from "./BooksGrid.module.scss";
+import { checkInclusion } from "helpers/checkInclusion";
 
 const renderBooks = (book: Book.Base) => (
     <Col xl={3} sm={6} className="mb-3" key={uniqueId()}>
@@ -28,9 +28,18 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     books,
     loading,
 }) => {
+    const queryString = useQueryString("query");
+
     if (loading) {
         return <BookBox.ShimmerGrid />;
     }
 
-    return <GenericGrid withRow items={books} renderItem={renderBooks} />;
+    return (
+        <GenericGrid
+            withRow
+            filter={book => checkInclusion(book.title, queryString)}
+            items={books}
+            renderItem={renderBooks}
+        />
+    );
 };

@@ -3,7 +3,7 @@ import React, { FC, Fragment } from "react";
 import { TopBar } from "components/TopBar";
 /* modules */
 /* helpers */
-import { updateQs } from "helpers/updateQs";
+import { updateQs } from "helpers/queryString";
 /* assets */
 /* constants */
 import { QS_KEYS } from "constants/qs";
@@ -15,7 +15,7 @@ export const Layout: FC<LayoutProps> = ({ children, withSearchbar }) => {
     return (
         <Fragment>
             <TopBar
-                onSearch={text => updateQs(QS_KEYS.feed, text)}
+                onSearch={text => updateQs("query", text)}
                 withSearchbar={withSearchbar}
             />
             {children}
