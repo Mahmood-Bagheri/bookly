@@ -1,20 +1,20 @@
-import React, { FC, Fragment, FunctionComponent } from "react";
+import React, { FC, Fragment, useState } from "react";
 /* components */
+import { TopBar } from "components/TopBar";
 /* modules */
-import clsx from "classnames";
+
 /* helpers */
+import { updateQs } from "helpers/updateQs";
 /* assets */
 /* types */
 import { LayoutProps } from "./Layout.types";
 /* styles */
-import s from "./Layout.module.scss";
-import { TopBar } from "components/TopBar";
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
     return (
-        <div>
-            <TopBar />
+        <Fragment>
+            <TopBar onSearch={updateQs} />
             {children}
-        </div>
+        </Fragment>
     );
 };

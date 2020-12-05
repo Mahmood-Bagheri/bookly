@@ -30,7 +30,7 @@ export const routers: Router[] = [
         path: ROUTES.home,
         component: Home,
         exact: true,
-        requireAuth: true,
+        requireAuth: false,
         permissionKey: "routes.home",
     },
     {

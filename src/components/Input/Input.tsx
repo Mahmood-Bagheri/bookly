@@ -24,13 +24,14 @@ export const Input = React.forwardRef<any, InputProps | TextAreaProps>(
                     {...restProps}
                 />
             );
+        } else {
+            return (
+                <AntDesignInput
+                    className={clsx(s.input, className)}
+                    ref={ref}
+                    {...(restProps as InputProps)}
+                />
+            );
         }
-        return (
-            <AntDesignInput
-                className={clsx(s.input, className)}
-                ref={ref}
-                {...(restProps as InputProps)}
-            />
-        );
     }
 );

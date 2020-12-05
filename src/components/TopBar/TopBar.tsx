@@ -18,41 +18,26 @@ import { TopBarComponentProps } from "./TopBar.types";
 /* styles */
 import s from "./TopBar.module.scss";
 import { MainDrawer } from "components/MainDrawer";
+import { FeedFilterBox } from "components/FeedFilterBox";
 
 export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
-    const { className, title, ...restProps } = props;
-
-    const [drawerState, setDrawerState] = useState(false);
-    const [role] = useRecoilState(roleState);
-
-    const openDrawer = () => setDrawerState(true);
-    const closeDrawer = () => setDrawerState(false);
+    const { className, title, onSearch, ...restProps } = props;
 
     return (
         <Fragment>
-            <Row>
-                <Col col={12}>
+            <Row className="align-items-center">
+                <Col col={6}>
+                    <FeedFilterBox.Component onSearch={onSearch} />
+                </Col>
+                <Col col={6}>
                     <div className={clsx(s.topbar, className)} {...restProps}>
                         <div className="d-flex align-items-center justify-content-center">
-                            <AclService permission="drawer.see">
-                                {/* <MenuIcon
-                                    onClick={openDrawer}
-                                    height="30"
-                                    width="30"
-                                    className="ml-5"
-                                /> */}
-                            </AclService>
                             <h1 className={s.title}>{title}</h1>
                         </div>
                         <MenuBar menu={MENU} />
                     </div>
                 </Col>
             </Row>
-            <MainDrawer
-                onClose={closeDrawer}
-                visible={drawerState}
-                closable={false}
-            />
         </Fragment>
     );
 };

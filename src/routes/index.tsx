@@ -10,7 +10,7 @@ const Router = () => {
 
     const pages = routers.map(route => {
         const {
-            component,
+            component: Component,
             exact,
             path,
             requireAuth,
@@ -30,7 +30,7 @@ const Router = () => {
                     key={uniqueId()}
                     path={path}
                     exact={exact}
-                    component={component!}
+                    component={Component!}
                     authUser={true}
                 />
             );
@@ -42,8 +42,8 @@ const Router = () => {
                 key={uniqueId()}
                 path={path}
                 exact={exact}
-                component={component!}
                 withLayout={withLayout}
+                component={Component}
             />
         );
     });

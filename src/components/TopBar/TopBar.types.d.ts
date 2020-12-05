@@ -6,4 +6,6 @@ export type TopBarComponentProps = Omit<
     React.HtmlHTMLAttributes<HTMLDivElement>,
     keyof TopBarProps
 > &
-    TopBarProps;
+    TopBarProps & {
+        onSearch: (text: string) => void;
+    };
