@@ -2,16 +2,22 @@ import React from "react";
 
 // * modules
 import { Redirect } from "react-router-dom";
-import { CustomRouteComponentProps, Route } from "components/Route";
+import { Route } from "components/Route";
 import { FunctionComponent, ComponentType } from "react";
 import { routeTo } from "helpers/routeTo";
 
-type Props = CustomRouteComponentProps & {
+declare type $ElementProps<T> = T extends React.ComponentType<infer Props>
+    ? Props extends object
+        ? Props
+        : never
+    : never;
+
+type AuthRouteProps = $ElementProps<typeof Route> & {
     component: ComponentType;
     authUser: boolean;
 };
 
-export const AuthRoute: FunctionComponent<Props> = ({
+export const AuthRoute: FunctionComponent<AuthRouteProps> = ({
     component: Component,
     authUser,
     ...rest
