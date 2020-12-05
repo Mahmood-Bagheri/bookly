@@ -36,7 +36,14 @@ const API_RESPONSE_MESSAGES = {
             error: "مشکلی در دنبال کردن ناشر پیش آمد!",
         },
     },
-    register: {},
+    register: {
+        error: "مشکلی در ثبت نام پیش آمد!",
+        success: "ثبت نام با موفقیت انجام شد",
+    },
+    login: {
+        error: "نام کاربری یا رمز عبور اشتباه می باشد!",
+        success: "با موفقیت وارد شدید :)",
+    },
 };
 
 export default API_RESPONSE_MESSAGES;
