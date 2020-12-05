@@ -1,9 +1,6 @@
 import React, { FunctionComponent } from "react";
 /* components */
-import {
-    BookCategoryBox,
-    BookCategoryBoxShimmerGrid,
-} from "components/BookCategoryBox";
+import { BookCategoryBox } from "components/BookCategoryBox";
 import { GenericGrid } from "components/GenericGrid";
 /* modules */
 import clsx from "classnames";
@@ -19,13 +16,13 @@ export const BookCategoriesGrid: FunctionComponent<BookCategoriesGridComponentPr
     const { className, loading = false, ...restProps } = props;
 
     if (loading) {
-        return <BookCategoryBoxShimmerGrid />;
+        return <BookCategoryBox.ShimmerGrid />;
     }
 
     return (
         <GenericGrid<Category.Base>
             withRow
-            items={mock("categories")}
+            items={mock("categories", 12)}
             renderItem={renderCategories}
         />
     );
@@ -33,7 +30,7 @@ export const BookCategoriesGrid: FunctionComponent<BookCategoriesGridComponentPr
 
 const renderCategories = (category: Category.Base, index: number) => {
     return (
-        <BookCategoryBox
+        <BookCategoryBox.Component
             key={category.id}
             id={category.id}
             categoryTitle={category.title}
