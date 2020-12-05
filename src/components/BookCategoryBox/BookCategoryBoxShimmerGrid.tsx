@@ -6,6 +6,7 @@ import { BookCategoryBoxShimmer } from "./BookCategoryBoxShimmer";
 /* helpers */
 import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
 import { SHIMMERS_CONFIG } from "constants/config";
+import { uniqueId } from "helpers/uniqueId";
 
 type Props = {
     count?: number;
@@ -25,7 +26,7 @@ export const BookCategoryBoxShimmerGrid = ({
 
 const renderShimmer = () => {
     return (
-        <Col xl={3} sm={6} className="mb-3">
+        <Col xl={3} sm={6} className="mb-3" key={uniqueId()}>
             <BookCategoryBoxShimmer />
         </Col>
     );
