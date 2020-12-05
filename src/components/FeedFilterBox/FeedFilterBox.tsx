@@ -12,6 +12,7 @@ import qs from "qs";
 import { FeedFilterBoxProps } from "./FeedFilterBox.types";
 /* styles */
 import s from "./FeedFilterBox.module.scss";
+import { QS_KEYS } from "constants/qs";
 
 export const FeedFilterBox: FC<FeedFilterBoxProps> = ({
     className,
@@ -21,7 +22,7 @@ export const FeedFilterBox: FC<FeedFilterBoxProps> = ({
     const { location } = useHistory();
     const queryText = get(
         qs.parse(location.search, { ignoreQueryPrefix: true }),
-        "queryText"
+        QS_KEYS.feed
     );
 
     return (

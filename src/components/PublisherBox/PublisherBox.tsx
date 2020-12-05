@@ -42,7 +42,9 @@ export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props
     return (
         <div className={clsx(s.box, `shadow`, className)} {...restProps}>
             <Link to={routeTo("publisher", { publisherId })}>
-                <Image className={s.image} src={imageSrc} />
+                <div className="p-1">
+                    <Image className={s.image} src={imageSrc} />
+                </div>
             </Link>
             <div className={s.content}>
                 <Text className={s.title}>{title}</Text>

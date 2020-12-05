@@ -1,7 +1,7 @@
 import { history } from "./history";
 
-export const updateQs = (queryText: string) => {
+export const updateQs = (key: string, query: string) => {
     history.push({
-        search: `?${new URLSearchParams({ queryText }).toString()}`,
+        search: `?${new URLSearchParams({ [key]: query }).toString()}`,
     });
 };

@@ -11,10 +11,7 @@ export const PublisherBoxShimmer = () => {
             <div className={s.content}>
                 <div className={s.title} />
                 <div className={s.description} />
-                <div
-                    className={s.follow}
-                    data-purpose="button-placeholder"
-                ></div>
+                <div className={clsx(s.follow, "mt-4")}></div>
             </div>
         </div>
     );

@@ -17,7 +17,7 @@
 }
 
 .title {
-    height: 40px;
+    height: 25px;
     width: 80px;
     display: block;
     margin: 0 auto;
@@ -27,7 +27,7 @@
 
 .description {
     margin-top: 10px;
-    height: 80px;
+    height: 25px;
     border-radius: 10px;
     @extend .shimmer;
 }

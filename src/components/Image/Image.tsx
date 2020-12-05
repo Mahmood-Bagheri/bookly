@@ -14,17 +14,10 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import s from "./Image.module.scss";
 
 const defaultAltText = "This image is related to the website :/";
-export const Image: FunctionComponent<LazyLoadImageProps> = ({
+export const Image: FunctionComponent<JSX.IntrinsicElements["img"]> = ({
     className,
     alt = defaultAltText,
     ...restProps
 }) => {
-    return (
-        <LazyLoadImage
-            effect="blur"
-            alt={alt}
-            className={className}
-            {...restProps}
-        />
-    );
+    return <img alt={alt} className={clsx(s.img, className)} {...restProps} />;
 };
