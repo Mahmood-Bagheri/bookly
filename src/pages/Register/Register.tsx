@@ -6,12 +6,12 @@ import { useRegister } from "hooks/operations";
 import { TopBar } from "components/TopBar";
 
 const Register: FC = props => {
-    const [register] = useRegister();
+    const [register, { isLoading: registerLoading }] = useRegister();
 
     return (
         <Fragment>
             <DocumentTitle title="Register" />
-            <RegisterForm onSubmit={register} />
+            <RegisterForm loading={registerLoading} onSubmit={register} />
         </Fragment>
     );
 };

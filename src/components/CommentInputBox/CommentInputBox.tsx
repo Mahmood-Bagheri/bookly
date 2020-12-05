@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 /* components */
 import { Form } from "antd";
-import { Textarea } from "components/Textarea";
+import { Input } from "components/Input";
 import { Button } from "components/Button";
 import { Text } from "components/Text";
 /* modules */
@@ -14,6 +14,7 @@ import { BOOK_COMMENT_VALIDATION_RULES } from "constants/validationRules";
 
 export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> = ({
     onSubmit,
+    loading = false,
 }) => {
     const [form] = Form.useForm();
 
@@ -32,14 +33,19 @@ export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> =
                     name="comment"
                     rules={BOOK_COMMENT_VALIDATION_RULES.comment}
                 >
-                    <Textarea
+                    <Input
                         className="mt-2"
                         rows={7}
                         placeholder="مثلا: من این کتاب رو خیلی دوست دارم :)"
                     />
                 </Form.Item>
 
-                <Button htmlType="submit" className="mt-3" type="primary">
+                <Button
+                    loading={loading}
+                    htmlType="submit"
+                    className="mt-3"
+                    type="primary"
+                >
                     ارسال نظر
                 </Button>
             </Form>

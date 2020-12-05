@@ -19,6 +19,7 @@ import { Password } from "components/Password";
 
 export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
     onSubmit = defaultOnSubmit,
+    loading = false,
 }) => {
     const onFinish = (values: any) => onSubmit(values);
 
@@ -58,10 +59,11 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
 
                         <Form.Item>
                             <Button
+                                className="mt-4"
                                 size="large"
                                 type="primary"
                                 htmlType="submit"
-                                className="mt-4"
+                                loading={loading}
                             >
                                 ثبت نام
                             </Button>

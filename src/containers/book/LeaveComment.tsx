@@ -8,7 +8,10 @@ export const LeaveCommentContainer = () => {
     const { bookId } = useParams<{ bookId: string }>();
 
     /* initiating operations hooks */
-    const [createComment] = useCreateComment();
+    const [
+        createComment,
+        { isLoading: createCommentLoading },
+    ] = useCreateComment();
 
     const handleSubmitComment = (comment: string) => {
         /* create comment api call */
@@ -18,7 +21,10 @@ export const LeaveCommentContainer = () => {
 
     return (
         <AclService permission="comments.create">
-            <CommentInputBox onSubmit={handleSubmitComment} />
+            <CommentInputBox
+                loading={createCommentLoading}
+                onSubmit={handleSubmitComment}
+            />
         </AclService>
     );
 };

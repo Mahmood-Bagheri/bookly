@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HtmlHTMLAttributes } from "react";
+import React from "react";
 /* components */
 import { Input as AntDesignInput } from "antd";
 /* modules */
@@ -6,35 +6,31 @@ import clsx from "classnames";
 /* styles */
 import s from "./Input.module.scss";
 /* types */
-import { InputComponentProps } from "./Input.types";
+import { InputProps, TextAreaProps } from "antd/lib/input";
 
-export const Input = React.forwardRef<any, InputComponentProps>(
+function isPropsForTextareaElement(
+    props: InputProps | TextAreaProps
+): props is TextAreaProps {
+    return "rows" in props;
+}
+
+export const Input = React.forwardRef<any, InputProps | TextAreaProps>(
     ({ className, ...restProps }, ref) => {
+        if (isPropsForTextareaElement(restProps)) {
+            return (
+                <AntDesignInput.TextArea
+                    className={clsx(s.textarea, className)}
+                    ref={ref}
+                    {...restProps}
+                />
+            );
+        }
         return (
             <AntDesignInput
-                ref={ref}
                 className={clsx(s.input, className)}
-                {...restProps}
+                ref={ref}
+                {...(restProps as InputProps)}
             />
         );
     }
 );
-
-/* todo -> make the component general as well */
-type InputProps = JSX.IntrinsicElements["input"];
-type TextareaProps = JSX.IntrinsicElements["textarea"];
-function isPropsForTextareaElement(
-    props: InputProps | TextareaProps
-): props is TextareaProps {
-    return "rows" in props;
-}
-
-export const TextareaInputGeneralComponent = (
-    props: InputProps | TextareaProps
-) => {
-    if (isPropsForTextareaElement(props)) {
-        return <textarea {...props} />;
-    } else {
-        return <input {...props} />;
-    }
-}; // optionally use a custom type guard

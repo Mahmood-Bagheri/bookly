@@ -6,13 +6,14 @@ import { useLogin, LoginMutationVariables } from "hooks/operations";
 import { TopBar } from "components/TopBar";
 
 const Login: FC = props => {
-    const [login] = useLogin();
+    const [login, { isLoading: loginIsLoading }] = useLogin();
 
     return (
         <Fragment>
             <DocumentTitle title="Login" />
 
             <LoginForm
+                loading={loginIsLoading}
                 onSubmit={credentials =>
                     login(credentials as LoginMutationVariables)
                 }

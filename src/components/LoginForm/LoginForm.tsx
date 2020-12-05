@@ -17,9 +17,10 @@ import { LoginFormComponentProps } from "./LoginForm.types";
 /* styles */
 import s from "./LoginForm.module.scss";
 
-export const LoginForm: FunctionComponent<LoginFormComponentProps> = props => {
-    const { onSubmit } = props;
-
+export const LoginForm: FunctionComponent<LoginFormComponentProps> = ({
+    onSubmit,
+    loading = false,
+}) => {
     return (
         <Row className="justify-content-center">
             <Col xl={5}>
@@ -48,6 +49,7 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = props => {
 
                         <Form.Item>
                             <Button
+                                loading={loading}
                                 size="large"
                                 type="primary"
                                 htmlType="submit"
