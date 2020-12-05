@@ -33,7 +33,7 @@ const dataSource: DataSourceType[] = [
         id: uniqueId(),
         name: "مایک",
         username: "Mike",
-        emailAddress: "مایک اسکل زاده ات ساین اوت لوک دات کام",
+        emailAddress: "مایک جک زاده ات ساین اوت لوک دات کام",
     },
 ];
 

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 /* components */
-import { Input } from "components/Input";
+import { Textarea } from "components/Input";
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -14,7 +14,7 @@ export const TextEditor: FunctionComponent<TextEditorComponentProps> = props => 
     const { className, ...restProps } = props;
     return (
         <div className={clsx(s.box, `shadow`, className)}>
-            <Input rows={4} {...restProps} />
+            <Textarea rows={4} {...restProps} />
         </div>
     );
 };

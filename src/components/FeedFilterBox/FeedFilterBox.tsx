@@ -1,8 +1,6 @@
 import React, { FC } from "react";
 /* components */
-import { Row } from "components/Row";
-import { Col } from "components/Col";
-import { Input } from "antd";
+import { Input } from "components/Input";
 /* modules */
 import clsx from "classnames";
 import { useHistory } from "react-router-dom";

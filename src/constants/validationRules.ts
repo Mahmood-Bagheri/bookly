@@ -17,7 +17,7 @@ export const LOGIN_FORM_VALIDATION_RULES: ValidationRuleType = {
     ],
 };
 
-export const REGISTER_FORM_VALIDATION_RULES = {
+export const REGISTER_FORM_VALIDATION_RULES: ValidationRuleType = {
     username: [
         {
             required: true,
@@ -35,6 +35,14 @@ export const REGISTER_FORM_VALIDATION_RULES = {
             required: true,
             message: "تکرار رمز عبور را وارد کنید",
         },
+        ({ getFieldValue }) => ({
+            validator(rule, value) {
+                if (!value || getFieldValue("password") === value) {
+                    return Promise.resolve();
+                }
+                return Promise.reject("تکرار پسورد، با پسورد برابر نیست!");
+            },
+        }),
     ],
 };
 

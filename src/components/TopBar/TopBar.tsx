@@ -17,7 +17,6 @@ import { MENU } from "constants/topbar";
 import { TopBarComponentProps } from "./TopBar.types";
 /* styles */
 import s from "./TopBar.module.scss";
-import { MainDrawer } from "components/MainDrawer";
 import { FeedFilterBox } from "components/FeedFilterBox";
 
 export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
