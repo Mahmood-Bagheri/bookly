@@ -11,8 +11,8 @@ import { SpinnerComponentProps } from "./Spinner.types";
 import s from "./Spinner.module.scss";
 
 export const Spinner: FunctionComponent<SpinnerComponentProps> = ({
-    height = 29,
-    width = 29,
+    height = 24,
+    width = 24,
 }) => {
     return (
         <div

@@ -1,11 +1,7 @@
-export const fakeApiCall = ({
-    responseTime = 3000,
-}: {
-    responseTime: number;
-}) => {
+export const fakeApiCall = <T>(): Promise<T> => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve();
-        }, responseTime);
+        }, 1000);
     });
 };

@@ -22,7 +22,7 @@ const Publishers: FC = props => {
 
     return (
         <Fragment>
-            <DocumentTitle title="Publishers" />
+            <DocumentTitle title="ناشر ها" />
             <GenericGrid<Publisher>
                 withRow
                 items={publishers as any}

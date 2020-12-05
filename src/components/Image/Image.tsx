@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactComponentElement } from "react";
+import React, { FunctionComponent } from "react";
 /* components */
 import {
     LazyLoadImage,
@@ -7,17 +7,25 @@ import {
 /* modules */
 import clsx from "classnames";
 /* types */
-import { ImageComponentProps } from "./Image.types";
-import "react-lazy-load-image-component/src/effects/blur.css";
-
 /* styles */
 import s from "./Image.module.scss";
 
 const defaultAltText = "This image is related to the website :/";
+
 export const Image: FunctionComponent<JSX.IntrinsicElements["img"]> = ({
     className,
     alt = defaultAltText,
+    src,
     ...restProps
 }) => {
-    return <img alt={alt} className={clsx(s.img, className)} {...restProps} />;
+    return (
+        <picture>
+            <img
+                alt={alt}
+                src={src}
+                className={clsx(s.img, className)}
+                {...restProps}
+            />
+        </picture>
+    );
 };

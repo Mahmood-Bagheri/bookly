@@ -12,7 +12,7 @@ const User: FC = props => {
 
     return (
         <Fragment>
-            <DocumentTitle title="User" />
+            <DocumentTitle title="کاربر" />
             <CommentsGrid
                 title={`نظرات داده شده توسط کاربر با آی دی ${userId}`}
                 comments={mock<Comment.Base>("comments")}

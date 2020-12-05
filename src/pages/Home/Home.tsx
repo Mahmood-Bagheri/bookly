@@ -20,7 +20,7 @@ const Home: FC = props => {
 
     return (
         <Fragment>
-            <DocumentTitle title="homepage" />
+            <DocumentTitle title="خانه" />
             <BooksGrid
                 books={mock<Book.Base>("books", 12)}
                 loading={isLoading}

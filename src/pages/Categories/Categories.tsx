@@ -16,7 +16,7 @@ const Categories: FC = props => {
 
     return (
         <Fragment>
-            <DocumentTitle title="Categories" />
+            <DocumentTitle title="دسته بندی ها" />
             <BookCategoriesGrid loading={isLoading} />
         </Fragment>
     );

@@ -3,14 +3,13 @@ import React, { FC, Fragment } from "react";
 import { DocumentTitle } from "components/DocumentTitle";
 import { RegisterForm } from "components/RegisterForm";
 import { useRegister } from "hooks/operations";
-import { TopBar } from "components/TopBar";
 
 const Register: FC = props => {
     const [register, { isLoading: registerLoading }] = useRegister();
 
     return (
         <Fragment>
-            <DocumentTitle title="Register" />
+            <DocumentTitle title="ثبت نام" />
             <RegisterForm loading={registerLoading} onSubmit={register} />
         </Fragment>
     );

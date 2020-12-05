@@ -11,7 +11,7 @@ const fakeApiCall = (): Promise<Book.Query.Result> =>
     new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve([{ id: "Salam" }]);
-        }, 3000);
+        }, 1000);
     });
 
 export const useBooks = () => {

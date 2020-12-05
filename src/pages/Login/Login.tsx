@@ -3,14 +3,13 @@ import React, { FC, Fragment } from "react";
 import { DocumentTitle } from "components/DocumentTitle";
 import { LoginForm } from "components/LoginForm";
 import { useLogin, LoginMutationVariables } from "hooks/operations";
-import { TopBar } from "components/TopBar";
 
 const Login: FC = props => {
     const [login, { isLoading: loginIsLoading }] = useLogin();
 
     return (
         <Fragment>
-            <DocumentTitle title="Login" />
+            <DocumentTitle title="ورود" />
 
             <LoginForm
                 loading={loginIsLoading}

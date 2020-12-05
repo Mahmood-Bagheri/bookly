@@ -5,7 +5,7 @@ import { DocumentTitle } from "components/DocumentTitle";
 const Error: FC = props => {
     return (
         <Fragment>
-            <DocumentTitle title="Error" />
+            <DocumentTitle title="خطا" />
             <div
                 style={{
                     height: "100vh",
