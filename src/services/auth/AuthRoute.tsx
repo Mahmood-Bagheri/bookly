@@ -1,16 +1,13 @@
 import React from "react";
-
-// * modules
-import { Redirect } from "react-router-dom";
+/* modules */
+import { Redirect, RouteComponentProps } from "react-router-dom";
 import { Route } from "components/Route";
 import { FunctionComponent, ComponentType } from "react";
+/* helpers */
 import { routeTo } from "helpers/routeTo";
-
-declare type $ElementProps<T> = T extends React.ComponentType<infer Props>
-    ? Props extends object
-        ? Props
-        : never
-    : never;
+/* types */
+import { $ElementProps } from "types/global";
+import { History } from "history";
 
 type AuthRouteProps = $ElementProps<typeof Route> & {
     component: ComponentType;
@@ -22,21 +19,16 @@ export const AuthRoute: FunctionComponent<AuthRouteProps> = ({
     authUser,
     ...rest
 }) => {
-    return (
-        <Route
-            {...rest}
-            render={props =>
-                authUser ? (
-                    <Component {...(props as any)} />
-                ) : (
-                    <Redirect
-                        to={{
-                            pathname: routeTo("login"),
-                            state: { from: props.location },
-                        }}
-                    />
-                )
-            }
-        />
-    );
+    const UnauthorizedRedirectionConfig: History.LocationDescriptor = {
+        pathname: routeTo("login"),
+        state: { from: rest.location },
+    };
+
+    const renderComponent = (props: RouteComponentProps) => {
+        if (authUser) {
+            return <Component {...props} />;
+        }
+        return <Redirect to={UnauthorizedRedirectionConfig} />;
+    };
+    return <Route {...rest} render={renderComponent} />;
 };
