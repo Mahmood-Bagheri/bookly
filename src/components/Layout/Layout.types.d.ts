@@ -1,6 +1,7 @@
 import { HTMLProps } from "react";
 
-export type LayoutTypes = {};
+export type LayoutTypes = { withSearchbar: boolean };
 
 export type LayoutProps = HTMLProps<HTMLDivElement> &
-    Layout;
+    LayoutTypes &
+    RouteComponentProps;

@@ -9,15 +9,8 @@ const Router = () => {
     const location = useLocation();
 
     const pages = routers.map(route => {
-        const {
-            component: Component,
-            exact,
-            path,
-            requireAuth,
-            permissionKey,
-            to,
-            withLayout = true,
-        } = route;
+        const { component: Component, exact, path, config, to } = route;
+        const { requireAuth, permissionKey, layout } = config;
 
         if (to) {
             return <Redirect from={path} to={to} />;
@@ -26,6 +19,7 @@ const Router = () => {
         if (requireAuth) {
             return (
                 <AuthRoute
+                    withSearchbar={layout.searchbar}
                     permissionKey={permissionKey}
                     key={uniqueId()}
                     path={path}
@@ -38,11 +32,12 @@ const Router = () => {
 
         return (
             <Route
+                withSearchbar={layout.searchbar}
+                withLayout={layout.include}
                 permissionKey={permissionKey}
                 key={uniqueId()}
                 path={path}
                 exact={exact}
-                withLayout={withLayout}
                 component={Component}
             />
         );

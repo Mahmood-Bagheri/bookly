@@ -1,19 +1,23 @@
-import React, { FC, Fragment, useState } from "react";
+import React, { FC, Fragment } from "react";
 /* components */
 import { TopBar } from "components/TopBar";
 /* modules */
-import { QS_KEYS } from "constants/qs";
 /* helpers */
 import { updateQs } from "helpers/updateQs";
 /* assets */
+/* constants */
+import { QS_KEYS } from "constants/qs";
 /* types */
 import { LayoutProps } from "./Layout.types";
 /* styles */
 
-export const Layout: FC<LayoutProps> = ({ children }) => {
+export const Layout: FC<LayoutProps> = ({ children, withSearchbar }) => {
     return (
         <Fragment>
-            <TopBar onSearch={text => updateQs(QS_KEYS.feed, text)} />
+            <TopBar
+                onSearch={text => updateQs(QS_KEYS.feed, text)}
+                withSearchbar={withSearchbar}
+            />
             {children}
         </Fragment>
     );

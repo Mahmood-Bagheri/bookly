@@ -5,33 +5,44 @@ import { Layout } from "components/Layout";
 import {
     Redirect,
     Route as ReactRouterRoute,
+    RouteComponentProps,
     RouteProps,
 } from "react-router-dom";
 import { AclService } from "services/rbac";
 import { useCanPerform } from "hooks/useCanPerform";
 import { routeTo } from "helpers/routeTo";
 /* types */
-type RouteComponentProps = RouteProps & {
+
+export type CustomRouteComponentProps = RouteProps & {
     permissionKey: string;
     withLayout?: boolean;
+    withSearchbar: boolean;
 };
 
-export const Route: FunctionComponent<RouteComponentProps> = ({
+export const Route: FunctionComponent<CustomRouteComponentProps> = ({
     permissionKey,
     withLayout = true,
+    withSearchbar,
     ...restProps
 }) => {
-    const LayoutPlaceholder = withLayout ? Layout : React.Fragment;
     const canPerform = useCanPerform(permissionKey);
 
     if (canPerform) {
+        if (withLayout) {
+            return (
+                <AclService permission={permissionKey}>
+                    <Layout withSearchbar={withSearchbar}>
+                        <ReactRouterRoute {...restProps} />
+                    </Layout>
+                </AclService>
+            );
+        }
         return (
             <AclService permission={permissionKey}>
-                <LayoutPlaceholder>
-                    <ReactRouterRoute {...restProps} />
-                </LayoutPlaceholder>
+                <ReactRouterRoute {...restProps} />
             </AclService>
         );
     }
+
     return <Redirect to={routeTo("home")} />;
 };

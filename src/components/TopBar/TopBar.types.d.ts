@@ -8,4 +8,5 @@ export type TopBarComponentProps = Omit<
 > &
     TopBarProps & {
         onSearch: (text: string) => void;
+        withSearchbar: boolean;
     };

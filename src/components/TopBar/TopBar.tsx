@@ -20,13 +20,15 @@ import s from "./TopBar.module.scss";
 import { FeedFilterBox } from "components/FeedFilterBox";
 
 export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
-    const { className, title, onSearch, ...restProps } = props;
+    const { className, title, onSearch, withSearchbar, ...restProps } = props;
 
     return (
         <Fragment>
             <Row className="align-items-center">
                 <Col col={6}>
-                    <FeedFilterBox.Component onSearch={onSearch} />
+                    {withSearchbar && (
+                        <FeedFilterBox.Component onSearch={onSearch} />
+                    )}
                 </Col>
                 <Col col={6}>
                     <div className={clsx(s.topbar, className)} {...restProps}>

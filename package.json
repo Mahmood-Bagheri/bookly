@@ -46,6 +46,7 @@
     "eject": "react-app-rewired eject",
     "format": "prettier --write src",
     "start:docs": "cd docs && yarn start",
+    "check":"yarn install --check-files",
     "generate": "plop"
   },
   "eslintConfig": {
