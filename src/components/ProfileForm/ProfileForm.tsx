@@ -47,18 +47,11 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                         </Form.Item>
 
                         <Form.Item
-                            label="نام کاربری"
+                            label="فیلد شماره یک"
                             name="username"
                             rules={PROFILE_FORM_RULES.password}
                         >
                             <Input disabled={true} />
-                        </Form.Item>
-                        <Form.Item
-                            label="تکرار رمز عبور"
-                            name="confirmPassword"
-                            rules={PROFILE_FORM_RULES.confirmPassword}
-                        >
-                            <Password />
                         </Form.Item>
                     </Col>
                     <Col md={6} className="d-flex flex-column">
@@ -86,7 +79,7 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                                 htmlType="submit"
                                 loading={loading}
                             >
-                                ثبت نام
+                                به روزرسانی پروفایل
                             </Button>
                         </Form.Item>
                     </Col>
