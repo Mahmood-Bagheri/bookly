@@ -16,7 +16,7 @@ export const MenuBarItem: FunctionComponent<MenuBarItemComponentProps> = props =
         permission,
         title,
         link,
-        exact = true,
+        exact = false,
         ...restProps
     } = props;
     return (
