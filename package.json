@@ -17,6 +17,7 @@
     "@types/react-helmet": "6.1.0",
     "@types/react-lazy-load-image-component": "1.5.1",
     "@types/react-router-dom": "^5.1.6",
+    "@types/recompose": "0.30.7",
     "antd": "4.8.0",
     "axios": "^0.21.0",
     "bootstrap": "4.5.3",
@@ -33,6 +34,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "recoil": "^0.1.1",
+    "recompose": "0.30.0",
     "sass": "1.28.0",
     "swiper": "6.3.5",
     "typescript": "^4.0.3",
@@ -46,7 +48,7 @@
     "eject": "react-app-rewired eject",
     "format": "prettier --write src",
     "start:docs": "cd docs && yarn start",
-    "check":"yarn install --check-files",
+    "check": "yarn install --check-files",
     "generate": "plop"
   },
   "eslintConfig": {

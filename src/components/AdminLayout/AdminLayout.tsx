@@ -11,5 +11,6 @@ import s from "./AdminLayout.module.scss";
 
 export const AdminLayout: FunctionComponent<AdminLayoutComponentProps> = props => {
     const { className, ...restProps } = props;
+
     return <div className={clsx(s.box, className)}></div>;
 };
