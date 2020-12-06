@@ -6,6 +6,7 @@ export const ROUTES = {
     publishers: "/publishers",
     publisher: "/publishers/:publisherId",
     profile: "/profile",
+    profileLikedBooks: "/profile/liked",
     users: "/users",
     user: "/users/:userId",
     categories: "/categories",

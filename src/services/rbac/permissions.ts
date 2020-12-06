@@ -11,7 +11,11 @@ export const permissions = {
             users: true,
             user: true,
             book: true,
-            profile: true,
+            profile: {
+                main: true,
+                likedBooks: true,
+            },
+
             error: true,
         },
         drawer: {

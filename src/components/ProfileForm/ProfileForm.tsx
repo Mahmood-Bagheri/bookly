@@ -15,6 +15,7 @@ import { Password } from "components/Password";
 import { Button } from "components/Button";
 import { Col } from "components/Col";
 import { Row } from "components/Row";
+import { Textarea } from "components/Textarea";
 
 export const ProfileForm: FC<ProfileFormProps> = ({
     className,
@@ -70,18 +71,11 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                         </Form.Item>
 
                         <Form.Item
-                            label="رمز عبور"
-                            name="password"
-                            rules={PROFILE_FORM_RULES.password}
+                            label="بیوگرافی"
+                            name="biography"
+                            rules={PROFILE_FORM_RULES.biography}
                         >
-                            <Password />
-                        </Form.Item>
-                        <Form.Item
-                            label="تکرار رمز عبور"
-                            name="confirmPassword"
-                            rules={PROFILE_FORM_RULES.confirmPassword}
-                        >
-                            <Password />
+                            <Textarea rows={5} />
                         </Form.Item>
 
                         <Form.Item className="align-self-end">

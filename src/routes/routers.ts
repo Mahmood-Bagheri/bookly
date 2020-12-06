@@ -13,6 +13,7 @@ import User from "pages/User";
 import Categories from "pages/Categories";
 import Category from "pages/Category";
 import Error from "pages/Error";
+import ProfileLikledBooks from "pages/UserProfileLikedBooks";
 
 type Router = {
     path: string;
@@ -97,7 +98,17 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: true,
-            permissionKey: "routes.profile",
+            permissionKey: "routes.profile.main",
+            layout: { include: true, searchbar: false },
+        },
+    },
+    {
+        path: ROUTES.profileLikedBooks,
+        component: ProfileLikledBooks,
+        exact: true,
+        config: {
+            requireAuth: true,
+            permissionKey: "routes.profile.likedBooks",
             layout: { include: true, searchbar: false },
         },
     },

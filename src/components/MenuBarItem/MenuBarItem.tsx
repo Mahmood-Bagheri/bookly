@@ -11,12 +11,19 @@ import { MenuBarItemComponentProps } from "./MenuBarItem.types";
 import s from "./MenuBarItem.module.scss";
 
 export const MenuBarItem: FunctionComponent<MenuBarItemComponentProps> = props => {
-    const { className, permission, title, link, ...restProps } = props;
+    const {
+        className,
+        permission,
+        title,
+        link,
+        exact = true,
+        ...restProps
+    } = props;
     return (
         <span className={clsx(s.menuItem, className)} {...restProps}>
             <Link<RouterLinkProps>
                 permission={permission}
-                exact
+                exact={exact}
                 activeClassName={s.activeMenuItem}
                 to={link}
             >
