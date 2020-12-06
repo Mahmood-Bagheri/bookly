@@ -11,7 +11,6 @@ import { CommentInputBoxComponentProps } from "./CommentInputBox.types";
 /* styles */
 import s from "./CommentInputBox.module.scss";
 import { BOOK_COMMENT_VALIDATION_RULES } from "constants/validationRules";
-import { Textarea } from "components/Textarea";
 
 export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> = ({
     onSubmit,
@@ -34,7 +33,7 @@ export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> =
                     name="comment"
                     rules={BOOK_COMMENT_VALIDATION_RULES.comment}
                 >
-                    <Textarea
+                    <Input.Textarea
                         className="mt-2"
                         rows={7}
                         placeholder="مثلا: من این کتاب رو خیلی دوست دارم :)"

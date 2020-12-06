@@ -1,6 +1,9 @@
 import * as React from "react";
 import { NavLink, NavLinkProps } from "react-router-dom";
 import { AclService } from "services/rbac";
+import { propsSeprator as isPropsForRouterLink } from "helpers/propsSeprator";
+
+// todo -> checkout why the intellisense not working ?
 
 type LinkProps = {
     permission: string;
@@ -8,17 +11,10 @@ type LinkProps = {
 export type AnchorProps = JSX.IntrinsicElements["a"];
 export type RouterLinkProps = Omit<NavLinkProps, "href"> & LinkProps;
 
-function isPropsForRouterLink(
-    props: AnchorProps | RouterLinkProps
-): props is RouterLinkProps {
-    return "permission" in props;
-}
-
-// todo -> why the intellisense not working ?! maybe a type mismatch ...
 export const Link = <T extends {}>(
     props: T extends RouterLinkProps ? RouterLinkProps & LinkProps : AnchorProps
 ) => {
-    if (isPropsForRouterLink(props)) {
+    if (isPropsForRouterLink<RouterLinkProps, AnchorProps>(props, "to")) {
         return (
             <AclService permission={props.permission}>
                 <NavLink {...(props as RouterLinkProps)} />

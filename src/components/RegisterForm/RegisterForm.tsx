@@ -15,7 +15,6 @@ import { REGISTER_FORM_VALIDATION_RULES } from "constants/validationRules";
 import { RegisterFormComponentProps } from "./RegisterForm.types";
 /* styles */
 import s from "./RegisterForm.module.scss";
-import { Password } from "components/Password";
 
 export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
     onSubmit = defaultOnSubmit,
@@ -37,7 +36,7 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
                             name="username"
                             rules={REGISTER_FORM_VALIDATION_RULES.username}
                         >
-                            <Input />
+                            <Input.Text />
                         </Form.Item>
 
                         <Form.Item
@@ -45,7 +44,7 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
                             name="password"
                             rules={REGISTER_FORM_VALIDATION_RULES.password}
                         >
-                            <Password />
+                            <Input.Password />
                         </Form.Item>
                         <Form.Item
                             label="تکرار رمز عبور"
@@ -54,7 +53,7 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
                                 REGISTER_FORM_VALIDATION_RULES.confirmPassword
                             }
                         >
-                            <Password />
+                            <Input.Password />
                         </Form.Item>
 
                         <Form.Item>

@@ -36,7 +36,7 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = ({
                             name="username"
                             rules={LOGIN_FORM_VALIDATION_RULES.username}
                         >
-                            <Input />
+                            <Input.Text />
                         </Form.Item>
 
                         <Form.Item
@@ -44,7 +44,7 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = ({
                             name="password"
                             rules={LOGIN_FORM_VALIDATION_RULES.password}
                         >
-                            <Password />
+                            <Input.Password />
                         </Form.Item>
 
                         <Form.Item>

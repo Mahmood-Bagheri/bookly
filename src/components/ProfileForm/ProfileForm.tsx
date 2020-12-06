@@ -5,7 +5,6 @@ import { Input } from "components/Input";
 import { Button } from "components/Button";
 import { Col } from "components/Col";
 import { Row } from "components/Row";
-import { Textarea } from "components/Textarea";
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -42,7 +41,7 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                             name="name"
                             rules={PROFILE_FORM_RULES.name}
                         >
-                            <Input tabIndex={1} />
+                            <Input.Text tabIndex={1} />
                         </Form.Item>
 
                         <Form.Item
@@ -50,7 +49,7 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                             name="username"
                             rules={PROFILE_FORM_RULES.password}
                         >
-                            <Input disabled={true} tabIndex={3} />
+                            <Input.Text disabled={true} tabIndex={3} />
                         </Form.Item>
                     </Col>
                     <Col md={6} className="d-flex flex-column">
@@ -59,7 +58,7 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                             name="username"
                             rules={PROFILE_FORM_RULES.name}
                         >
-                            <Input tabIndex={2} />
+                            <Input.Text tabIndex={2} />
                         </Form.Item>
 
                         <Form.Item
@@ -67,7 +66,7 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                             name="biography"
                             rules={PROFILE_FORM_RULES.biography}
                         >
-                            <Textarea rows={5} />
+                            <Input.Textarea rows={5} />
                         </Form.Item>
 
                         <Form.Item className="align-self-end">

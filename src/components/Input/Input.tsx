@@ -1,5 +1,4 @@
 import * as React from "react";
-import { ElementRef, FC, forwardRef, RefObject, useRef } from "react";
 /* components */
 import { Input as AntDesignInput } from "antd";
 /* modules */
@@ -7,45 +6,33 @@ import clsx from "classnames";
 /* styles */
 import s from "./Input.module.scss";
 /* types */
-import { InputProps, TextAreaProps } from "antd/lib/input";
+import { InputProps, PasswordProps, TextAreaProps } from "antd/lib/input";
 
-function isPropsForTextareaElement(
-    props: InputProps | TextAreaProps
-): props is TextAreaProps {
-    return "rows" in props;
-}
+// todo -> generalize this file
 
-// export const Input = React.forwardRef<any, InputProps | TextAreaProps>(
-//     ({ className, ...restProps }, ref) => {
-//         if (isPropsForTextareaElement(restProps)) {
-//             return (
-//                 <AntDesignInput.TextArea
-//                     className={clsx(s.textarea, className)}
-//                     ref={ref}
-//                     {...restProps}
-//                 />
-//             );
-//         } else {
-//             return (
-//                 <AntDesignInput
-//                     className={clsx(s.input, className)}
-//                     ref={ref}
-//                     {...restProps}
-//                 />
-//             );
-//         }
-//     }
-// );
-
-export const Input: FC<InputProps> = props => {
+export const Text = React.forwardRef<any, InputProps>((props, ref) => {
     return (
-        <AntDesignInput className={clsx(s.input, props.className)} {...props} />
+        <AntDesignInput
+            ref={ref}
+            className={clsx(s.input, props.className)}
+            {...props}
+        />
     );
-};
+});
 
-export const Textarea = forwardRef<any, TextAreaProps>((props, ref) => {
+export const Textarea = React.forwardRef<any, TextAreaProps>((props, ref) => {
     return (
         <AntDesignInput.TextArea
+            className={clsx(s.textarea, props.className)}
+            ref={ref}
+            {...props}
+        />
+    );
+});
+
+export const Password = React.forwardRef<any, PasswordProps>((props, ref) => {
+    return (
+        <AntDesignInput.Password
             className={clsx(s.textarea, props.className)}
             ref={ref}
             {...props}
