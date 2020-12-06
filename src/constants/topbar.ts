@@ -25,6 +25,11 @@ export const MENU: MenuItem[] = [
         permission: "routes.users",
     },
     {
+        title: "پروفایل",
+        link: routeTo("profile"),
+        permission: "routes.profile",
+    },
+    {
         title: "خانه",
         link: routeTo("home"),
         permission: "routes.home",

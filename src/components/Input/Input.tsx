@@ -39,10 +39,7 @@ function isPropsForTextareaElement(
 
 export const Input: FC<InputProps> = props => {
     return (
-        <AntDesignInput
-            className={clsx(s.customInput, props.className)}
-            {...props}
-        />
+        <AntDesignInput className={clsx(s.input, props.className)} {...props} />
     );
 };
 

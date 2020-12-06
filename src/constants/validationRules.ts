@@ -54,3 +54,6 @@ export const BOOK_COMMENT_VALIDATION_RULES: ValidationRuleType = {
         },
     ],
 };
+export const PROFILE_FORM_RULES: ValidationRuleType = {
+    name: [{ required: true }],
+};

@@ -4,17 +4,17 @@ import { Table } from "components/Table";
 import { Button } from "components/Button";
 import { PopConfirm } from "components/PopConfirm";
 import { ColumnsType } from "antd/lib/table";
+import { Link, RouterLinkProps } from "components/Link";
 /* modules */
 import clsx from "classnames";
 /* helpers */
+import { routeTo } from "helpers/routeTo";
 import { uniqueId } from "helpers/uniqueId";
 /* assets */
 /* types */
 import { UsersTableComponentProps } from "./UsersTable.types";
 /* styles */
 import s from "./UsersTable.module.scss";
-import { Link, RouterLinkProps } from "components/Link";
-import { routeTo } from "helpers/routeTo";
 
 type DataSourceType = {
     id: string;
