@@ -1,6 +1,4 @@
-export function propsSeprator<T, P>(
+export const propsSeprator = <T, P>(
     props: T | P,
     seprator: keyof T
-): props is T {
-    return seprator in props;
-}
+): props is T => seprator in props;

@@ -20,9 +20,8 @@ export const Link = <T extends {}>(
                 <NavLink {...(props as RouterLinkProps)} />
             </AclService>
         );
-    } else {
-        return <a {...(props as AnchorProps)} />;
     }
+    return <a {...(props as AnchorProps)} />;
 };
 
 // const Usage = () => {
