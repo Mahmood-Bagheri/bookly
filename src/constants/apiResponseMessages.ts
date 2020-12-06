@@ -44,6 +44,12 @@ const API_RESPONSE_MESSAGES = {
         error: "نام کاربری یا رمز عبور اشتباه می باشد!",
         success: "با موفقیت وارد شدید :)",
     },
+    profile: {
+        update: {
+            success: "پروفایل با موفقیت به روز رسانی شد",
+            error: "مشکلی در به روزرسانی پروفایل پیش آمد!",
+        },
+    },
 };
 
 export default API_RESPONSE_MESSAGES;

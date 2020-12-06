@@ -9,6 +9,7 @@ const API_URLS = {
     publisher: "/publisher",
     followPublisher: "/publisher/follow",
     category: "/category",
+    profile: "/profile",
 };
 
 export default API_URLS;

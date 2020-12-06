@@ -4,7 +4,7 @@ import { ENV_CONFIG } from "constants/config";
 export const applyLogger = (instance: AxiosInstance) => {
     // Add a response interceptor
 
-    if (!ENV_CONFIG.isProd) {
+    if (ENV_CONFIG.isProd) {
         return instance;
     }
     return instance.interceptors.response.use(
