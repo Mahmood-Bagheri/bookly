@@ -1,6 +1,11 @@
 import React, { FC } from "react";
 /* components */
 import { Form } from "antd";
+import { Input } from "components/Input";
+import { Button } from "components/Button";
+import { Col } from "components/Col";
+import { Row } from "components/Row";
+import { Textarea } from "components/Textarea";
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -10,12 +15,6 @@ import { ProfileFormProps } from "./ProfileForm.types";
 /* styles */
 import s from "./ProfileForm.module.scss";
 import { PROFILE_FORM_RULES } from "constants/validationRules";
-import { Input } from "components/Input";
-import { Password } from "components/Password";
-import { Button } from "components/Button";
-import { Col } from "components/Col";
-import { Row } from "components/Row";
-import { Textarea } from "components/Textarea";
 
 export const ProfileForm: FC<ProfileFormProps> = ({
     className,
@@ -43,7 +42,7 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                             name="name"
                             rules={PROFILE_FORM_RULES.name}
                         >
-                            <Input />
+                            <Input tabIndex={1} />
                         </Form.Item>
 
                         <Form.Item
@@ -51,7 +50,7 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                             name="username"
                             rules={PROFILE_FORM_RULES.password}
                         >
-                            <Input disabled={true} />
+                            <Input disabled={true} tabIndex={3} />
                         </Form.Item>
                     </Col>
                     <Col md={6} className="d-flex flex-column">
@@ -60,7 +59,7 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                             name="username"
                             rules={PROFILE_FORM_RULES.name}
                         >
-                            <Input />
+                            <Input tabIndex={2} />
                         </Form.Item>
 
                         <Form.Item
@@ -74,8 +73,8 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                         <Form.Item className="align-self-end">
                             <Button
                                 className="mt-4 align-self-end"
-                                size="large"
-                                type="primary"
+                                size="middle"
+                                type="dashed"
                                 htmlType="submit"
                                 loading={loading}
                             >
