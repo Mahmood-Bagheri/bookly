@@ -2,6 +2,8 @@ import React, { FunctionComponent } from "react";
 /* components */
 import { Col } from "components/Col";
 import { Text } from "components/Text";
+import { Link, RouterLinkProps } from "components/Link";
+
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -9,7 +11,6 @@ import clsx from "classnames";
 import { BookCategoryBoxComponentProps } from "./BookCategoryBox.types";
 /* styles */
 import s from "./BookCategoryBox.module.scss";
-import { Link } from "react-router-dom";
 import { routeTo } from "helpers/routeTo";
 import { uniqueId } from "helpers/uniqueId";
 
@@ -18,7 +19,10 @@ export const BookCategoryBox: FunctionComponent<BookCategoryBoxComponentProps> =
 
     return (
         <Col xl={3} sm={6} className="mb-3">
-            <Link to={routeTo("category", { categoryId })}>
+            <Link<RouterLinkProps>
+                permission="routes.category"
+                to={routeTo("category", { categoryId })}
+            >
                 <div
                     className={clsx(s.box, `shadow`, className)}
                     {...restProps}

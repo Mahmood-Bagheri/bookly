@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 /* components */
 /* modules */
-import { Link } from "components/Link";
+import { Link, RouterLinkProps } from "components/Link";
 import clsx from "classnames";
 /* helpers */
 /* assets */
@@ -14,7 +14,7 @@ export const MenuBarItem: FunctionComponent<MenuBarItemComponentProps> = props =
     const { className, permission, title, link, ...restProps } = props;
     return (
         <span className={clsx(s.menuItem, className)} {...restProps}>
-            <Link
+            <Link<RouterLinkProps>
                 permission={permission}
                 exact
                 activeClassName={s.activeMenuItem}

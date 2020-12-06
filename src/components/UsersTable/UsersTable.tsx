@@ -13,7 +13,7 @@ import { uniqueId } from "helpers/uniqueId";
 import { UsersTableComponentProps } from "./UsersTable.types";
 /* styles */
 import s from "./UsersTable.module.scss";
-import { Link } from "react-router-dom";
+import { Link, RouterLinkProps } from "components/Link";
 import { routeTo } from "helpers/routeTo";
 
 type DataSourceType = {
@@ -62,7 +62,10 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             key: "x",
             render: (row: DataSourceType) => (
                 <Fragment>
-                    <Link to={routeTo("user", { userId: row.id })}>
+                    <Link<RouterLinkProps>
+                        permission="routes.user"
+                        to={routeTo("user", { userId: row.id })}
+                    >
                         <Button className="ml-2" type="primary">
                             نمایش اطلاعات بیشتر!
                         </Button>

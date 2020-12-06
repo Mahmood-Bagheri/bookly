@@ -1,4 +1,5 @@
-import React, { FC, forwardRef, RefObject } from "react";
+import * as React from "react";
+import { ElementRef, FC, forwardRef, RefObject, useRef } from "react";
 /* components */
 import { Input as AntDesignInput } from "antd";
 /* modules */

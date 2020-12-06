@@ -5,7 +5,7 @@ import { Button } from "components/Button";
 import { Text } from "components/Text";
 /* modules */
 import clsx from "classnames";
-import { Link } from "react-router-dom";
+import { Link, RouterLinkProps } from "components/Link";
 /* helpers */
 import { conditionalText } from "helpers/conditionalText";
 import { routeTo } from "helpers/routeTo";
@@ -41,7 +41,10 @@ export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props
 
     return (
         <div className={clsx(s.box, `shadow`, className)} {...restProps}>
-            <Link to={routeTo("publisher", { publisherId })}>
+            <Link<RouterLinkProps>
+                permission="routes.publisher"
+                to={routeTo("publisher", { publisherId })}
+            >
                 <div className="p-1">
                     <Image className={s.image} src={imageSrc} />
                 </div>

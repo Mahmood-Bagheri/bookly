@@ -5,10 +5,9 @@ import { Image } from "components/Image";
 import { DeleteButton } from "components/DeleteButton";
 import { Text } from "components/Text";
 /* modules */
-import { Link } from "react-router-dom";
+import { Link, RouterLinkProps } from "components/Link";
 import { routeTo } from "helpers/routeTo";
 import { useDeleteBook, useLikeBook } from "hooks/operations";
-import { useBooleanState } from "hooks/useBooleanState";
 import { useOverflow } from "hooks/useOverflow";
 /* assets */
 /* types */
@@ -77,7 +76,10 @@ export const BookBox: React.FC<BookProps> = ({
                 </div>
             </div>
             <div className="p-1">
-                <Link to={routeTo("book", { bookId })}>
+                <Link<RouterLinkProps>
+                    permission="routes.book"
+                    to={routeTo("book", { bookId })}
+                >
                     <Image className={s.image} src={imageSrc} />
                 </Link>
             </div>
