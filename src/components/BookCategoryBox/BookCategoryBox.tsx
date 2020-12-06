@@ -6,13 +6,13 @@ import { Link, RouterLinkProps } from "components/Link";
 
 /* modules */
 import clsx from "classnames";
+import { uniqueId } from "helpers/uniqueId";
 /* helpers */
 /* types */
 import { BookCategoryBoxComponentProps } from "./BookCategoryBox.types";
 /* styles */
 import s from "./BookCategoryBox.module.scss";
 import { routeTo } from "helpers/routeTo";
-import { uniqueId } from "helpers/uniqueId";
 
 export const BookCategoryBox: FunctionComponent<BookCategoryBoxComponentProps> = props => {
     const { className, id: categoryId, categoryTitle, ...restProps } = props;
