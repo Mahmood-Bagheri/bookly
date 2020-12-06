@@ -1,2 +1,2 @@
-export * from './ProfileForm'
-export * from './ProfileForm.types.d'
+export * from "./ProfileForm";
+export * from "./ProfileForm.types.d";

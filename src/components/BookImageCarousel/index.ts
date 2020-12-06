@@ -1,2 +1,2 @@
-export * from './BookImageCarousel'
-export * from './BookImageCarousel.types.d'
+export * from "./BookImageCarousel";
+export * from "./BookImageCarousel.types.d";
