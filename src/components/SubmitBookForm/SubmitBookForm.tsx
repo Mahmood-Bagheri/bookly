@@ -60,9 +60,13 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
             >
                 <Row>
                     <Col lg={6}>
-                        {/* <Form.Item name="image" label="عکس کتاب">
+                        <Form.Item
+                            name="image"
+                            label="عکس کتاب"
+                            valuePropName="file"
+                        >
                             <UploadDropbox {...dropBoxConfig} />
-                        </Form.Item> */}
+                        </Form.Item>
 
                         <Form.Item name="tag" label="دسته بندی">
                             <Select<string> options={categoryOptions} />
