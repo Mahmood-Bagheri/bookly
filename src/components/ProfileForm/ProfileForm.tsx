@@ -72,9 +72,9 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                         <Form.Item className="align-self-end">
                             <Button
                                 className="mt-4 align-self-end"
-                                size="middle"
-                                type="dashed"
                                 htmlType="submit"
+                                type="primary"
+                                size="large"
                                 loading={loading}
                             >
                                 به روزرسانی پروفایل
