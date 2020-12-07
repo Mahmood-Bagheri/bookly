@@ -14,7 +14,6 @@ import { uniqueId } from "helpers/uniqueId";
 /* types */
 import { UsersTableComponentProps } from "./UsersTable.types";
 /* styles */
-import s from "./UsersTable.module.scss";
 
 type DataSourceType = {
     id: string;
@@ -45,6 +44,18 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             title: "نام",
             dataIndex: "name",
             key: "name",
+            render: (name, record) => {
+                return (
+                    <Link<RouterLinkProps>
+                        permission="routes.user"
+                        to={routeTo("publicUserProfile", {
+                            userId: record.id || 0,
+                        })}
+                    >
+                        {name}
+                    </Link>
+                );
+            },
         },
         {
             title: "نام کاربری",
@@ -60,19 +71,11 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             title: "عملیات",
             dataIndex: "",
             key: "x",
-            render: (row: DataSourceType) => (
+            render: (_, record) => (
                 <Fragment>
-                    <Link<RouterLinkProps>
-                        permission="routes.user"
-                        to={routeTo("publicUserProfile", { userId: row.id })}
-                    >
-                        <Button className="ml-2" type="primary">
-                            نمایش اطلاعات بیشتر!
-                        </Button>
-                    </Link>
                     <PopConfirm
                         title="برای حذف این کاربر مطمئن هستید ؟ "
-                        onConfirm={() => onDeleteUser({ userId: row.id })}
+                        onConfirm={() => onDeleteUser({ userId: record.id })}
                     >
                         <Button danger>حذف کاربر</Button>
                     </PopConfirm>
