@@ -15,6 +15,7 @@ import Category from "pages/Category";
 import Error from "pages/Error";
 import ProfileLikledBooks from "pages/UserProfileLikedBooks";
 import PublicUserProfile from "pages/PublicUserProfile";
+import SubmitBook from "pages/SubmitBook";
 
 type Router = {
     path: string;
@@ -162,6 +163,16 @@ export const routers: Router[] = [
             requireAuth: false,
             permissionKey: "routes.category",
             layout: { include: true, searchbar: true },
+        },
+    },
+    {
+        path: ROUTES.submitBook,
+        component: SubmitBook,
+        exact: true,
+        config: {
+            requireAuth: false,
+            permissionKey: "routes.submitBook",
+            layout: { include: true, searchbar: false },
         },
     },
     {

@@ -16,7 +16,7 @@ export const permissions = {
                 likedBooks: true,
                 publicUser: true,
             },
-
+            submitBook: true,
             error: true,
         },
         drawer: {
