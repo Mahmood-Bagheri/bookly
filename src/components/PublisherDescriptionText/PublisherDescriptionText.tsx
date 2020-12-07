@@ -12,9 +12,10 @@ import s from "./PublisherDescriptionText.module.scss";
 export const PublisherDescriptionText: FunctionComponent<PublisherDescriptionTextComponentProps> = ({
     title,
     description,
+    className,
 }) => {
     return (
-        <div className={clsx(s.box, `shadow`)}>
+        <div className={clsx(s.box, `shadow`, className)}>
             <p className={s.title}>{title}</p>
             <p className={s.body}>{description}</p>
         </div>

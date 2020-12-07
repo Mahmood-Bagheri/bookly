@@ -3,4 +3,5 @@ export type PublisherDescriptionTextProps = {
     description: string;
 };
 
-export type PublisherDescriptionTextComponentProps = PublisherDescriptionTextProps;
+export type PublisherDescriptionTextComponentProps = PublisherDescriptionTextProps &
+    HTMLProps<HTMLDivElement>;

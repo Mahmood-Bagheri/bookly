@@ -4,7 +4,7 @@ import s from "./PublisherDescriptionTextShimmer.module.scss";
 
 export const PublisherDescriptionTextShimmer = () => {
     return (
-        <div className={clsx(s.box, `shadow`)}>
+        <div className={clsx(s.box, `shadow mb-3`)}>
             <div className={s.title}></div>
             <p className={s.body} />
         </div>
