@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 /* components */
 import { Input } from "components/Input";
 /* modules */
@@ -6,7 +6,6 @@ import clsx from "classnames";
 import { useQueryString } from "hooks/useQueryString";
 /* helpers */
 /* constants */
-import { QS_KEYS } from "constants/qs";
 /* assets */
 /* types */
 import { FeedFilterBoxProps } from "./FeedFilterBox.types";
@@ -23,8 +22,8 @@ export const FeedFilterBox: FC<FeedFilterBoxProps> = ({
     return (
         <div className={clsx(s.box, "mb-3", className)}>
             <Input.Text
-                defaultValue={query}
                 placeholder="جست و جو"
+                defaultValue={query}
                 onKeyDown={e => {
                     if (e.key === "Enter") {
                         onSearch(e.currentTarget.value);

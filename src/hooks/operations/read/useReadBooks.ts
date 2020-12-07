@@ -7,16 +7,9 @@ export const readBooks = async () => {
     return data;
 };
 
-const fakeApiCall = (): Promise<Book.Query.Result> =>
-    new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve([{ id: "Salam" }]);
-        }, 1000);
-    });
-
 export const useBooks = () => {
     return useQuery<Book.Query.Result, ApiServiceError>(
         API_URLS.book,
-        fakeApiCall
+        readBooks
     );
 };

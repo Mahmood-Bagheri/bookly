@@ -11,19 +11,6 @@ import { BooksGridComponentProps } from "./BooksGrid.types";
 /* styles */
 import { checkInclusion } from "helpers/checkInclusion";
 
-const renderBooks = (book: Book.Base) => (
-    <Col xl={3} sm={6} className="mb-3" key={uniqueId()}>
-        <BookBox.Component
-            id={book.id}
-            title={book.title}
-            author={book.author}
-            imageSrc={book.imageSrc}
-            initialLikeState={book.initialLikeState}
-            onDeleteBook={bookId => console.log(bookId)}
-        />
-    </Col>
-);
-
 export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     books,
     loading,
@@ -43,3 +30,16 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
         />
     );
 };
+
+const renderBooks = (book: Book.Base) => (
+    <Col xl={3} sm={6} className="mb-3" key={uniqueId()}>
+        <BookBox.Component
+            id={book.id}
+            title={book.title}
+            author={book.author}
+            imageSrc={book.imageSrc}
+            initialLikeState={book.initialLikeState}
+            onDeleteBook={bookId => console.log(bookId)}
+        />
+    </Col>
+);
