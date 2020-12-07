@@ -7,6 +7,8 @@ import { Col } from "components/Col";
 import { UploadDropbox, UploadProps } from "components/UploadDropbox";
 import { Text } from "components/Text";
 import { Form } from "antd";
+import { Button } from "components/Button";
+import { Select } from "components/Select";
 /* helpers */
 import * as notice from "helpers/notice";
 /* assets */
@@ -14,7 +16,14 @@ import * as notice from "helpers/notice";
 import { SubmitBookFormProps } from "./SubmitBookForm.types";
 /* styles */
 import s from "./SubmitBookForm.module.scss";
-import { Button } from "components/Button";
+import { mock } from "helpers/mock";
+import {
+    LabeledValue,
+    OptionProps,
+    OptionType,
+    SelectValue,
+} from "antd/lib/select";
+import { Category } from "components/BookCategoryBox";
 
 export const SubmitBookForm: FC<SubmitBookFormProps> = ({
     className,
@@ -36,6 +45,14 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
         },
     };
 
+    const categoryOptions: LabeledValue[] = mock<Category>(
+        "categories",
+        10
+    ).map(item => ({
+        value: item.categoryTitle,
+        key: item.id,
+        label: item.categoryTitle,
+    }));
     return (
         <div className={clsx(s.box, `shadow p-3`, className)}>
             <Text className={s.title}>ثبت کتاب</Text>
@@ -50,6 +67,9 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                     <Col lg={6}>
                         <Form.Item name="image" label="عکس کتاب">
                             <UploadDropbox {...dropBoxConfig} />
+                        </Form.Item>
+                        <Form.Item name="tag" label="دسته بندی">
+                            <Select<string> options={categoryOptions} />
                         </Form.Item>
                         <Form.Item>
                             <Button

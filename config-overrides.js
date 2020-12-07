@@ -4,7 +4,10 @@ const WebpackBar = require("webpackbar");
 const lessLoaders = addLessLoader({
     lessOptions: {
         javascriptEnabled: true,
-        modifyVars: { "@primary-color": "#000" },
+        modifyVars: {
+            "@primary-color": "#000",
+            "@select-item-selected-bg": "#dedede",
+        },
     },
 });
 
