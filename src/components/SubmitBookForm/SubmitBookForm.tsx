@@ -19,6 +19,7 @@ import { LabeledValue } from "antd/lib/select";
 import { DraggerProps } from "antd/lib/upload";
 /* styles */
 import s from "./SubmitBookForm.module.scss";
+import { Input } from "components/Input";
 
 export const SubmitBookForm: FC<SubmitBookFormProps> = ({
     className,
@@ -60,7 +61,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                 onFinish={onSubmit}
             >
                 <Row>
-                    <Col lg={6}>
+                    <Col lg={4}>
                         <Form.Item
                             name="image"
                             label="عکس کتاب"
@@ -68,11 +69,15 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                         >
                             <UploadDropbox {...dropBoxConfig} />
                         </Form.Item>
-
+                        <Form.Item name="name" label="نام کتاب">
+                            <Input.Text />
+                        </Form.Item>
+                        <Form.Item name="releaseYear" label="سال نشر">
+                            <Input.Number />
+                        </Form.Item>
                         <Form.Item name="tag" label="دسته بندی">
                             <Select<string> options={categoryOptions} />
                         </Form.Item>
-
                         <Form.Item>
                             <Button
                                 className="mt-4"
