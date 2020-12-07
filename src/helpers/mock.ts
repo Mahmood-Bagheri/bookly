@@ -10,12 +10,11 @@ import * as mockData from "mock";
  */
 export const mock = <T extends any>(
     mockKey: keyof typeof mockData,
-    count?: number
+    count: number = 3
 ): T[] => {
     const mocks = get(mockData, mockKey);
-    count = mocks.length;
     if (mocks.length < count) {
         return mocks as T[];
     }
-    return shuffle(mocks.slice(0, count)) as T[];
+    return shuffle(mocks.slice(0, count || mocks.length)) as T[];
 };

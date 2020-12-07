@@ -24,6 +24,11 @@ export const FeedFilterBox: FC<FeedFilterBoxProps> = ({
             <Input.Text
                 placeholder="جست و جو"
                 defaultValue={query}
+                onChange={e => {
+                    if (!e.target.value) {
+                        onSearch("");
+                    }
+                }}
                 onKeyDown={e => {
                     if (e.key === "Enter") {
                         onSearch(e.currentTarget.value);
