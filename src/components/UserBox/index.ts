@@ -1,2 +1,2 @@
-export * from './UserBox'
-export * from './UserBox.types.d'
+export * from "./UserBox";
+export * from "./UserBox.types.d";
