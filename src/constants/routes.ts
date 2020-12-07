@@ -11,6 +11,6 @@ export const ROUTES = {
     user: "/users/:userId",
     publicUserProfile: "/users/:userId/profile",
     categories: "/categories",
-    category: "/categories/:categoryId",
+    category: "/categories/:categoryId/details",
     error: "/error",
 };
