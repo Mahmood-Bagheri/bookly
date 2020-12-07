@@ -7,7 +7,7 @@ import clsx from "classnames";
 import s from "./Input.module.scss";
 /* types */
 import { InputProps, PasswordProps, TextAreaProps } from "antd/lib/input";
-import TextArea from "antd/lib/input/TextArea";
+import TextArea, { TextAreaRef } from "antd/lib/input/TextArea";
 
 /* 
     TODO === 1- generalize this file, 2- remove all this any things
@@ -25,7 +25,7 @@ export const Text = React.forwardRef<Input, InputProps>(
     }
 );
 
-export const Textarea = React.forwardRef<TextArea, TextAreaProps>(
+export const Textarea = React.forwardRef<TextAreaRef, TextAreaProps>(
     ({ className, ...restProps }, ref) => {
         return (
             <Input.TextArea
