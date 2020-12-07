@@ -5,7 +5,7 @@ import { BookCategoriesGrid } from "components/BookCategoriesGrid";
 import { useCategories } from "hooks";
 import { mock } from "helpers/mock";
 
-const Categories: FC = props => {
+const Categories: FC = () => {
     const { isLoading } = useCategories();
 
     return (

@@ -13,9 +13,11 @@ import { checkInclusion } from "helpers/checkInclusion";
 
 export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     books,
-    loading,
+    loading = false,
 }) => {
     const queryString = useQueryString("query");
+    const filterBooks = (book: Book.Base) =>
+        checkInclusion(book.title, queryString);
 
     if (loading) {
         return <BookBox.ShimmerGrid />;
@@ -24,7 +26,7 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     return (
         <GenericGrid
             withRow
-            filter={book => checkInclusion(book.title, queryString)}
+            filter={filterBooks}
             items={books}
             renderItem={renderBooks}
         />
