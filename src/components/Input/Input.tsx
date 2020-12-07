@@ -17,6 +17,7 @@ export const Text = React.forwardRef<Input, InputProps>(
     ({ className, ...restProps }, ref) => {
         return (
             <Input
+                allowClear
                 ref={ref}
                 className={clsx(s.input, className)}
                 {...restProps}
@@ -29,6 +30,7 @@ export const Textarea = React.forwardRef<TextAreaRef, TextAreaProps>(
     ({ className, ...restProps }, ref) => {
         return (
             <Input.TextArea
+                allowClear
                 className={clsx(s.textarea, className)}
                 ref={ref}
                 {...restProps}

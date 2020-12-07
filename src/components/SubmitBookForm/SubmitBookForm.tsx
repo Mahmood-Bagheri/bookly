@@ -7,18 +7,18 @@ import { Text } from "components/Text";
 import { Form } from "antd";
 import { Button } from "components/Button";
 import { Select } from "components/Select";
+import { Input } from "components/Input";
 /* modules */
 import clsx from "classnames";
 /* helpers */
 /* assets */
 /* mock */
-import { categoryOptions, publishersOptions } from "./mock";
+import { categoryOptions, publishersOptions, yearsOptions } from "./mock";
 /* types */
 import { SubmitBookFormProps } from "./SubmitBookForm.types";
 import { DraggerProps } from "antd/lib/upload";
 /* styles */
 import s from "./SubmitBookForm.module.scss";
-import { Input } from "components/Input";
 
 export const SubmitBookForm: FC<SubmitBookFormProps> = ({
     className,
@@ -64,7 +64,11 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                         </Form.Item>
 
                         <Form.Item name="releaseYear" label="سال نشر">
-                            <Input.Number />
+                            <Select<number>
+                                options={yearsOptions}
+                                showSearch
+                                allowClear
+                            />
                         </Form.Item>
 
                         <Form.Item name="tag" label="دسته بندی">
