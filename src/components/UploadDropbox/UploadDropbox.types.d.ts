@@ -4,5 +4,5 @@ export type UploadDropboxBaseProps = {
     title?: string;
     subTitle?: string;
 };
-export type UploadDropboxComponentProps = UploadProps & UploadDropboxBaseProps;
+export type UploadDropboxProps = UploadProps & UploadDropboxBaseProps;
 export * from "antd/lib/upload";
