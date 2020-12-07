@@ -1,0 +1,52 @@
+.box {
+    border-radius: 10px;
+}
+
+.name {
+    font-weight: 700;
+}
+
+.role {
+    color: var(--gray-300);
+    font-weight: 200;
+}
+
+.nameRoleWrap {
+    margin-right: 10px;
+}
+
+.profileImage {
+    height: 60px;
+    width: 60px;
+    border-radius: 9999px;
+}
+
+.biographyTitle {
+    margin-top: 30px;
+    font-weight: 700;
+    color: var(--gray-400);
+}
+
+.biography {
+    color: var(--gray-400);
+    line-height: 2;
+    font-size: 15px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.collapsed {
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 30%;
+        background: linear-gradient(
+            to bottom,
+            transparent -20%,
+            var(--white) 90%
+        );
+    }
+}

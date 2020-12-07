@@ -14,6 +14,7 @@ import Categories from "pages/Categories";
 import Category from "pages/Category";
 import Error from "pages/Error";
 import ProfileLikledBooks from "pages/UserProfileLikedBooks";
+import PublicUserProfile from "pages/PublicUserProfile";
 
 type Router = {
     path: string;
@@ -92,6 +93,17 @@ export const routers: Router[] = [
             layout: { include: true, searchbar: true },
         },
     },
+    {
+        path: ROUTES.publicUserProfile,
+        component: PublicUserProfile,
+        exact: true,
+        config: {
+            requireAuth: true,
+            permissionKey: "routes.profile.publicUser",
+            layout: { include: true, searchbar: false },
+        },
+    },
+
     {
         path: ROUTES.profile,
         component: Profile,

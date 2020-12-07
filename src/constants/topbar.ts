@@ -27,6 +27,7 @@ export const MENU: MenuItem[] = [
         title: "کاربران",
         link: routeTo("users"),
         permission: "routes.users",
+        exact: true,
     },
     {
         title: "پروفایل",

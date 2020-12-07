@@ -37,7 +37,7 @@ module.exports = plop => {
             },
         ],
     });
-    /*  plop.setGenerator("hook", {
+    plop.setGenerator("hook", {
         description: "Create a hook",
         prompts: [
             {
@@ -56,8 +56,8 @@ module.exports = plop => {
                 templateFile: "internals/plop-templates/hook/hook.ts.hbs",
             },
         ],
-    }); */
-    /* plop.setGenerator("page", {
+    });
+    plop.setGenerator("page", {
         description: "Create a page",
         prompts: [
             {
@@ -78,5 +78,5 @@ module.exports = plop => {
                 templateFile: "internals/plop-templates/page/index.tsx.hbs",
             },
         ],
-    }); */
+    });
 };

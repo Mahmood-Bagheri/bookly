@@ -9,6 +9,7 @@ export const ROUTES = {
     profileLikedBooks: "/profile/liked",
     users: "/users",
     user: "/users/:userId",
+    publicUserProfile: "/users/:userId/profile",
     categories: "/categories",
     category: "/categories/:categoryId",
     error: "/error",

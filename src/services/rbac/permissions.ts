@@ -14,6 +14,7 @@ export const permissions = {
             profile: {
                 main: true,
                 likedBooks: true,
+                publicUser: true,
             },
 
             error: true,

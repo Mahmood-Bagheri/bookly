@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 /* components */
 import { DeleteButton } from "components/DeleteButton";
 import { Text } from "components/Text";
+import { Link, RouterLinkProps } from "components/Link";
 /* modules */
 import dayJs from "dayjs";
 /* assets */
@@ -10,6 +11,8 @@ import BookImage from "assets/images/book.jpg";
 import { CommentBoxComponentProps } from "./CommentBox.types";
 /* styles */
 import s from "./CommentBox.module.scss";
+import { routeTo } from "helpers/routeTo";
+import { uniqueId } from "helpers/uniqueId";
 
 export const CommentBox: FunctionComponent<CommentBoxComponentProps> = ({
     id: commentId,
@@ -22,7 +25,13 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = ({
 
     return (
         <div className={s.box}>
-            <img className={s.profileImage} src={BookImage} />
+            {/* navigating to user profile page */}
+            <Link<RouterLinkProps>
+                permission="routes.profile.publicUser"
+                to={routeTo("publicUserProfile", { userId: uniqueId() })}
+            >
+                <img className={s.profileImage} src={BookImage} />
+            </Link>
 
             <div className={s.header}>
                 <p className={s.description}>
