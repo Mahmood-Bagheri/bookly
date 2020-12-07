@@ -65,7 +65,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                             label="عکس کتاب"
                             valuePropName="file"
                         >
-                            <UploadDropbox {...dropBoxConfig} />
+                            <UploadDropbox />
                         </Form.Item>
 
                         <Form.Item name="tag" label="دسته بندی">
