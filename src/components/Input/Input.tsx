@@ -13,34 +13,38 @@ import TextArea from "antd/lib/input/TextArea";
     TODO === 1- generalize this file, 2- remove all this any things
 */
 
-export const Text = React.forwardRef<Input, InputProps>((props, ref) => {
-    return (
-        <Input
-            ref={ref}
-            className={clsx(s.input, props.className)}
-            {...props}
-        />
-    );
-});
-
-export const Textarea = React.forwardRef<TextArea, TextAreaProps>(
-    (props, ref) => {
+export const Text = React.forwardRef<Input, InputProps>(
+    ({ className, ...restProps }, ref) => {
         return (
-            <Input.TextArea
-                className={clsx(s.textarea, props.className)}
+            <Input
                 ref={ref}
-                {...props}
+                className={clsx(s.input, className)}
+                {...restProps}
             />
         );
     }
 );
 
-export const Password = React.forwardRef<any, PasswordProps>((props, ref) => {
-    return (
-        <Input.Password
-            className={clsx(s.textarea, props.className)}
-            ref={ref}
-            {...props}
-        />
-    );
-});
+export const Textarea = React.forwardRef<TextArea, TextAreaProps>(
+    ({ className, ...restProps }, ref) => {
+        return (
+            <Input.TextArea
+                className={clsx(s.textarea, className)}
+                ref={ref}
+                {...restProps}
+            />
+        );
+    }
+);
+
+export const Password = React.forwardRef<any, PasswordProps>(
+    ({ className, ...restProps }, ref) => {
+        return (
+            <Input.Password
+                className={clsx(s.textarea, className)}
+                ref={ref}
+                {...restProps}
+            />
+        );
+    }
+);
