@@ -6,6 +6,7 @@ export type UserBoxTypes = {
     role: RoleUnionType;
     biography: string;
     profileImage: string;
+    loading?: boolean;
 };
 
 export type UserBoxProps = HTMLProps<HTMLDivElement> & UserBoxTypes;

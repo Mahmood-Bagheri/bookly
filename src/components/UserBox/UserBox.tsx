@@ -12,6 +12,7 @@ import { UserBoxProps, RoleUnionType } from "./UserBox.types";
 /* styles */
 import s from "./UserBox.module.scss";
 import { conditionalText } from "helpers/conditionalText";
+import { UserBoxShimmer } from "./UserBoxShimmer";
 
 export const UserBox: FC<UserBoxProps> = ({
     className,
@@ -19,11 +20,17 @@ export const UserBox: FC<UserBoxProps> = ({
     role,
     biography,
     profileImage: imageSrc,
+    loading = false,
     ...restProps
 }) => {
     const [biographyExpanded, setBiographyExpanded] = useState(false);
     const toggleExpantion = () =>
         setBiographyExpanded(previousValue => !previousValue);
+
+    if (loading) {
+        return <UserBoxShimmer />;
+    }
+
     return (
         <div className={clsx(s.box, `shadow p-4`, className)} {...restProps}>
             <div className="d-flex align-items-center">
