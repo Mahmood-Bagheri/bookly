@@ -2,7 +2,7 @@ import React from "react";
 import { CommentsGrid } from "components/CommentsGrid";
 import { useDeleteComment } from "hooks";
 import { AclService } from "services/rbac";
-import { comments } from "mock/comments";
+import { mock } from "helpers/mock";
 export const CommentsContainer = () => {
     const [deleteComment] = useDeleteComment();
 
@@ -14,7 +14,10 @@ export const CommentsContainer = () => {
 
     return (
         <AclService permission="comments.read">
-            <CommentsGrid onDelete={handleDeleteComment} comments={comments} />
+            <CommentsGrid
+                onDelete={handleDeleteComment}
+                comments={mock("comments", 4)}
+            />
         </AclService>
     );
 };

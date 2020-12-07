@@ -35,7 +35,14 @@ export const CommentBox: FunctionComponent<CommentBoxComponentProps> = ({
 
             <div className={s.header}>
                 <p className={s.description}>
-                    {username}
+                    <Link<RouterLinkProps>
+                        permission="routes.profile.publicUser"
+                        to={routeTo("publicUserProfile", {
+                            userId: uniqueId(),
+                        })}
+                    >
+                        {username}
+                    </Link>
                     {"  "}
                     {relativeFakeTime} پیش گفته
                 </p>
