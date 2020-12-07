@@ -7,15 +7,14 @@ import { Text } from "components/Text";
 import { Form } from "antd";
 import { Button } from "components/Button";
 import { Select } from "components/Select";
-import { Category } from "components/BookCategoryBox";
 /* modules */
 import clsx from "classnames";
 /* helpers */
-import { mock } from "helpers/mock";
 /* assets */
+/* mock */
+import { categoryOptions, publishersOptions } from "./mock";
 /* types */
 import { SubmitBookFormProps } from "./SubmitBookForm.types";
-import { LabeledValue } from "antd/lib/select";
 import { DraggerProps } from "antd/lib/upload";
 /* styles */
 import s from "./SubmitBookForm.module.scss";
@@ -25,7 +24,6 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
     className,
     onSubmit,
     loading = false,
-    ...restProps
 }) => {
     const [form] = Form.useForm();
 
@@ -40,15 +38,6 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
             form.setFieldsValue({ image: file.file });
         },
     };
-
-    const categoryOptions: LabeledValue[] = mock<Category>(
-        "categories",
-        10
-    ).map(item => ({
-        key: item.id,
-        value: item.id,
-        label: item.categoryTitle,
-    }));
 
     return (
         <div className={clsx(s.box, `shadow p-3`, className)}>
@@ -69,15 +58,28 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                         >
                             <UploadDropbox {...dropBoxConfig} />
                         </Form.Item>
+
                         <Form.Item name="name" label="نام کتاب">
                             <Input.Text />
                         </Form.Item>
+
                         <Form.Item name="releaseYear" label="سال نشر">
                             <Input.Number />
                         </Form.Item>
+
                         <Form.Item name="tag" label="دسته بندی">
                             <Select<string> options={categoryOptions} />
                         </Form.Item>
+                    </Col>
+                    <Col lg={4}>
+                        <Form.Item name="publisher" label="ناشر">
+                            <Select<string> options={publishersOptions} />
+                        </Form.Item>
+                    </Col>
+                    <Col
+                        lg={4}
+                        className="d-flex flex-column justify-content-end align-items-end"
+                    >
                         <Form.Item>
                             <Button
                                 className="mt-4"
@@ -86,7 +88,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                                 htmlType="submit"
                                 loading={loading}
                             >
-                                ثبت نام
+                                ثبت کتاب
                             </Button>
                         </Form.Item>
                     </Col>

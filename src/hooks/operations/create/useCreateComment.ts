@@ -23,6 +23,6 @@ export const useCreateComment = () =>
             notice.success(API_RESPONSE_MESSAGES.comment.create.success);
         },
         onError: () => {
-            notice.error(API_RESPONSE_MESSAGES.book.create.error);
+            notice.error(API_RESPONSE_MESSAGES.comment.create.error);
         },
     });

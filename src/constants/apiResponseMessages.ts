@@ -6,7 +6,7 @@ const API_RESPONSE_MESSAGES = {
         },
     },
     book: {
-        create: {
+        submit: {
             success: `کتاب شما با موفقیت ثبت شد`,
             error: "مشکلی در ثبت کردن کتاب پیش آمد!",
         },

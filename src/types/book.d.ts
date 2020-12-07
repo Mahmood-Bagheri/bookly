@@ -23,7 +23,7 @@ declare namespace Book {
             type Result = {};
         }
 
-        declare namespace Create {
+        declare namespace Submit {
             type Variables = {};
             type Result = {};
         }
