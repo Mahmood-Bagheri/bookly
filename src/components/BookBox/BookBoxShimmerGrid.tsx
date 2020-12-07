@@ -10,7 +10,7 @@ import { uniqueId } from "helpers/uniqueId";
 
 const renderShimmer = () => {
     return (
-        <Col xl={3} sm={6} className="mb-3" key={uniqueId()}>
+        <Col xl={4} sm={6} className="mb-3" key={uniqueId()}>
             <BookBoxShimmer />
         </Col>
     );

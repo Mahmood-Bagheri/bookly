@@ -34,7 +34,7 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
 };
 
 const renderBooks = (book: Book.Base) => (
-    <Col xl={3} sm={6} className="mb-3" key={uniqueId()}>
+    <Col xl={4} sm={6} className="mb-3" key={uniqueId()}>
         <BookBox.Component
             id={book.id}
             title={book.title}

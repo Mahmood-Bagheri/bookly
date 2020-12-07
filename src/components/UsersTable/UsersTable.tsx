@@ -64,7 +64,7 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
                 <Fragment>
                     <Link<RouterLinkProps>
                         permission="routes.user"
-                        to={routeTo("user", { userId: row.id })}
+                        to={routeTo("publicUserProfile", { userId: row.id })}
                     >
                         <Button className="ml-2" type="primary">
                             نمایش اطلاعات بیشتر!

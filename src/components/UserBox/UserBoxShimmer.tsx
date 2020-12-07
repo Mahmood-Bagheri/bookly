@@ -11,6 +11,7 @@ export const UserBoxShimmer = () => {
                     <div className={s.name}></div>
                     <div className={s.role}></div>
                 </div>
+                <div className={s.registerDate}></div>
             </div>
             <div className={s.biographyTitle}></div>
             <div className={clsx(s.biography)}></div>

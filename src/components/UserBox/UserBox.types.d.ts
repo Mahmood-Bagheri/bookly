@@ -7,6 +7,7 @@ export type UserBoxTypes = {
     biography: string;
     profileImage: string;
     loading?: boolean;
+    registerDate: Date;
 };
 
 export type UserBoxProps = HTMLProps<HTMLDivElement> & UserBoxTypes;
