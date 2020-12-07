@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 /* components */
 import { Text } from "components/Text";
 import { Image } from "components/Image";
@@ -6,11 +6,12 @@ import { Image } from "components/Image";
 import clsx from "classnames";
 /* helpers */
 /* assets */
+import { ReactComponent as ArrowLeft } from "assets/icons/arrow-left.svg";
 /* types */
 import { UserBoxProps, RoleUnionType } from "./UserBox.types";
 /* styles */
 import s from "./UserBox.module.scss";
-import { CollapsibleText } from "components/CollapsibleText";
+import { conditionalText } from "helpers/conditionalText";
 
 export const UserBox: FC<UserBoxProps> = ({
     className,
@@ -20,6 +21,9 @@ export const UserBox: FC<UserBoxProps> = ({
     profileImage: imageSrc,
     ...restProps
 }) => {
+    const [biographyExpanded, setBiographyExpanded] = useState(false);
+    const toggleExpantion = () =>
+        setBiographyExpanded(previousValue => !previousValue);
     return (
         <div className={clsx(s.box, `shadow p-4`, className)} {...restProps}>
             <div className="d-flex align-items-center">
@@ -30,8 +34,25 @@ export const UserBox: FC<UserBoxProps> = ({
                 </div>
             </div>
             <Text className={s.biographyTitle}>بیوگرافی کاربر</Text>
-            <Text className={clsx(s.biography, { [s.collapsed]: true })}>
+            <Text
+                className={clsx(s.biography, {
+                    [s.collapsed]: !biographyExpanded,
+                })}
+            >
                 {biography}
+            </Text>
+            <Text
+                className={clsx(s.showMore, {
+                    [s.showMoreNormalPosition]: biographyExpanded,
+                })}
+                onClick={toggleExpantion}
+            >
+                {conditionalText(
+                    biographyExpanded,
+                    "نمایش کمتر",
+                    "نمایش بیشتر"
+                )}
+                <ArrowLeft />
             </Text>
         </div>
     );
