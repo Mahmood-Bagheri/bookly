@@ -7,7 +7,7 @@ import clsx from "classnames";
 import s from "./Input.module.scss";
 /* types */
 import { InputProps, PasswordProps, TextAreaProps } from "antd/lib/input";
-import TextArea, { TextAreaRef } from "antd/lib/input/TextArea";
+import { TextAreaRef } from "antd/lib/input/TextArea";
 
 /* 
     TODO === 1- generalize this file, 2- remove all this any things

@@ -1,21 +1,22 @@
 import React, { FC } from "react";
 /* components */
-/* modules */
-import clsx from "classnames";
 import { Row } from "components/Row";
 import { Col } from "components/Col";
-import { UploadDropbox, UploadProps } from "components/UploadDropbox";
+import { UploadDropbox } from "components/UploadDropbox";
 import { Text } from "components/Text";
 import { Form } from "antd";
 import { Button } from "components/Button";
 import { Select } from "components/Select";
 import { Category } from "components/BookCategoryBox";
+/* modules */
+import clsx from "classnames";
 /* helpers */
 import { mock } from "helpers/mock";
 /* assets */
 /* types */
 import { SubmitBookFormProps } from "./SubmitBookForm.types";
 import { LabeledValue } from "antd/lib/select";
+import { DraggerProps } from "antd/lib/upload";
 /* styles */
 import s from "./SubmitBookForm.module.scss";
 
@@ -27,7 +28,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
 }) => {
     const [form] = Form.useForm();
 
-    const dropBoxConfig: UploadProps = {
+    const dropBoxConfig: DraggerProps = {
         showUploadList: false,
         multiple: false,
         accept: "image/x-png,image/gif,image/jpeg",
@@ -65,7 +66,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                             label="عکس کتاب"
                             valuePropName="file"
                         >
-                            <UploadDropbox {...dropBoxConfig} />
+                            <UploadDropbox />
                         </Form.Item>
 
                         <Form.Item name="tag" label="دسته بندی">
