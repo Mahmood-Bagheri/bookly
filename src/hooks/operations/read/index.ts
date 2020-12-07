@@ -6,3 +6,4 @@ export * from "./useReadPublishers";
 export * from "./useCategoryBooks";
 export * from "./useProfile";
 export * from "./usePublicUserProfile";
+export * from "./useCategories";

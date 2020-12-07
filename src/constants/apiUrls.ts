@@ -9,6 +9,7 @@ const API_URLS = {
     publisher: "/publisher",
     followPublisher: "/publisher/follow",
     category: "/category",
+    categories: "/categories",
     profile: "/profile",
 };
 

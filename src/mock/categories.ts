@@ -1,52 +1,53 @@
+import { Category } from "components/BookCategoryBox";
 import { uniqueId } from "helpers/uniqueId";
 
-export const categories = [
+export const categories: Category[] = [
     {
         id: uniqueId(),
-        title: "فلسفه",
+        categoryTitle: "فلسفه",
     },
     {
         id: uniqueId(),
-        title: "علمی",
+        categoryTitle: "علمی",
     },
     {
         id: uniqueId(),
-        title: "داستان",
+        categoryTitle: "داستان",
     },
     {
         id: uniqueId(),
-        title: "تخیلی",
+        categoryTitle: "تخیلی",
     },
     {
         id: uniqueId(),
-        title: "رُمان",
+        categoryTitle: "رُمان",
     },
     {
         id: uniqueId(),
-        title: "زیست شناسی",
+        categoryTitle: "زیست شناسی",
     },
     {
         id: uniqueId(),
-        title: "زمین شناسی",
+        categoryTitle: "زمین شناسی",
     },
     {
         id: uniqueId(),
-        title: "مباحث دیگر",
+        categoryTitle: "مباحث دیگر",
     },
     {
         id: uniqueId(),
-        title: "رُمان",
+        categoryTitle: "رُمان",
     },
     {
         id: uniqueId(),
-        title: "زیست شناسی",
+        categoryTitle: "زیست شناسی",
     },
     {
         id: uniqueId(),
-        title: "زمین شناسی",
+        categoryTitle: "زمین شناسی",
     },
     {
         id: uniqueId(),
-        title: "مباحث دیگر",
+        categoryTitle: "مباحث دیگر",
     },
 ];

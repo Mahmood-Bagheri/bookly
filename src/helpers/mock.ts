@@ -10,10 +10,10 @@ import * as mockData from "mock";
  */
 export const mock = <T extends any>(
     mockKey: keyof typeof mockData,
-    count: number = 5
+    count?: number
 ): T[] => {
     const mocks = get(mockData, mockKey);
-
+    count = mocks.length;
     if (mocks.length < count) {
         return mocks as T[];
     }
