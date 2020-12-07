@@ -14,6 +14,10 @@ export const Select = <T extends string | number>({
     ...restProps
 }: SelectProps<T>) => {
     return (
-        <AntDesignSelect className={clsx(s.select, className)} {...restProps} />
+        <AntDesignSelect
+            size="large"
+            className={clsx(s.select, className)}
+            {...restProps}
+        />
     );
 };

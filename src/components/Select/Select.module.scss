@@ -2,6 +2,8 @@
     width: 100%;
 
     .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+        background: var(--gray-100);
         border-radius: 9999px;
+        font-size: 14px;
     }
 }

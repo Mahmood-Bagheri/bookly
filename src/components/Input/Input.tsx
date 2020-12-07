@@ -41,7 +41,7 @@ export const Password = React.forwardRef<any, PasswordProps>(
     ({ className, ...restProps }, ref) => {
         return (
             <Input.Password
-                className={clsx(s.textarea, className)}
+                className={clsx(s.input, className)}
                 ref={ref}
                 {...restProps}
             />
