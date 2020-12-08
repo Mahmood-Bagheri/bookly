@@ -5,11 +5,9 @@ import { BooksGrid } from "components/BooksGrid";
 /* modules */
 import { useBooks } from "hooks";
 import { mock } from "helpers/mock";
-import { useHistory } from "react-router-dom";
 
 const Home: FC = props => {
-    const { isLoading, data } = useBooks();
-    const { location } = useHistory();
+    const { isLoading, data } = useBooks({});
 
     return (
         <Fragment>
