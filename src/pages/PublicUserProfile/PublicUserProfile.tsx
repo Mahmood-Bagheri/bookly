@@ -18,7 +18,7 @@ const UserProfile: FC = props => {
         <Fragment>
             <DocumentTitle title="پروفایل کاربر" />
             <Row>
-                <Col md={6} lg={4}>
+                <Col md={5} lg={4}>
                     <UserBox
                         name="محمود باقری"
                         role="admin"
@@ -28,7 +28,7 @@ const UserProfile: FC = props => {
                         registerDate={randomDate(new Date("10/10/2010"))}
                     />
                 </Col>
-                <Col md={6} lg={8}>
+                <Col md={7} lg={8}>
                     <BooksGrid
                         loading={profileLoading}
                         books={mock("books", 12)}

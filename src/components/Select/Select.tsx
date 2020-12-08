@@ -15,6 +15,8 @@ export const Select = <T extends string | number>({
 }: SelectProps<T>) => {
     return (
         <AntDesignSelect
+            allowClear
+            showSearch
             size="large"
             className={clsx(s.select, className)}
             {...restProps}

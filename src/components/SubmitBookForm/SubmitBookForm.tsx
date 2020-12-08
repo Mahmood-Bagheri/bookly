@@ -65,11 +65,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                         </Form.Item>
 
                         <Form.Item name="releaseYear" label="سال نشر">
-                            <Select<number>
-                                options={yearsOptions}
-                                showSearch
-                                allowClear
-                            />
+                            <Select<number> options={yearsOptions} allowClear />
                         </Form.Item>
 
                         <Form.Item name="tag" label="دسته بندی">
