@@ -8,6 +8,7 @@ import { Form } from "antd";
 import { Button } from "components/Button";
 import { Select } from "components/Select";
 import { Input } from "components/Input";
+import { ReadingBookSvg } from "components/ReadingBookSvg";
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -50,6 +51,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
             >
                 <Row>
                     <Col lg={4}>
+                        <ReadingBookSvg className="d-block d-lg-none mb-2" />
                         <Form.Item
                             name="image"
                             label="عکس کتاب"
@@ -81,8 +83,9 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                     </Col>
                     <Col
                         lg={4}
-                        className="d-flex flex-column justify-content-end align-items-end"
+                        className="d-flex flex-column justify-content-between align-items-end"
                     >
+                        <ReadingBookSvg className="d-none d-lg-block" />
                         <Form.Item>
                             <Button
                                 className="mt-4"
