@@ -13,8 +13,8 @@ const Register: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="ثبت نام" />
-            <Row className="align-items-center">
-                <Col lg={6} className="order-1 order-lg-0">
+            <Row className="align-items-center justify-content-between">
+                <Col lg={4} className="order-1 order-lg-0">
                     <RegisterForm
                         loading={registerLoading}
                         onSubmit={register}
