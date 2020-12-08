@@ -1,12 +1,21 @@
 .box {
     text-align: center;
     padding: 30px 0;
+    margin-top: 50px;
     svg {
-        height: 200px;
-        width: 200px;
+        height: 300px;
+        width: 300px;
     }
 }
 
 .title {
     font-weight: 700;
+}
+.description {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.here {
+    font-weight: 900;
 }
