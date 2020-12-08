@@ -7,14 +7,14 @@ import { useBooks } from "hooks";
 import { mock } from "helpers/mock";
 
 const Home: FC = props => {
-    const { isLoading, data } = useBooks({});
+    const { data, isFetched } = useBooks();
 
     return (
         <Fragment>
             <DocumentTitle title="خانه" />
             <BooksGrid
                 books={mock<Book.Base>("books", 12)}
-                loading={isLoading}
+                loading={!isFetched}
             />
         </Fragment>
     );
