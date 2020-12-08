@@ -3,6 +3,9 @@ import React, { FC, Fragment } from "react";
 import { DocumentTitle } from "components/DocumentTitle";
 import { RegisterForm } from "components/RegisterForm";
 import { useRegister } from "hooks/operations";
+import { RegisterFormPicture } from "components/RegisterFormPicture";
+import { Row } from "components/Row";
+import { Col } from "components/Col";
 
 const Register: FC = props => {
     const [register, { isLoading: registerLoading }] = useRegister();
@@ -10,7 +13,17 @@ const Register: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="ثبت نام" />
-            <RegisterForm loading={registerLoading} onSubmit={register} />
+            <Row className="align-items-center mt-5">
+                <Col lg={6} className="order-1 order-lg-0">
+                    <RegisterForm
+                        loading={registerLoading}
+                        onSubmit={register}
+                    />
+                </Col>
+                <Col lg={6}>
+                    <RegisterFormPicture />
+                </Col>
+            </Row>
         </Fragment>
     );
 };

@@ -12,7 +12,7 @@ const Categories: FC = () => {
         <Fragment>
             <DocumentTitle title="دسته بندی ها" />
             <BookCategoriesGrid
-                categories={mock("categories")}
+                categories={mock("categories", 12)}
                 loading={isLoading}
             />
         </Fragment>

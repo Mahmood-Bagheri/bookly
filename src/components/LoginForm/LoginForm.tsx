@@ -3,8 +3,6 @@ import React, { FunctionComponent } from "react";
 import { Form } from "antd";
 import { Input } from "components/Input";
 import { Button } from "components/Button";
-import { Row } from "components/Row";
-import { Col } from "components/Col";
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -21,45 +19,39 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = ({
     loading = false,
 }) => {
     return (
-        <Row className="justify-content-center">
-            <Col xl={5}>
-                <div className={s.box}>
-                    <Form
-                        layout="vertical"
-                        name="basic"
-                        onFinish={onSubmit}
-                        style={{ width: "100%" }}
-                    >
-                        <Form.Item
-                            label="نام کاربری"
-                            name="username"
-                            rules={LOGIN_FORM_VALIDATION_RULES.username}
-                        >
-                            <Input.Text />
-                        </Form.Item>
+        <Form
+            layout="vertical"
+            name="basic"
+            onFinish={onSubmit}
+            style={{ width: "100%" }}
+        >
+            <Form.Item
+                label="نام کاربری"
+                name="username"
+                rules={LOGIN_FORM_VALIDATION_RULES.username}
+            >
+                <Input.Text />
+            </Form.Item>
 
-                        <Form.Item
-                            label="رمز عبور"
-                            name="password"
-                            rules={LOGIN_FORM_VALIDATION_RULES.password}
-                        >
-                            <Input.Password />
-                        </Form.Item>
+            <Form.Item
+                label="رمز عبور"
+                name="password"
+                rules={LOGIN_FORM_VALIDATION_RULES.password}
+            >
+                <Input.Password />
+            </Form.Item>
 
-                        <Form.Item>
-                            <Button
-                                loading={loading}
-                                size="large"
-                                type="primary"
-                                htmlType="submit"
-                                className="mt-4"
-                            >
-                                ورود
-                            </Button>
-                        </Form.Item>
-                    </Form>
-                </div>
-            </Col>
-        </Row>
+            <Form.Item>
+                <Button
+                    loading={loading}
+                    size="large"
+                    type="primary"
+                    htmlType="submit"
+                    className="mt-4"
+                >
+                    ورود
+                </Button>
+            </Form.Item>
+        </Form>
     );
 };
