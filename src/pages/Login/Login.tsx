@@ -13,7 +13,7 @@ const Login: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="ورود" />
-            <Row className="align-items-center mt-5">
+            <Row className="align-items-center">
                 <Col lg={6} className="order-1 order-lg-0">
                     <LoginForm loading={loginIsLoading} onSubmit={login} />
                 </Col>
