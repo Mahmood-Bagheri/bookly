@@ -21,12 +21,12 @@ export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     return (
         <Fragment>
             <Row className="align-items-center">
-                <Col col={6}>
-                    {withSearchbar && (
+                {withSearchbar && (
+                    <Col lg={6} className="order-2 order-lg-0">
                         <FeedFilterBox.Component onSearch={onSearch} />
-                    )}
-                </Col>
-                <Col col={6}>
+                    </Col>
+                )}
+                <Col lg={withSearchbar ? 6 : 12}>
                     <div className={clsx(s.topbar, className)} {...restProps}>
                         <div className="d-flex align-items-center justify-content-center">
                             <h1 className={s.title}>{title}</h1>

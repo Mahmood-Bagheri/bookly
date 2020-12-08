@@ -20,15 +20,14 @@ export const MenuBarItem: FunctionComponent<MenuBarItemComponentProps> = props =
         ...restProps
     } = props;
     return (
-        <span className={clsx(s.menuItem, className)} {...restProps}>
-            <Link<RouterLinkProps>
-                permission={permission}
-                exact={exact}
-                activeClassName={s.activeMenuItem}
-                to={link}
-            >
-                {title}
-            </Link>
-        </span>
+        <Link<RouterLinkProps>
+            permission={permission}
+            exact={exact}
+            activeClassName={s.activeMenuItem}
+            to={link}
+            className={clsx(s.menuItem, className)}
+        >
+            <span {...restProps}>{title}</span>
+        </Link>
     );
 };
