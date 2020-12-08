@@ -21,7 +21,6 @@ import { DraggerProps } from "antd/lib/upload";
 import s from "./SubmitBookForm.module.scss";
 
 export const SubmitBookForm: FC<SubmitBookFormProps> = ({
-    className,
     onSubmit,
     loading = false,
 }) => {
@@ -40,7 +39,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
     };
 
     return (
-        <div className={clsx(s.box, `shadow p-3`, className)}>
+        <div className={clsx(s.box, `shadow p-3`)}>
             <Text className={s.title}>ثبت کتاب</Text>
 
             <Form

@@ -1,23 +1,19 @@
-import React, { FunctionComponent, useState, Fragment } from "react";
+import React, { FunctionComponent, Fragment } from "react";
 /* components */
 import { MenuBar } from "components/MenuBar";
 import { Row } from "components/Row";
 import { Col } from "components/Col";
 /* modules */
 import clsx from "classnames";
-import { useRecoilState } from "recoil";
-import { roleState } from "services/recoil/user/atoms";
-import { AclService } from "services/rbac";
 /* helpers */
 /* assets */
-import { ReactComponent as MenuIcon } from "assets/icons/menu.svg";
 /* constants */
 import { MENU } from "constants/topbar";
 /* types */
 import { TopBarComponentProps } from "./TopBar.types";
+import { FeedFilterBox } from "components/FeedFilterBox";
 /* styles */
 import s from "./TopBar.module.scss";
-import { FeedFilterBox } from "components/FeedFilterBox";
 
 export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
     const { className, title, onSearch, withSearchbar, ...restProps } = props;

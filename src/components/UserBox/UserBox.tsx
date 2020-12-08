@@ -75,6 +75,7 @@ export const UserBox: FC<UserBoxProps> = ({
 };
 
 // todo -> checkout how we can make bettter (generalize) this part
+
 const transformRole = (role: RoleUnionType) => {
     switch (role) {
         case "admin":

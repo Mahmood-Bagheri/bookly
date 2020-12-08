@@ -1,20 +1,16 @@
-import React, { Fragment, FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 /* components */
 import { Table } from "components/Table";
-import { Button } from "components/Button";
-import { PopConfirm } from "components/PopConfirm";
 import { ColumnsType } from "antd/lib/table";
-import { Link, RouterLinkProps } from "components/Link";
 /* modules */
-import clsx from "classnames";
 /* helpers */
-import { routeTo } from "helpers/routeTo";
 import { uniqueId } from "helpers/uniqueId";
+import { RenderActionsColumn, RenderColumnName } from "./columns";
 /* assets */
 /* types */
 import { UsersTableComponentProps } from "./UsersTable.types";
 /* styles */
-
+// todo -> make this structure better
 type DataSourceType = {
     id: string;
     name: string;
@@ -44,18 +40,13 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             title: "نام",
             dataIndex: "name",
             key: "name",
-            render: (name, record) => {
-                return (
-                    <Link<RouterLinkProps>
-                        permission="routes.user"
-                        to={routeTo("publicUserProfile", {
-                            userId: record.id || 0,
-                        })}
-                    >
-                        {name}
-                    </Link>
-                );
-            },
+            render: (name, record, index) => (
+                <RenderColumnName<DataSourceType>
+                    name={name}
+                    record={record}
+                    index={index}
+                />
+            ),
         },
         {
             title: "نام کاربری",
@@ -71,15 +62,13 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             title: "عملیات",
             dataIndex: "",
             key: "x",
-            render: (_, record) => (
-                <Fragment>
-                    <PopConfirm
-                        title="برای حذف این کاربر مطمئن هستید ؟ "
-                        onConfirm={() => onDeleteUser({ userId: record.id })}
-                    >
-                        <Button danger>حذف کاربر</Button>
-                    </PopConfirm>
-                </Fragment>
+            render: (name, record, index) => (
+                <RenderActionsColumn<DataSourceType>
+                    name={name}
+                    record={record}
+                    onDeleteUser={onDeleteUser}
+                    index={index}
+                />
             ),
         },
     ];

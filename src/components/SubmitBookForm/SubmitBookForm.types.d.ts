@@ -1,8 +1,10 @@
 import { HTMLProps } from "react";
 
-export type SubmitBookFormTypes = {
+export type SubmitBookFormTypes<T> = {
     loading?: boolean;
+    onSubmit: (object: T) => void;
 };
 
-export type SubmitBookFormProps = HTMLProps<HTMLDivElement> &
-    SubmitBookFormTypes;
+export type SubmitBookFormProps = SubmitBookFormTypes<
+    Book.Mutation.Submit.Variables
+>;
