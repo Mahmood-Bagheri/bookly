@@ -1,5 +1,5 @@
 export * from "./useReadBook";
-export * from "./useReadBooks";
+export * from "./useBooks";
 export * from "./useReadComments";
 export * from "./useReadPublisher";
 export * from "./useReadPublishers";
