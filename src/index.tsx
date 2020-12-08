@@ -23,9 +23,9 @@ dayJs.locale("fa");
 
 const MOUNT_NODE = document.getElementById("root") as HTMLElement;
 
-interface Props {
+type Props = {
     Component: typeof App;
-}
+};
 
 const ConnectedApp = ({ Component }: Props) => (
     <React.StrictMode>

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import { Form } from "antd";
 import { Input } from "components/Input";
@@ -7,12 +7,12 @@ import { Text } from "components/Text";
 /* modules */
 import clsx from "classnames";
 /* types */
-import { CommentInputBoxComponentProps } from "./CommentInputBox.types";
+import { CommentInputBoxProps } from "./CommentInputBox.types";
 /* styles */
 import s from "./CommentInputBox.module.scss";
 import { BOOK_COMMENT_VALIDATION_RULES } from "constants/validationRules";
 
-export const CommentInputBox: FunctionComponent<CommentInputBoxComponentProps> = ({
+export const CommentInputBox: FC<CommentInputBoxProps> = ({
     onSubmit,
     loading = false,
 }) => {

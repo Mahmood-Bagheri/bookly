@@ -3,8 +3,6 @@ import { NavLink, NavLinkProps } from "react-router-dom";
 import { AclService } from "services/rbac";
 import { propsSeprator as isPropsForRouterLink } from "helpers/propsSeprator";
 
-// todo -> checkout why the intellisense not working ?
-
 type LinkProps = {
     permission: string;
 };

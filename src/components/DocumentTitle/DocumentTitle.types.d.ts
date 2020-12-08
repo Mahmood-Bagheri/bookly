@@ -1,3 +1,3 @@
 import { HelmetProps } from "react-helmet";
 
-export type DocumentTitleComponentProps = HelmetProps;
+export type DocumentTitleProps = HelmetProps;

@@ -1,10 +1,9 @@
 import { LabeledValue } from "antd/lib/select";
-import { Category } from "components/BookCategoryBox";
 import { Publisher } from "components/PublisherBox";
 import { mock } from "helpers/mock";
 import { yearGenerator } from "helpers/yearGenerator";
 
-export const categoryOptions: LabeledValue[] = mock<Category>(
+export const categoryOptions: LabeledValue[] = mock<Category.Base>(
     "categories",
     10
 ).map(item => ({

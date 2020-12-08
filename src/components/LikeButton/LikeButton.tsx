@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import { Spinner } from "components/Spinner";
 /* modules */
@@ -11,7 +11,7 @@ import { LikeButtonComponentProps } from "./LikeButton.types";
 import s from "./LikeButton.module.scss";
 import { AclService } from "services/rbac";
 
-export const LikeButton: FunctionComponent<LikeButtonComponentProps> = props => {
+export const LikeButton: FC<LikeButtonComponentProps> = props => {
     const {
         onChange,
         initialLikeState = false,

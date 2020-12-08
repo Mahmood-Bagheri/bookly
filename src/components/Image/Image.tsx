@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import {
     LazyLoadImage,
@@ -10,9 +10,10 @@ import clsx from "classnames";
 /* styles */
 import s from "./Image.module.scss";
 
+// todo -> fix this file to use 'react-lazy-load-image-component'
 const defaultAltText = "This image is related to the website :/";
 
-export const Image: FunctionComponent<JSX.IntrinsicElements["img"]> = ({
+export const Image: FC<JSX.IntrinsicElements["img"]> = ({
     className,
     alt = defaultAltText,
     src,

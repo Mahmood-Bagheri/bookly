@@ -1,16 +1,17 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import { CommentBox } from "components/CommentBox";
-/* types */
-import { CommentsGridComponentProps } from "./CommentsGrid.types";
-/* styles */
-import s from "./CommentsGrid.module.scss";
 import { GenericGrid } from "components/GenericGrid";
 import { Col } from "components/Col";
 import { Text } from "components/Text";
+/* helpers */
 import { uniqueId } from "helpers/uniqueId";
+/* types */
+import { CommentsGridProps } from "./CommentsGrid.types";
+/* styles */
+import s from "./CommentsGrid.module.scss";
 
-export const CommentsGrid: FunctionComponent<CommentsGridComponentProps> = props => {
+export const CommentsGrid: FC<CommentsGridProps> = props => {
     const { comments, onDelete, title = "نظرات کاربران" } = props;
 
     const renderComments = (comment: Comment.Base) => (

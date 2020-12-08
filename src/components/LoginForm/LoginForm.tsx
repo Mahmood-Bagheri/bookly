@@ -1,11 +1,10 @@
-import React, { FunctionComponent, useRef } from "react";
+import React, { FunctionComponent } from "react";
 /* components */
 import { Form } from "antd";
 import { Input } from "components/Input";
 import { Button } from "components/Button";
 import { Row } from "components/Row";
 import { Col } from "components/Col";
-import { Password } from "components/Password";
 /* modules */
 import clsx from "classnames";
 /* helpers */

@@ -4,9 +4,9 @@ import { useMutation } from "react-query";
 import apiService from "services/api/apiService";
 /* helpers */
 import * as notice from "helpers/notice";
-interface FollowPublisherMutationVariables {
+type FollowPublisherMutationVariables = {
     publisherId: string;
-}
+};
 export const followPublisher = ({
     publisherId,
 }: FollowPublisherMutationVariables) => {

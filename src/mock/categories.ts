@@ -1,7 +1,6 @@
-import { Category } from "components/BookCategoryBox";
 import { uniqueId } from "helpers/uniqueId";
 
-export const categories: Category[] = [
+export const categories: Category.Base[] = [
     {
         id: uniqueId(),
         categoryTitle: "فلسفه",

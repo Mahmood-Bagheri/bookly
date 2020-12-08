@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Row } from "components/Row";
 
-interface Props<T> {
+type Props<T> = {
     items: T[];
     renderItem: (item: T, index: number) => React.ReactNode;
     filter?: (item: T, index: number) => boolean;
     withRow?: boolean;
-}
+};
 
 export function GenericGrid<T>(props: Props<T>) {
     const {

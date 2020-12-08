@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import { MenuBarItem, MenuItem } from "components/MenuBarItem";
 import { GenericGrid } from "components/GenericGrid";
@@ -12,7 +12,7 @@ import { MenuBarComponentProps } from "./MenuBar.types";
 /* styles */
 import s from "./MenuBar.module.scss";
 
-export const MenuBar: FunctionComponent<MenuBarComponentProps> = props => {
+export const MenuBar: FC<MenuBarComponentProps> = props => {
     const { className, menu, ...restProps } = props;
     return (
         <div className={clsx(s.box, className)} {...restProps}>
@@ -27,8 +27,8 @@ export const MenuBar: FunctionComponent<MenuBarComponentProps> = props => {
 
 const renderMenuItem = ({ title, link, permission, exact }: MenuItem) => (
     <MenuBarItem
-        permission={permission}
         key={link.toString()}
+        permission={permission}
         title={title}
         link={link}
         exact={exact}

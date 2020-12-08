@@ -1,4 +1,4 @@
 export type CommentsFunctions = {
     onDelete?: (id: string) => void;
 };
-export type CommentBoxComponentProps = Comment.Base & CommentsFunctions;
+export type CommentBoxProps = Comment.Base & CommentsFunctions;

@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 import { Helmet } from "react-helmet";
-import { DocumentTitleComponentProps } from "./DocumentTitle.types";
+import { DocumentTitleProps } from "./DocumentTitle.types";
 
-export const DocumentTitle: FunctionComponent<DocumentTitleComponentProps> = ({
+export const DocumentTitle: FC<DocumentTitleProps> = ({
     title,
     ...restProps
 }) => {

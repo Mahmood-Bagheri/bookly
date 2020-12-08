@@ -1,6 +1,1 @@
-export type LoadingIndicatorProps = {};
-
-export type LoadingIndicatorComponentProps = React.HtmlHTMLAttributes<
-    HTMLDivElement
-> &
-    Partial<LoadingIndicatorProps>;
+export type LoadingIndicatorProps = React.HtmlHTMLAttributes<HTMLDivElement>;

@@ -1,6 +1,6 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 /* components */
-import { Input } from "components/Input";
+import { Input, InputProps } from "components/Input";
 /* modules */
 import clsx from "classnames";
 import { useQueryString } from "hooks/useQueryString";
@@ -19,22 +19,30 @@ export const FeedFilterBox: FC<FeedFilterBoxProps> = ({
 }) => {
     const query = useQueryString("query");
 
+    const inputConfig: InputProps = {
+        placeholder: "جست و جو",
+        defaultValue: query,
+        onChange: event => handleOnChange(event, onSearch),
+        onKeyDown: event => handleOnKeyDown(event, onSearch),
+    };
+
     return (
         <div className={clsx(s.box, "mb-3", className)}>
-            <Input.Text
-                placeholder="جست و جو"
-                defaultValue={query}
-                onChange={e => {
-                    if (!e.target.value) {
-                        onSearch("");
-                    }
-                }}
-                onKeyDown={e => {
-                    if (e.key === "Enter") {
-                        onSearch(e.currentTarget.value);
-                    }
-                }}
-            />
+            <Input.Text {...inputConfig} />
         </div>
     );
+};
+
+type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+const handleOnChange = (e: ChangeEvent, cb: Function) => {
+    if (!e.target.value) {
+        cb("");
+    }
+};
+
+type KeyboardEvent = React.KeyboardEvent<HTMLInputElement>;
+const handleOnKeyDown = (e: KeyboardEvent, cb: Function) => {
+    if (e.key === "Enter") {
+        cb(e.currentTarget.value);
+    }
 };

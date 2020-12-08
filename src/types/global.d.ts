@@ -15,3 +15,10 @@ declare type $ElementProps<T> = T extends React.ComponentType<infer Props>
         ? Props
         : never
     : never;
+
+declare let process: {
+    env: {
+        NODE_ENV: "development" | "production";
+        REACT_APP_API_URL: string;
+    };
+};

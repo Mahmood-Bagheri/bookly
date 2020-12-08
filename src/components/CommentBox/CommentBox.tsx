@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import { DeleteButton } from "components/DeleteButton";
 import { Text } from "components/Text";
@@ -8,13 +8,13 @@ import dayJs from "dayjs";
 /* assets */
 import BookImage from "assets/images/book.jpg";
 /* types */
-import { CommentBoxComponentProps } from "./CommentBox.types";
+import { CommentBoxProps } from "./CommentBox.types";
 /* styles */
 import s from "./CommentBox.module.scss";
 import { routeTo } from "helpers/routeTo";
 import { uniqueId } from "helpers/uniqueId";
 
-export const CommentBox: FunctionComponent<CommentBoxComponentProps> = ({
+export const CommentBox: FC<CommentBoxProps> = ({
     id: commentId,
     body,
     date,

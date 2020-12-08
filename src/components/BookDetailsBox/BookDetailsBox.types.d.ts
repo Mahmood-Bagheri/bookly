@@ -1,5 +1,4 @@
-export type BookDetailsBoxComponentProps = {
-    title: string;
-    author: string;
-    imageSrc?: string;
-};
+export type BookDetailsBoxComponentProps = Pick<
+    Book.Base,
+    "author" | "title" | "imageSrc"
+>;

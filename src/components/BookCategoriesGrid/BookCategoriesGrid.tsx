@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 /* components */
-import { BookCategoryBox, Category } from "components/BookCategoryBox";
+import { BookCategoryBox } from "components/BookCategoryBox";
 import { GenericGrid } from "components/GenericGrid";
 /* modules */
 import { useQueryString } from "hooks/useQueryString";
@@ -16,7 +16,7 @@ export const BookCategoriesGrid: FunctionComponent<BookCategoriesGridComponentPr
     loading = false,
 }) => {
     const query = useQueryString("query");
-    const filterPublishers = (category: Category) =>
+    const filterPublishers = (category: Category.Base) =>
         checkInclusion(category.categoryTitle, query);
 
     if (loading) {
@@ -24,7 +24,7 @@ export const BookCategoriesGrid: FunctionComponent<BookCategoriesGridComponentPr
     }
 
     return (
-        <GenericGrid<Category>
+        <GenericGrid<Category.Base>
             withRow
             filter={filterPublishers}
             items={categories}
@@ -33,7 +33,7 @@ export const BookCategoriesGrid: FunctionComponent<BookCategoriesGridComponentPr
     );
 };
 
-const renderCategories = (category: Category) => {
+const renderCategories = (category: Category.Base) => {
     return (
         <BookCategoryBox.Component
             key={category.id}

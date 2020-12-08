@@ -8,7 +8,7 @@ export type BaseLikeButtonProps = {
 };
 
 export type LikeButtonComponentProps = Omit<
-    React.SVGProps<SVGSVGElement>,
+    JSX.IntrinsicElements["svg"],
     keyof BaseLikeButtonProps
 > &
     BaseLikeButtonProps;

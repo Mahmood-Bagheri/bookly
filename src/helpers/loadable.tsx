@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from "react";
 
-interface Props {
+type Props = {
     fallback?: React.ReactNode | null;
-}
+};
 /**
  *
  * @param importFunc

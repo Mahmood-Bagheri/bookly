@@ -1,9 +1,8 @@
 import { HTMLProps } from "react";
-import { Category } from "components/BookCategoryBox";
 
 export type BookCategoriesGridProps = {
     loading?: boolean;
-    categories: Category[];
+    categories: Category.Base[];
 };
 
 export type BookCategoriesGridComponentProps = HTMLProps<HTMLDivElement> &

@@ -1,6 +1,8 @@
-export type LoginFormProps = {
-    onSubmit: (values: object) => void;
+import { LoginMutationVariables } from "hooks";
+
+export type LoginFormProps<T> = {
+    onSubmit: (values: T) => void;
     loading?: boolean;
 };
 
-export type LoginFormComponentProps = LoginFormProps;
+export type LoginFormComponentProps = LoginFormProps<LoginMutationVariables>;

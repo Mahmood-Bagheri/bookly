@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import { Image } from "components/Image";
 import { Button } from "components/Button";
@@ -17,22 +17,82 @@ import { PublisherBoxComponentProps } from "./PublisherBox.types";
 import s from "./PublisherBox.module.scss";
 import { useFollowPublisher } from "hooks";
 
-export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props => {
+const defaultOnFollow = (id: string) => {
+    console.log(id);
+};
+
+export const PublisherBox: FC<PublisherBoxComponentProps> = props => {
     const {
         id: publisherId,
         className,
-        title = "",
-        description = "",
+        title,
+        description,
         initialFollowingState = false,
         imageSrc = PublisherImage,
         onFollow = defaultOnFollow,
         ...restProps
     } = props;
 
+    return (
+        <div className={clsx(s.box, `shadow`, className)} {...restProps}>
+            <PublisherBoxImage id={publisherId} imageSrc={imageSrc} />
+
+            <PublisherBoxContent
+                id={publisherId}
+                title={title}
+                description={description}
+                initialFollowingState={initialFollowingState}
+            />
+        </div>
+    );
+};
+
+const PublisherBoxImage = ({
+    id: publisherId,
+    imageSrc,
+}: Pick<PublisherBoxComponentProps, "imageSrc" | "id">) => {
+    return (
+        <Link<RouterLinkProps>
+            permission="routes.publisher"
+            to={routeTo("publisher", { publisherId })}
+        >
+            <div className="p-1">
+                <Image className={s.image} src={imageSrc} />
+            </div>
+        </Link>
+    );
+};
+
+export const PublisherBoxContent = ({
+    title,
+    description,
+    initialFollowingState = false,
+    id: publisherId,
+}: Pick<
+    PublisherBoxComponentProps,
+    "title" | "initialFollowingState" | "description" | "id"
+>) => {
+    return (
+        <div className={s.content}>
+            <Text className={s.title}>{title}</Text>
+            <Text className={s.description}>{description}</Text>
+            <PublisherBoxFollowButton
+                id={publisherId}
+                initialFollowingState={initialFollowingState}
+            />
+        </div>
+    );
+};
+
+const PublisherBoxFollowButton = ({
+    id: publisherId,
+    initialFollowingState = false,
+}: Pick<PublisherBoxComponentProps, "initialFollowingState" | "id">) => {
     const [
         follow,
         { isLoading: followPublisherIsLoading },
     ] = useFollowPublisher();
+
     const SubscriptionTextButtonText = conditionalText(
         initialFollowingState,
         "لغو سابسکریپشن",
@@ -40,34 +100,16 @@ export const PublisherBox: FunctionComponent<PublisherBoxComponentProps> = props
     );
 
     return (
-        <div className={clsx(s.box, `shadow`, className)} {...restProps}>
-            <Link<RouterLinkProps>
-                permission="routes.publisher"
-                to={routeTo("publisher", { publisherId })}
-            >
-                <div className="p-1">
-                    <Image className={s.image} src={imageSrc} />
-                </div>
-            </Link>
-            <div className={s.content}>
-                <Text className={s.title}>{title}</Text>
-                <Text className={s.description}>{description}</Text>
-                <Button
-                    type={initialFollowingState ? "dashed" : "primary"}
-                    className="mt-4"
-                    danger={initialFollowingState}
-                    block
-                    size="large"
-                    onClick={() => follow({ publisherId })}
-                    loading={followPublisherIsLoading}
-                >
-                    {SubscriptionTextButtonText}
-                </Button>
-            </div>
-        </div>
+        <Button
+            type={initialFollowingState ? "dashed" : "primary"}
+            className="mt-4"
+            danger={initialFollowingState}
+            block
+            size="large"
+            onClick={() => follow({ publisherId })}
+            loading={followPublisherIsLoading}
+        >
+            {SubscriptionTextButtonText}
+        </Button>
     );
-};
-
-const defaultOnFollow = (id: string) => {
-    console.log(id);
 };

@@ -2,7 +2,7 @@ import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
 import { LoginForm } from "components/LoginForm";
-import { useLogin, LoginMutationVariables } from "hooks/operations";
+import { useLogin } from "hooks/operations";
 
 const Login: FC = props => {
     const [login, { isLoading: loginIsLoading }] = useLogin();
@@ -11,12 +11,7 @@ const Login: FC = props => {
         <Fragment>
             <DocumentTitle title="ورود" />
 
-            <LoginForm
-                loading={loginIsLoading}
-                onSubmit={credentials =>
-                    login(credentials as LoginMutationVariables)
-                }
-            />
+            <LoginForm loading={loginIsLoading} onSubmit={login} />
         </Fragment>
     );
 };

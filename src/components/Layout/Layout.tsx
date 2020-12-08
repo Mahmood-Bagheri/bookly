@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useEffect } from "react";
+import React, { FC, Fragment } from "react";
 /* components */
 import { TopBar } from "components/TopBar";
 /* modules */
@@ -6,7 +6,6 @@ import { TopBar } from "components/TopBar";
 import { updateQs } from "helpers/queryString";
 /* assets */
 /* constants */
-import { QS_KEYS } from "constants/qs";
 /* types */
 import { LayoutProps } from "./Layout.types";
 /* styles */

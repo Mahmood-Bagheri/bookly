@@ -16,21 +16,18 @@ import s from "./ProfileForm.module.scss";
 import { PROFILE_FORM_RULES } from "constants/validationRules";
 
 export const ProfileForm: FC<ProfileFormProps> = ({
-    className,
     onSubmit,
     loading = false,
     ...restProps
 }) => {
-    const onFinish = (values: object) => onSubmit(values);
-
     const initialValues = {
         username: "نام کاربریِ غیر قابل تعویض :|",
     };
     return (
-        <div className={clsx(s.box, "shadow", className)}>
+        <div className={clsx(s.box, "shadow")}>
             <Form
                 layout="vertical"
-                onFinish={onFinish}
+                onFinish={onSubmit}
                 style={{ width: "100%" }}
                 initialValues={initialValues}
             >

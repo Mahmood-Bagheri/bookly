@@ -1,2 +1,2 @@
-import { DrawerProps } from "antd/lib/drawer";
-export type DrawerComponentProps = DrawerProps;
+import { DrawerProps as AntDesignDrawerProps } from "antd/lib/drawer";
+export type DrawerProps = AntDesignDrawerProps;

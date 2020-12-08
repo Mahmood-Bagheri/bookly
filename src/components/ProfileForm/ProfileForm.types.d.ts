@@ -1,8 +1,11 @@
 import { HTMLProps } from "react";
+import { Profile } from "types/profile";
 
-export type ProfileFormTypes = {
-    onSubmit: (values: object) => void;
+export type ProfileFormTypes<T> = {
+    onSubmit: (values: T) => void;
     loading?: boolean;
 };
 
-export type ProfileFormProps = HTMLProps<HTMLDivElement> & ProfileFormTypes;
+export type ProfileFormProps = ProfileFormTypes<
+    Profile.Mutation.Update.Variables
+>;

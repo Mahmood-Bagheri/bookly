@@ -9,10 +9,7 @@ const Profile: FC = props => {
     return (
         <Fragment>
             <DocumentTitle title="پروفایل" />
-            <ProfileForm
-                loading={isLoading}
-                onSubmit={(v: any) => updateProfile(v)}
-            />
+            <ProfileForm loading={isLoading} onSubmit={updateProfile} />
         </Fragment>
     );
 };
