@@ -17,13 +17,12 @@ import { KeyboardKeys } from "types/global";
 export const FeedFilterBox: FC<FeedFilterBoxProps> = ({
     className,
     onSearch,
-    ...restProps
 }) => {
-    const query = useQueryString("query");
+    const [{ query }] = useQueryString();
 
     const inputConfig: InputProps = {
         placeholder: "جست و جو",
-        defaultValue: query,
+        defaultValue: query as string,
         onChange: event => handleOnChange(event, onSearch),
         onKeyDown: event => handleOnKeyDown(event, onSearch),
     };
@@ -37,20 +36,20 @@ export const FeedFilterBox: FC<FeedFilterBoxProps> = ({
 
 const handleOnChange = (
     e: React.ChangeEvent<HTMLInputElement>,
-    cb: (text: string) => void
+    callback: (text: string) => void
 ) => {
-    if (isNullOrEmptyString(e.target.value)) cb("");
+    if (isNullOrEmptyString(e.target.value)) callback("");
 };
-// todo -> generalize this.
+
 const handleOnKeyDown = (
     e: React.KeyboardEvent<HTMLInputElement>,
-    cb: (text: string) => void
+    callback: (text: string) => void
 ) => {
     switch (e.key as KeyboardKeys) {
         case "Enter":
-            return cb(e.currentTarget.value);
+            return callback(e.currentTarget.value);
         case "Escape":
-            return cb("");
+            return callback("");
         default:
             return;
     }

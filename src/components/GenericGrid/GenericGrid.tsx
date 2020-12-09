@@ -6,9 +6,9 @@ import { useQueryString } from "hooks/useQueryString";
 
 type Props<T> = {
     items: T[];
-    renderItem: (item: T, index: number) => React.ReactNode;
-    filter?: (item: T, index: number) => boolean;
     withRow?: boolean;
+    filter?: (item: T, index: number) => boolean;
+    renderItem: (item: T, index: number) => React.ReactNode;
 };
 
 export function GenericGrid<T>(props: Props<T>) {
@@ -16,10 +16,10 @@ export function GenericGrid<T>(props: Props<T>) {
 
     const RowPlaceholder = withRow ? Row : Fragment;
     const filtered = items.filter(filter);
-    const query = useQueryString("query");
+    const [{ query }, setQueryString] = useQueryString();
 
     if (isEmptyArray(filtered)) {
-        return <EmptyGrid query={query} />;
+        return <EmptyGrid query={query as string} />;
     }
 
     return <RowPlaceholder>{filtered.map(renderItem)}</RowPlaceholder>;

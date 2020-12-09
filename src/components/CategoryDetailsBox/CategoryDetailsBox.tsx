@@ -11,6 +11,7 @@ import clsx from "classnames";
 import { CategoryDetailsBoxProps } from "./CategoryDetailsBox.types";
 /* styles */
 import s from "./CategoryDetailsBox.module.scss";
+import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
 
 export const CategoryDetailsBox: FC<CategoryDetailsBoxProps> = ({
     className,

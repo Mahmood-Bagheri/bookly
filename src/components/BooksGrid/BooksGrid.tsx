@@ -15,9 +15,10 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     books,
     loading = false,
 }) => {
-    const queryString = useQueryString("query");
+    const [{ query }, setQueryString] = useQueryString();
+
     const filterBooks = (book: Book.Base) =>
-        checkInclusion(book.title, queryString);
+        checkInclusion(book.title, query as string);
 
     if (loading) {
         return <BookBox.ShimmerGrid />;

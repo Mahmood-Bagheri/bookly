@@ -16,9 +16,10 @@ export const PublishersGrid: FunctionComponent<PublishersGridComponentProps> = (
     loading,
     publishers,
 }) => {
-    const queryString = useQueryString("query");
+    const [{ query }] = useQueryString();
+
     const filterPublishers = (publisher: Publisher) =>
-        checkInclusion(publisher.title, queryString);
+        checkInclusion(publisher.title, query as string);
 
     if (loading) {
         return <PublisherBox.ShimmerGrid />;

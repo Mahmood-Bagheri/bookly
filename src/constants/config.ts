@@ -15,3 +15,7 @@ export const FAKE_IMAGE_API_CONFIG = {
     key: "book",
     size: `500`,
 };
+
+export const APP_TITLE = process.env.REACT_APP_WEBSITE_TITLE || "Bookly 📚";
+
+export const DEFAULT_IMAGE_ALT = "This image is related to the website :/";

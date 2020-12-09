@@ -1,9 +1,9 @@
 import React from "react";
-import clsx from "classnames";
+/* components */
 import { Row } from "components/Row";
 import { Col } from "components/Col";
+/* styles */
 import s from "./FeedFilterBoxShimmer.module.scss";
-import { Input } from "components/Input";
 
 export const FeedFilterBoxShimmer = () => {
     return (

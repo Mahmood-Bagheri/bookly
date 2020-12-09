@@ -1,6 +1,7 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 /* modules */
 import classnames from "classnames";
+import { useToggle } from "hooks/useToggle";
 /* assets */
 import { ReactComponent as BookmarkIcon } from "assets/icons/bookmark.svg";
 /* types */
@@ -8,24 +9,18 @@ import { BookmarkButtonComponentProps } from "./BookmarkButton.types";
 /* styles */
 import s from "./BookmarkButton.module.scss";
 
-export const BookmarkButton: FunctionComponent<BookmarkButtonComponentProps> = props => {
-    const {
-        onBookmarkStateChange = defaultOnBookmarkStateChange,
-        initialBookmarkState = false,
-        ...restProps
-    } = props;
-
-    const [bookmarkState, setBookmarkState] = useState(initialBookmarkState);
+export const BookmarkButton: FunctionComponent<BookmarkButtonComponentProps> = ({
+    onBookmarkStateChange = defaultOnBookmarkStateChange,
+    initialBookmarkState = false,
+    ...restProps
+}) => {
+    const [bookmarkState, toggleBookmarkState] = useToggle(false);
     const svgColor = classnames(s.bookmark, { [s.black]: bookmarkState });
-
-    const toggleBookmark = () => {
-        setBookmarkState(previousLikeState => !previousLikeState);
-    };
-
     useEffect(() => onBookmarkStateChange(bookmarkState), [bookmarkState]);
+
     return (
         <BookmarkIcon
-            onClick={toggleBookmark}
+            onClick={toggleBookmarkState}
             className={svgColor}
             {...restProps}
         />

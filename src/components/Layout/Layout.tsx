@@ -2,8 +2,8 @@ import React, { FC, Fragment } from "react";
 /* components */
 import { TopBar } from "components/TopBar";
 /* modules */
+import { useQueryString } from "hooks/useQueryString";
 /* helpers */
-import { updateQs } from "helpers/queryString";
 /* assets */
 /* constants */
 /* types */
@@ -11,10 +11,12 @@ import { LayoutProps } from "./Layout.types";
 /* styles */
 
 export const Layout: FC<LayoutProps> = ({ children, withSearchbar }) => {
+    const [, setQueryString] = useQueryString();
+
     return (
         <Fragment>
             <TopBar
-                onSearch={text => updateQs("query", text)}
+                onSearch={text => setQueryString("app", text)}
                 withSearchbar={withSearchbar}
             />
             {children}

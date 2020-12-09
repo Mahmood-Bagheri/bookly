@@ -9,15 +9,18 @@ import { checkInclusion } from "helpers/checkInclusion";
 /* assets */
 /* types */
 import { BookCategoriesGridProps } from "./BookCategoriesGrid.types";
+import { Col } from "components/Col";
+import { uniqueId } from "lodash";
 /* styles */
 
 export const BookCategoriesGrid: FC<BookCategoriesGridProps> = ({
     categories,
     loading = false,
 }) => {
-    const query = useQueryString("query");
+    const [{ query }] = useQueryString();
+
     const filterPublishers = (category: Category.Base) =>
-        checkInclusion(category.categoryTitle, query);
+        checkInclusion(category.categoryTitle, query as string);
 
     if (loading) {
         return <BookCategoryBox.ShimmerGrid />;
@@ -35,10 +38,11 @@ export const BookCategoriesGrid: FC<BookCategoriesGridProps> = ({
 
 const renderCategories = (category: Category.Base) => {
     return (
-        <BookCategoryBox.Component
-            key={category.id}
-            id={category.id}
-            categoryTitle={category.categoryTitle}
-        />
+        <Col xl={3} sm={6} className="mb-3" key={uniqueId()}>
+            <BookCategoryBox.Component
+                id={category.id}
+                categoryTitle={category.categoryTitle}
+            />
+        </Col>
     );
 };

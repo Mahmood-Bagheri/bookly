@@ -13,11 +13,7 @@ import { EmptyGridProps } from "./EmptyGrid.types";
 /* styles */
 import s from "./EmptyGrid.module.scss";
 
-export const EmptyGrid: FC<EmptyGridProps> = ({
-    className,
-    query,
-    ...restProps
-}) => {
+export const EmptyGrid: FC<EmptyGridProps> = ({ className, query }) => {
     return (
         <div className={clsx(s.box, className)}>
             <EmptyGridPicture />

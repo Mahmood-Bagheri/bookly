@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import { PopConfirm } from "components/PopConfirm";
 import { Spinner } from "components/Spinner";
@@ -8,14 +8,16 @@ import { DeleteButtonProps } from "./DeleteButton.types";
 /* assets */
 import { ReactComponent as DeleteIcon } from "assets/icons/delete.svg";
 /* modules */
-import classnames from "classnames";
+import clsx from "classnames";
 /* styles */
 import s from "./DeleteButton.module.scss";
 
-export const DeleteButton: FunctionComponent<DeleteButtonProps> = props => {
-    const { className, permission, loading = false, ...restProps } = props;
-    const clsx = classnames(className, s.icon);
-
+export const DeleteButton: FC<DeleteButtonProps> = ({
+    className,
+    permission,
+    loading = false,
+    ...restProps
+}) => {
     if (loading) {
         return <Spinner />;
     }
@@ -23,7 +25,7 @@ export const DeleteButton: FunctionComponent<DeleteButtonProps> = props => {
     return (
         <AclService permission={permission}>
             <PopConfirm {...restProps}>
-                <DeleteIcon className={clsx} />
+                <DeleteIcon className={clsx(className, s.icon)} />
             </PopConfirm>
         </AclService>
     );

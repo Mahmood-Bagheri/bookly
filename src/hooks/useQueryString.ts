@@ -1,58 +1,43 @@
-import { parseQueryString, QSKeys } from "helpers/queryString";
-import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-
-// todo -> make this hook generic
-export const useQueryString = (key: QSKeys) => {
-    const history = useHistory();
-    const urlQuery = parseQueryString(history.location.search, key);
-    const [queryString, setQueryString] = useState<string>(urlQuery || "");
-    useEffect(() => {
-        setQueryString(urlQuery);
-    }, [history.location.search]);
-
-    return queryString;
-};
-
-/* 
 import {
     ParseOptions,
-    ParsedQuery,
     StringifyOptions,
     parse,
     stringify,
+    ParsedQuery,
+    StringifiableRecord,
 } from "query-string";
 import { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
+import { History } from "history";
+import { QueryStringKeys } from "types/qs";
 
-export interface QueryStringResult<T> {
-    [0]: ParsedQuery<T>;
-    [1]: (values: T) => void;
-}
+const pushQueryString = (
+    history: History,
+    newQuery: StringifiableRecord,
+    stringifyOptions?: StringifyOptions
+) => {
+    return history.push(
+        history.location.pathname + "?" + stringify(newQuery, stringifyOptions)
+    );
+};
 
-export function useQueryString<T>(
+export function useQueryString(
     parseOptions?: ParseOptions,
     stringifyOptions?: StringifyOptions
-) {
+): [ParsedQuery, (key: QueryStringKeys, values: string) => void] {
     const history = useHistory();
     const location = useLocation();
-    const [state, setState] = useState<T>(
-        parse<T>(location.search, parseOptions)
-    );
+    const [state, setState] = useState(parse(location.search, parseOptions));
 
-    function setQuery(values: T): void {
+    function setQuery(key: QueryStringKeys, values: string): void {
         const newQuery = {
             ...state,
-            ...values,
+            [key]: values,
         };
 
         setState(newQuery);
-        history.push(
-            location.pathname + "?" + stringify<T>(newQuery, stringifyOptions)
-        );
+        pushQueryString(history, newQuery, stringifyOptions);
     }
 
     return [state, setQuery];
 }
-
-*/
