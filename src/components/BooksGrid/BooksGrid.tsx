@@ -6,10 +6,10 @@ import { Col } from "components/Col";
 /* helpers */
 import { uniqueId } from "helpers/uniqueId";
 import { useQueryString } from "hooks/useQueryString";
+import { checkInclusion } from "helpers/checkInclusion";
 /* types */
 import { BooksGridComponentProps } from "./BooksGrid.types";
 /* styles */
-import { checkInclusion } from "helpers/checkInclusion";
 
 export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     books,

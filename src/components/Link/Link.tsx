@@ -28,28 +28,9 @@ export const Link = <T extends {}>(
 // const Usage = () => {
 //     return (
 //         <div>
-//             <Link<RouterLinkProps> to="/">My link</Link>; // ok
-//             <Link<AnchorProps> href="/">My link</Link>; // ok
+//             <Link<RouterLinkProps> permission="routes.home" to="/">My link</Link>; // ok
 //             <Link<RouterLinkProps> to="/">My link</Link>; // error
+//             <Link<AnchorProps> href="/">My link</Link>; // ok
 //         </div>
 //     );
 // };
-
-/* // deprecated
-import * as React from "react";
-import { NavLink, NavLinkProps } from "react-router-dom";
-import { AclService } from "services/rbac";
-
-type LinkProps = {
-    permission: string;
-};
-type RouterLinkProps = Omit<NavLinkProps, "href"> & LinkProps;
-
-export const Link = (props: LinkProps & RouterLinkProps) => {
-    return (
-        <AclService permission={props.permission}>
-            <NavLink {...(props as RouterLinkProps)} />
-        </AclService>
-    );
-};
- */

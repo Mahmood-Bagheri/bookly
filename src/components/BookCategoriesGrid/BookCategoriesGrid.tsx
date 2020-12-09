@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import { BookCategoryBox } from "components/BookCategoryBox";
 import { GenericGrid } from "components/GenericGrid";
@@ -8,10 +8,10 @@ import { useQueryString } from "hooks/useQueryString";
 import { checkInclusion } from "helpers/checkInclusion";
 /* assets */
 /* types */
-import { BookCategoriesGridComponentProps } from "./BookCategoriesGrid.types";
+import { BookCategoriesGridProps } from "./BookCategoriesGrid.types";
 /* styles */
 
-export const BookCategoriesGrid: FunctionComponent<BookCategoriesGridComponentProps> = ({
+export const BookCategoriesGrid: FC<BookCategoriesGridProps> = ({
     categories,
     loading = false,
 }) => {

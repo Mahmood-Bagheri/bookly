@@ -1,20 +1,19 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import { Col } from "components/Col";
 import { Text } from "components/Text";
 import { Link, RouterLinkProps } from "components/Link";
-
 /* modules */
 import clsx from "classnames";
-import { uniqueId } from "helpers/uniqueId";
 /* helpers */
+import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
+import { routeTo } from "helpers/routeTo";
 /* types */
-import { BookCategoryBoxComponentProps } from "./BookCategoryBox.types";
+import { BookCategoryBoxProps } from "./BookCategoryBox.types";
 /* styles */
 import s from "./BookCategoryBox.module.scss";
-import { routeTo } from "helpers/routeTo";
 
-export const BookCategoryBox: FunctionComponent<BookCategoryBoxComponentProps> = props => {
+export const BookCategoryBox: FC<BookCategoryBoxProps> = props => {
     const { className, id: categoryId, categoryTitle, ...restProps } = props;
 
     return (
@@ -34,7 +33,7 @@ export const BookCategoryBox: FunctionComponent<BookCategoryBoxComponentProps> =
                                 to left,
                                 rgba(0, 0, 0, 0.3),
                                 rgba(0, 0, 0, 0.3)
-                            ), url(https://source.unsplash.com/500x500/?book&sig=${uniqueId()})`,
+                            ), url(${generateFakeImageUrl()})`,
                         }}
                     >
                         <Text className={s.title}>{categoryTitle}</Text>

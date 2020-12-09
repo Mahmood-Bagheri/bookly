@@ -11,6 +11,8 @@ import { useQueryString } from "hooks/useQueryString";
 import { FeedFilterBoxProps } from "./FeedFilterBox.types";
 /* styles */
 import s from "./FeedFilterBox.module.scss";
+import { isNullOrEmptyString } from "helpers/isNullOrEmptyString";
+import { KeyboardKeys } from "types/global";
 
 export const FeedFilterBox: FC<FeedFilterBoxProps> = ({
     className,
@@ -33,16 +35,23 @@ export const FeedFilterBox: FC<FeedFilterBoxProps> = ({
     );
 };
 
-type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
-const handleOnChange = (e: ChangeEvent, cb: Function) => {
-    if (!e.target.value) {
-        cb("");
-    }
+const handleOnChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    cb: (text: string) => void
+) => {
+    if (isNullOrEmptyString(e.target.value)) cb("");
 };
-
-type KeyboardEvent = React.KeyboardEvent<HTMLInputElement>;
-const handleOnKeyDown = (e: KeyboardEvent, cb: Function) => {
-    if (e.key === "Enter") {
-        cb(e.currentTarget.value);
+// todo -> generalize this.
+const handleOnKeyDown = (
+    e: React.KeyboardEvent<HTMLInputElement>,
+    cb: (text: string) => void
+) => {
+    switch (e.key as KeyboardKeys) {
+        case "Enter":
+            return cb(e.currentTarget.value);
+        case "Escape":
+            return cb("");
+        default:
+            return;
     }
 };

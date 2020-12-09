@@ -1,17 +1,17 @@
 import React, { FC } from "react";
 /* components */
 import { Text } from "components/Text";
+import { Link, RouterLinkProps } from "components/Link";
 /* modules */
 import clsx from "classnames";
 /* helpers */
+import { routeTo } from "helpers/routeTo";
 /* assets */
 import { ReactComponent as EmptyGridPicture } from "assets/icons/empty.svg";
 /* types */
 import { EmptyGridProps } from "./EmptyGrid.types";
 /* styles */
 import s from "./EmptyGrid.module.scss";
-import { Link, RouterLinkProps } from "components/Link";
-import { routeTo } from "helpers/routeTo";
 
 export const EmptyGrid: FC<EmptyGridProps> = ({
     className,
@@ -31,6 +31,7 @@ export const EmptyGrid: FC<EmptyGridProps> = ({
         </div>
     );
 };
+
 const Home = () => (
     <Link<RouterLinkProps>
         permission="routes.home"

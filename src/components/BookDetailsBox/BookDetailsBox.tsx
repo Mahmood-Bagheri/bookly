@@ -11,7 +11,6 @@ import clsx from "classnames";
 import { BookDetailsBoxComponentProps } from "./BookDetailsBox.types";
 /* styles */
 import s from "./BookDetailsBox.module.scss";
-import { BooksCarousel } from "components/BooksCarousel";
 
 export const BookDetailsBox: FunctionComponent<BookDetailsBoxComponentProps> = ({
     title,

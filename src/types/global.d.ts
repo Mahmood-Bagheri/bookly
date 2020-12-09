@@ -20,5 +20,10 @@ declare let process: {
     env: {
         NODE_ENV: "development" | "production";
         REACT_APP_API_URL: string;
+        REACT_APP_WEBSITE_TITLE: string;
     };
 };
+
+type Maybe<T> = T | undefined | null;
+
+export type KeyboardKeys = "Enter" | "Escape";

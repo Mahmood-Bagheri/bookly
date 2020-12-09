@@ -1,14 +1,14 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import { Text } from "components/Text";
 /* modules */
 import clsx from "classnames";
 /* types */
-import { BookDescriptionTextComponentProps } from "./BookDescriptionText.types";
+import { BookDescriptionTextProps } from "./BookDescriptionText.types";
 /* styles */
 import s from "./BookDescriptionText.module.scss";
 
-export const BookDescriptionText: FunctionComponent<BookDescriptionTextComponentProps> = ({
+export const BookDescriptionText: FC<BookDescriptionTextProps> = ({
     description,
     title = "مشخصات کتاب",
 }) => {

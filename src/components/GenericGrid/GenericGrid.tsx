@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { Fragment } from "react";
 import { Row } from "components/Row";
 import { isEmptyArray } from "helpers/isEmptyArray";
 import { EmptyGrid } from "components/EmptyGrid";
@@ -14,7 +14,7 @@ type Props<T> = {
 export function GenericGrid<T>(props: Props<T>) {
     const { items, renderItem, filter = () => true, withRow = false } = props;
 
-    const RowPlaceholder = withRow ? Row : React.Fragment;
+    const RowPlaceholder = withRow ? Row : Fragment;
     const filtered = items.filter(filter);
     const query = useQueryString("query");
 

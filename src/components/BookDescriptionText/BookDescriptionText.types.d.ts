@@ -1,4 +1,4 @@
-export type BookDescriptionTextComponentProps = {
+export type BookDescriptionTextProps = {
     title?: string;
     description: string;
 };

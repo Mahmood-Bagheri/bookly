@@ -6,6 +6,7 @@ export const DocumentTitle: FC<DocumentTitleProps> = ({
     title,
     ...restProps
 }) => {
-    const dcTitle = `${title} | Bookly 📚`;
+    const appTitle = process.env.REACT_APP_WEBSITE_TITLE || "Bookly 📚";
+    const dcTitle = `${title} | ${appTitle}`;
     return <Helmet title={dcTitle} {...restProps} />;
 };

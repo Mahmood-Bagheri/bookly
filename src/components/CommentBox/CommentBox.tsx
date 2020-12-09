@@ -5,14 +5,15 @@ import { Text } from "components/Text";
 import { Link, RouterLinkProps } from "components/Link";
 /* modules */
 import dayJs from "dayjs";
+/* helpers */
+import { routeTo } from "helpers/routeTo";
+import { uniqueId } from "helpers/uniqueId";
 /* assets */
 import BookImage from "assets/images/book.jpg";
 /* types */
 import { CommentBoxProps } from "./CommentBox.types";
 /* styles */
 import s from "./CommentBox.module.scss";
-import { routeTo } from "helpers/routeTo";
-import { uniqueId } from "helpers/uniqueId";
 
 export const CommentBox: FC<CommentBoxProps> = ({
     id: commentId,

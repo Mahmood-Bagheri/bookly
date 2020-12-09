@@ -6,11 +6,12 @@ import { Button } from "components/Button";
 import { Text } from "components/Text";
 /* modules */
 import clsx from "classnames";
+/* constants */
+import { BOOK_COMMENT_VALIDATION_RULES } from "constants/validationRules";
 /* types */
 import { CommentInputBoxProps } from "./CommentInputBox.types";
 /* styles */
 import s from "./CommentInputBox.module.scss";
-import { BOOK_COMMENT_VALIDATION_RULES } from "constants/validationRules";
 
 export const CommentInputBox: FC<CommentInputBoxProps> = ({
     onSubmit,
