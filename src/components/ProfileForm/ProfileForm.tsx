@@ -9,12 +9,12 @@ import { Row } from "components/Row";
 import clsx from "classnames";
 /* helpers */
 /* assets */
+import { ProfileFormPicture } from "components/ProfileFormPicture";
 /* types */
 import { ProfileFormProps } from "./ProfileForm.types";
 /* styles */
 import s from "./ProfileForm.module.scss";
 import { PROFILE_FORM_RULES } from "constants/validationRules";
-import { ProfileFormPicture } from "components/ProfileFormPicture";
 
 export const ProfileForm: FC<ProfileFormProps> = ({
     onSubmit,
@@ -34,6 +34,8 @@ export const ProfileForm: FC<ProfileFormProps> = ({
             >
                 <Row>
                     <Col md={4}>
+                        <ProfileFormPicture className="d-block d-md-none mb-2" />
+
                         <Form.Item
                             label="نام"
                             name="name"
@@ -68,10 +70,10 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                         </Form.Item>
                     </Col>
                     <Col
-                        xl={4}
+                        md={4}
                         className="d-flex flex-column justify-content-between align-items-end"
                     >
-                        <ProfileFormPicture />
+                        <ProfileFormPicture className="d-none d-md-block" />
                         <Form.Item className="align-self-end">
                             <Button
                                 className="mt-4 align-self-end"
