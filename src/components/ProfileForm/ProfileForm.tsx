@@ -14,6 +14,7 @@ import { ProfileFormProps } from "./ProfileForm.types";
 /* styles */
 import s from "./ProfileForm.module.scss";
 import { PROFILE_FORM_RULES } from "constants/validationRules";
+import { ProfileFormPicture } from "components/ProfileFormPicture";
 
 export const ProfileForm: FC<ProfileFormProps> = ({
     onSubmit,
@@ -32,7 +33,7 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                 initialValues={initialValues}
             >
                 <Row>
-                    <Col md={6}>
+                    <Col md={4}>
                         <Form.Item
                             label="نام"
                             name="name"
@@ -49,7 +50,7 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                             <Input.Text disabled={true} tabIndex={3} />
                         </Form.Item>
                     </Col>
-                    <Col md={6} className="d-flex flex-column">
+                    <Col md={4} className="d-flex flex-column">
                         <Form.Item
                             label="نام کاربری"
                             name="username"
@@ -65,7 +66,12 @@ export const ProfileForm: FC<ProfileFormProps> = ({
                         >
                             <Input.Textarea rows={5} />
                         </Form.Item>
-
+                    </Col>
+                    <Col
+                        xl={4}
+                        className="d-flex flex-column justify-content-between align-items-end"
+                    >
+                        <ProfileFormPicture />
                         <Form.Item className="align-self-end">
                             <Button
                                 className="mt-4 align-self-end"
