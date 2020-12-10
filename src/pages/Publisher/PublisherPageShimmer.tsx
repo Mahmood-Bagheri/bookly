@@ -13,7 +13,7 @@ export const PublisherPageShimmer = () => {
                     <PublisherBox.Shimmer />
                 </Col>
                 <Col lg={9}>
-                    <DescriptionBox.Shimmer />
+                    <DescriptionBox loading />
                     <BookBox.ShimmerGrid count={4} />
                 </Col>
             </Row>

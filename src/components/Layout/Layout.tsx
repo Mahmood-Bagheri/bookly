@@ -16,7 +16,7 @@ export const Layout: FC<LayoutProps> = ({ children, withSearchbar }) => {
     return (
         <Fragment>
             <TopBar
-                onSearch={text => setQueryString("app", text)}
+                onSearch={text => setQueryString("query", text)}
                 withSearchbar={withSearchbar}
             />
             {children}

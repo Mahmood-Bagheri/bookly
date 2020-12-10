@@ -9,13 +9,14 @@ import { ReactComponent as ImageIcon } from "assets/icons/image.svg";
 import { UploadDropboxProps } from "./UploadDropbox.types";
 /* styles */
 import s from "./UploadDropbox.module.scss";
+import { injectDefaultProps } from "components/hoc/inject";
 
 const { Dragger } = Upload;
 
-export const UploadDropbox: FC<UploadDropboxProps> = ({
+const UploadDropbox: FC<UploadDropboxProps> = ({
     className,
-    title = "تصویر را اینجا وِل کنید",
-    subTitle = "حداکثر حجم عکس باید 500 کیلوبایت باشد",
+    title,
+    subTitle,
     ...restProps
 }) => {
     return (
@@ -28,3 +29,8 @@ export const UploadDropbox: FC<UploadDropboxProps> = ({
         </div>
     );
 };
+
+export default injectDefaultProps(UploadDropbox, {
+    title: "تصویر را اینجا وِل کنید",
+    subTitle: "حداکثر حجم عکس باید 500 کیلوبایت باشد",
+});

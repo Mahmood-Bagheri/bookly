@@ -6,10 +6,5 @@ export const BookDescriptionContainer = () => {
     استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
     در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد`;
 
-    return (
-        <DescriptionBox.Component
-            title="مشخصات کتاب"
-            description={description}
-        />
-    );
+    return <DescriptionBox title="مشخصات کتاب" description={description} />;
 };

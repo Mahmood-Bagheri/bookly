@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 /* components */
-import { Select as AntDesignSelect } from "antd";
+import { Select as SelectComponent } from "antd";
 /* modules */
 import clsx from "classnames";
 /* types */
@@ -14,7 +14,7 @@ export const Select = <T extends string | number>({
     ...restProps
 }: SelectProps<T>) => {
     return (
-        <AntDesignSelect
+        <SelectComponent
             allowClear
             showSearch
             size="large"

@@ -1,7 +1,3 @@
-import { DescriptionBox as Component } from "./DescriptionBox";
-import { DescriptionBoxShimmer as Shimmer } from "./DescriptionBoxShimmer";
-export const DescriptionBox = {
-    Component,
-    Shimmer,
-};
+export * from "./DescriptionBox";
+export * from "./DescriptionBoxShimmer";
 export * from "./DescriptionBox.types.d";

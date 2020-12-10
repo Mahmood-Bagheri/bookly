@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import { BookBox } from "components/BookBox";
 import { GenericGrid } from "components/GenericGrid";
@@ -8,13 +8,10 @@ import { uniqueId } from "helpers/uniqueId";
 import { useQueryString } from "hooks/useQueryString";
 import { checkInclusion } from "helpers/checkInclusion";
 /* types */
-import { BooksGridComponentProps } from "./BooksGrid.types";
+import { BooksGridProps } from "./BooksGrid.types";
 /* styles */
 
-export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
-    books,
-    loading = false,
-}) => {
+export const BooksGrid: FC<BooksGridProps> = ({ books, loading = false }) => {
     const [{ query }] = useQueryString();
 
     const filterBooks = (book: Book.Base) =>

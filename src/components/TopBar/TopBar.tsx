@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Fragment } from "react";
+import React, { FC, Fragment } from "react";
 /* components */
 import { MenuBar } from "components/MenuBar";
 import { Row } from "components/Row";
@@ -15,7 +15,7 @@ import { FeedFilterBox } from "components/FeedFilterBox";
 /* styles */
 import s from "./TopBar.module.scss";
 
-export const TopBar: FunctionComponent<TopBarComponentProps> = props => {
+export const TopBar: FC<TopBarComponentProps> = props => {
     const { className, title, onSearch, withSearchbar, ...restProps } = props;
 
     return (

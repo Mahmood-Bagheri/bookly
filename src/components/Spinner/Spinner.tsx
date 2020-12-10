@@ -1,19 +1,15 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* compoents */
-import { Spin } from "antd";
 /* modules */
 import clsx from "classnames";
 /* helpers */
 /* assets */
 /* types */
-import { SpinnerComponentProps } from "./Spinner.types";
+import { SpinnerProps } from "./Spinner.types";
 /* styles */
 import s from "./Spinner.module.scss";
 
-export const Spinner: FunctionComponent<SpinnerComponentProps> = ({
-    height = 24,
-    width = 24,
-}) => {
+export const Spinner: FC<SpinnerProps> = ({ height = 24, width = 24 }) => {
     return (
         <div
             className={s["sk-chase"]}

@@ -1,10 +1,12 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 /* components */
 import { Text } from "components/Text";
 import { Image } from "components/Image";
+import { UserBoxShimmer } from "./UserBoxShimmer";
 /* modules */
 import clsx from "classnames";
 import dayJs from "dayjs";
+import { useToggle } from "hooks/useToggle";
 /* helpers */
 /* assets */
 import { ReactComponent as ArrowLeft } from "assets/icons/arrow-left.svg";
@@ -12,8 +14,6 @@ import { ReactComponent as ArrowLeft } from "assets/icons/arrow-left.svg";
 import { UserBoxProps, RoleUnionType } from "./UserBox.types";
 /* styles */
 import s from "./UserBox.module.scss";
-import { conditionalText } from "helpers/conditionalText";
-import { UserBoxShimmer } from "./UserBoxShimmer";
 
 export const UserBox: FC<UserBoxProps> = ({
     className,
@@ -25,9 +25,7 @@ export const UserBox: FC<UserBoxProps> = ({
     registerDate,
     ...restProps
 }) => {
-    const [biographyExpanded, setBiographyExpanded] = useState(false);
-    const toggleExpantion = () =>
-        setBiographyExpanded(previousValue => !previousValue);
+    const [biographyExpanded, toggleExpantion] = useToggle(false);
 
     if (loading) {
         return <UserBoxShimmer />;
@@ -63,11 +61,7 @@ export const UserBox: FC<UserBoxProps> = ({
                 })}
                 onClick={toggleExpantion}
             >
-                {conditionalText(
-                    biographyExpanded,
-                    "نمایش کمتر",
-                    "نمایش بیشتر"
-                )}
+                {biographyExpanded ? "نمایش کمتر" : "نمایش بیشتر"}
                 <ArrowLeft />
             </Text>
         </div>

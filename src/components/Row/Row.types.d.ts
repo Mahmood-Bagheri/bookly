@@ -1,4 +1,1 @@
-export type RowProps = {};
-
-export type RowComponentProps = React.HtmlHTMLAttributes<HTMLDivElement> &
-    Partial<RowProps>;
+export type RowProps = React.HtmlHTMLAttributes<HTMLDivElement>;

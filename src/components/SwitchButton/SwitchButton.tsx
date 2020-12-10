@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
-import { Switch as AntDesignSwitch } from "antd";
+import { Switch } from "antd";
 /* types */
-import { SwitchButtonComponentProps } from "./SwitchButton.types";
+import { SwitchButtonProps } from "./SwitchButton.types";
 /* styles */
 import s from "./SwitchButton.module.scss";
 
-export const SwitchButton: FunctionComponent<SwitchButtonComponentProps> = props => {
-    return <AntDesignSwitch />;
+export const SwitchButton: FC<SwitchButtonProps> = props => {
+    return <Switch />;
 };

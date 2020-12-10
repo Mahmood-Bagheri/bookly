@@ -1,6 +1,6 @@
 import { SpinProps } from "antd/lib/spin";
 
-export type SpinnerComponentProps = SpinProps & {
+export type SpinnerProps = SpinProps & {
     height?: number;
     width?: number;
 };

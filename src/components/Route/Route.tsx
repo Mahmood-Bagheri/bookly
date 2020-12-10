@@ -1,11 +1,10 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 import { Layout } from "components/Layout";
 /* modules */
 import {
     Redirect,
     Route as ReactRouterRoute,
-    RouteComponentProps,
     RouteProps,
 } from "react-router-dom";
 import { AclService } from "services/rbac";
@@ -19,7 +18,7 @@ export type CustomRouteComponentProps = RouteProps & {
     withSearchbar: boolean;
 };
 
-export const Route: FunctionComponent<CustomRouteComponentProps> = ({
+export const Route: FC<CustomRouteComponentProps> = ({
     permissionKey,
     withLayout = true,
     withSearchbar,
