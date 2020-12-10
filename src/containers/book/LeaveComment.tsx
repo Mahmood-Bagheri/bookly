@@ -3,6 +3,7 @@ import { CommentInputBox } from "components/CommentInputBox";
 import { useCreateComment } from "hooks";
 import { useParams } from "react-router-dom";
 import { AclService } from "services/rbac";
+import { FormInstance } from "antd/lib/form";
 
 export const LeaveCommentContainer = () => {
     const { bookId } = useParams<{ bookId: string }>();
@@ -13,13 +14,14 @@ export const LeaveCommentContainer = () => {
         { isLoading: createCommentLoading },
     ] = useCreateComment();
 
-    const handleSubmitComment = (comment: string, callback: Function) => {
+    const handleSubmitComment = (comment: string, form: FormInstance) => {
         /* create comment api call */
         createComment(
             { bookId, comment },
             {
                 onSuccess: () => {
-                    callback();
+                    /* reset fields after successful api call */
+                    form.resetFields();
                 },
             }
         );

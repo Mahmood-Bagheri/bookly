@@ -17,18 +17,16 @@ export const CommentInputBox: FC<CommentInputBoxProps> = ({
     onSubmit,
     loading = false,
 }) => {
-    const [form] = Form.useForm();
+    const [form] = Form.useForm<Comment.Create.Variables>();
+
+    const handleSubmitForm = (values: Comment.Create.Variables) => {
+        onSubmit(values.comment, form);
+    };
 
     return (
         <div className={clsx(s.box, `shadow`)}>
             <Text className={s.title}>نظرتون در مورد این پست چیه؟</Text>
-            <Form
-                form={form}
-                layout="vertical"
-                onFinish={values => {
-                    onSubmit(values.comment, form.resetFields);
-                }}
-            >
+            <Form form={form} layout="vertical" onFinish={handleSubmitForm}>
                 <Form.Item
                     name="comment"
                     rules={BOOK_COMMENT_VALIDATION_RULES.comment}

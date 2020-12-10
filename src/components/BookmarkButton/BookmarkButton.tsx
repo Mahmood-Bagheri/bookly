@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect } from "react";
+import React, { FC, useEffect } from "react";
 /* modules */
 import classnames from "classnames";
 import { useToggle } from "hooks/useToggle";
@@ -9,7 +9,7 @@ import { BookmarkButtonComponentProps } from "./BookmarkButton.types";
 /* styles */
 import s from "./BookmarkButton.module.scss";
 
-export const BookmarkButton: FunctionComponent<BookmarkButtonComponentProps> = ({
+export const BookmarkButton: FC<BookmarkButtonComponentProps> = ({
     onBookmarkStateChange = defaultOnBookmarkStateChange,
     initialBookmarkState = false,
     ...restProps

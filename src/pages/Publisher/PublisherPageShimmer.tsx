@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { BookBox } from "components/BookBox";
 import { Col } from "components/Col";
 import { PublisherBox } from "components/PublisherBox";
-import { PublisherDescriptionText } from "components/PublisherDescriptionText";
+import { DescriptionBox } from "components/DescriptionBox";
 import { Row } from "components/Row";
 
 export const PublisherPageShimmer = () => {
@@ -13,7 +13,7 @@ export const PublisherPageShimmer = () => {
                     <PublisherBox.Shimmer />
                 </Col>
                 <Col lg={9}>
-                    <PublisherDescriptionText.Shimmer />
+                    <DescriptionBox.Shimmer />
                     <BookBox.ShimmerGrid count={4} />
                 </Col>
             </Row>

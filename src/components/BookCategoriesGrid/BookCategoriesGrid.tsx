@@ -2,15 +2,15 @@ import React, { FC } from "react";
 /* components */
 import { BookCategoryBox } from "components/BookCategoryBox";
 import { GenericGrid } from "components/GenericGrid";
+import { Col } from "components/Col";
 /* modules */
 import { useQueryString } from "hooks/useQueryString";
 /* helpers */
 import { checkInclusion } from "helpers/checkInclusion";
+import { uniqueId } from "lodash";
 /* assets */
 /* types */
 import { BookCategoriesGridProps } from "./BookCategoriesGrid.types";
-import { Col } from "components/Col";
-import { uniqueId } from "lodash";
 /* styles */
 
 export const BookCategoriesGrid: FC<BookCategoriesGridProps> = ({

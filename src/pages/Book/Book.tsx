@@ -9,7 +9,6 @@ import { LeaveCommentContainer } from "containers/book/LeaveComment";
 import { BookDetailsContainer } from "containers/book/BookDetails";
 import { useSingleBook } from "hooks";
 import { useParams } from "react-router-dom";
-import { CommentBox } from "components/CommentBox";
 
 /* modules */
 

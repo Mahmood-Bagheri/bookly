@@ -1,15 +1,15 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 /* modules */
 import clsx from "classnames";
 /* helpers */
 /* assets */
 /* types */
-import { PublisherDescriptionTextComponentProps } from "./PublisherDescriptionText.types";
+import { DescriptionBoxProps } from "./DescriptionBox.types";
 /* styles */
-import s from "./PublisherDescriptionText.module.scss";
+import s from "./DescriptionBox.module.scss";
 
-export const PublisherDescriptionText: FunctionComponent<PublisherDescriptionTextComponentProps> = ({
+export const DescriptionBox: FC<DescriptionBoxProps> = ({
     title,
     description,
     className,

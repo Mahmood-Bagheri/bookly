@@ -15,7 +15,7 @@ export const BooksGrid: FunctionComponent<BooksGridComponentProps> = ({
     books,
     loading = false,
 }) => {
-    const [{ query }, setQueryString] = useQueryString();
+    const [{ query }] = useQueryString();
 
     const filterBooks = (book: Book.Base) =>
         checkInclusion(book.title, query as string);

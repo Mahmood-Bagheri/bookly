@@ -2,6 +2,7 @@ import React, { FC } from "react";
 /* components */
 import { Text } from "components/Text";
 import { Link, RouterLinkProps } from "components/Link";
+import { Image } from "components/Image";
 /* modules */
 import clsx from "classnames";
 /* helpers */
@@ -11,7 +12,6 @@ import { routeTo } from "helpers/routeTo";
 import { BookCategoryBoxProps } from "./BookCategoryBox.types";
 /* styles */
 import s from "./BookCategoryBox.module.scss";
-import { Image } from "components/Image";
 
 export const BookCategoryBox: FC<BookCategoryBoxProps> = ({
     id: categoryId,

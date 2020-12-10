@@ -3,7 +3,6 @@ import {
     StringifyOptions,
     parse,
     stringify,
-    ParsedQuery,
     StringifiableRecord,
 } from "query-string";
 import { useState } from "react";

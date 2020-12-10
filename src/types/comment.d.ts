@@ -6,6 +6,11 @@ declare namespace Comment {
         date: Date;
     };
 
+    declare namespace Create {
+        type Variables = {
+            comment: string;
+        };
+    }
     type GetRequest = Base & {};
     type PostRequest = {};
     type PutRequest = {};

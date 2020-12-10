@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import clsx from "classnames";
-import s from "./PublisherDescriptionTextShimmer.module.scss";
+import s from "./DescriptionBoxShimmer.module.scss";
 
-export const PublisherDescriptionTextShimmer = () => {
+export const DescriptionBoxShimmer = () => {
     return (
         <div className={clsx(s.box, `shadow mb-3`)}>
             <div className={s.title}></div>
