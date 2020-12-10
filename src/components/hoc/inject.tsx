@@ -1,7 +1,7 @@
 import React from "react";
 
 // inject static values to a component so that they're always provided
-export function inject<TProps, TInjectedKeys extends keyof TProps>(
+export function injectDefaultProps<TProps, TInjectedKeys extends keyof TProps>(
     Component: React.JSXElementConstructor<TProps>,
     injector: Pick<TProps, TInjectedKeys>
 ) {
