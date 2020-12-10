@@ -2,6 +2,7 @@ import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
 import { BooksGrid } from "components/BooksGrid";
+import { withUserLayout } from "components/UserLayout";
 /* modules */
 import { useBooks } from "hooks";
 import { mock } from "helpers/mock";
@@ -20,4 +21,4 @@ const Home: FC = props => {
     );
 };
 
-export default Home;
+export default withUserLayout(Home);

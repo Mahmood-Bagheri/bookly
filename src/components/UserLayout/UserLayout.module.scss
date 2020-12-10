@@ -1,2 +1,71 @@
 .box {
+    background: var(--black);
+    width: 100%;
+    border-radius: 20px 0 0 20px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+:global {
+    .ant-drawer-content {
+        background: transparent !important;
+        overflow: hidden;
+        width: 300px !important;
+    }
+    .ant-drawer-content-wrapper {
+        border-radius: 20px 0 0 20px;
+        padding: 0;
+    }
+    .ant-drawer-body {
+        padding: 0 !important;
+        display: flex;
+    }
+}
+
+.role {
+    font-weight: 200;
+    color: var(--gray-100);
+    margin-top: 5px;
+}
+
+.profileImage {
+    height: 60px;
+    width: 60px;
+    color: var(--gray-100);
+    border-radius: 9999px;
+}
+
+.menuItem {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    cursor: pointer;
+    color: var(--gray-100);
+    &:hover {
+        color: var(--gray-100);
+    }
+}
+
+.activeMenuItem {
+    background: var(--white);
+    color: var(--black);
+    svg {
+        stroke: var(--black);
+    }
+    &:hover {
+        color: var(--black);
+    }
+}
+
+.menuItemIcon {
+    margin-left: 10px;
+    height: 29px;
+    width: 29px;
+    stroke: var(--gray-100);
+}
+
+.menuItemText {
+    font-weight: 700;
 }

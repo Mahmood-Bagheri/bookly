@@ -38,7 +38,7 @@ export const BookCategoriesGrid: FC<BookCategoriesGridProps> = ({
 
 const renderCategories = (category: Category.Base) => {
     return (
-        <Col xl={3} sm={6} className="mb-3" key={uniqueId()}>
+        <Col xl={4} sm={6} className="mb-3" key={uniqueId()}>
             <BookCategoryBox.Component
                 id={category.id}
                 categoryTitle={category.categoryTitle}

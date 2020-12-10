@@ -1,4 +1,5 @@
 export type ColValuesUnionType =
+    | 0
     | 1
     | 2
     | 3

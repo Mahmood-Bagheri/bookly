@@ -35,7 +35,7 @@ export const PublishersGrid: FunctionComponent<PublishersGridComponentProps> = (
 };
 
 const renderPublisher = (publisher: Publisher) => (
-    <Col xl={3} lg={4} md={6} className="mb-3">
+    <Col xl={4} lg={4} md={6} className="mb-3">
         <PublisherBox.Component
             key={publisher.id}
             id={publisher.id}
