@@ -11,12 +11,10 @@ import { DEFAULT_IMAGE_ALT } from "constants/config";
 
 // todo -> fix this file to use 'react-lazy-load-image-component'
 
-export const Image: FC<ImageComponentProps> = injectDefaultProps<
-    ImageComponentProps,
-    "alt"
->(
-    ({ className, ...restProps }) => {
-        return <img className={clsx(s.img, className)} {...restProps} />;
-    },
-    { alt: DEFAULT_IMAGE_ALT }
-);
+const Image: FC<ImageComponentProps> = ({ className, ...restProps }) => {
+    return <img className={clsx(s.img, className)} {...restProps} />;
+};
+
+export default injectDefaultProps<ImageComponentProps, "alt">(Image, {
+    alt: DEFAULT_IMAGE_ALT,
+});
