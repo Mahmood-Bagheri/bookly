@@ -24,7 +24,7 @@ const pushQueryString = (
 export function useQueryString(
     parseOptions?: ParseOptions,
     stringifyOptions?: StringifyOptions
-): [ParsedQuery, (key: QueryStringKeys, values: string) => void] {
+) {
     const history = useHistory();
     const location = useLocation();
     const [state, setState] = useState(parse(location.search, parseOptions));
@@ -39,5 +39,5 @@ export function useQueryString(
         pushQueryString(history, newQuery, stringifyOptions);
     }
 
-    return [state, setQuery];
+    return [state, setQuery] as const;
 }

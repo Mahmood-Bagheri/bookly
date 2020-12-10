@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 
-export const useToggle = (initialState: boolean): [boolean, () => void] => {
+export const useToggle = (initialState: boolean) => {
     const [isToggled, setIsToggled] = useState(initialState);
 
     // put [setIsToggled] into the useCallback's dependencies array
@@ -9,5 +9,5 @@ export const useToggle = (initialState: boolean): [boolean, () => void] => {
         setIsToggled,
     ]);
 
-    return [isToggled, toggle];
+    return [isToggled, toggle] as const;
 };
