@@ -1,7 +1,7 @@
-import { HTMLProps } from "react";
+import { ComponentPropsWithRef } from "react";
 
 export type EmptyGridTypes = {
     query?: string;
 };
 
-export type EmptyGridProps = HTMLProps<HTMLDivElement> & EmptyGridTypes;
+export type EmptyGridProps = ComponentPropsWithRef<"div"> & EmptyGridTypes;
