@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 /* components */
 /* modules */
 import clsx from "classnames";
@@ -9,7 +9,7 @@ import { RowComponentProps } from "./Row.types";
 /* styles */
 import s from "./Row.module.scss";
 
-export const Row: FunctionComponent<RowComponentProps> = props => {
+export const Row: FC<RowComponentProps> = props => {
     const { className, ...restProps } = props;
     return <div className={clsx(`row`, className)} {...restProps} />;
 };
