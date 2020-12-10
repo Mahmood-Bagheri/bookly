@@ -1,10 +1,12 @@
+import { ComponentPropsWithRef } from "react";
+
 export type NotFoundGridProps = {
     title: string;
     icon: string;
 };
 
 export type NotFoundComponentProps = Omit<
-    React.HtmlHTMLAttributes<HTMLDivElement>,
+    ComponentPropsWithRef<"div">,
     keyof NotFoundGridProps
 > &
-    Partial<NotFoundGridProps>;
+    NotFoundGridProps;
