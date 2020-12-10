@@ -13,10 +13,16 @@ export const LeaveCommentContainer = () => {
         { isLoading: createCommentLoading },
     ] = useCreateComment();
 
-    const handleSubmitComment = (comment: string) => {
+    const handleSubmitComment = (comment: string, callback: Function) => {
         /* create comment api call */
-        createComment({ bookId, comment });
-        console.log(`submitting comment: ${comment} from bookId`, bookId);
+        createComment(
+            { bookId, comment },
+            {
+                onSuccess: () => {
+                    callback();
+                },
+            }
+        );
     };
 
     return (

@@ -26,8 +26,7 @@ export const CommentInputBox: FC<CommentInputBoxProps> = ({
                 form={form}
                 layout="vertical"
                 onFinish={values => {
-                    onSubmit(values.comment);
-                    form.resetFields();
+                    onSubmit(values.comment, form.resetFields);
                 }}
             >
                 <Form.Item

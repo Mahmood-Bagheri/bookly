@@ -1,5 +1,5 @@
-import { useMutation } from "react-query";
-import apiService from "services/api/apiService";
+import { MutateConfig, useMutation } from "react-query";
+import apiService, { AxiosError } from "services/api/apiService";
 import API_URLS from "constants/apiUrls";
 import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
 /* helpers */
@@ -17,7 +17,7 @@ export const createComment = ({
     return apiService.post(API_URLS.comments, { bookId, comment });
 };
 
-export const useCreateComment = () =>
+export const useCreateComment = (config?: MutateConfig<any>) =>
     useMutation(createComment, {
         onSuccess: () => {
             notice.success(API_RESPONSE_MESSAGES.comment.create.success);
@@ -25,4 +25,5 @@ export const useCreateComment = () =>
         onError: () => {
             notice.error(API_RESPONSE_MESSAGES.comment.create.error);
         },
+        ...config,
     });
