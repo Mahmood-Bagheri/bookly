@@ -20,7 +20,7 @@ export const TopBar: FC<TopBarComponentProps> = props => {
 
     return (
         <Fragment>
-            <Row className="align-items-center">
+            <Row className="align-items-center mt-3">
                 {withSearchbar && (
                     <Col lg={6} className="order-2 order-lg-0">
                         <FeedFilterBox.Component onSearch={onSearch} />

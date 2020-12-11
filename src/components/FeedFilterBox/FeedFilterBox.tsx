@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 /* components */
 import { Input, InputProps } from "components/Input";
+import { Form } from "antd";
 /* modules */
 import clsx from "classnames";
 import { useQueryString } from "hooks/useQueryString";
@@ -29,7 +30,9 @@ export const FeedFilterBox: FC<FeedFilterBoxProps> = ({
 
     return (
         <div className={clsx(s.box, "mb-3", className)}>
-            <Input.Text {...inputConfig} />
+            <Form.Item help="بعد از نوشتن متن مورد نظر، Enter را فشار دهید">
+                <Input.Text {...inputConfig} />
+            </Form.Item>
         </div>
     );
 };
