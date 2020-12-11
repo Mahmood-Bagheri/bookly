@@ -1,23 +1,25 @@
 import React, { FC } from "react";
 /* components */
+import { Form } from "antd";
 import { Row } from "components/Row";
 import { Col } from "components/Col";
 import { UploadDropbox } from "components/UploadDropbox";
 import { Text } from "components/Text";
-import { Form } from "antd";
 import { Button } from "components/Button";
 import { Select } from "components/Select";
 import { Input } from "components/Input";
 import { ReadingBookSvg } from "components/ReadingBookSvg";
 /* modules */
 import clsx from "classnames";
+import { useParams } from "react-router-dom";
 /* helpers */
 /* assets */
 /* mock */
 import { categoryOptions, publishersOptions, yearsOptions } from "./mock";
 /* types */
 import { SubmitBookFormProps } from "./SubmitBookForm.types";
-import { DraggerProps } from "antd/lib/upload";
+/* utils */
+import { dropBoxConfig, renderSubmitBookTitle } from "./utils";
 /* styles */
 import s from "./SubmitBookForm.module.scss";
 
@@ -26,22 +28,11 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
     loading = false,
 }) => {
     const [form] = Form.useForm();
-
-    const dropBoxConfig: DraggerProps = {
-        showUploadList: false,
-        multiple: false,
-        accept: "image/x-png,image/gif,image/jpeg",
-        beforeUpload: file => {
-            return false;
-        },
-        onChange: file => {
-            form.setFieldsValue({ image: file.file });
-        },
-    };
+    const { bookId } = useParams<{ bookId: string }>();
 
     return (
         <div className={clsx(s.box, `shadow p-3`)}>
-            <Text className={s.title}>ثبت کتاب</Text>
+            <Text className={s.title}>{renderSubmitBookTitle(bookId)}</Text>
 
             <Form
                 form={form}
@@ -57,7 +48,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                             label="عکس کتاب"
                             valuePropName="file"
                         >
-                            <UploadDropbox {...dropBoxConfig} />
+                            <UploadDropbox {...dropBoxConfig(form)} />
                         </Form.Item>
 
                         <Form.Item name="name" label="نام کتاب">
@@ -90,7 +81,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                                 htmlType="submit"
                                 loading={loading}
                             >
-                                ثبت کتاب
+                                {renderSubmitBookTitle(bookId)}
                             </Button>
                         </Form.Item>
                     </Col>
