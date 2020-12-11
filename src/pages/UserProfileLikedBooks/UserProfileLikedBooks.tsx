@@ -1,6 +1,6 @@
 import React, { FC, Fragment } from "react";
 /* components */
-import { BooksGrid } from "components/BooksGrid";
+import { BooksGrid } from "components/Book/BooksGrid";
 import { mock } from "helpers/mock";
 
 const UserProfileLikedBooks: FC = props => {

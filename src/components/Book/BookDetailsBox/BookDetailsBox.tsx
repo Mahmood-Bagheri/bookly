@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 /* components */
 import { Image } from "components/Image";
 import { Text } from "components/Text";
-import { BookImageCarousel } from "components/BookImageCarousel";
+import { BookImageCarousel } from "components/Book/BookImageCarousel";
 /* assets */
 import BookImage from "assets/images/book.jpg";
 /* modules */

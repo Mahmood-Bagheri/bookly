@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
-import { BookCategoriesGrid } from "components/BookCategoriesGrid";
+import { BookCategoriesGrid } from "components/Book/BookCategoriesGrid";
 import { useCategories } from "hooks";
 import { mock } from "helpers/mock";
 

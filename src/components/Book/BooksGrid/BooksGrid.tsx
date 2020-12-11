@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 /* components */
-import { BookBox } from "components/BookBox";
+import { BookBox } from "components/Book/BookBox";
 import { GenericGrid } from "components/GenericGrid";
 import { Col } from "components/Col";
 /* helpers */
@@ -8,7 +8,7 @@ import { uniqueId } from "helpers/uniqueId";
 import { useQueryString } from "hooks/useQueryString";
 import { checkInclusion } from "helpers/checkInclusion";
 /* types */
-import { BooksGridProps } from "./BooksGrid.types";
+import { BooksGridProps } from "./BooksGrid.types.d";
 /* styles */
 
 export const BooksGrid: FC<BooksGridProps> = ({ books, loading = false }) => {
