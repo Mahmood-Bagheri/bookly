@@ -3,7 +3,7 @@ import React, { FC, Fragment } from "react";
 import { Row } from "components/Row";
 import { Col } from "components/Col";
 import { PublisherBox } from "components/Publisher";
-import { BooksGrid } from "components/Book/BooksGrid";
+import { BooksGrid } from "components/Book";
 import { DescriptionBox } from "components/DescriptionBox";
 import { uniqueId } from "helpers/uniqueId";
 import { useSinglePublisher } from "hooks";

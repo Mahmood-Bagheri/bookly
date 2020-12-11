@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 /* components */
-import { BookBox } from "components/Book/BookBox";
+import { BookBox } from "components/Book";
 import { GenericGrid } from "components/GenericGrid";
 import { Col } from "components/Col";
 /* helpers */

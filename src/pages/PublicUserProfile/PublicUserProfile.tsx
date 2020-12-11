@@ -6,7 +6,7 @@ import { Row } from "components/Row";
 import { Col } from "components/Col";
 import { usePublicUserProfile } from "hooks";
 import { useParams } from "react-router-dom";
-import { BooksGrid } from "components/Book/BooksGrid";
+import { BooksGrid } from "components/Book";
 import { mock } from "helpers/mock";
 import { randomDate } from "helpers/randomDate";
 

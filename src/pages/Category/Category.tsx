@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
-import { BooksGrid } from "components/Book/BooksGrid";
+import { BooksGrid } from "components/Book";
 import { Row } from "components/Row";
 import { Col } from "components/Col";
 import { CategoryDetailsBox } from "components/CategoryDetailsBox";

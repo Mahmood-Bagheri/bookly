@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
-import { BooksGrid } from "components/Book/BooksGrid";
+import { BooksGrid } from "components/Book";
 import { withUserLayout } from "components/UserLayout";
 /* modules */
 import { useBooks } from "hooks";
