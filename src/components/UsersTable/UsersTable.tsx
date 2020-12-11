@@ -9,39 +9,27 @@ import { RenderActionsColumn, RenderColumnName } from "./columns";
 /* assets */
 /* types */
 import { UsersTableComponentProps } from "./UsersTable.types";
+import { mock } from "helpers/mock";
 /* styles */
 // todo -> make this structure better
-type DataSourceType = {
+export type UsersDataSourceType = {
     id: string;
     name: string;
     username: string;
     emailAddress: string;
 };
-const dataSource: DataSourceType[] = [
-    {
-        id: uniqueId(),
-        name: "محمود",
-        username: "Mahmood",
-        emailAddress: "محمود دات باقری ات ساین جیمیل دات کام",
-    },
-    {
-        id: uniqueId(),
-        name: "مایک",
-        username: "Mike",
-        emailAddress: "مایک جک زاده ات ساین اوت لوک دات کام",
-    },
-];
+const dataSource = mock("users", 20);
 
 export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => {
     const { className, onDeleteUser, ...restProps } = props;
 
-    const columns: ColumnsType<DataSourceType> = [
+    const columns: ColumnsType<UsersDataSourceType> = [
         {
             title: "نام",
             dataIndex: "name",
             key: "name",
             render: (name, record, index) => (
-                <RenderColumnName<DataSourceType>
+                <RenderColumnName<UsersDataSourceType>
                     name={name}
                     record={record}
                     index={index}
@@ -63,7 +51,7 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             dataIndex: "",
             key: "x",
             render: (name, record, index) => (
-                <RenderActionsColumn<DataSourceType>
+                <RenderActionsColumn<UsersDataSourceType>
                     name={name}
                     record={record}
                     onDeleteUser={onDeleteUser}
@@ -79,6 +67,7 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             pagination={{ hideOnSinglePage: true }}
             dataSource={dataSource}
             columns={columns}
+            showHeader
         />
     );
 };
