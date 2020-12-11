@@ -10,6 +10,7 @@ import { useSinglePublisher } from "hooks";
 import { useParams } from "react-router-dom";
 import { mock } from "helpers/mock";
 import { PublisherPageShimmer } from "./PublisherPageShimmer";
+import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
 
 const Publisher: FC = props => {
     const { publisherId } = useParams<{ publisherId: string }>();
@@ -25,7 +26,7 @@ const Publisher: FC = props => {
                 <Col md={6} lg={3} className="mb-3 ">
                     <PublisherBox.Component
                         id={uniqueId()}
-                        imageSrc="https://source.unsplash.com/500x500/?book&sig=8"
+                        imageSrc={generateFakeImageUrl()}
                         description="توضیحات پابلیشر"
                         title="ققنوس"
                     />

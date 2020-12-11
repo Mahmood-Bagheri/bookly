@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { BooksGrid } from "components/Book";
 import { mock } from "helpers/mock";
 import { randomDate } from "helpers/randomDate";
+import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
 
 const UserProfile: FC = props => {
     const { userId } = useParams<{ userId: string }>();
@@ -23,7 +24,7 @@ const UserProfile: FC = props => {
                         name="محمود باقری"
                         role="admin"
                         biography="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت"
-                        profileImage="https://source.unsplash.com/500x500/?people"
+                        profileImage={generateFakeImageUrl()}
                         loading={profileLoading}
                         registerDate={randomDate(new Date("10/10/2010"))}
                     />
