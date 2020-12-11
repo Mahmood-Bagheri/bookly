@@ -6,7 +6,7 @@ export const renderSubmitBookTitle = (bookId: string) => {
     return isNullOrEmptyString(bookId) ? "ثبت کتاب" : "به روزرسانی کتاب";
 };
 
-export const dropBoxConfig = (form: FormInstance): DraggerProps => {
+export const getDropboxConfig = (form: FormInstance): DraggerProps => {
     const dropboxConfigsObject: DraggerProps = {
         showUploadList: false,
         multiple: false,

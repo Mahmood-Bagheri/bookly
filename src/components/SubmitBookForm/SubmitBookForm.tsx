@@ -19,7 +19,7 @@ import { categoryOptions, publishersOptions, yearsOptions } from "./mock";
 /* types */
 import { SubmitBookFormProps } from "./SubmitBookForm.types";
 /* utils */
-import { dropBoxConfig, renderSubmitBookTitle } from "./utils";
+import { getDropboxConfig, renderSubmitBookTitle } from "./utils";
 /* styles */
 import s from "./SubmitBookForm.module.scss";
 
@@ -48,7 +48,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                             label="عکس کتاب"
                             valuePropName="file"
                         >
-                            <UploadDropbox {...dropBoxConfig(form)} />
+                            <UploadDropbox {...getDropboxConfig(form)} />
                         </Form.Item>
 
                         <Form.Item name="name" label="نام کتاب">
