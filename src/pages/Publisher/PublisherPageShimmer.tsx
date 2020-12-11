@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { BookBox } from "components/Book/BookBox";
 import { Col } from "components/Col";
-import { PublisherBox } from "components/Publisher/PublisherBox";
+import { PublisherBox } from "components/Publisher";
 import { DescriptionBox } from "components/DescriptionBox";
 import { Row } from "components/Row";
 

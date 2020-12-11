@@ -2,7 +2,7 @@ import React, { FC, Fragment } from "react";
 /* components */
 import { Row } from "components/Row";
 import { Col } from "components/Col";
-import { PublisherBox } from "components/Publisher/PublisherBox";
+import { PublisherBox } from "components/Publisher";
 import { BooksGrid } from "components/Book/BooksGrid";
 import { DescriptionBox } from "components/DescriptionBox";
 import { uniqueId } from "helpers/uniqueId";
