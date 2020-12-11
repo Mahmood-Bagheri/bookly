@@ -9,11 +9,11 @@ import clsx from "classnames";
 import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
 import { routeTo } from "helpers/routeTo";
 /* types */
-import { BookCategoryBoxProps } from "./BookCategoryBox.types";
+import { CategoryBoxProps } from "./CategoryBox.types";
 /* styles */
-import s from "./BookCategoryBox.module.scss";
+import s from "./CategoryBox.module.scss";
 
-export const BookCategoryBox: FC<BookCategoryBoxProps> = ({
+export const CategoryBox: FC<CategoryBoxProps> = ({
     id: categoryId,
     categoryTitle,
     className,

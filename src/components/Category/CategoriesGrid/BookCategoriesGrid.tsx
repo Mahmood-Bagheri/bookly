@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 /* components */
-import { BookCategoryBox } from "components/Book";
+import { CategoryBox } from "components/Category";
 import { GenericGrid } from "components/GenericGrid";
 import { Col } from "components/Col";
 /* modules */
@@ -10,10 +10,10 @@ import { checkInclusion } from "helpers/checkInclusion";
 import { uniqueId } from "lodash";
 /* assets */
 /* types */
-import { BookCategoriesGridProps } from "./BookCategoriesGrid.types";
+import { CategoriesGridProps } from "./CategoriesGrid.types.d";
 /* styles */
 
-export const BookCategoriesGrid: FC<BookCategoriesGridProps> = ({
+export const CategoriesGrid: FC<CategoriesGridProps> = ({
     categories,
     loading = false,
 }) => {
@@ -23,7 +23,7 @@ export const BookCategoriesGrid: FC<BookCategoriesGridProps> = ({
         checkInclusion(category.categoryTitle, query as string);
 
     if (loading) {
-        return <BookCategoryBox.ShimmerGrid />;
+        return <CategoryBox.ShimmerGrid />;
     }
 
     return (
@@ -39,7 +39,7 @@ export const BookCategoriesGrid: FC<BookCategoriesGridProps> = ({
 const renderCategories = (category: Category.Base) => {
     return (
         <Col xl={4} sm={6} className="mb-3" key={uniqueId()}>
-            <BookCategoryBox.Component
+            <CategoryBox.Component
                 id={category.id}
                 categoryTitle={category.categoryTitle}
             />

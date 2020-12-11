@@ -1,6 +1,6 @@
 import { HTMLProps } from "react";
 
-export type BookCategoriesGridProps = {
+export type CategoriesGridProps = {
     loading?: boolean;
     categories: Category.Base[];
 };

@@ -1,4 +1,4 @@
-export type BookCategoryBoxProps = Omit<
+export type CategoryBoxProps = Omit<
     React.HtmlHTMLAttributes<HTMLDivElement>,
     keyof Category.Base
 > &

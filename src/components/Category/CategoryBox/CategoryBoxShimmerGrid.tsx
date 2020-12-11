@@ -2,7 +2,7 @@ import React from "react";
 /* components */
 import { GenericGrid } from "components/GenericGrid";
 import { Col } from "components/Col";
-import { BookCategoryBoxShimmer } from "./BookCategoryBoxShimmer";
+import { CategoryBoxShimmer } from "./CategoryBoxShimmer";
 /* helpers */
 import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
 import { SHIMMERS_CONFIG } from "constants/config";
@@ -12,7 +12,7 @@ type Props = {
     count?: number;
 };
 
-export const BookCategoryBoxShimmerGrid = ({
+export const CategoryBoxShimmerGrid = ({
     count = SHIMMERS_CONFIG.categoriesCount,
 }: Props) => {
     return (
@@ -27,7 +27,7 @@ export const BookCategoryBoxShimmerGrid = ({
 const renderShimmer = () => {
     return (
         <Col xl={4} sm={6} className="mb-3" key={uniqueId()}>
-            <BookCategoryBoxShimmer />
+            <CategoryBoxShimmer />
         </Col>
     );
 };

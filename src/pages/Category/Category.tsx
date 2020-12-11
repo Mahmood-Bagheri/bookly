@@ -4,7 +4,7 @@ import { DocumentTitle } from "components/DocumentTitle";
 import { BooksGrid } from "components/Book";
 import { Row } from "components/Row";
 import { Col } from "components/Col";
-import { CategoryDetailsBox } from "components/CategoryDetailsBox";
+import { CategoryDetailsBox } from "components/Category";
 /* mocks */
 import { mock } from "helpers/mock";
 /* modules */
