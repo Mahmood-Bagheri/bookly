@@ -64,7 +64,15 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             title: "نام کاربری",
             dataIndex: "username",
             key: "username",
-        },
+            ...getColumnSearchProps(
+                "username",
+                handleReset,
+                handleSearch,
+                inputRef,
+                searchedColumn,
+                searchText
+            ),
+        } as any,
         {
             title: "آدرس ایمیل",
             dataIndex: "emailAddress",
