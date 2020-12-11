@@ -16,6 +16,9 @@ const App: FunctionComponent = () => {
         <React.Fragment>
             <Router history={history}>
                 <Container>
+                    <Routes />
+                </Container>
+                {/* <Container>
                     <Row>
                         <Col lg={3} className="d-flex">
                             <UserLayout />
@@ -24,7 +27,7 @@ const App: FunctionComponent = () => {
                             <Routes />
                         </Col>
                     </Row>
-                </Container>
+                </Container> */}
             </Router>
         </React.Fragment>
     );
