@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Mahmood-Bagheri",
+      "name": "Mahmud Bagheri",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/40164360?v=4",
+      "profile": "https://github.com/Mahmood-Bagheri",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "bookly",
+  "projectOwner": "Mahmood-Bagheri",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
