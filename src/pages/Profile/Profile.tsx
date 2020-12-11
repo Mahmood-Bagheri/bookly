@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
-import { ProfileForm } from "components/ProfileForm";
+import { ProfileForm } from "components/Profile";
 import { useUpdateProfile } from "hooks";
 
 const Profile: FC = props => {

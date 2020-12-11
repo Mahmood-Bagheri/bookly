@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 /* components */
 import { Form } from "antd";
 import { Input } from "components/Input";
@@ -10,7 +10,7 @@ import { UploadDropbox } from "components/UploadDropbox";
 import clsx from "classnames";
 /* helpers */
 /* assets */
-import { ProfileFormPicture } from "components/ProfileFormPicture";
+import { ProfileFormPicture } from "components/Profile";
 /* types */
 import { ProfileFormProps } from "./ProfileForm.types";
 /* styles */
