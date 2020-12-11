@@ -13,5 +13,6 @@ export const ROUTES = {
     categories: "/categories",
     category: "/categories/:categoryId/details",
     submitBook: "/book/submit",
+    updateBook: "/book/update/:bookId",
     error: "/error",
 };

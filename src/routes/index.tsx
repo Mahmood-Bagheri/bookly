@@ -13,7 +13,7 @@ const Router = () => {
         const { requireAuth, permissionKey, layout } = config;
 
         if (to) {
-            return <Redirect from={path} to={to} />;
+            return <Redirect from={path as string} to={to} />;
         }
 
         if (requireAuth) {

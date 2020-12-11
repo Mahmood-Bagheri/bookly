@@ -77,7 +77,7 @@ export const BookBox: React.FC<BookProps> = ({
             </div>
             <div className="p-1">
                 <Link<RouterLinkProps>
-                    permission="routes.book"
+                    permission="routes.book.read"
                     to={routeTo("book", { bookId })}
                 >
                     <Image className={s.image} src={imageSrc} />

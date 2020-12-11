@@ -16,9 +16,10 @@ import Error from "pages/Error";
 import ProfileLikledBooks from "pages/UserProfileLikedBooks";
 import PublicUserProfile from "pages/PublicUserProfile";
 import SubmitBook from "pages/SubmitBook";
+import UpdateBook from "pages/SubmitBook";
 
 type Router = {
-    path: string;
+    path: string | string[];
     exact: boolean;
     component?: ComponentType;
     to?: string;
@@ -70,7 +71,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: false,
-            permissionKey: "routes.book",
+            permissionKey: "routes.book.read",
             layout: { include: true, searchbar: false },
         },
     },
@@ -166,7 +167,7 @@ export const routers: Router[] = [
         },
     },
     {
-        path: ROUTES.submitBook,
+        path: [ROUTES.submitBook, ROUTES.updateBook],
         component: SubmitBook,
         exact: true,
         config: {

@@ -10,7 +10,10 @@ export const permissions = {
             home: true,
             users: true,
             user: true,
-            book: true,
+            book: {
+                read: true,
+                update: true,
+            },
             profile: {
                 main: true,
                 likedBooks: true,
