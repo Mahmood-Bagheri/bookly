@@ -6,7 +6,7 @@ import { AclService } from "services/rbac";
 import { FormInstance } from "antd/lib/form";
 
 export const LeaveCommentContainer = () => {
-    const { bookId } = useParams<{ bookId: string }>();
+    const { bookId } = useParams<Book.Id>();
 
     /* initiating operations hooks */
     const [

@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 const SubmitBook: FC = () => {
     const [submitBook, { isLoading }] = useSubmitBook();
-    const { bookId } = useParams<{ bookId: string }>();
+    const { bookId } = useParams<Book.Id>();
 
     return (
         <Fragment>

@@ -3,7 +3,7 @@ import { BookDetailsBox } from "components/Book";
 import { useParams } from "react-router-dom";
 
 export const BookDetailsContainer = () => {
-    const { bookId } = useParams<{ bookId: string }>();
+    const { bookId } = useParams<Book.Id>();
 
     return (
         <BookDetailsBox

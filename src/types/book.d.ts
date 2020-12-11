@@ -6,6 +6,9 @@ declare namespace Book {
         imageSrc?: string;
         id: string;
     };
+    type Id = {
+        bookId: string;
+    };
 
     declare namespace Query {
         type Result = Array<{

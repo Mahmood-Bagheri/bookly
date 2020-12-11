@@ -28,7 +28,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
     loading = false,
 }) => {
     const [form] = Form.useForm();
-    const { bookId } = useParams<{ bookId: string }>();
+    const { bookId } = useParams<Book.Id>();
 
     return (
         <div className={clsx(s.box, `shadow p-3`)}>

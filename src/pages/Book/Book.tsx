@@ -13,7 +13,7 @@ import { useParams } from "react-router-dom";
 /* modules */
 
 const Book: FC = () => {
-    const { bookId } = useParams<{ bookId: string }>();
+    const { bookId } = useParams<Book.Id>();
     const { data, isLoading } = useSingleBook(bookId);
     return (
         <Fragment>
