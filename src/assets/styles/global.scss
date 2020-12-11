@@ -98,3 +98,7 @@ img {
     -ms-transform: rotate(3deg) translate(0px, -4px);
     transform: rotate(3deg) translate(0px, -4px);
 }
+
+.ant-message-notice-content {
+    border-radius: 99999px;
+}
