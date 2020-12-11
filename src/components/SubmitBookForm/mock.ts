@@ -1,5 +1,5 @@
 import { LabeledValue } from "antd/lib/select";
-import { Publisher } from "components/PublisherBox";
+import { Publisher } from "components/Publisher/PublisherBox";
 import { mock } from "helpers/mock";
 import { yearGenerator } from "helpers/yearGenerator";
 

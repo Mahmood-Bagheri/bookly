@@ -1,5 +1,5 @@
 import { uniqueId } from "helpers/uniqueId";
-import { Publisher } from "components/PublisherBox";
+import { Publisher } from "components/Publisher/PublisherBox";
 import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
 
 export const publishers: Publisher[] = [

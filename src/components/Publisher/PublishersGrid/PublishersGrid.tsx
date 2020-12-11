@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 /* components */
-import { Publisher, PublisherBox } from "components/PublisherBox";
+import { Publisher, PublisherBox } from "components/Publisher/PublisherBox";
 import { GenericGrid } from "components/GenericGrid";
 /* modules */
 import { useQueryString } from "hooks/useQueryString";
