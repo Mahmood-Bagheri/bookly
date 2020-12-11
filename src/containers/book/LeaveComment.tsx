@@ -1,5 +1,5 @@
 import React from "react";
-import { CommentInputBox } from "components/CommentInputBox";
+import { CommentInputBox } from "components/Comment";
 import { useCreateComment } from "hooks";
 import { useParams } from "react-router-dom";
 import { AclService } from "services/rbac";

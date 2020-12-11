@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 /* components */
-import { CommentBox } from "components/CommentBox";
+import { CommentBox } from "components/Comment";
 import { GenericGrid } from "components/GenericGrid";
 import { Col } from "components/Col";
 import { Text } from "components/Text";

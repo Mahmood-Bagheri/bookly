@@ -2,7 +2,7 @@ import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
 import { useParams } from "react-router-dom";
-import { CommentsGrid } from "components/CommentsGrid";
+import { CommentsGrid } from "components/Comment";
 import { useDeleteComment } from "hooks";
 import { mock } from "helpers/mock";
 

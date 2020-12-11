@@ -1,4 +1,4 @@
-import { CommentBoxProps } from "components/CommentBox";
+import { CommentBoxProps } from "components/Comment";
 
 export type CommentsGridProps = {
     onDelete: (commentId: string) => void;

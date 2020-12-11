@@ -1,5 +1,5 @@
 import React from "react";
-import { CommentsGrid } from "components/CommentsGrid";
+import { CommentsGrid } from "components/Comment";
 import { useDeleteComment } from "hooks";
 import { AclService } from "services/rbac";
 import { mock } from "helpers/mock";
