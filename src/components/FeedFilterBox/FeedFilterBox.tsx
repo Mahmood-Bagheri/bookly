@@ -15,27 +15,26 @@ import s from "./FeedFilterBox.module.scss";
 import { isNullOrEmptyString } from "helpers/isNullOrEmptyString";
 import { KeyboardKeys } from "types/global";
 
-export const FeedFilterBox: FC<FeedFilterBoxProps> = ({
-    className,
-    onSearch,
-}) => {
-    const [{ query }] = useQueryString();
+export const FeedFilterBox: FC<FeedFilterBoxProps> = React.memo(
+    ({ className, onSearch }) => {
+        const [{ query }] = useQueryString();
 
-    const inputConfig: InputProps = {
-        placeholder: "جست و جو",
-        defaultValue: query as string,
-        onChange: event => handleOnChange(event, onSearch),
-        onKeyDown: event => handleOnKeyDown(event, onSearch),
-    };
+        const inputConfig: InputProps = {
+            placeholder: "جست و جو",
+            defaultValue: query as string,
+            onChange: event => handleOnChange(event, onSearch),
+            onKeyDown: event => handleOnKeyDown(event, onSearch),
+        };
 
-    return (
-        <div className={clsx(s.box, "mb-3", className)}>
-            <Form.Item help="بعد از نوشتن متن مورد نظر، Enter را فشار دهید">
-                <Input.Text {...inputConfig} />
-            </Form.Item>
-        </div>
-    );
-};
+        return (
+            <div className={clsx(s.box, "mb-3", className)}>
+                <Form.Item help="بعد از نوشتن متن مورد نظر، Enter را فشار دهید">
+                    <Input.Text {...inputConfig} />
+                </Form.Item>
+            </div>
+        );
+    }
+);
 
 const handleOnChange = (
     e: React.ChangeEvent<HTMLInputElement>,

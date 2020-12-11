@@ -15,7 +15,7 @@ import { FeedFilterBox } from "components/FeedFilterBox";
 /* styles */
 import s from "./TopBar.module.scss";
 
-export const TopBar: FC<TopBarComponentProps> = props => {
+export const TopBar: FC<TopBarComponentProps> = React.memo(props => {
     const { className, title, onSearch, withSearchbar, ...restProps } = props;
 
     return (
@@ -37,4 +37,4 @@ export const TopBar: FC<TopBarComponentProps> = props => {
             </Row>
         </Fragment>
     );
-};
+});

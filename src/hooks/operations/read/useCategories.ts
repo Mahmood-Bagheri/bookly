@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { QueryConfig, useQuery } from "react-query";
 import API_URLS from "constants/apiUrls";
 import apiService, { ApiServiceError } from "services/api/apiService";
 
@@ -7,6 +7,6 @@ export const readCategories = async () => {
     return data;
 };
 
-export const useCategories = () => {
-    return useQuery(API_URLS.categories, readCategories);
+export const useCategories = (queryConfig?: QueryConfig<Category.Base>) => {
+    return useQuery(API_URLS.categories, readCategories, queryConfig);
 };

@@ -6,7 +6,11 @@ import { useCategories } from "hooks";
 import { mock } from "helpers/mock";
 
 const Categories: FC = () => {
-    const { isLoading, isFetched } = useCategories();
+    const { isLoading, isFetched } = useCategories({
+        refetchOnMount: false,
+        refetchOnWindowFocus: false,
+        refetchOnReconnect: false,
+    });
 
     return (
         <Fragment>
