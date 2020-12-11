@@ -14,7 +14,7 @@ type WithLoadingProps = CommonProps & {
     loading?: true;
 };
 
-type NoLoadingProps = CommonProps & {
+type WithoutLoadingProps = CommonProps & {
     loading?: false;
     title: string;
     description: string;
@@ -27,7 +27,7 @@ type Props = CommonProps & {
 };
 /* overloading */
 export function DescriptionBox(props: WithLoadingProps): JSX.Element;
-export function DescriptionBox(props: NoLoadingProps): JSX.Element;
+export function DescriptionBox(props: WithoutLoadingProps): JSX.Element;
 export function DescriptionBox(props: Props): JSX.Element {
     if (props.loading) {
         return <DescriptionBoxShimmer />;
