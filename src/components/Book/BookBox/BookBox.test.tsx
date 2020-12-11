@@ -1,4 +1,5 @@
 import { fireEvent, screen } from "@testing-library/react";
+import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
 import { setupWrapper } from "helpers/test";
 import { $ElementProps } from "types/global";
 import { BookBox } from "./BookBox";
@@ -12,7 +13,7 @@ describe("<BookBox />", () => {
         author: "Mahmood Bagheri",
         initialLikeState: true,
         title: "I'm thinking to you",
-        imageSrc: "https://source.unsplash.com/500x500/?book&sig=1",
+        imageSrc: generateFakeImageUrl(),
         onDeleteBook,
     };
 

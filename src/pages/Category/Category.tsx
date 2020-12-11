@@ -11,7 +11,7 @@ import { mock } from "helpers/mock";
 import { useParams } from "react-router-dom";
 import { useCategoryBooks } from "hooks";
 /* helpers */
-import { uniqueId } from "helpers/uniqueId";
+import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
 
 const Category: FC = props => {
     const { categoryId } = useParams<{ categoryId: string }>();
@@ -25,7 +25,7 @@ const Category: FC = props => {
                     <CategoryDetailsBox
                         categoryTitle="رُمان"
                         description="توضیحات دسته بندی"
-                        imageSrc={`https://source.unsplash.com/500x500/?book&sig=${uniqueId()}`}
+                        imageSrc={generateFakeImageUrl()}
                         loading={isLoading}
                     />
                 </Col>
