@@ -12,6 +12,18 @@
     --shadow-color: rgba(161, 161, 161, 0.75);
     --page-title-font-size: 20px;
 }
+.dark-mode {
+    --black: #fff;
+    --white: #000;
+    --gray-100: #00151e;
+    --gray-200: #d5d8da;
+    --gray-300: #b2b8ba;
+    --gray-400: #8e979b;
+    --gray-500: #d5d8da;
+    --gray-600: #47565d;
+    --gray-700: #24363d;
+    --gray-800: #00151e;
+}
 ::-webkit-scrollbar {
     display: none;
 }
@@ -26,6 +38,8 @@
 body {
     font-family: dana;
     font-size: 1rem;
+    background: var(--white);
+    color: var(--black);
 }
 
 a {

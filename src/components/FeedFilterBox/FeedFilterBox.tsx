@@ -5,6 +5,7 @@ import { Form } from "antd";
 /* modules */
 import clsx from "classnames";
 import { useQueryString } from "hooks/useQueryString";
+import { useDarkMode } from "hooks/useDarkMode";
 /* helpers */
 /* constants */
 /* assets */
@@ -27,7 +28,7 @@ export const FeedFilterBox: FC<FeedFilterBoxProps> = React.memo(
         };
 
         return (
-            <div className={clsx(s.box, "mb-3", className)}>
+            <div className={clsx(s.box, "mb-3 d-flex", className)}>
                 <Form.Item help="بعد از نوشتن متن مورد نظر، Enter را فشار دهید">
                     <Input.Text {...inputConfig} />
                 </Form.Item>
