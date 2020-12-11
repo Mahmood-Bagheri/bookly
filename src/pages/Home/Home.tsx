@@ -12,7 +12,13 @@ const Home: FC = props => {
 
     return (
         <Fragment>
-            <DocumentTitle title="خانه" />
+            <DocumentTitle title="خانه">
+                <meta
+                    name="description"
+                    content="لیست عکس های ثبت شده توسط کاربران"
+                />
+                <meta name="keywords" content="book, scientific books" />
+            </DocumentTitle>
             <BooksGrid
                 books={mock<Book.Base>("books", 12)}
                 loading={!isFetched}
