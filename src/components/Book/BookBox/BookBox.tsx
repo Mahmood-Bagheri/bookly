@@ -38,11 +38,9 @@ export const BookBox: React.FC<BookProps> = ({
     const titleRef = useRef<HTMLParagraphElement>(null!);
     const authorRef = useRef<HTMLParagraphElement>(null!);
     const authorSubtitleRef = useRef<HTMLParagraphElement>(null!);
-    const { refXOverflowing: titleIsOverflowing } = useOverflow(titleRef);
-    const { refXOverflowing: authorIsOverflowing } = useOverflow(authorRef);
-    const { refXOverflowing: authorSubtitleIsOverflowing } = useOverflow(
-        authorSubtitleRef
-    );
+    const [titleIsOverflowing] = useOverflow(titleRef);
+    const [authorIsOverflowing] = useOverflow(authorRef);
+    const [authorSubtitleIsOverflowing] = useOverflow(authorSubtitleRef);
 
     return (
         <div className={`${s.box} shadow`} {...restProps}>

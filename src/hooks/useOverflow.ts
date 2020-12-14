@@ -2,16 +2,15 @@ import { useState, RefObject, useLayoutEffect } from "react";
 
 import useWindowSize from "./useWindowSize";
 
-export function useOverflow(
-    ref: RefObject<HTMLElement>
-): {
-    refXOverflowing: boolean;
-    refYOverflowing: boolean;
-    refXScrollBegin: boolean;
-    refXScrollEnd: boolean;
-    refYScrollBegin: boolean;
-    refYScrollEnd: boolean;
-} {
+export function useOverflow(ref: RefObject<HTMLElement>) {
+    // : [
+    // refXOverflowing: boolean;
+    // refYOverflowing: boolean;
+    // refXScrollBegin: boolean;
+    // refXScrollEnd: boolean;
+    // refYScrollBegin: boolean;
+    // refYScrollEnd: boolean;
+    // ]
     const [refXOverflowing, setRefXOverflowing] = useState(false);
     const [refYOverflowing, setRefYOverflowing] = useState(false);
 
@@ -84,12 +83,13 @@ export function useOverflow(
             ref.current?.removeEventListener("scroll", handleScroll);
     }, [ref, size.width]); // Empty array ensures that effect is only run on mount and unmount
 
-    return {
-        refXOverflowing,
-        refYOverflowing,
-        refXScrollBegin,
-        refXScrollEnd,
-        refYScrollBegin,
-        refYScrollEnd,
-    };
+    // return {
+    //     refXOverflowing,
+    //     refYOverflowing,
+    //     refXScrollBegin,
+    //     refXScrollEnd,
+    //     refYScrollBegin,
+    //     refYScrollEnd,
+    // };
+    return [refXOverflowing] as const;
 }
