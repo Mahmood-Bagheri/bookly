@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 /* components */
 import { Layout } from "components/Layout";
 /* modules */
@@ -7,7 +7,6 @@ import {
     Route as ReactRouterRoute,
     RouteProps,
 } from "react-router-dom";
-import { AclService } from "services/rbac";
 import { useCanPerform } from "hooks/useCanPerform";
 import { routeTo } from "helpers/routeTo";
 /* types */
@@ -26,20 +25,15 @@ export const Route: FC<CustomRouteComponentProps> = ({
 }) => {
     const canPerform = useCanPerform(permissionKey);
 
+    const LayoutTag = withLayout ? Layout : Fragment;
+    const layoutProps = {
+        withSearchbar,
+    };
     if (canPerform) {
-        if (withLayout) {
-            return (
-                <AclService permission={permissionKey}>
-                    <Layout withSearchbar={withSearchbar}>
-                        <ReactRouterRoute {...restProps} />
-                    </Layout>
-                </AclService>
-            );
-        }
         return (
-            <AclService permission={permissionKey}>
+            <LayoutTag {...layoutProps}>
                 <ReactRouterRoute {...restProps} />
-            </AclService>
+            </LayoutTag>
         );
     }
 
