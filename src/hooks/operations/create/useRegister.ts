@@ -4,7 +4,7 @@ import apiService from "services/api/apiService";
 import * as notice from "helpers/notice";
 import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
 
-type RegisterMutationVariables = {
+export type RegisterMutationVariables = {
     username: string;
     password: string;
 };

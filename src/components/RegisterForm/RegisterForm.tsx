@@ -18,10 +18,8 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
     onSubmit = defaultOnSubmit,
     loading = false,
 }) => {
-    const onFinish = (values: any) => onSubmit(values);
-
     return (
-        <Form layout="vertical" onFinish={onFinish} style={{ width: "100%" }}>
+        <Form layout="vertical" onFinish={onSubmit} style={{ width: "100%" }}>
             <Form.Item
                 label="نام کاربری"
                 name="username"

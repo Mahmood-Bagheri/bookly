@@ -1,6 +1,10 @@
-export type RegisterFormProps = {
-    onSubmit?: (values: any) => void;
+import { RegisterMutationVariables } from "hooks/operations";
+
+export type RegisterFormProps<T> = {
+    onSubmit?: (values: T) => void;
     loading?: boolean;
 };
 
-export type RegisterFormComponentProps = RegisterFormProps;
+export type RegisterFormComponentProps = RegisterFormProps<
+    RegisterMutationVariables
+>;
