@@ -7,10 +7,8 @@ import * as notice from "helpers/notice";
 type FollowPublisherMutationVariables = {
     publisherId: string;
 };
-export const followPublisher = ({
-    publisherId,
-}: FollowPublisherMutationVariables) => {
-    return apiService.post(API_URLS.followPublisher, { publisherId });
+export const followPublisher = (data: FollowPublisherMutationVariables) => {
+    return apiService.post(API_URLS.followPublisher, data);
 };
 
 export const useFollowPublisher = () =>
