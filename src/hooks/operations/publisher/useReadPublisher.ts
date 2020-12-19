@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import API_URLS from "constants/apiUrls";
 import apiService, { AxiosRequestConfig } from "services/api/apiService";
-import { fakeApiCall } from "./useReadBook";
+import { fakeApiCall } from "../book/useReadBook";
 
 export const readPublisher = async (_: unknown, publisherId: string) => {
     const requestConfig: AxiosRequestConfig = {

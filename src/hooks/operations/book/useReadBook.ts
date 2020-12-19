@@ -10,7 +10,7 @@ export const readBook = async (_: unknown, bookId: string) => {
     return data;
 };
 
-export const fakeApiCall = () =>
+export const fakeApiCall = (): Promise<void> =>
     new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve();
