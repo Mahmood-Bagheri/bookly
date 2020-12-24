@@ -1,26 +1,23 @@
 module.exports = {
     moduleDirectories: ["node_modules", "src"],
-    // The root of your source code, typically /src
-    // `<rootDir>` is a token Jest substitutes
-
     roots: ["<rootDir>/src"],
-
-    // Jest transformations -- this adds support for TypeScript
-    // using ts-jest
     transform: {
         "^.+\\.tsx?$": "ts-jest",
     },
-
-    // Runs special logic, such as cleaning up components
-    // when using React Testing Library and adds special
-    // extended assertions to Jest
     testEnvironment: "jsdom",
-
-    // Test spec file resolution pattern
-    // Matches parent folder `__tests__` and filename
-    // should contain `test` or `spec`.
-    testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-
-    // Module file extensions for importing
+    testMatch: [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)",
+    ],
     moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+    globals: {
+        "ts-jest": {
+            isolatedModules: true,
+        },
+    },
+    testURL: "http://localhost:3000",
+    collectCoverage: true,
+    collectCoverageFrom: ["src/**/*.{ts,tsx}"],
+    coveragePathIgnorePatterns: ["/node_modules/", "/build/"],
+    prettierPath: "node_modules/prettier",
 };

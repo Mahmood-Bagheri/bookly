@@ -11,19 +11,14 @@ describe("<BookBox />", () => {
         id: "1",
         author: "Mahmood Bagheri",
         initialLikeState: true,
-        title: "I'm thinking to you",
+        title: "جز از کل",
         imageSrc: generateFakeImageUrl(),
         onDeleteBook,
     };
+    const wrapper = setupWrapper(BookBox, props);
 
     it("Should render title mese aadam", () => {
-        const title = screen.getByText(props.title);
+        const title = wrapper.getByText(props.title);
         expect(title).toBeInTheDocument();
     });
-
-    // it("Should fire like on click of heart button", () => {
-    //     const likeButton = screen.getByTestId(/likeButton/);
-    //     fireEvent.click(likeButton);
-    //     expect(props.onLikeStateChange).toBeCalledTimes(1);
-    // });
 });
