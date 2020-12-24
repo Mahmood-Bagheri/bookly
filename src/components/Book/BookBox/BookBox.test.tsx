@@ -1,12 +1,11 @@
-import { fireEvent, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
-import { setupWrapper } from "helpers/test";
+import { setupWrapper } from "helpers/setupWrapper";
 import { $ElementProps } from "types/global";
 import { BookBox } from "./BookBox";
 
 describe("<BookBox />", () => {
     const onDeleteBook = jest.fn();
-    const onLikeStateChange = jest.fn();
 
     const props: $ElementProps<typeof BookBox> = {
         id: "1",
@@ -16,8 +15,6 @@ describe("<BookBox />", () => {
         imageSrc: generateFakeImageUrl(),
         onDeleteBook,
     };
-
-    const wrapper = setupWrapper(BookBox, props);
 
     it("Should render title mese aadam", () => {
         const title = screen.getByText(props.title);
