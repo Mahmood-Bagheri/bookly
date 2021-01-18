@@ -25,7 +25,7 @@ export const BookDetailsBox: FunctionComponent<BookDetailsBoxComponentProps> = (
         <div className={clsx(s.box, `shadow`)}>
             <div className="d-flex align-items-center p-3">
                 <Link<RouterLinkProps>
-                    permission="routes.book.update"
+                    permission="books.update"
                     to={routeTo("updateBook", { bookId })}
                 >
                     <EditButton

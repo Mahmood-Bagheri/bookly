@@ -30,7 +30,7 @@ export const EmptyGrid: FC<EmptyGridProps> = ({ className, query }) => {
 
 const Home = () => (
     <Link<RouterLinkProps>
-        permission="routes.home"
+        permission="home.read"
         to={routeTo("home")}
         className={s.here}
     >

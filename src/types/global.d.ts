@@ -1,29 +1,41 @@
-import { AxiosError } from "axios";
-
+/* picks all types of a specific component */
 interface ServerError {
     message: object;
 }
 
 /* customize the AxiosError object type */
-declare module "axios" {
-    interface ApiServiceError extends AxiosError<ServerError> {}
+declare module 'axios' {
+    interface ApiServiceError extends AxiosError<ServerError> { }
 }
 
-/* picks all types of a specific component */
-declare type $ElementProps<T> = T extends React.ComponentType<infer Props>
+export type $ElementProps<T> = T extends React.ComponentType<infer Props>
     ? Props extends object
-        ? Props
-        : never
+    ? Props
+    : never
+    : never;
+export type Maybe<T> = T | undefined | null;
+export type KeyboardKeys = 'Enter' | 'Escape';
+export type ValidationRuleType = Record<string, Rule[]>;
+
+export type PathImpl<T, K extends keyof T> = K extends string
+    ? T[K] extends Record<string, any>
+    ? T[K] extends ArrayLike<any>
+    ? K | `${K}.${PathImpl<T[K], Exclude<keyof T[K], keyof any[]>>}`
+    : K | `${K}.${PathImpl<T[K], keyof T[K]>}`
+    : K
     : never;
 
-declare let process: {
-    env: {
-        NODE_ENV: "development" | "production";
-        REACT_APP_API_URL: string;
-        REACT_APP_WEBSITE_TITLE: string;
-    };
-};
+export type Path<T> = PathImpl<T, keyof T> | keyof T;
 
-type Maybe<T> = T | undefined | null;
-
-export type KeyboardKeys = "Enter" | "Escape";
+export type PathValue<
+    T,
+    P extends Path<T>
+    > = P extends `${infer K}.${infer Rest}`
+    ? K extends keyof T
+    ? Rest extends Path<T[K]>
+    ? PathValue<T[K], Rest>
+    : never
+    : never
+    : P extends keyof T
+    ? T[P]
+    : never;

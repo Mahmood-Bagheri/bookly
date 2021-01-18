@@ -1,11 +1,12 @@
 import * as React from "react";
 import { NavLink, NavLinkProps } from "react-router-dom";
-import { AclService } from "services/rbac";
+import { AclService, Permission } from "services/rbac";
 import { propsSeprator as isPropsForRouterLink } from "helpers/propsSeprator";
 import { omit } from "lodash";
+import { Path } from "types/global";
 
 type LinkProps = {
-    permission: string;
+    permission: Path<Permission>;
 };
 export type AnchorProps = JSX.IntrinsicElements["a"];
 export type RouterLinkProps = Omit<NavLinkProps, "href"> & LinkProps;
@@ -24,13 +25,3 @@ export const Link = <T extends {}>(
     }
     return <a {...(props as AnchorProps)} />;
 };
-
-// const Usage = () => {
-//     return (
-//         <div>
-//             <Link<RouterLinkProps> permission="routes.home" to="/">My link</Link>; // ok
-//             <Link<RouterLinkProps> to="/">My link</Link>; // error
-//             <Link<AnchorProps> href="/">My link</Link>; // ok
-//         </div>
-//     );
-// };

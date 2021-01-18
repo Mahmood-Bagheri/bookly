@@ -7,9 +7,6 @@ import { Router } from "react-router-dom";
 import Routes from "routes";
 // helpers
 import { history } from "helpers/history";
-import { Col } from "components/Col";
-import { Row } from "components/Row";
-import { UserLayout } from "components/UserLayout";
 
 const App: FunctionComponent = () => {
     return (
@@ -18,16 +15,6 @@ const App: FunctionComponent = () => {
                 <Container>
                     <Routes />
                 </Container>
-                {/* <Container>
-                    <Row>
-                        <Col lg={3} className="d-flex">
-                            <UserLayout />
-                        </Col>
-                        <Col lg={9}>
-                            <Routes />
-                        </Col>
-                    </Row>
-                </Container> */}
             </Router>
         </React.Fragment>
     );

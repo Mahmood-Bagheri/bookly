@@ -1,7 +1,5 @@
-export const fakeApiCall = <T>(): Promise<T> => {
+export function fakeApiCall<T>(): any {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve();
-        }, 1000);
+        setTimeout(() => {}, 1000);
     });
-};
+}

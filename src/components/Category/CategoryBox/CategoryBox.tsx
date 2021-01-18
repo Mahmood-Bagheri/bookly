@@ -20,7 +20,7 @@ export const CategoryBox: FC<CategoryBoxProps> = ({
 }) => {
     return (
         <Link<RouterLinkProps>
-            permission="routes.category"
+            permission="category.read"
             to={routeTo("category", { categoryId })}
         >
             <div className={clsx(s.box, "shadow", className)}>

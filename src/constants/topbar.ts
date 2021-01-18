@@ -5,44 +5,44 @@ export const MENU: MenuItem[] = [
     {
         title: "ورود",
         link: routeTo("login"),
-        permission: "routes.login",
+        permission: "login",
         exact: true,
     },
     {
         title: "ثبت نام",
         link: routeTo("register"),
-        permission: "routes.register",
+        permission: "register",
     },
     {
         title: "دسته بندی ها",
         link: routeTo("categories"),
-        permission: "routes.categories",
+        permission: "category.read",
     },
     {
         title: "ناشر ها",
         link: routeTo("publishers"),
-        permission: "routes.publishers",
+        permission: "publisher.delete",
     },
     {
         title: "کاربران",
         link: routeTo("users"),
-        permission: "routes.users",
+        permission: "users.read",
         exact: true,
     },
     {
         title: "پروفایل",
         link: routeTo("profile"),
-        permission: "routes.profile.main",
+        permission: "profile.read",
     },
     {
         title: "ثبت کتاب",
         link: routeTo("submitBook"),
-        permission: "routes.submitBook",
+        permission: "books.submit",
     },
     {
         title: "خانه",
         link: routeTo("home"),
-        permission: "routes.home",
+        permission: "home.read",
         exact: true,
     },
 ];

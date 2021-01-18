@@ -17,6 +17,8 @@ import ProfileLikledBooks from "pages/UserProfileLikedBooks";
 import PublicUserProfile from "pages/PublicUserProfile";
 import SubmitBook from "pages/SubmitBook";
 import UpdateBook from "pages/SubmitBook";
+import { Path } from "types/global";
+import { Permission } from "services/rbac";
 
 type Router = {
     path: string | string[];
@@ -25,7 +27,7 @@ type Router = {
     to?: string;
     config: {
         requireAuth: boolean;
-        permissionKey: string;
+        permissionKey: Path<Permission>;
         props?: object;
         layout: {
             include: boolean;
@@ -41,7 +43,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: false,
-            permissionKey: "routes.home",
+            permissionKey: "home.read",
             layout: { include: true, searchbar: true },
         },
     },
@@ -51,7 +53,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: false,
-            permissionKey: "routes.login",
+            permissionKey: "login",
             layout: { include: true, searchbar: false },
         },
     },
@@ -61,7 +63,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: false,
-            permissionKey: "routes.register",
+            permissionKey: "register",
             layout: { include: true, searchbar: false },
         },
     },
@@ -71,7 +73,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: false,
-            permissionKey: "routes.book.read",
+            permissionKey: "books.readSingle",
             layout: { include: true, searchbar: false },
         },
     },
@@ -81,7 +83,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: false,
-            permissionKey: "routes.publisher",
+            permissionKey: "publisher.readSingle",
             layout: { include: true, searchbar: false },
         },
     },
@@ -91,7 +93,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: false,
-            permissionKey: "routes.publishers",
+            permissionKey: "publisher.read",
             layout: { include: true, searchbar: true },
         },
     },
@@ -101,7 +103,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: true,
-            permissionKey: "routes.profile.publicUser",
+            permissionKey: "profile.readPublicUserProfile",
             layout: { include: true, searchbar: false },
         },
     },
@@ -112,7 +114,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: true,
-            permissionKey: "routes.profile.main",
+            permissionKey: "profile.read",
             layout: { include: true, searchbar: false },
         },
     },
@@ -122,7 +124,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: true,
-            permissionKey: "routes.profile.likedBooks",
+            permissionKey: "profile.read",
             layout: { include: true, searchbar: false },
         },
     },
@@ -132,7 +134,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: true,
-            permissionKey: "routes.users",
+            permissionKey: "users.read",
             layout: { include: true, searchbar: true },
         },
     },
@@ -142,7 +144,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: true,
-            permissionKey: "routes.user",
+            permissionKey: "users.readSingle",
             layout: { include: true, searchbar: false },
         },
     },
@@ -152,7 +154,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: false,
-            permissionKey: "routes.categories",
+            permissionKey: "category.read",
             layout: { include: true, searchbar: true },
         },
     },
@@ -162,7 +164,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: false,
-            permissionKey: "routes.category",
+            permissionKey: "category.readSingle",
             layout: { include: true, searchbar: true },
         },
     },
@@ -172,7 +174,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: false,
-            permissionKey: "routes.submitBook",
+            permissionKey: "books.submit",
             layout: { include: true, searchbar: false },
         },
     },
@@ -182,7 +184,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: false,
-            permissionKey: "routes.error",
+            permissionKey: "home.read",
             layout: { include: false, searchbar: false },
         },
     },
@@ -192,7 +194,7 @@ export const routers: Router[] = [
         exact: true,
         config: {
             requireAuth: false,
-            permissionKey: "routes.home",
+            permissionKey: "home.read",
             layout: { include: false, searchbar: false },
         },
     },
@@ -203,7 +205,7 @@ export const routers: Router[] = [
         to: ROUTES.error,
         config: {
             requireAuth: false,
-            permissionKey: "routes.error",
+            permissionKey: "home.read",
             layout: { include: false, searchbar: false },
         },
     },

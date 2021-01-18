@@ -1,15 +1,15 @@
 const API_URLS = {
     book: "/book",
     like: "/book/like",
-    comments: "/comments",
+    comments: "/comment",
     user: "/user",
-    login: "/auth/login",
-    register: "/auth/register",
-    publishers: "/publishers",
+    login: "/user/login",
+    register: "/user/register",
+    publishers: "/publisher",
     publisher: "/publisher",
     followPublisher: "/publisher/follow",
     category: "/category",
-    categories: "/categories",
+    categories: "/category",
     profile: "/profile",
 };
 

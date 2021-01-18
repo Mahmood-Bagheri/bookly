@@ -28,7 +28,7 @@ export const CommentBox: FC<CommentBoxProps> = ({
         <div className={s.box}>
             {/* navigating to user profile page */}
             <Link<RouterLinkProps>
-                permission="routes.profile.publicUser"
+                permission="profile.readPublicUserProfile"
                 to={routeTo("publicUserProfile", { userId: uniqueId() })}
             >
                 <img className={s.profileImage} src={BookImage} />
@@ -37,7 +37,7 @@ export const CommentBox: FC<CommentBoxProps> = ({
             <div className={s.header}>
                 <p className={s.description}>
                     <Link<RouterLinkProps>
-                        permission="routes.profile.publicUser"
+                        permission="profile.readPublicUserProfile"
                         to={routeTo("publicUserProfile", {
                             userId: uniqueId(),
                         })}

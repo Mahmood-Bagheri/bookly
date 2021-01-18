@@ -1,37 +1,14 @@
 export const permissions = {
     guest: {
-        routes: {
-            login: true,
-            register: true,
-            categories: true,
-            category: true,
-            publishers: true,
-            publisher: true,
-            home: true,
-            users: true,
-            user: true,
-            book: {
-                read: true,
-                update: true,
-            },
-            profile: {
-                main: true,
-                likedBooks: true,
-                publicUser: true,
-            },
-            submitBook: true,
-            error: true,
-        },
-        drawer: {
-            see: true,
-            users: false,
-            books: false,
+        home: {
+            read: true,
         },
         books: {
             read: true,
-            create: true,
+            submit: true,
             update: true,
             delete: true,
+            readSingle: true,
             like: true,
         },
         comments: {
@@ -41,22 +18,33 @@ export const permissions = {
             delete: true,
         },
         bookComments: {},
+        category: {
+            read: true,
+            update: true,
+            delete: true,
+            create: true,
+            readSingle: true,
+        },
         profile: {
-            read: false,
-            update: false,
-            image: false,
-            name: false,
-            biography: false,
-            username: {
-                update: false,
-            },
-            comments: {
-                read: false,
-                delete: false,
-            },
+            read: true,
+            update: true,
+            readPublicUserProfile: true,
         },
         publisher: {
-            submissionRequest: false,
+            read: true,
+            readSingle: true,
+            delete: true,
+            update: true,
+            create: true,
+            submissionRequest: true,
         },
+        users: {
+            read: true,
+            readSingle: true,
+        },
+        login: true,
+        register: true,
     },
 };
+
+export type Permission = typeof permissions["guest"];
