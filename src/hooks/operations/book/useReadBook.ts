@@ -3,10 +3,7 @@ import API_URLS from "constants/apiUrls";
 import apiService, { AxiosRequestConfig } from "services/api/apiService";
 
 export const readBook = async (_: unknown, bookId: string) => {
-    const requestConfig: AxiosRequestConfig = {
-        params: { bookId },
-    };
-    const { data } = await apiService.get(API_URLS.book, requestConfig);
+    const { data } = await apiService.get(`${API_URLS.book}/${bookId}`);
     return data;
 };
 

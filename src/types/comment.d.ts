@@ -8,8 +8,8 @@ declare namespace Comment {
 
     declare namespace Create {
         type Variables = {
-            bookId: string;
-            comment: string;
+            book: string;
+            body: string;
         };
     }
 
@@ -23,6 +23,7 @@ declare namespace Comment {
             };
             createdAt: string;
             updatedAt: string;
+            isPublished: boolean;
         };
     }
 

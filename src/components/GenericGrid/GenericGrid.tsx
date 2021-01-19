@@ -21,5 +21,5 @@ export function GenericGrid<T>(props: Props<T>) {
     /* if (isEmptyArray(filtered)) {
         return <EmptyGrid query={query as string} />;
     } */
-    return <RowPlaceholder>{filtered.map(renderItem)}</RowPlaceholder>;
+    return <RowPlaceholder>{filtered?.map(renderItem)}</RowPlaceholder>;
 }

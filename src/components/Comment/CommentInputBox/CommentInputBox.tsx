@@ -20,7 +20,7 @@ export const CommentInputBox: FC<CommentInputBoxProps> = ({
     const [form] = Form.useForm<Comment.Create.Variables>();
 
     const handleSubmitForm = (values: Comment.Create.Variables) => {
-        onSubmit(values.comment, form);
+        onSubmit(values.body, form);
     };
 
     return (
@@ -28,7 +28,7 @@ export const CommentInputBox: FC<CommentInputBoxProps> = ({
             <Text className={s.title}>نظرتون در مورد این پست چیه؟</Text>
             <Form form={form} layout="vertical" onFinish={handleSubmitForm}>
                 <Form.Item
-                    name="comment"
+                    name="body"
                     rules={BOOK_COMMENT_VALIDATION_RULES.comment}
                 >
                     <Input.Textarea

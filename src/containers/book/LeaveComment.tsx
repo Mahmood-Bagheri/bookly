@@ -14,10 +14,10 @@ export const LeaveCommentContainer = () => {
         { isLoading: createCommentLoading },
     ] = useCreateComment();
 
-    const handleSubmitComment = (comment: string, form: FormInstance) => {
+    const handleSubmitComment = (body: string, form: FormInstance) => {
         /* create comment api call */
         createComment(
-            { bookId, comment },
+            { book: bookId, body },
             {
                 onSuccess: () => {
                     /* reset fields after successful api call */

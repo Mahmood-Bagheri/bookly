@@ -11,15 +11,27 @@ import { CommentsGridProps } from "./CommentsGrid.types";
 import { $ElementProps } from "types/global";
 /* styles */
 import s from "./CommentsGrid.module.scss";
+import { Row } from "components/Row";
 
 export const CommentsGrid: FC<CommentsGridProps> = props => {
-    const { comments, onDelete, title = "نظرات کاربران" } = props;
+    const {
+        comments,
+        onDelete,
+        title = "نظرات کاربران",
+        loading = false,
+    } = props;
+
+    if (loading) {
+        return <div></div>;
+    }
 
     return (
         <div className={s.box}>
             <Text className={s.title}>{title}</Text>
+            {/* {JSON.stringify(comments, null, 2)} */}
+            {/* <Row>{comments?.map(cm => renderComments(cm, onDelete))}</Row> */}
             <GenericGrid<Comment.Query.Result>
-                items={comments}
+                items={comments.filter(item => item.isPublished)}
                 renderItem={cm => renderComments(cm, onDelete)}
                 withRow
             />
@@ -40,6 +52,7 @@ const renderComments = (
             onDelete={onDelete}
             createdAt={comment.createdAt}
             updatedAt={comment.updatedAt}
+            isPublished={comment.isPublished}
         />
     </Col>
 );

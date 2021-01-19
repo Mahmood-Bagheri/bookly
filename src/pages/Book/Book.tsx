@@ -15,7 +15,7 @@ import { DescriptionBox } from "components/DescriptionBox";
 
 const Book: FC = () => {
     const { bookId } = useParams<Book.Id>();
-    const { data, isLoading } = useSingleBook(bookId);
+    const { data: book, isLoading } = useSingleBook(bookId);
 
     /* initiating operations hooks */
     const [
@@ -23,10 +23,10 @@ const Book: FC = () => {
         { isLoading: createCommentLoading },
     ] = useCreateComment();
 
-    const handleSubmitComment = (comment: string, form: FormInstance) => {
+    const handleSubmitComment = (body: string, form: FormInstance) => {
         /* create comment api call */
         createComment(
-            { bookId, comment },
+            { book: bookId, body },
             {
                 onSuccess: () => {
                     /* reset fields after successful api call */
@@ -43,7 +43,7 @@ const Book: FC = () => {
         console.log(`deleting comment with the commentId: ${commentId} `);
     };
 
-    if (!data || isLoading) {
+    if (!book || isLoading) {
         return <div></div>;
     }
 
@@ -54,8 +54,8 @@ const Book: FC = () => {
                 <Col xl={4}>
                     <BookDetailsBox
                         id={bookId}
-                        title={data?.title}
-                        author={data?.author?.name}
+                        title={book?.title}
+                        author={book?.author?.name}
                     />
                     <AclService permission="comments.create">
                         <CommentInputBox
@@ -67,13 +67,14 @@ const Book: FC = () => {
 
                 <Col xl={8} className="mt-3 mt-xl-0">
                     <DescriptionBox
-                        title="مشخصات کتاب"
-                        description={"description"}
+                        title={book.title}
+                        description={book.title}
                     />
                     <AclService permission="comments.read">
                         <CommentsGrid
+                            loading={isLoading}
                             onDelete={handleDeleteComment}
-                            comments={data?.comments}
+                            comments={book.comments}
                         />
                     </AclService>
                 </Col>

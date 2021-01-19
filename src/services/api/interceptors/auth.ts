@@ -1,5 +1,5 @@
 import { AxiosRequestConfig, AxiosInstance } from "axios";
-
+import * as localStorage from "helpers/localStorage";
 interface AuthRequestConfig {
     /**
      * @default true
@@ -17,7 +17,9 @@ export const applyAuthInterceptor = (instance: AxiosInstance) => {
 
         if (shouldAuthenticate) {
             // * some logic to read Bearer token from localStorage
-            config.headers.authorization = ``;
+            config.headers.authorization = `Bearer ${localStorage.getItem(
+                "token"
+            )}`;
         }
         return config;
     });
