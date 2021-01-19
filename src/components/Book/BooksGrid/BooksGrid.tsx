@@ -14,7 +14,7 @@ import { BooksGridProps } from "./BooksGrid.types.d";
 export const BooksGrid: FC<BooksGridProps> = ({ books, loading = false }) => {
     const [{ query }] = useQueryString();
 
-    const filterBooks = (book: Book.Base) =>
+    const filterBooks = (book: Book.Query.Result) =>
         checkInclusion(book.title, query as string);
 
     if (loading) {
@@ -31,14 +31,15 @@ export const BooksGrid: FC<BooksGridProps> = ({ books, loading = false }) => {
     );
 };
 
-const renderBooks = (book: Book.Base) => (
+const renderBooks = (book: Book.Query.Result) => (
     <Col md={6} xl={4} className="mb-3" key={uniqueId()}>
         <BookBox.Component
-            id={book.id}
+            id={book._id}
             title={book.title}
-            author={book.author}
-            imageSrc={book.imageSrc}
-            initialLikeState={book.initialLikeState}
+            author={book.author.name}
+            imageSrc={`${process.env.REACT_APP_API_URL}/${book?.image?.filename}`}
+            /* FIXME complete this part */
+            initialLikeState={false}
             onDeleteBook={bookId => console.log(bookId)}
         />
     </Col>

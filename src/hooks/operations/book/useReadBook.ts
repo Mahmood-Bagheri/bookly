@@ -10,12 +10,8 @@ export const readBook = async (_: unknown, bookId: string) => {
     return data;
 };
 
-export const fakeApiCall = (): Promise<void> =>
-    new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve();
-        }, 3000);
-    });
 export const useSingleBook = (bookId: string) => {
-    return useQuery([API_URLS.book, bookId], fakeApiCall);
+    return useQuery<Book.Query.Result>([API_URLS.book, bookId], () =>
+        readBook(undefined, bookId)
+    );
 };

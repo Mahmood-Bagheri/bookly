@@ -8,7 +8,11 @@ import { useBooks } from "hooks";
 import { mock } from "helpers/mock";
 
 const Home: FC = props => {
-    const { data, isFetched } = useBooks();
+    const { data, isLoading } = useBooks();
+
+    if (isLoading || !data) {
+        return <div></div>;
+    }
 
     return (
         <Fragment>
@@ -19,10 +23,7 @@ const Home: FC = props => {
                 />
                 <meta name="keywords" content="book, scientific books" />
             </DocumentTitle>
-            <BooksGrid
-                books={mock<Book.Base>("books", 12)}
-                loading={!isFetched}
-            />
+            <BooksGrid books={data} loading={isLoading} />
         </Fragment>
     );
 };

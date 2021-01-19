@@ -11,9 +11,39 @@ declare namespace Book {
     };
 
     declare namespace Query {
-        type Result = Array<{
-            id: string;
-        }>;
+        type Result = {
+            _id: string;
+            comments: Comment.Query.Result[];
+            isPublished: boolean;
+            title: string;
+            category: {
+                _id: string;
+                title: string;
+            };
+            author: {
+                _id: string;
+                name: string;
+            };
+            submittedBy: {
+                _id: string;
+                name: string;
+            };
+            createdAt: string;
+            updatedAt: string;
+            image: {
+                _id: string;
+                fieldname: string;
+                originalname: string;
+                encoding: string;
+                mimetype: string;
+                destination: string;
+                filename: string;
+                path: string;
+                size: number;
+                createdAt: string;
+                updatedAt: string;
+            };
+        };
     }
 
     declare namespace Mutation {

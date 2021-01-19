@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 /* components */
-import { Publisher, PublisherBox } from "components/Publisher";
+import { PublisherBox } from "components/Publisher";
 import { GenericGrid } from "components/GenericGrid";
 /* modules */
 import { useQueryString } from "hooks/useQueryString";
@@ -11,6 +11,8 @@ import { PublishersGridComponentProps } from "./PublishersGrid.types";
 /* styles */
 import s from "./PublishersGrid.module.scss";
 import { Col } from "components/Col";
+import { Publisher } from "types/publisher";
+import { PublisherBoxComponentProps } from "../PublisherBox";
 
 export const PublishersGrid: FunctionComponent<PublishersGridComponentProps> = ({
     loading,
@@ -18,14 +20,14 @@ export const PublishersGrid: FunctionComponent<PublishersGridComponentProps> = (
 }) => {
     const [{ query }] = useQueryString();
 
-    const filterPublishers = (publisher: Publisher) =>
+    const filterPublishers = (publisher: Publisher.Query.Result) =>
         checkInclusion(publisher.title, query as string);
 
     if (loading) {
         return <PublisherBox.ShimmerGrid />;
     }
     return (
-        <GenericGrid<Publisher>
+        <GenericGrid<Publisher.Query.Result>
             withRow
             items={publishers}
             filter={filterPublishers}
@@ -34,14 +36,16 @@ export const PublishersGrid: FunctionComponent<PublishersGridComponentProps> = (
     );
 };
 
-const renderPublisher = (publisher: Publisher) => (
+const renderPublisher = (publisher: PublisherBoxComponentProps) => (
     <Col xl={4} lg={4} md={6} className="mb-3">
         <PublisherBox.Component
-            key={publisher.id}
-            id={publisher.id}
+            _id={publisher._id}
             title={publisher.title}
+            createdAt={publisher.createdAt}
+            updatedAt={publisher.updatedAt}
             description={publisher.description}
-            imageSrc={publisher.imageSrc}
+            followers={publisher.followers}
+            image={publisher.image}
             initialFollowingState={false}
             onFollow={publisherId => console.log(publisherId)}
         />

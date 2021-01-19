@@ -31,7 +31,7 @@ const Category: FC = props => {
                 </Col>
                 <Col lg={8}>
                     <BooksGrid
-                        books={mock<Book.Base>("books", 12)}
+                        books={mock<Book.Query.Result>("books", 12)}
                         loading={isLoading}
                     />
                 </Col>

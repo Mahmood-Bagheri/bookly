@@ -2,7 +2,7 @@ import { Publisher } from "components/Publisher";
 
 export type PublishersGridProps = {
     loading?: boolean;
-    publishers: Publisher[];
+    publishers: Maybe<Publisher[]>;
 };
 
 export type PublishersGridComponentProps = React.HtmlHTMLAttributes<

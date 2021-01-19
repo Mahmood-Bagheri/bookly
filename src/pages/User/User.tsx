@@ -15,7 +15,7 @@ const User: FC = props => {
             <DocumentTitle title="کاربر" />
             <CommentsGrid
                 title={`نظرات داده شده توسط کاربر با آی دی ${userId}`}
-                comments={mock<Comment.Base>("comments")}
+                comments={mock<Comment.Query.Result>("comments")}
                 onDelete={commentId => {
                     deleteComment({ commentId });
                 }}

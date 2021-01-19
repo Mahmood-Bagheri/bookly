@@ -6,18 +6,12 @@ import { DocumentTitle } from "components/DocumentTitle";
 import { mock } from "helpers/mock";
 
 const Publishers: FC = props => {
-    const {
-        data: tempPublishers,
-        isLoading: publishersIsLoading,
-    } = usePublishers();
+    const { data, isLoading: publishersIsLoading } = usePublishers();
 
     return (
         <Fragment>
             <DocumentTitle title="ناشر ها" />
-            <PublishersGrid
-                publishers={mock("publishers")}
-                loading={publishersIsLoading}
-            />
+            <PublishersGrid publishers={data} loading={publishersIsLoading} />
         </Fragment>
     );
 };

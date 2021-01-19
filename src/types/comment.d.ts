@@ -12,7 +12,20 @@ declare namespace Comment {
             comment: string;
         };
     }
-    type GetRequest = Base & {};
+
+    declare namespace Query {
+        type Result = {
+            _id: string;
+            body: string;
+            author: {
+                _id: string;
+                name: string;
+            };
+            createdAt: string;
+            updatedAt: string;
+        };
+    }
+
     type PostRequest = {};
     type PutRequest = {};
     type PutResponse = {};

@@ -18,7 +18,7 @@ export const CommentsGrid: FC<CommentsGridProps> = props => {
     return (
         <div className={s.box}>
             <Text className={s.title}>{title}</Text>
-            <GenericGrid<Comment.Base>
+            <GenericGrid<Comment.Query.Result>
                 items={comments}
                 renderItem={cm => renderComments(cm, onDelete)}
                 withRow
@@ -28,17 +28,18 @@ export const CommentsGrid: FC<CommentsGridProps> = props => {
 };
 
 const renderComments = (
-    comment: Comment.Base,
+    comment: Comment.Query.Result,
     onDelete: $ElementProps<typeof CommentsGrid>["onDelete"]
 ) => (
     <Col col={12} key={uniqueId()}>
         <CommentBox.Component
-            key={comment.id}
-            id={comment.id}
-            username={comment.username}
-            date={comment.date}
+            key={comment._id}
+            _id={comment._id}
+            author={comment.author}
             body={comment.body}
             onDelete={onDelete}
+            createdAt={comment.createdAt}
+            updatedAt={comment.updatedAt}
         />
     </Col>
 );

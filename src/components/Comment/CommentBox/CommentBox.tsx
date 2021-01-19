@@ -16,13 +16,14 @@ import { CommentBoxProps } from "./CommentBox.types";
 import s from "./CommentBox.module.scss";
 
 export const CommentBox: FC<CommentBoxProps> = ({
-    id: commentId,
+    _id: commentId,
     body,
-    date,
-    username,
+    createdAt,
+    updatedAt,
+    author,
     onDelete = defaultOnDelete,
 }) => {
-    const relativeFakeTime = dayJs().from(date, true);
+    const relativeFakeTime = dayJs().from(createdAt, true);
 
     return (
         <div className={s.box}>
@@ -42,7 +43,7 @@ export const CommentBox: FC<CommentBoxProps> = ({
                             userId: uniqueId(),
                         })}
                     >
-                        {username}
+                        {author?.name}
                     </Link>
                     {"  "}
                     {relativeFakeTime} پیش گفته

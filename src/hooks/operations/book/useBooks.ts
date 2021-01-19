@@ -8,9 +8,9 @@ export const readBooks = async () => {
 };
 
 export const useBooks = (
-    queryConfig?: QueryConfig<Book.Query.Result, ApiServiceError>
+    queryConfig?: QueryConfig<Book.Query.Result[], ApiServiceError>
 ) => {
-    return useQuery<Book.Query.Result, ApiServiceError>(
+    return useQuery<Book.Query.Result[], ApiServiceError>(
         API_URLS.book,
         readBooks,
         queryConfig

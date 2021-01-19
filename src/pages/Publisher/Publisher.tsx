@@ -16,7 +16,7 @@ const Publisher: FC = props => {
     const { publisherId } = useParams<{ publisherId: string }>();
     const { data, isLoading: loading } = useSinglePublisher(publisherId);
 
-    if (loading) {
+    if (loading || !data) {
         return <PublisherPageShimmer />;
     }
 
@@ -25,10 +25,13 @@ const Publisher: FC = props => {
             <Row className="mb-3">
                 <Col md={6} lg={3} className="mb-3 ">
                     <PublisherBox.Component
-                        id={uniqueId()}
-                        imageSrc={generateFakeImageUrl()}
+                        followers={data.followers}
                         description="توضیحات پابلیشر"
+                        image={data?.image}
+                        _id={uniqueId()}
                         title="ققنوس"
+                        createdAt={data.createdAt}
+                        updatedAt={data.updatedAt}
                     />
                 </Col>
                 <Col lg={9}>
@@ -37,7 +40,7 @@ const Publisher: FC = props => {
                         title="مشخصات ناشر"
                         description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
                     />
-                    <BooksGrid books={mock<Book.Base>("books", 4)} />
+                    <BooksGrid books={mock<Book.Query.Result>("books", 4)} />
                 </Col>
             </Row>
         </Fragment>

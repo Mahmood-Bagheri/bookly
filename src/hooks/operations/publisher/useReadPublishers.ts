@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import API_URLS from "constants/apiUrls";
 import apiService from "services/api/apiService";
+import { Publisher } from "components/Publisher";
 
 export const readPublishers = async () => {
     const { data } = await apiService.get(API_URLS.publishers);
@@ -8,5 +9,5 @@ export const readPublishers = async () => {
 };
 
 export const usePublishers = () => {
-    return useQuery(API_URLS.publishers, readPublishers);
+    return useQuery<Publisher[]>(API_URLS.publishers, readPublishers);
 };
