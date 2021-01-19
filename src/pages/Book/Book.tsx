@@ -67,8 +67,8 @@ const Book: FC = () => {
 
                 <Col xl={8} className="mt-3 mt-xl-0">
                     <DescriptionBox
-                        title={book.title}
-                        description={book.title}
+                        title="توضیحات"
+                        description={book.description}
                     />
                     <AclService permission="comments.read">
                         <CommentsGrid

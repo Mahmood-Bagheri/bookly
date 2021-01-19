@@ -47,6 +47,7 @@ const renderBooks = (book: Book.Query.Result) => (
             updatedAt={book.updatedAt}
             isPublished={book.isPublished}
             submittedBy={book.submittedBy}
+            description={book.description}
         />
     </Col>
 );

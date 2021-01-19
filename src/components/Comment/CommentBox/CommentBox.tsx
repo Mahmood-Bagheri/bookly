@@ -43,7 +43,7 @@ export const CommentBox: FC<CommentBoxProps> = ({
                             userId: uniqueId(),
                         })}
                     >
-                        {author?.name}
+                        {author?.name} ({readableRole(author?.role)})
                     </Link>
                     {"  "}
                     {relativeFakeTime} پیش گفته
@@ -62,3 +62,18 @@ export const CommentBox: FC<CommentBoxProps> = ({
 };
 
 const defaultOnDelete = () => {};
+const readableRole = (role: string) => {
+    switch (role) {
+        case "ADMIN":
+            return "مدیر";
+
+        case "USER":
+            return "کاربر";
+
+        case "AUTHOR":
+            return "نویسنده";
+
+        default:
+            break;
+    }
+};

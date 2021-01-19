@@ -15,6 +15,7 @@ declare namespace Book {
             _id: string;
             comments: Comment.Query.Result[];
             isPublished: boolean;
+            description: string;
             title: string;
             category: {
                 _id: string;
