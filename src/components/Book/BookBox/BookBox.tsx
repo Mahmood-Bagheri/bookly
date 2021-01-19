@@ -16,17 +16,17 @@ import { BookProps } from "./BookBox.types";
 import s from "./BookBox.module.scss";
 
 export const BookBox: React.FC<BookProps> = ({
-    initialLikeState,
     title,
     author,
-    imageSrc,
+    image,
     onDeleteBook,
-    id: bookId,
+    _id: bookId = "Salam",
     ...restProps
 }) => {
     const [like, { isLoading: likeIsLoading }] = useLikeBook();
     const [deleteBook, { isLoading: deleteBookIsLoading }] = useDeleteBook();
-
+    /* FIXME initialLikeState */
+    const initialLikeState = false;
     const handleLikeChange = (likeState: boolean, bookId: string) => {
         like({ likeState, bookId });
     };
@@ -62,7 +62,7 @@ export const BookBox: React.FC<BookProps> = ({
                         withTooltip={authorIsOverflowing}
                         className={`${s.author} truncate`}
                     >
-                        {author}
+                        {author.name}
                     </Text>
                     <Text
                         ref={authorSubtitleRef}
@@ -78,7 +78,10 @@ export const BookBox: React.FC<BookProps> = ({
                     permission="books.readSingle"
                     to={routeTo("book", { bookId })}
                 >
-                    <Image className={s.image} src={imageSrc} />
+                    <Image
+                        className={s.image}
+                        src={`${process.env.REACT_APP_API_URL}/${image?.filename}`}
+                    />
                 </Link>
             </div>
 

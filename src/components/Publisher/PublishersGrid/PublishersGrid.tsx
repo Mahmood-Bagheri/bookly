@@ -48,6 +48,7 @@ const renderPublisher = (publisher: PublisherBoxComponentProps) => (
             image={publisher.image}
             initialFollowingState={false}
             onFollow={publisherId => console.log(publisherId)}
+            books={publisher.books}
         />
     </Col>
 );

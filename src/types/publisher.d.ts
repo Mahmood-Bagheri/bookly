@@ -10,6 +10,7 @@ declare namespace Publisher {
             createdAt: string;
             updatedAt: string;
             image: Image;
+            books: Book.Query.Result[];
         };
     }
 }

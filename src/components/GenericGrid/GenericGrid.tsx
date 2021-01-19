@@ -16,10 +16,10 @@ export function GenericGrid<T>(props: Props<T>) {
 
     const RowPlaceholder = withRow ? Row : Fragment;
     const filtered = items?.filter(filter);
-    const [{ query }] = useQueryString();
+    /*  const [{ query }] = useQueryString(); */
 
-    if (isEmptyArray(filtered)) {
+    /* if (isEmptyArray(filtered)) {
         return <EmptyGrid query={query as string} />;
-    }
+    } */
     return <RowPlaceholder>{filtered.map(renderItem)}</RowPlaceholder>;
 }

@@ -15,7 +15,7 @@ export const BooksGrid: FC<BooksGridProps> = ({ books, loading = false }) => {
     const [{ query }] = useQueryString();
 
     const filterBooks = (book: Book.Query.Result) =>
-        checkInclusion(book.title, query as string);
+        checkInclusion(book?.title, query as string);
 
     if (loading) {
         return <BookBox.ShimmerGrid />;
@@ -34,13 +34,19 @@ export const BooksGrid: FC<BooksGridProps> = ({ books, loading = false }) => {
 const renderBooks = (book: Book.Query.Result) => (
     <Col md={6} xl={4} className="mb-3" key={uniqueId()}>
         <BookBox.Component
-            id={book._id}
-            title={book.title}
-            author={book.author.name}
-            imageSrc={`${process.env.REACT_APP_API_URL}/${book?.image?.filename}`}
+            _id={book?._id}
+            title={book?.title}
+            author={book?.author}
+            image={book.image}
             /* FIXME complete this part */
-            initialLikeState={false}
+            // initialLikeState={false}
             onDeleteBook={bookId => console.log(bookId)}
+            category={book.category}
+            comments={book.comments}
+            createdAt={book.createdAt}
+            updatedAt={book.updatedAt}
+            isPublished={book.isPublished}
+            submittedBy={book.submittedBy}
         />
     </Col>
 );

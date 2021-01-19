@@ -3,10 +3,10 @@ import API_URLS from "constants/apiUrls";
 import apiService, { AxiosRequestConfig } from "services/api/apiService";
 import { Publisher as PublisherNamespace } from "types/publisher";
 export const readPublisher = async (_: unknown, publisherId: string) => {
-    const requestConfig: AxiosRequestConfig = {
-        params: { publisherId },
-    };
-    return await (await apiService.get(API_URLS.publisher, requestConfig)).data;
+    const { data } = await apiService.get(
+        `${API_URLS.publisher}/${publisherId}`
+    );
+    return data;
 };
 
 export const useSinglePublisher = (publisherId: string) => {

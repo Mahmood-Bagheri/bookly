@@ -59,7 +59,7 @@ const PublisherBoxImage = ({
             <div className="p-1">
                 <Image
                     className={s.image}
-                    src={`${process.env.REACT_APP_API_URL}/${image.filename}`}
+                    src={`${process.env.REACT_APP_API_URL}/${image?.filename}`}
                 />
             </div>
         </Link>
