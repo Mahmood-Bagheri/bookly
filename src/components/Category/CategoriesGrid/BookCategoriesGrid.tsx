@@ -19,15 +19,15 @@ export const CategoriesGrid: FC<CategoriesGridProps> = ({
 }) => {
     const [{ query }] = useQueryString();
 
-    const filterPublishers = (category: Category.Base) =>
-        checkInclusion(category.categoryTitle, query as string);
+    const filterPublishers = (category: Category.Query.Result) =>
+        checkInclusion(category.title, query as string);
 
     if (loading) {
         return <CategoryBox.ShimmerGrid />;
     }
 
     return (
-        <GenericGrid<Category.Base>
+        <GenericGrid<Category.Query.Result>
             withRow
             filter={filterPublishers}
             items={categories}
@@ -36,12 +36,13 @@ export const CategoriesGrid: FC<CategoriesGridProps> = ({
     );
 };
 
-const renderCategories = (category: Category.Base) => {
+const renderCategories = (category: Category.Query.Result) => {
     return (
-        <Col xl={4} sm={6} className="mb-3" key={uniqueId()}>
+        <Col xl={4} sm={6} className="mb-3" key={category._id}>
             <CategoryBox.Component
-                id={category.id}
-                categoryTitle={category.categoryTitle}
+                _id={category._id}
+                title={category.title}
+                books={category.books}
             />
         </Col>
     );

@@ -2,7 +2,7 @@ import { HTMLProps } from "react";
 
 export type CategoryDetailsBoxTypes = {
     categoryTitle: string;
-    description: string;
+    // description: string;
     imageSrc: string;
     loading?: boolean;
 };

@@ -6,19 +6,17 @@ import { useCategories } from "hooks";
 import { mock } from "helpers/mock";
 
 const Categories: FC = () => {
-    const { isLoading, isFetched } = useCategories({
+    const { data: categories, isLoading, isFetched } = useCategories({
         refetchOnMount: false,
         refetchOnWindowFocus: false,
         refetchOnReconnect: false,
     });
+    console.log(categories);
 
     return (
         <Fragment>
             <DocumentTitle title="دسته بندی ها" />
-            <CategoriesGrid
-                categories={mock("categories", 12)}
-                loading={!isFetched}
-            />
+            <CategoriesGrid categories={categories!} loading={isLoading} />
         </Fragment>
     );
 };

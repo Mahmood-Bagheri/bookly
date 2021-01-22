@@ -7,6 +7,12 @@ export const readCategories = async () => {
     return data;
 };
 
-export const useCategories = (queryConfig?: QueryConfig<Category.Base>) => {
-    return useQuery(API_URLS.categories, readCategories, queryConfig);
+export const useCategories = (
+    queryConfig?: QueryConfig<Category.Query.Result[]>
+) => {
+    return useQuery<Category.Query.Result[]>(
+        API_URLS.categories,
+        readCategories,
+        queryConfig
+    );
 };

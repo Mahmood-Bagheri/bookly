@@ -14,8 +14,8 @@ import { CategoryBoxProps } from "./CategoryBox.types";
 import s from "./CategoryBox.module.scss";
 
 export const CategoryBox: FC<CategoryBoxProps> = ({
-    id: categoryId,
-    categoryTitle,
+    _id: categoryId,
+    title,
     className,
 }) => {
     return (
@@ -25,9 +25,9 @@ export const CategoryBox: FC<CategoryBoxProps> = ({
         >
             <div className={clsx(s.box, "shadow", className)}>
                 <picture className={s.picture}>
-                    <Image alt={categoryTitle} src={generateFakeImageUrl()} />
+                    <Image alt={title} src={generateFakeImageUrl()} />
                 </picture>
-                <Text className={s.title}>{categoryTitle}</Text>
+                <Text className={s.title}>{title}</Text>
             </div>
         </Link>
     );

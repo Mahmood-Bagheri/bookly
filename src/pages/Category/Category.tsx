@@ -15,7 +15,11 @@ import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
 
 const Category: FC = props => {
     const { categoryId } = useParams<{ categoryId: string }>();
-    const { isLoading, data } = useCategoryBooks(categoryId);
+    const { data: category, isLoading } = useCategoryBooks(categoryId);
+
+    if (!category || isLoading) {
+        return <div></div>;
+    }
 
     return (
         <Fragment>
@@ -23,17 +27,13 @@ const Category: FC = props => {
             <Row>
                 <Col lg={4}>
                     <CategoryDetailsBox
-                        categoryTitle="رُمان"
-                        description="توضیحات دسته بندی"
+                        categoryTitle={category?.title!}
                         imageSrc={generateFakeImageUrl()}
                         loading={isLoading}
                     />
                 </Col>
                 <Col lg={8}>
-                    <BooksGrid
-                        books={mock<Book.Query.Result>("books", 12)}
-                        loading={isLoading}
-                    />
+                    <BooksGrid books={category?.books} loading={isLoading} />
                 </Col>
             </Row>
         </Fragment>

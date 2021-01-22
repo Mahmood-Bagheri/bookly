@@ -1,5 +1,5 @@
 export type CategoryBoxProps = Omit<
     React.HtmlHTMLAttributes<HTMLDivElement>,
-    keyof Category.Base
+    keyof Category.Query.Result
 > &
-    Category.Base;
+    Category.Query.Result;

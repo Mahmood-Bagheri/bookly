@@ -15,7 +15,6 @@ import s from "./CategoryDetailsBox.module.scss";
 export const CategoryDetailsBox: FC<CategoryDetailsBoxProps> = ({
     className,
     categoryTitle,
-    description,
     imageSrc,
     loading = false,
     ...restProps
@@ -32,7 +31,7 @@ export const CategoryDetailsBox: FC<CategoryDetailsBoxProps> = ({
                 <Image className={s.categoryImage} src={imageSrc} />
                 <Text className={s.name}>{categoryTitle}</Text>
             </div>
-            <Text className={clsx(s.description)}>{description}</Text>
+            {/* <Text className={clsx(s.description)}>{description}</Text> */}
         </div>
     );
 };
