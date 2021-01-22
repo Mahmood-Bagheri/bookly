@@ -10,6 +10,7 @@ declare namespace Profile {
 
     declare namespace Query {
         type Result = {
+            _id: string;
             name: string;
             role: RoleUnionType;
             books: Book.Query.Result[];

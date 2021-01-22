@@ -15,7 +15,7 @@ import PublisherImage from "assets/images/book.jpg";
 import { PublisherBoxComponentProps } from "./PublisherBox.types";
 /* styles */
 import s from "./PublisherBox.module.scss";
-import { useFollowPublisher } from "hooks";
+import { useFollowPublisher, useUnfollowPublisher } from "hooks";
 
 const defaultOnFollow = (id: string) => {
     console.log(id);
@@ -79,14 +79,15 @@ export const PublisherBoxContent = ({
         <div className={s.content}>
             <Text className={s.title}>{title}</Text>
             <Text className={s.description}>{description}</Text>
-            <PublisherBoxFollowButton
+            {/* <PublisherBoxFollowButton
                 _id={publisherId}
                 initialFollowingState={initialFollowingState}
-            />
+            /> */}
         </div>
     );
 };
 
+/* TODO add follow feature */
 const PublisherBoxFollowButton = ({
     _id: publisherId,
     initialFollowingState = false,
@@ -95,6 +96,11 @@ const PublisherBoxFollowButton = ({
         follow,
         { isLoading: followPublisherIsLoading },
     ] = useFollowPublisher();
+
+    const [
+        unfollow,
+        { isLoading: unfollowPublisherIsLoading },
+    ] = useUnfollowPublisher();
 
     const SubscriptionTextButtonText = conditionalText(
         initialFollowingState,
@@ -109,7 +115,11 @@ const PublisherBoxFollowButton = ({
             danger={initialFollowingState}
             block
             size="large"
-            onClick={() => follow({ publisherId })}
+            onClick={
+                initialFollowingState
+                    ? () => unfollow({ publisherId })
+                    : () => follow({ publisherId })
+            }
             loading={followPublisherIsLoading}
         >
             {SubscriptionTextButtonText}

@@ -1,9 +1,10 @@
 import { Image } from "./image";
+import { Profile } from "./profile";
 
 declare namespace Publisher {
     declare namespace Query {
         type Result = {
-            followers: [];
+            followers: { _id: string; name: string }[];
             description: string;
             _id: string;
             title: string;

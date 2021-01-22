@@ -8,6 +8,7 @@ const API_URLS = {
     publishers: "/publisher",
     publisher: "/publisher",
     followPublisher: "/publisher/follow",
+    unfollowPublisher: "/publisher/unfollow",
     category: "/category",
     categories: "/category",
     profile: "/user",

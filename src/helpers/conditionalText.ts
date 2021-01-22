@@ -7,8 +7,8 @@
  */
 export const conditionalText = (
     condition: boolean,
-    ifTrue: string | number,
-    ifFalse: string | number
+    ifTrue: string | number | JSX.Element,
+    ifFalse: string | number | JSX.Element
 ) => {
     return condition ? ifTrue : ifFalse;
 };

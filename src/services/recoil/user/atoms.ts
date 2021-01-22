@@ -6,3 +6,8 @@ export const roleState = atom<RoleUnionType>({
     key: "roleState",
     default: "guest",
 });
+
+export const userState = atom({
+    key: "user",
+    default: {},
+});
