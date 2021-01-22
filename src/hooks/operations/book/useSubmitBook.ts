@@ -8,11 +8,23 @@ import * as notice from "helpers/notice";
 import { transformObjectToFormData } from "helpers/transformObjectToFormData";
 /* services */
 import apiService from "services/api/apiService";
+import { map, omit, pick } from "lodash/fp";
 
-export const submitBook = (data: Book.Mutation.Submit.Variables) => {
-    console.log(data);
-    const payload = transformObjectToFormData(data);
-    return apiService.post(API_URLS.book, payload);
+export const submitBook = async (data: Book.Mutation.Submit.Variables) => {
+    const { data: book } = await apiService.post(API_URLS.book, {
+        ...omit(["image", "author", "releaseYear"])(data),
+        author: "600572f7126669293811482f",
+    });
+
+    const fd = new FormData();
+    /* FIXME fix this any  */
+    const imageFile = pick<any, any>("image")(data).image;
+    fd.append("image", imageFile);
+    const { data: image } = await apiService.post(API_URLS.uploadImage, fd);
+    console.log({ image });
+    await apiService.put(`${API_URLS.attachImageToBook}/${book._id}`, {
+        image: image._id,
+    });
 };
 
 export const useSubmitBook = () =>

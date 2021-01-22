@@ -12,6 +12,9 @@ const API_URLS = {
     category: "/category",
     categories: "/category",
     profile: "/user",
+    uploadImage: "/image/upload",
+    image: "/image",
+    attachImageToBook: "/book/attach-image",
 };
 
 export default API_URLS;

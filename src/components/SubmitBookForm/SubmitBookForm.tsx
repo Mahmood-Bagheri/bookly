@@ -85,6 +85,9 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                         </Form.Item>
                     </Col>
                     <Col lg={4}>
+                        <Form.Item name="description" label="توضیحات">
+                            <Input.Textarea />
+                        </Form.Item>
                         <Form.Item name="publisher" label="ناشر">
                             <Select
                                 options={map(
