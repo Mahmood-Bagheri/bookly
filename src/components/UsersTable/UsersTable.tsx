@@ -10,6 +10,8 @@ import { RenderActionsColumn, RenderColumnName } from "./columns";
 import { UsersTableComponentProps } from "./UsersTable.types";
 import { getColumnSearchProps } from "./lib";
 import { useUsers } from "hooks";
+import { Profile } from "types/profile";
+import { RoleUnionType } from "components/UserBox";
 /* styles */
 /*
  * todo {
@@ -48,7 +50,7 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
         setSearchText("");
     };
 
-    const columns: ColumnsType<UsersDataSourceType> = [
+    const columns: ColumnsType<Profile.Query.Result> = [
         {
             title: "نام",
             dataIndex: "name",
@@ -97,13 +99,29 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             ),
         } as any,
         {
+            title: "نقش",
+            dataIndex: "role",
+            key: "role",
+            ...getColumnSearchProps(
+                "role",
+                handleReset,
+                handleSearch,
+                inputRef,
+                searchedColumn,
+                searchText
+            ),
+            render: (name, record, index) => (
+                <div>{transformRole(record.role)}</div>
+            ),
+        },
+        {
             title: "عملیات",
             dataIndex: "",
             key: "x",
             render: (name, record, index) => (
-                <RenderActionsColumn<UsersDataSourceType>
+                <RenderActionsColumn<Profile.Query.Result>
                     name={name}
-                    record={record}
+                    record={record as any}
                     onDeleteUser={onDeleteUser}
                     index={index}
                 />
@@ -119,4 +137,17 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             columns={columns}
         />
     );
+};
+
+const transformRole = (role: RoleUnionType) => {
+    switch (role) {
+        case "ADMIN":
+            return "مدیر";
+        case "AUTHOR":
+            return "نویسنده";
+        case "USER":
+            return "کاربر";
+        default:
+            return "بدون نقش!";
+    }
 };

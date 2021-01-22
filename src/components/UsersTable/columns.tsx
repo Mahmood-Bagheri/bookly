@@ -33,7 +33,6 @@ type RenderActionsColumnProps<T> = RenderColumnNameProps<T> & {
 
 export function RenderActionsColumn<T>({
     record,
-    name,
     onDeleteUser,
 }: RenderActionsColumnProps<T>): JSX.Element {
     return (
