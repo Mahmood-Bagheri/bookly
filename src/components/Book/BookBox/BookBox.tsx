@@ -21,6 +21,13 @@ export const BookBox: React.FC<BookProps> = ({
     image,
     onDeleteBook,
     _id: bookId = "Salam",
+    // category,
+    // comments,
+    // createdAt,
+    // updatedAt,
+    // isPublished,
+    // submittedBy,
+    // description,
     ...restProps
 }) => {
     const [like, { isLoading: likeIsLoading }] = useLikeBook();
@@ -43,7 +50,7 @@ export const BookBox: React.FC<BookProps> = ({
     const [authorSubtitleIsOverflowing] = useOverflow(authorSubtitleRef);
 
     return (
-        <div className={`${s.box} shadow`} {...restProps}>
+        <div className={`${s.box} shadow`}>
             <div
                 className={s.content}
                 id="content"

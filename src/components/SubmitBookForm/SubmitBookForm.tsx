@@ -12,16 +12,19 @@ import { ReadingBookSvg } from "components/ReadingBookSvg";
 /* modules */
 import clsx from "classnames";
 import { useParams } from "react-router-dom";
+import { useCategories, usePublishers } from "hooks";
 /* helpers */
 /* assets */
 /* mock */
-import { categoryOptions, publishersOptions, yearsOptions } from "./mock";
+import { publishersOptions, yearsOptions } from "./mock";
 /* types */
 import { SubmitBookFormProps } from "./SubmitBookForm.types";
 /* utils */
 import { getDropboxConfig, renderSubmitBookTitle } from "./utils";
 /* styles */
 import s from "./SubmitBookForm.module.scss";
+import { map } from "lodash/fp";
+import { Publisher } from "types/publisher";
 
 export const SubmitBookForm: FC<SubmitBookFormProps> = ({
     onSubmit,
@@ -29,6 +32,13 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
 }) => {
     const [form] = Form.useForm();
     const { bookId } = useParams<Book.Id>();
+    const { data: categories } = useCategories();
+    const { data: publishers } = usePublishers();
+    // const { data: publishers } = usePublishers();
+
+    if (!categories || !publishers) {
+        return <div>loading...</div>;
+    }
 
     return (
         <div className={clsx(s.box, `shadow p-3`)}>
@@ -43,6 +53,49 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                 <Row>
                     <Col lg={4}>
                         <ReadingBookSvg className="d-block d-lg-none mb-2" />
+
+                        <Form.Item name="title" label="نام کتاب">
+                            <Input.Text />
+                        </Form.Item>
+
+                        <Form.Item name="category" label="نویسنده">
+                            <Select
+                                options={map(
+                                    (category: Category.Query.Result) => ({
+                                        value: category._id,
+                                        label: category.title,
+                                    })
+                                )(categories)}
+                            />
+                        </Form.Item>
+
+                        <Form.Item name="releaseYear" label="سال نشر">
+                            <Select options={yearsOptions} allowClear />
+                        </Form.Item>
+
+                        <Form.Item name="category" label="دسته بندی">
+                            <Select
+                                options={map(
+                                    (category: Category.Query.Result) => ({
+                                        value: category._id,
+                                        label: category.title,
+                                    })
+                                )(categories)}
+                            />
+                        </Form.Item>
+                    </Col>
+                    <Col lg={4}>
+                        <Form.Item name="publisher" label="ناشر">
+                            <Select
+                                options={map(
+                                    (publisher: Publisher.Query.Result) => ({
+                                        value: publisher._id,
+                                        label: publisher.title,
+                                    })
+                                )(publishers)}
+                            />
+                        </Form.Item>
+
                         <Form.Item
                             name="image"
                             label="عکس کتاب"
@@ -50,29 +103,13 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                         >
                             <UploadDropbox {...getDropboxConfig(form)} />
                         </Form.Item>
-
-                        <Form.Item name="name" label="نام کتاب">
-                            <Input.Text />
-                        </Form.Item>
-
-                        <Form.Item name="releaseYear" label="سال نشر">
-                            <Select<number> options={yearsOptions} allowClear />
-                        </Form.Item>
-
-                        <Form.Item name="tag" label="دسته بندی">
-                            <Select<string> options={categoryOptions} />
-                        </Form.Item>
-                    </Col>
-                    <Col lg={4}>
-                        <Form.Item name="publisher" label="ناشر">
-                            <Select<string> options={publishersOptions} />
-                        </Form.Item>
                     </Col>
                     <Col
                         lg={4}
                         className="d-flex flex-column justify-content-between align-items-end"
                     >
                         <ReadingBookSvg className="d-none d-lg-block" />
+
                         <Form.Item>
                             <Button
                                 className="mt-4"

@@ -9,10 +9,12 @@ import {
 } from "react-router-dom";
 import { useCanPerform } from "hooks/useCanPerform";
 import { routeTo } from "helpers/routeTo";
+import { Permission } from "services/rbac";
+import { Path } from "types/global";
 /* types */
 
 export type CustomRouteComponentProps = RouteProps & {
-    permissionKey: string;
+    permissionKey: Path<Permission>;
     withLayout?: boolean;
     withSearchbar: boolean;
 };

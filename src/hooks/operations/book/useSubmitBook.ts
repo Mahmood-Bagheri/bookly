@@ -10,6 +10,7 @@ import { transformObjectToFormData } from "helpers/transformObjectToFormData";
 import apiService from "services/api/apiService";
 
 export const submitBook = (data: Book.Mutation.Submit.Variables) => {
+    console.log(data);
     const payload = transformObjectToFormData(data);
     return apiService.post(API_URLS.book, payload);
 };

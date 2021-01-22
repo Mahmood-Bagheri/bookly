@@ -8,11 +8,11 @@ import { SelectProps } from "antd/lib/select";
 /* styles */
 import s from "./Select.module.scss";
 
-export const Select = <T extends string | number>({
+export const Select = ({
     children,
     className,
     ...restProps
-}: SelectProps<T>) => {
+}: SelectProps<any>) => {
     return (
         <SelectComponent
             allowClear
