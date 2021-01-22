@@ -21,19 +21,18 @@ const UserProfile: FC = props => {
             <Row>
                 <Col md={5} lg={4}>
                     <UserBox
-                        name="محمود باقری"
-                        role="admin"
-                        biography="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت"
+                        name={data?.name!}
+                        role={data?.role!}
+                        biography={
+                            data?.biography || "بیوگرافی ثبت نشده است :)"
+                        }
                         profileImage={generateFakeImageUrl()}
                         loading={profileLoading}
-                        registerDate={randomDate(new Date("10/10/2010"))}
+                        registerDate={data?.createdAt || new Date()}
                     />
                 </Col>
                 <Col md={7} lg={8}>
-                    <BooksGrid
-                        loading={profileLoading}
-                        books={mock("books", 12)}
-                    />
+                    <BooksGrid loading={profileLoading} books={data?.books!} />
                 </Col>
             </Row>
         </Fragment>

@@ -53,13 +53,22 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             title: "نام",
             dataIndex: "name",
             key: "name",
-            render: (name, record, index) => (
-                <RenderColumnName<UsersDataSourceType>
-                    name={name}
-                    record={record}
-                    index={index}
-                />
+            ...getColumnSearchProps(
+                "name",
+                handleReset,
+                handleSearch,
+                inputRef,
+                searchedColumn,
+                searchText
             ),
+
+            // render: (name, record, index) => (
+            //     <RenderColumnName<UsersDataSourceType>
+            //         name={name}
+            //         record={record}
+            //         index={index}
+            //     />
+            // ),
         },
         {
             title: "نام کاربری",

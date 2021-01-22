@@ -72,13 +72,11 @@ export const UserBox: FC<UserBoxProps> = ({
 
 const transformRole = (role: RoleUnionType) => {
     switch (role) {
-        case "admin":
+        case "ADMIN":
             return "مدیر";
-        case "author":
+        case "AUTHOR":
             return "نویسنده";
-        case "guest":
-            return "میهمان";
-        case "user":
+        case "USER":
             return "کاربر";
         default:
             return "بدون نقش!";

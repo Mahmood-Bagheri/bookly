@@ -8,10 +8,7 @@ import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
 export const updateProfile = async (
     profile: Profile.Mutation.Update.Variables
 ) => {
-    const { data } = await apiService.patch<any, Profile.Query.Result>(
-        API_URLS.profile,
-        profile
-    );
+    const { data } = await apiService.patch(API_URLS.profile, profile);
     return data;
 };
 

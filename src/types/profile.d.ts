@@ -1,4 +1,5 @@
 import { AxiosResponse } from "axios";
+import { RoleUnionType } from "components/UserBox";
 
 declare namespace Profile {
     type Base = {
@@ -8,13 +9,20 @@ declare namespace Profile {
     };
 
     declare namespace Query {
-        type Result = AxiosResponse<{ id: string }>;
+        type Result = {
+            name: string;
+            role: RoleUnionType;
+            books: Book.Query.Result[];
+            biography: string;
+            createdAt: string;
+            updatedAt: string;
+        };
     }
 
     declare namespace Mutation {
         declare namespace Update {
             type Variables = Base;
-            type REsult = {};
+            type Result = {};
         }
     }
 }
