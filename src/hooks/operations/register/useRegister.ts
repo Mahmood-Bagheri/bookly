@@ -7,6 +7,7 @@ import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
 export type RegisterMutationVariables = {
     username: string;
     password: string;
+    name: string;
 };
 
 export const register = (credentials: RegisterMutationVariables) => {

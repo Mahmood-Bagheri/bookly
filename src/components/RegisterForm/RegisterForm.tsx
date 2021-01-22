@@ -29,6 +29,14 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
             </Form.Item>
 
             <Form.Item
+                label="نام"
+                name="name"
+                rules={REGISTER_FORM_VALIDATION_RULES.name}
+            >
+                <Input.Text />
+            </Form.Item>
+
+            <Form.Item
                 label="رمز عبور"
                 name="password"
                 rules={REGISTER_FORM_VALIDATION_RULES.password}

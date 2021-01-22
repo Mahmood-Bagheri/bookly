@@ -4,7 +4,7 @@ const API_URLS = {
     comments: "/comment",
     user: "/user",
     login: "/user/login",
-    register: "/user/register",
+    register: "/user",
     publishers: "/publisher",
     publisher: "/publisher",
     followPublisher: "/publisher/follow",

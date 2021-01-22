@@ -2,10 +2,12 @@ import React, { FC, Fragment } from "react";
 /* components */
 import { DocumentTitle } from "components/DocumentTitle";
 import { RegisterForm } from "components/RegisterForm";
-import { useRegister } from "hooks/operations";
+import { RegisterMutationVariables, useRegister } from "hooks/operations";
 import { RegisterFormPicture } from "components/RegisterFormPicture";
 import { Row } from "components/Row";
 import { Col } from "components/Col";
+/* modules */
+import { omit } from "lodash/fp";
 
 const Register: FC = props => {
     const [register, { isLoading: registerLoading }] = useRegister();
@@ -17,7 +19,13 @@ const Register: FC = props => {
                 <Col lg={4} className="order-1 order-lg-0">
                     <RegisterForm
                         loading={registerLoading}
-                        onSubmit={register}
+                        onSubmit={v =>
+                            register(
+                                omit("confirmPassword")(
+                                    v
+                                ) as RegisterMutationVariables
+                            )
+                        }
                     />
                 </Col>
                 <Col lg={6}>

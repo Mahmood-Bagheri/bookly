@@ -18,6 +18,13 @@ export const LOGIN_FORM_VALIDATION_RULES: ValidationRuleType = {
 };
 
 export const REGISTER_FORM_VALIDATION_RULES: ValidationRuleType = {
+    name: [
+        {
+            required: true,
+            message: "نام را وارد کنید",
+        },
+    ],
+
     username: [
         {
             required: true,
