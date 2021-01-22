@@ -7,7 +7,7 @@ import { BaseUsersTableComponentProps } from "./UsersTable.types";
 
 type RenderColumnNameProps<T> = {
     name: any;
-    record: T & { id: string };
+    record: T & { _id: string };
     index: number;
 };
 
@@ -19,7 +19,7 @@ export function RenderColumnName<T>({
         <Link<RouterLinkProps>
             permission="users.readSingle"
             to={routeTo("publicUserProfile", {
-                userId: record.id || 0,
+                userId: record._id || 0,
             })}
         >
             {name}
@@ -39,7 +39,7 @@ export function RenderActionsColumn<T>({
     return (
         <PopConfirm
             title="برای حذف این کاربر مطمئن هستید ؟ "
-            onConfirm={() => onDeleteUser({ userId: record.id })}
+            onConfirm={() => onDeleteUser({ userId: record._id })}
         >
             <Button danger>حذف کاربر</Button>
         </PopConfirm>

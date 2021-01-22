@@ -17,14 +17,15 @@ const queryConfig = {
     queries: { retry: false, refetchOnWindowFocus: false },
 };
 
+export const queryCache = new QueryCache({
+    defaultConfig: {
+        ...queryConfig,
+        ...mutationConfig,
+    },
+});
+
 export const ReactQueryService: FunctionComponent = props => {
     const { children } = props;
-    const queryCache = new QueryCache({
-        defaultConfig: {
-            ...queryConfig,
-            ...mutationConfig,
-        },
-    });
 
     return (
         <ReactQueryCacheProvider queryCache={queryCache}>

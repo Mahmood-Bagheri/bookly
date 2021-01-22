@@ -8,8 +8,8 @@ import { RenderActionsColumn, RenderColumnName } from "./columns";
 /* assets */
 /* types */
 import { UsersTableComponentProps } from "./UsersTable.types";
-import { mock } from "helpers/mock";
 import { getColumnSearchProps } from "./lib";
+import { useUsers } from "hooks";
 /* styles */
 /*
  * todo {
@@ -18,16 +18,17 @@ import { getColumnSearchProps } from "./lib";
  * }
  */
 export type UsersDataSourceType = {
-    id: string;
+    _id: string;
     name: string;
     username: string;
     emailAddress: string;
 };
-const dataSource = mock("users", 20);
 
 export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => {
     const { className, onDeleteUser, ...restProps } = props;
 
+    // const dataSource = mock("users", 20);
+    const { data: users } = useUsers();
     const [searchText, setSearchText] = useState("");
     const [searchedColumn, setSearchedColumn] = useState("");
 
@@ -105,7 +106,7 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
         <Table
             {...restProps}
             pagination={{ hideOnSinglePage: true }}
-            dataSource={dataSource}
+            dataSource={users}
             columns={columns}
         />
     );
