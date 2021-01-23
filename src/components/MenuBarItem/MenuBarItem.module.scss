@@ -2,11 +2,12 @@
     color: var(--black);
     margin-left: 10px;
     display: inline-block;
+    vertical-align: middle;
+    line-height: 1.7;
+    font-weight: 400;
 }
 
 .activeMenuItem {
-    // border-bottom: 3px dotted var(--black);
-    // padding: 0 0 6px 0;
+    transition: 300ms all ease-in-out;
     font-weight: 900;
-    // vertical-align: top;
 }

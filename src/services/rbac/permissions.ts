@@ -59,10 +59,10 @@ export const permissions = {
         books: {
             read: true,
             submit: true,
-            update: true,
-            delete: true,
+            update: false,
+            delete: false,
             readSingle: true,
-            like: true,
+            like: false,
         },
         comments: {
             read: true,

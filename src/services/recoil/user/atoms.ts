@@ -6,6 +6,7 @@ export type RoleUnionType = "guest" | "ADMIN" | "USER" | "AUTHOR";
 type User = {
     role: RoleUnionType;
     token?: string;
+    userId: string;
 };
 
 export const userState = atom<User>({
@@ -13,5 +14,6 @@ export const userState = atom<User>({
     default: {
         role: (LocalStorage.getItem("role") as RoleUnionType) || "guest",
         token: LocalStorage.getItem("token") || "",
+        userId: LocalStorage.getItem("userId") || "",
     },
 });

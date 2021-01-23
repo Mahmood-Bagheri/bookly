@@ -14,6 +14,8 @@ import { useOverflow } from "hooks/useOverflow";
 import { BookProps } from "./BookBox.types";
 /* styles */
 import s from "./BookBox.module.scss";
+import { useRecoilState } from "recoil";
+import { userState } from "services/recoil/user/atoms";
 
 export const BookBox: React.FC<BookProps> = ({
     title,
@@ -26,12 +28,14 @@ export const BookBox: React.FC<BookProps> = ({
     // createdAt,
     // updatedAt,
     // isPublished,
-    // submittedBy,
+    submittedBy,
     // description,
     ...restProps
 }) => {
     const [like, { isLoading: likeIsLoading }] = useLikeBook();
     const [deleteBook, { isLoading: deleteBookIsLoading }] = useDeleteBook();
+
+    const [user] = useRecoilState(userState);
     /* FIXME initialLikeState */
     const initialLikeState = false;
     const handleLikeChange = (likeState: boolean, bookId: string) => {
@@ -104,8 +108,9 @@ export const BookBox: React.FC<BookProps> = ({
                     initialLikeState={initialLikeState}
                     loading={likeIsLoading}
                 />
+
                 <DeleteButton
-                    permission="books.delete"
+                    permission={user.userId === submittedBy._id}
                     data-testid="deleteButton"
                     title="برای حذف کردن این کتاب مطمئن هستید ؟"
                     onConfirm={() => handleDeleteBook(bookId)}

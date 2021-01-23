@@ -24,7 +24,7 @@ export const LogoutButton: FC<LogoutButtonProps> = ({
     const [user, updateUser] = useRecoilState(userState);
 
     const handleLogout = () => {
-        updateUser({ role: "guest", token: "" });
+        updateUser({ role: "guest", token: "", userId: "" });
         localStorage.setItem("token", "");
         localStorage.setItem("role", "guest");
         notice.info("با موفقیت خارج شدید :)");
