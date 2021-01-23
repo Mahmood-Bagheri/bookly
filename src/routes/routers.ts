@@ -16,7 +16,9 @@ import Error from "pages/Error";
 import ProfileLikledBooks from "pages/UserProfileLikedBooks";
 import PublicUserProfile from "pages/PublicUserProfile";
 import SubmitBook from "pages/SubmitBook";
-import UpdateBook from "pages/SubmitBook";
+import Authors from "pages/Authors";
+import Author from "pages/Author";
+
 import { Path } from "types/global";
 import { Permission } from "services/rbac";
 
@@ -175,6 +177,26 @@ export const routers: Router[] = [
         config: {
             requireAuth: false,
             permissionKey: "books.submit",
+            layout: { include: true, searchbar: false },
+        },
+    },
+    {
+        path: ROUTES.author,
+        component: Author,
+        exact: true,
+        config: {
+            requireAuth: false,
+            permissionKey: "author.readSingle",
+            layout: { include: true, searchbar: false },
+        },
+    },
+    {
+        path: ROUTES.authors,
+        component: Authors,
+        exact: true,
+        config: {
+            requireAuth: false,
+            permissionKey: "author.read",
             layout: { include: true, searchbar: false },
         },
     },

@@ -12,6 +12,8 @@ export const ROUTES = {
     publicUserProfile: "/users/:userId/profile",
     categories: "/categories",
     category: "/categories/:categoryId/details",
+    authors: "/authors",
+    author: "/authors/:authorId",
     submitBook: "/book/submit",
     updateBook: "/book/update/:bookId",
     error: "/error",

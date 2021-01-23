@@ -19,9 +19,14 @@ export const MENU: MenuItem[] = [
         permission: "category.read",
     },
     {
+        title: "نویسندگان",
+        link: routeTo("authors"),
+        permission: "author.read",
+    },
+    {
         title: "ناشر ها",
         link: routeTo("publishers"),
-        permission: "publisher.delete",
+        permission: "publisher.read",
     },
     {
         title: "کاربران",
