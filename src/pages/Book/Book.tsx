@@ -54,6 +54,7 @@ const Book: FC = () => {
                 <Col xl={4}>
                     <BookDetailsBox
                         id={bookId}
+                        releaseYear={book?.releaseYear}
                         title={book?.title}
                         author={book?.author?.name}
                     />

@@ -6,10 +6,12 @@ export const BookDetailsContainer = () => {
     const { bookId } = useParams<Book.Id>();
 
     return (
-        <BookDetailsBox
-            id={bookId}
-            title="کتاب جز از کل"
-            author="استیو تولتز"
-        />
+        // <BookDetailsBox
+        // // releaseYear={book}
+        //     id={bookId}
+        //     title="کتاب جز از کل"
+        //     author="استیو تولتز"
+        // />
+        <div></div>
     );
 };

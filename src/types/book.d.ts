@@ -17,6 +17,7 @@ declare namespace Book {
             isPublished: boolean;
             description: string;
             title: string;
+            releaseYear: number;
             category: {
                 _id: string;
                 title: string;

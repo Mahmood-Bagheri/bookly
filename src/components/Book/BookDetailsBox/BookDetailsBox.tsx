@@ -20,6 +20,7 @@ export const BookDetailsBox: FunctionComponent<BookDetailsBoxComponentProps> = (
     author,
     id: bookId,
     imageSrc = BookImage,
+    releaseYear,
 }) => {
     return (
         <div className={clsx(s.box, `shadow`)}>
@@ -34,7 +35,10 @@ export const BookDetailsBox: FunctionComponent<BookDetailsBoxComponentProps> = (
                     />
                 </Link>
                 <Text className={s.title}>{title}</Text>
-                <Text className={s.author}>{author}</Text>
+                <div className="author mr-auto">
+                    <Text className={s.author}>{author}</Text>
+                    <Text className={s.author}>سال نشر: {releaseYear}</Text>
+                </div>
             </div>
             <BookImageCarousel />
             {/* <Image className={s.image} src={imageSrc} /> */}
