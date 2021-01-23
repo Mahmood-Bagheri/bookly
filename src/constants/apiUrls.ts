@@ -15,6 +15,7 @@ const API_URLS = {
     uploadImage: "/image/upload",
     image: "/image",
     attachImageToBook: "/book/attach-image",
+    author: "/author",
 };
 
 export default API_URLS;

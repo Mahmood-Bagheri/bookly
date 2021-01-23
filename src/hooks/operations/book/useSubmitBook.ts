@@ -12,8 +12,7 @@ import { map, omit, pick } from "lodash/fp";
 
 export const submitBook = async (data: Book.Mutation.Submit.Variables) => {
     const { data: book } = await apiService.post(API_URLS.book, {
-        ...omit(["image", "author", "releaseYear"])(data),
-        author: "600572f7126669293811482f",
+        ...omit(["image", "releaseYear"])(data),
     });
 
     const fd = new FormData();

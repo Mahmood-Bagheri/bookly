@@ -12,7 +12,7 @@ import { ReadingBookSvg } from "components/ReadingBookSvg";
 /* modules */
 import clsx from "classnames";
 import { useParams } from "react-router-dom";
-import { useCategories, usePublishers } from "hooks";
+import { useCategories, usePublishers, useAuthors } from "hooks";
 /* helpers */
 /* assets */
 /* mock */
@@ -34,7 +34,7 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
     const { bookId } = useParams<Book.Id>();
     const { data: categories } = useCategories();
     const { data: publishers } = usePublishers();
-    // const { data: publishers } = usePublishers();
+    const { data: authors } = useAuthors();
 
     if (!categories || !publishers) {
         return <div>loading...</div>;
@@ -58,14 +58,12 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                             <Input.Text />
                         </Form.Item>
 
-                        <Form.Item name="category" label="نویسنده">
+                        <Form.Item name="author" label="نویسنده">
                             <Select
-                                options={map(
-                                    (category: Category.Query.Result) => ({
-                                        value: category._id,
-                                        label: category.title,
-                                    })
-                                )(categories)}
+                                options={map((author: Author.Query.Result) => ({
+                                    value: author._id,
+                                    label: author.name,
+                                }))(authors)}
                             />
                         </Form.Item>
 
