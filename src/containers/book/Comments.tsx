@@ -8,7 +8,7 @@ export const CommentsContainer = () => {
 
     const handleDeleteComment = (commentId: string) => {
         /* delete comment api call */
-        deleteComment({ commentId });
+        deleteComment(commentId);
         console.log(`deleting comment with the commentId: ${commentId} `);
     };
 

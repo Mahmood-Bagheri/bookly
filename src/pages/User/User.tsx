@@ -17,7 +17,7 @@ const User: FC = props => {
                 title={`نظرات داده شده توسط کاربر با آی دی ${userId}`}
                 comments={mock<Comment.Query.Result>("comments")}
                 onDelete={commentId => {
-                    deleteComment({ commentId });
+                    deleteComment(commentId);
                 }}
             />
         </Fragment>
