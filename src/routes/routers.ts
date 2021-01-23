@@ -187,7 +187,7 @@ export const routers: Router[] = [
         config: {
             requireAuth: false,
             permissionKey: "author.readSingle",
-            layout: { include: true, searchbar: false },
+            layout: { include: true, searchbar: true },
         },
     },
     {
@@ -197,7 +197,7 @@ export const routers: Router[] = [
         config: {
             requireAuth: false,
             permissionKey: "author.read",
-            layout: { include: true, searchbar: false },
+            layout: { include: true, searchbar: true },
         },
     },
     {
