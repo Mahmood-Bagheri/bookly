@@ -5,6 +5,7 @@ import { Path } from "types/global";
 
 export const useCanPerform = (permission: Path<Permission> | boolean) => {
     const { role, permissions } = usePermissions();
+
     const canPerform = get(permissions, `${role}.${permission}`);
     if (isBoolean(permission)) {
         return permission;

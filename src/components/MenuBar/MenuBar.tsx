@@ -2,6 +2,7 @@ import React, { FC } from "react";
 /* components */
 import { MenuBarItem, MenuItem } from "components/MenuBarItem";
 import { GenericGrid } from "components/GenericGrid";
+import { LogoutButton } from "components/LogoutButton";
 
 /* modules */
 import clsx from "classnames";
@@ -21,6 +22,7 @@ export const MenuBar: FC<MenuBarComponentProps> = props => {
                 renderItem={renderMenuItem}
                 withRow={false}
             />
+            <LogoutButton />
         </div>
     );
 };

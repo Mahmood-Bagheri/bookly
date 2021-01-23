@@ -52,7 +52,7 @@ export const permissions = {
         login: true,
         register: true,
     },
-    user: {
+    USER: {
         home: {
             read: true,
         },
@@ -78,6 +78,13 @@ export const permissions = {
             create: true,
             readSingle: true,
         },
+        author: {
+            read: true,
+            update: false,
+            delete: false,
+            create: false,
+            readSingle: true,
+        },
         profile: {
             read: true,
             update: true,
@@ -95,8 +102,8 @@ export const permissions = {
             read: true,
             readSingle: true,
         },
-        login: true,
-        register: true,
+        login: false,
+        register: false,
     },
 };
 

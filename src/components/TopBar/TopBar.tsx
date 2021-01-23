@@ -20,7 +20,7 @@ export const TopBar: FC<TopBarComponentProps> = React.memo(props => {
 
     return (
         <Fragment>
-            <Row className="align-items-center py-3">
+            <Row className="pt-4 pb-3">
                 {withSearchbar && (
                     <Col lg={6} className="order-2 order-lg-0">
                         <FeedFilterBox.Component onSearch={onSearch} />

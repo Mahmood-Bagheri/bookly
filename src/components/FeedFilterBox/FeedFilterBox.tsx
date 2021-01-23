@@ -27,8 +27,11 @@ export const FeedFilterBox: FC<FeedFilterBoxProps> = React.memo(
         };
 
         return (
-            <div className={clsx(s.box, "mb-3", className)}>
-                <Form.Item help="بعد از نوشتن متن مورد نظر، Enter را فشار دهید">
+            <div className={clsx(s.box, className)}>
+                <Form.Item
+                    help="بعد از نوشتن متن مورد نظر، Enter را فشار دهید"
+                    className="mb-0"
+                >
                     <Input.Text {...inputConfig} />
                 </Form.Item>
             </div>
