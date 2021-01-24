@@ -10,7 +10,6 @@ import React, {
 import { Table, Input, Popconfirm, Form } from "antd";
 import { FormInstance } from "antd/lib/form";
 /* modules */
-import clsx from "classnames";
 /* helpers */
 /* assets */
 /* types */
@@ -18,7 +17,6 @@ import { CategoryManagementTableProps } from "./CategoryManagementTable.types";
 /* styles */
 import s from "./CategoryManagementTable.module.scss";
 import { useDeleteCategory, useUpdateCategory } from "hooks";
-import { routeTo } from "helpers/routeTo";
 
 const EditableContext = React.createContext<FormInstance<any> | null>(null);
 interface Item extends Category.Query.Result {}
