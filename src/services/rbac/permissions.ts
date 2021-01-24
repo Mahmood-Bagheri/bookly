@@ -52,6 +52,9 @@ export const permissions = {
         login: true,
         register: true,
         drawer: false,
+        management: {
+            comments: false,
+        },
     },
 
     USER: {
@@ -107,6 +110,9 @@ export const permissions = {
         login: false,
         register: false,
         drawer: false,
+        management: {
+            comments: false,
+        },
     },
 
     ADMIN: {

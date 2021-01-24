@@ -9,7 +9,7 @@ const CommentsManagement: FC = () => {
     const { data: comments, isLoading: loading } = useComments();
     return (
         <Fragment>
-            <DocumentTitle title="CommentsManagement" />
+            <DocumentTitle title="مدیریت نظرات" />
             <CommentManagementTable comments={comments} />
         </Fragment>
     );

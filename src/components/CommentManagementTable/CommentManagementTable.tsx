@@ -1,15 +1,17 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 /* components */
-import { Space, Table, Tag } from "antd";
+import { Popconfirm, Space, Table, Tag as AntDesignTag } from "antd";
 /* modules */
 import clsx from "classnames";
+import { map } from "lodash/fp";
+import { TagProps } from "antd/lib/tag";
+import { useDeleteComment, useUpdateComment } from "hooks";
 /* helpers */
 /* assets */
 /* types */
 import { CommentManagementTableProps } from "./CommentManagementTable.types";
 /* styles */
 import s from "./CommentManagementTable.module.scss";
-import { map } from "lodash/fp";
 
 const columns = [
     {
@@ -26,23 +28,19 @@ const columns = [
     {
         title: "وضعیت",
         key: "status",
-        render: (_: any, record: ReturnType<typeof mapComment>) => (
+        render: (_: any, comment: ReturnType<typeof mapComment>) => (
             <Space size="middle">
-                {record.status ? (
-                    <Tag color="green">منتظر شده</Tag>
-                ) : (
-                    <Tag color="red">منتشر نشده</Tag>
-                )}
+                <CustomTag commentId={comment._id} status={comment.status}>
+                    منتظر شده
+                </CustomTag>
             </Space>
         ),
     },
     {
         title: "عملیات",
         key: "action",
-        render: (_: any, record: any) => (
-            <Space size="middle">
-                <a>حذف نظر</a>
-            </Space>
+        render: (_: any, record: ReturnType<typeof mapComment>) => (
+            <DeleteComment commentId={record._id} />
         ),
     },
 ];
@@ -53,7 +51,12 @@ export const CommentManagementTable: FC<CommentManagementTableProps> = ({
 }) => {
     return (
         <div className={clsx(s.box, className)}>
-            <Table columns={columns} dataSource={normalizeComments(comments)} />
+            <p className={s.title}>مدیریت نظرات کاربران</p>
+            <Table
+                pagination={{ hideOnSinglePage: true }}
+                columns={columns}
+                dataSource={normalizeComments(comments)}
+            />
         </div>
     );
 };
@@ -65,4 +68,45 @@ const mapComment = (comment: Comment.Query.Result) => ({
     author: comment.author.name,
     body: comment.body,
     status: comment.isPublished,
+    _id: comment._id,
 });
+
+type Tag = TagProps & {
+    status: boolean;
+    commentId: string;
+};
+
+const CustomTag: FC<Tag> = ({ status, commentId, ...tagProps }) => {
+    const [updateComment] = useUpdateComment();
+
+    return (
+        <AntDesignTag
+            color={status ? "green" : "red"}
+            onClick={() =>
+                updateComment({ commentId, data: { isPublished: !status } })
+            }
+            style={{ cursor: "pointer" }}
+            {...tagProps}
+        >
+            {status ? "منتشر شده" : "در انتظار تایید"}
+        </AntDesignTag>
+    );
+};
+
+type DeleteCommentProps = {
+    commentId: string;
+};
+
+const DeleteComment: FC<DeleteCommentProps> = ({ commentId }) => {
+    const [deleteComment] = useDeleteComment();
+    return (
+        <Popconfirm
+            title="برای حذف این نظر مطمئن هستید؟"
+            onConfirm={() => deleteComment(commentId)}
+            okText="بله"
+            cancelText="خیر"
+        >
+            <button>حذف نظر</button>
+        </Popconfirm>
+    );
+};

@@ -29,6 +29,11 @@ const API_RESPONSE_MESSAGES = {
             success: "نظر با موفقیت حذف شد",
             error: "مشکلی در حذف کردن نظر پیش آمد",
         },
+
+        update: {
+            success: "نظر با موفقیت به روزرسانی شد",
+            error: "مشکلی در به روزرسانی نظر پیش آمد",
+        },
     },
     publisher: {
         follow: {
