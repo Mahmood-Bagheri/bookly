@@ -16,5 +16,6 @@ export const ROUTES = {
     author: "/authors/:authorId",
     submitBook: "/book/submit",
     updateBook: "/book/update/:bookId",
+    commentsManagement: "/comment-management",
     error: "/error",
 };

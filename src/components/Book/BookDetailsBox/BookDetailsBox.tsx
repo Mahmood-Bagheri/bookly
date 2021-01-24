@@ -40,8 +40,8 @@ export const BookDetailsBox: FunctionComponent<BookDetailsBoxComponentProps> = (
                     <Text className={s.author}>سال نشر: {releaseYear}</Text>
                 </div>
             </div>
-            <BookImageCarousel />
-            {/* <Image className={s.image} src={imageSrc} /> */}
+            {/* <BookImageCarousel /> */}
+            <Image className={s.image} src={imageSrc} />
         </div>
     );
 };

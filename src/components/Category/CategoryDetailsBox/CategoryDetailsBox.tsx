@@ -39,7 +39,7 @@ export const CategoryDetailsBox: FC<CategoryDetailsBoxProps> = ({
         >
             <div className="d-flex flex-column align-items-center">
                 <Image className={s.categoryImage} src={imageSrc} />
-                <AclService permission="category.update">
+                {/*  <AclService permission="category.update">
                     <Typography.Paragraph
                         className={s.name}
                         editable={{
@@ -53,7 +53,7 @@ export const CategoryDetailsBox: FC<CategoryDetailsBoxProps> = ({
                     >
                         {categoryTitle}
                     </Typography.Paragraph>
-                </AclService>
+                </AclService> */}
                 <Text className={s.name}>{categoryTitle}</Text>
             </div>
             {/* <Text className={clsx(s.description)}>{description}</Text> */}

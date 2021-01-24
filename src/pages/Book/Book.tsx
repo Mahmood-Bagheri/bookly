@@ -57,6 +57,7 @@ const Book: FC = () => {
                         releaseYear={book?.releaseYear}
                         title={book?.title}
                         author={book?.author?.name}
+                        imageSrc={`${process.env.REACT_APP_API_URL}/${book?.image?.filename}`}
                     />
                     <AclService permission="comments.create">
                         <CommentInputBox

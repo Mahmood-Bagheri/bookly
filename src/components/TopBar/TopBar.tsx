@@ -30,11 +30,11 @@ export const TopBar: FC<TopBarComponentProps> = React.memo(props => {
                 </AclService>
 
                 {withSearchbar && (
-                    <Col lg={6} className="order-2 order-lg-0">
+                    <Col lg={4} className="ml-auto order-2 order-lg-0">
                         <FeedFilterBox.Component onSearch={onSearch} />
                     </Col>
                 )}
-                <Col className="mr-auto" lg={withSearchbar ? 5 : 12}>
+                <Col className="mr-auto" lg={withSearchbar ? 7 : 11}>
                     <div className={clsx(s.topbar, className)} {...restProps}>
                         <div className="d-flex align-items-center justify-content-center">
                             <h1 className={s.title}>{title}</h1>

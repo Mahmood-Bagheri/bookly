@@ -18,6 +18,7 @@ import PublicUserProfile from "pages/PublicUserProfile";
 import SubmitBook from "pages/SubmitBook";
 import Authors from "pages/Authors";
 import Author from "pages/Author";
+import CommentsManagement from "pages/CommentsManagement";
 
 import { Path } from "types/global";
 import { Permission } from "services/rbac";
@@ -198,6 +199,16 @@ export const routers: Router[] = [
             requireAuth: false,
             permissionKey: "author.read",
             layout: { include: true, searchbar: true },
+        },
+    },
+    {
+        path: ROUTES.commentsManagement,
+        component: CommentsManagement,
+        exact: true,
+        config: {
+            requireAuth: true,
+            permissionKey: "management.comments",
+            layout: { include: true, searchbar: false },
         },
     },
     {

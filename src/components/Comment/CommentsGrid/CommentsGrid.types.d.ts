@@ -5,4 +5,5 @@ export type CommentsGridProps = {
     comments: CommentBoxProps[];
     title?: string;
     loading?: boolean;
+    isManagementList?: boolean;
 };

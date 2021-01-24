@@ -19,10 +19,10 @@ export const CommentBox: FC<CommentBoxProps> = ({
     _id: commentId,
     body,
     createdAt,
-    updatedAt,
     author,
     onDelete = defaultOnDelete,
 }) => {
+    console.log(body);
     const relativeFakeTime = dayJs().from(createdAt, true);
 
     return (

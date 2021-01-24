@@ -53,6 +53,7 @@ export const permissions = {
         register: true,
         drawer: false,
     },
+
     USER: {
         home: {
             read: true,
@@ -105,8 +106,66 @@ export const permissions = {
         },
         login: false,
         register: false,
+        drawer: false,
+    },
+
+    ADMIN: {
+        home: {
+            read: true,
+        },
+        books: {
+            read: true,
+            submit: true,
+            update: false,
+            delete: false,
+            readSingle: true,
+            like: false,
+        },
+        comments: {
+            read: true,
+            create: true,
+            update: false,
+            delete: true,
+        },
+        bookComments: {},
+        category: {
+            read: true,
+            update: true,
+            delete: true,
+            create: true,
+            readSingle: true,
+        },
+        author: {
+            read: true,
+            update: false,
+            delete: false,
+            create: false,
+            readSingle: true,
+        },
+        profile: {
+            read: true,
+            update: true,
+            readPublicUserProfile: true,
+        },
+        publisher: {
+            read: true,
+            readSingle: true,
+            delete: true,
+            update: true,
+            create: true,
+            submissionRequest: true,
+        },
+        users: {
+            read: true,
+            readSingle: true,
+        },
+        login: false,
+        register: false,
         drawer: true,
+        management: {
+            comments: true,
+        },
     },
 };
 
-export type Permission = typeof permissions["guest"];
+export type Permission = typeof permissions["ADMIN"];

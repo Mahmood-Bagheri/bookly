@@ -11,6 +11,7 @@ import { ReactComponent as MenuIcon } from "assets/icons/menu.svg";
 import { MainDrawerComponentProps } from "./MainDrawer.types";
 /* styles */
 import s from "./MainDrawer.module.scss";
+import { routeTo } from "helpers/routeTo";
 
 export const MainDrawer: FunctionComponent<MainDrawerComponentProps> = props => {
     const [open, setOpen] = useState(false);
@@ -26,27 +27,9 @@ export const MainDrawer: FunctionComponent<MainDrawerComponentProps> = props => 
                 <div className="d-flex flex-column">
                     <MenuBarItem
                         className="mb-3"
-                        title="کاربران"
-                        link="/path/to/somewhere"
-                        permission="books.read"
-                    />
-                    <MenuBarItem
-                        className="mb-3"
-                        title="کتاب ها"
-                        link="/path/to/somewhere"
-                        permission="books.read"
-                    />
-                    <MenuBarItem
-                        className="mb-3"
-                        title="کاربران"
-                        link="/path/to/somewhere"
-                        permission="books.read"
-                    />
-                    <MenuBarItem
-                        className="mb-3"
-                        title="کاربران"
-                        link="/path/to/somewhere"
-                        permission="books.read"
+                        title="نظرات"
+                        link={routeTo("commentsManagement")}
+                        permission="management.comments"
                     />
                 </div>
             </Drawer>

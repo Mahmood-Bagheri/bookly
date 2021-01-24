@@ -19,6 +19,7 @@ export const CommentsGrid: FC<CommentsGridProps> = props => {
         onDelete,
         title = "نظرات کاربران",
         loading = false,
+        isManagementList = false,
     } = props;
 
     if (loading) {
@@ -28,10 +29,13 @@ export const CommentsGrid: FC<CommentsGridProps> = props => {
     return (
         <div className={s.box}>
             <Text className={s.title}>{title}</Text>
-            {/* {JSON.stringify(comments, null, 2)} */}
-            {/* <Row>{comments?.map(cm => renderComments(cm, onDelete))}</Row> */}
+
             <GenericGrid<Comment.Query.Result>
-                items={comments.filter(item => item.isPublished)}
+                items={
+                    isManagementList
+                        ? comments
+                        : comments.filter(item => item.isPublished)
+                }
                 renderItem={cm => renderComments(cm, onDelete)}
                 withRow
             />
