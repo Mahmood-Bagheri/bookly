@@ -27,7 +27,7 @@ const Category: FC = props => {
             <Row>
                 <Col lg={4}>
                     <CategoryDetailsBox
-                        categoryTitle={category?.title!}
+                        categoryTitle={category.title}
                         imageSrc={generateFakeImageUrl()}
                         loading={isLoading}
                     />

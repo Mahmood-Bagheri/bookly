@@ -26,9 +26,9 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = ({
             style={{ width: "100%" }}
         >
             <Form.Item
-                label="نام کاربری"
+                label="ایمیل"
                 name="username"
-                rules={LOGIN_FORM_VALIDATION_RULES.username}
+                rules={LOGIN_FORM_VALIDATION_RULES.email}
             >
                 <Input.Text />
             </Form.Item>

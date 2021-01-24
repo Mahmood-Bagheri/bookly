@@ -51,6 +51,7 @@ export const permissions = {
         },
         login: true,
         register: true,
+        drawer: false,
     },
     USER: {
         home: {
@@ -104,6 +105,7 @@ export const permissions = {
         },
         login: false,
         register: false,
+        drawer: true,
     },
 };
 

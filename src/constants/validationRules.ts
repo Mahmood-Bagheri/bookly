@@ -6,10 +6,14 @@ import * as REGEX from "./regex";
 type ValidationRuleType = Record<string, Rule[]>;
 
 export const LOGIN_FORM_VALIDATION_RULES: ValidationRuleType = {
-    username: [
+    email: [
         {
             required: true,
-            message: "نام کاربری را وارد کنید",
+            message: "ایمیل را وارد کنید",
+        },
+        {
+            pattern: REGEX.Email,
+            message: "فرمت ایمیل وارد شده صحیح نیست!",
         },
     ],
     password: [

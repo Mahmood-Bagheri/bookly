@@ -26,7 +26,7 @@ export const LogoutButton: FC<LogoutButtonProps> = ({
 
     const handleLogout = () => {
         updateUser({ role: "guest", token: "", userId: "" });
-        localStorage.setItem("token", "");
+        localStorage.clearLocalStorage();
         localStorage.setItem("role", "guest");
         notice.info("با موفقیت خارج شدید :)");
     };

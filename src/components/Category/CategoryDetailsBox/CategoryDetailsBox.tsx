@@ -54,7 +54,7 @@ export const CategoryDetailsBox: FC<CategoryDetailsBoxProps> = ({
                         {categoryTitle}
                     </Typography.Paragraph>
                 </AclService>
-                {/* <Text className={s.name}>{categoryTitle}</Text> */}
+                <Text className={s.name}>{categoryTitle}</Text>
             </div>
             {/* <Text className={clsx(s.description)}>{description}</Text> */}
         </div>
