@@ -1,6 +1,6 @@
 /* picks all types of a specific component */
 interface ServerError {
-    message: object;
+    message: string[];
 }
 
 /* customize the AxiosError object type */

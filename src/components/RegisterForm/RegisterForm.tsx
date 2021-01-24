@@ -21,9 +21,9 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
     return (
         <Form layout="vertical" onFinish={onSubmit} style={{ width: "100%" }}>
             <Form.Item
-                label="نام کاربری"
-                name="username"
-                rules={REGISTER_FORM_VALIDATION_RULES.username}
+                label="ایمیل"
+                name="email"
+                rules={REGISTER_FORM_VALIDATION_RULES.email}
             >
                 <Input.Text />
             </Form.Item>

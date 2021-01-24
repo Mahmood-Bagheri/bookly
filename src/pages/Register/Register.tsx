@@ -8,9 +8,31 @@ import { Row } from "components/Row";
 import { Col } from "components/Col";
 /* modules */
 import { omit } from "lodash/fp";
+/* helpers */
+import * as LocalStorage from "helpers/localStorage";
+import { useRecoilState } from "recoil";
+import { userState } from "services/recoil/user/atoms";
 
 const Register: FC = props => {
     const [register, { isLoading: registerLoading }] = useRegister();
+    const [, updateUser] = useRecoilState(userState);
+
+    const handleUserRegistration = (vars: RegisterMutationVariables) => {
+        register(
+            omit("confirmPassword")(vars) as RegisterMutationVariables
+        ).then(res => {
+            if (res) {
+                updateUser({
+                    role: res?.role,
+                    token: res?.token,
+                    userId: res?._id,
+                });
+                LocalStorage.setItem("token", res?.token);
+                LocalStorage.setItem("role", res?.role);
+                LocalStorage.setItem("userId", res?._id);
+            }
+        });
+    };
 
     return (
         <Fragment>
@@ -19,13 +41,7 @@ const Register: FC = props => {
                 <Col lg={4} className="order-1 order-lg-0">
                     <RegisterForm
                         loading={registerLoading}
-                        onSubmit={v =>
-                            register(
-                                omit("confirmPassword")(
-                                    v
-                                ) as RegisterMutationVariables
-                            )
-                        }
+                        onSubmit={handleUserRegistration}
                     />
                 </Col>
                 <Col lg={6}>

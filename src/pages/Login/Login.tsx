@@ -18,14 +18,16 @@ const Login: FC = props => {
 
     const handleUSerLogin = (vars: LoginMutationVariables) => {
         login(vars).then(res => {
-            updateUser({
-                role: res?.data?.role,
-                token: res?.data?.token,
-                userId: res?.data?._id,
-            });
-            LocalStorage.setItem("token", res?.data?.token);
-            LocalStorage.setItem("role", res?.data?.role);
-            LocalStorage.setItem("userId", res?.data?._id);
+            if (res) {
+                updateUser({
+                    role: res?.role,
+                    token: res?.token,
+                    userId: res?._id,
+                });
+                LocalStorage.setItem("token", res?.token);
+                LocalStorage.setItem("role", res?.role);
+                LocalStorage.setItem("userId", res?._id);
+            }
         });
     };
     return (

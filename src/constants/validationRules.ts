@@ -1,4 +1,7 @@
 import { Rule } from "antd/lib/form";
+import apiService from "services/api/apiService";
+import API_URLS from "./apiUrls";
+import * as REGEX from "./regex";
 
 type ValidationRuleType = Record<string, Rule[]>;
 
@@ -17,6 +20,13 @@ export const LOGIN_FORM_VALIDATION_RULES: ValidationRuleType = {
     ],
 };
 
+const checkEmailExistance = async (email: string) => {
+    try {
+        const { data } = await apiService.post(API_URLS.checkEmail, { email });
+        return data;
+    } catch (error) {}
+};
+
 export const REGISTER_FORM_VALIDATION_RULES: ValidationRuleType = {
     name: [
         {
@@ -24,11 +34,14 @@ export const REGISTER_FORM_VALIDATION_RULES: ValidationRuleType = {
             message: "نام را وارد کنید",
         },
     ],
-
-    username: [
+    email: [
         {
             required: true,
-            message: "نام کاربری را وارد کنید",
+            message: "ایمیل را وارد کنید",
+        },
+        {
+            pattern: REGEX.Email,
+            message: "فرمت ایمیل وارد شده صحیح نیست!",
         },
     ],
     password: [

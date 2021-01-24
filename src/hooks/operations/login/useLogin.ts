@@ -9,8 +9,13 @@ export type LoginMutationVariables = {
     password: string;
 };
 
-export const login = (credentials: LoginMutationVariables) => {
-    return apiService.post(API_URLS.login, credentials);
+export const login = async (credentials: LoginMutationVariables) => {
+    try {
+        const { data } = await apiService.post(API_URLS.login, credentials);
+        return data;
+    } catch (error) {
+        throw error;
+    }
 };
 
 export const useLogin = () =>

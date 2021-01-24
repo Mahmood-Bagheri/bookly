@@ -30,6 +30,10 @@ export const PublisherBox: FC<PublisherBoxComponentProps> = props => {
         initialFollowingState = false,
         image,
         onFollow = defaultOnFollow,
+        books,
+        createdAt,
+        followers,
+        updatedAt,
         ...restProps
     } = props;
 
