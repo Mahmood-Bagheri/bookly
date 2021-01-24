@@ -12,6 +12,7 @@
     --shadow-color: rgba(161, 161, 161, 0.75);
     --page-title-font-size: 20px;
 }
+
 .dark-mode {
     --black: #fff;
     --white: #000;
@@ -24,6 +25,7 @@
     --gray-700: #24363d;
     --gray-800: #00151e;
 }
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -115,4 +117,8 @@ img {
 
 .ant-message-notice-content {
     border-radius: 99999px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }

@@ -22,6 +22,7 @@ import CommentsManagement from "pages/CommentsManagement";
 
 import { Path } from "types/global";
 import { Permission } from "services/rbac";
+import CategoryManagement from "pages/CategoryManagement";
 
 type Router = {
     path: string | string[];
@@ -208,6 +209,16 @@ export const routers: Router[] = [
         config: {
             requireAuth: true,
             permissionKey: "management.comments",
+            layout: { include: true, searchbar: false },
+        },
+    },
+    {
+        path: ROUTES.categoryManagement,
+        component: CategoryManagement,
+        exact: true,
+        config: {
+            requireAuth: true,
+            permissionKey: "management.category",
             layout: { include: true, searchbar: false },
         },
     },

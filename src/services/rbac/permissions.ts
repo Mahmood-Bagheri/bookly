@@ -54,6 +54,7 @@ export const permissions = {
         drawer: false,
         management: {
             comments: false,
+            category: false,
         },
     },
 
@@ -112,6 +113,7 @@ export const permissions = {
         drawer: false,
         management: {
             comments: false,
+            category: false,
         },
     },
 
@@ -170,6 +172,7 @@ export const permissions = {
         drawer: true,
         management: {
             comments: true,
+            category: true,
         },
     },
 };

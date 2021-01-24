@@ -36,6 +36,7 @@ export const useUpdateCategory = () =>
                     ...previousCategory,
                     title: variables.categoryTitle,
                 };
+
                 queryCache.setQueryData(
                     [API_URLS.category, variables.categoryId],
                     newCategory
@@ -46,6 +47,9 @@ export const useUpdateCategory = () =>
                         [API_URLS.category, variables.categoryId],
                         previousCategory
                     );
+            },
+            onSuccess: () => {
+                queryCache.refetchQueries(API_URLS.categories);
             },
         }
     );

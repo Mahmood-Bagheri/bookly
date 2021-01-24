@@ -30,6 +30,12 @@ export const MainDrawer: FunctionComponent<MainDrawerComponentProps> = props => 
                         title="نظرات"
                         link={routeTo("commentsManagement")}
                         permission="management.comments"
+                    />{" "}
+                    <MenuBarItem
+                        className="mb-3"
+                        title="دسته بندی ها"
+                        link={routeTo("categoryManagement")}
+                        permission="management.comments"
                     />
                 </div>
             </Drawer>
