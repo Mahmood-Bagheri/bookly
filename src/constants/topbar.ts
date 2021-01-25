@@ -28,12 +28,12 @@ export const MENU: MenuItem[] = [
         link: routeTo("publishers"),
         permission: "publisher.read",
     },
-    {
+    /*  {
         title: "کاربران",
         link: routeTo("users"),
         permission: "users.read",
         exact: true,
-    },
+    }, */
     {
         title: "پروفایل",
         link: routeTo("profile"),

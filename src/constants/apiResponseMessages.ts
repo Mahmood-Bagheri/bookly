@@ -4,6 +4,10 @@ const API_RESPONSE_MESSAGES = {
             success: `کاربر با موفقیت حذف شد!`,
             error: `مشکلی در حذف کردن کاربر پیش آمد!`,
         },
+        changeRole: {
+            success: `نقش کاربر با موفقیت به روزرسانی شد!`,
+            error: `مشکلی در به روز رسانی نقش کاربر پیش آمد`,
+        },
     },
     book: {
         submit: {

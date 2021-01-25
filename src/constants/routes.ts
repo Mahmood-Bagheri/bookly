@@ -7,8 +7,6 @@ export const ROUTES = {
     publisher: "/publishers/:publisherId/details",
     profile: "/profile",
     profileLikedBooks: "/profile/liked",
-    users: "/users",
-    user: "/users/:userId",
     publicUserProfile: "/users/:userId/profile",
     categories: "/categories",
     category: "/categories/:categoryId/details",
@@ -19,5 +17,6 @@ export const ROUTES = {
     commentsManagement: "/management/comments",
     categoryManagement: "/management/category",
     bookManagement: "/management/book",
+    userManagement: "/management/users",
     error: "/error",
 };

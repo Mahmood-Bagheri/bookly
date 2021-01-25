@@ -9,6 +9,7 @@ import clsx from "classnames";
 /* constants */
 import { BOOK_COMMENT_VALIDATION_RULES } from "constants/validationRules";
 /* types */
+import { Comment } from "types/comment";
 import { CommentInputBoxProps } from "./CommentInputBox.types";
 /* styles */
 import s from "./CommentInputBox.module.scss";

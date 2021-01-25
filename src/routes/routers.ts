@@ -134,7 +134,7 @@ export const routers: Router[] = [
         },
     },
     {
-        path: ROUTES.users,
+        path: ROUTES.userManagement,
         component: Users,
         exact: true,
         config: {
@@ -143,16 +143,7 @@ export const routers: Router[] = [
             layout: { include: true, searchbar: true },
         },
     },
-    {
-        path: ROUTES.user,
-        component: User,
-        exact: true,
-        config: {
-            requireAuth: true,
-            permissionKey: "users.readSingle",
-            layout: { include: true, searchbar: false },
-        },
-    },
+
     {
         path: ROUTES.categories,
         component: Categories,

@@ -3,6 +3,7 @@ const API_URLS = {
     like: "/book/like",
     comments: "/comment",
     user: "/user",
+    changeUserRole: "/user/change-role",
     login: "/user/login",
     register: "/user",
     publishers: "/publisher",

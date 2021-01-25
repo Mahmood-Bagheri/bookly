@@ -56,6 +56,7 @@ export const permissions = {
             comments: false,
             category: false,
             book: false,
+            user: false,
         },
     },
 
@@ -116,6 +117,7 @@ export const permissions = {
             comments: false,
             category: false,
             book: false,
+            user: false,
         },
     },
 
@@ -176,6 +178,7 @@ export const permissions = {
             comments: true,
             category: true,
             book: true,
+            user: true,
         },
     },
 };
