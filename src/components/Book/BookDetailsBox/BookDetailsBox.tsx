@@ -37,11 +37,16 @@ export const BookDetailsBox: FunctionComponent<BookDetailsBoxComponentProps> = (
                 <Text className={s.title}>{title}</Text>
                 <div className="author mr-auto">
                     <Text className={s.author}>{author}</Text>
-                    <Text className={s.author}>سال نشر: {releaseYear}</Text>
                 </div>
             </div>
             {/* <BookImageCarousel /> */}
             <Image className={s.image} src={imageSrc} />
+            <div className="releaseYear-content d-flex justify-content-between p-3">
+                <Text className={clsx(s.title)}>سال نشر</Text>
+                <Text className={clsx(s.releaseYear)}>
+                    سال نشر: {releaseYear}
+                </Text>
+            </div>
         </div>
     );
 };
