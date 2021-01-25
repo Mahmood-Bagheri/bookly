@@ -12,6 +12,7 @@ import { $ElementProps } from "types/global";
 /* styles */
 import s from "./CommentsGrid.module.scss";
 import { Row } from "components/Row";
+import { Comment } from "types/comment";
 
 export const CommentsGrid: FC<CommentsGridProps> = props => {
     const {

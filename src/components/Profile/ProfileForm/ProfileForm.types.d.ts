@@ -4,6 +4,7 @@ import { Profile } from "types/profile";
 export type ProfileFormTypes<T> = {
     onSubmit: (values: T) => void;
     loading?: boolean;
+    initialProfile: Profile.Mutation.Update.Variables;
 };
 
 export type ProfileFormProps = ProfileFormTypes<

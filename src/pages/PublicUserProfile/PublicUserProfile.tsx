@@ -13,7 +13,13 @@ import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
 
 const UserProfile: FC = props => {
     const { userId } = useParams<{ userId: string }>();
-    const { isLoading: profileLoading, data } = usePublicUserProfile(userId);
+    const { isLoading: profileLoading, data: profile } = usePublicUserProfile(
+        userId
+    );
+
+    if (profileLoading || !profile) {
+        return <div className="text-center">در حال دریافت</div>;
+    }
 
     return (
         <Fragment>
@@ -21,18 +27,20 @@ const UserProfile: FC = props => {
             <Row>
                 <Col md={5} lg={4}>
                     <UserBox
-                        name={data?.name!}
-                        role={data?.role!}
-                        biography={
-                            data?.biography || "بیوگرافی ثبت نشده است :)"
-                        }
-                        profileImage={generateFakeImageUrl()}
-                        loading={profileLoading}
-                        registerDate={data?.createdAt || new Date()}
+                        _id={profile?._id}
+                        biography={profile?.biography}
+                        createdAt={profile?.createdAt}
+                        updatedAt={profile?.updatedAt}
+                        image={profile?.image}
+                        name={profile?.name}
+                        role={profile?.role}
                     />
                 </Col>
                 <Col md={7} lg={8}>
-                    <BooksGrid loading={profileLoading} books={data?.books!} />
+                    <BooksGrid
+                        loading={profileLoading}
+                        books={profile?.books!}
+                    />
                 </Col>
             </Row>
         </Fragment>

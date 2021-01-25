@@ -20,17 +20,14 @@ export const UserBox: FC<UserBoxProps> = ({
     name,
     role,
     biography,
-    profileImage: imageSrc,
-    loading = false,
-    registerDate,
+    _id,
+    image,
+    createdAt,
+    updatedAt,
     ...restProps
 }) => {
     const [biographyExpanded, toggleExpantion] = useToggle(false);
-
-    if (loading) {
-        return <UserBoxShimmer />;
-    }
-    const registerationDate = dayJs().from(registerDate, true);
+    const registerationDate = dayJs().from(createdAt, true);
 
     return (
         <div
@@ -38,7 +35,11 @@ export const UserBox: FC<UserBoxProps> = ({
             {...restProps}
         >
             <div className="d-flex align-items-center">
-                <Image className={s.profileImage} src={imageSrc} />
+                <Image
+                    className={s.profileImage}
+                    src={`${process.env.REACT_APP_API_URL}/${image.filename}`}
+                />
+
                 <div className={s.nameRoleWrap}>
                     <Text className={s.name}>{name}</Text>
                     <Text className={s.role}>{transformRole(role)}</Text>
@@ -54,15 +55,6 @@ export const UserBox: FC<UserBoxProps> = ({
                 })}
             >
                 {biography}
-            </Text>
-            <Text
-                className={clsx(s.showMore, {
-                    [s.showMoreNormalPosition]: biographyExpanded,
-                })}
-                onClick={toggleExpantion}
-            >
-                {biographyExpanded ? "نمایش کمتر" : "نمایش بیشتر"}
-                <ArrowLeft />
             </Text>
         </div>
     );

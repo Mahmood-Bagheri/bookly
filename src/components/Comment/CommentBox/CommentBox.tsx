@@ -22,7 +22,6 @@ export const CommentBox: FC<CommentBoxProps> = ({
     author,
     onDelete = defaultOnDelete,
 }) => {
-    console.log(body);
     const relativeFakeTime = dayJs().from(createdAt, true);
 
     return (
@@ -30,9 +29,12 @@ export const CommentBox: FC<CommentBoxProps> = ({
             {/* navigating to user profile page */}
             <Link<RouterLinkProps>
                 permission="profile.readPublicUserProfile"
-                to={routeTo("publicUserProfile", { userId: author._id })}
+                to={routeTo("publicUserProfile", { userId: author?._id })}
             >
-                <img className={s.profileImage} src={BookImage} />
+                <img
+                    className={s.profileImage}
+                    src={`${process.env.REACT_APP_API_URL}/${author?.image?.filename}`}
+                />
             </Link>
 
             <div className={s.header}>

@@ -1,3 +1,5 @@
+import { Image } from "./image";
+
 declare namespace Comment {
     type Base = {
         id: string;
@@ -21,6 +23,7 @@ declare namespace Comment {
                 _id: string;
                 name: string;
                 role: string;
+                image: Image;
             };
             createdAt: string;
             updatedAt: string;

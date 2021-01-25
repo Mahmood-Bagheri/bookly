@@ -1,5 +1,6 @@
 import { AxiosResponse } from "axios";
 import { RoleUnionType } from "components/UserBox";
+import { Image } from "./image";
 
 declare namespace Profile {
     type Base = {
@@ -17,12 +18,17 @@ declare namespace Profile {
             biography: string;
             createdAt: string;
             updatedAt: string;
+            image: Image;
         };
     }
 
     declare namespace Mutation {
         declare namespace Update {
-            type Variables = Base;
+            type Variables = {
+                image: File;
+                name: string;
+                biography: string;
+            };
             type Result = {};
         }
     }

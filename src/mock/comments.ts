@@ -1,5 +1,6 @@
 import { randomDate } from "helpers/randomDate";
 import { uniqueId } from "helpers/uniqueId";
+import { Comment } from "types/comment";
 
 export const comments: Comment.Base[] = [
     {

@@ -7,7 +7,9 @@ import apiService, {
 import { Profile } from "types/profile";
 
 export const readPublicUserProfile = async (_: unknown, userId: string) => {
-    const { data } = await apiService.get(`${API_URLS.profile}/${userId}`);
+    const { data } = await apiService.get(
+        `${API_URLS.publicProfile}/${userId}`
+    );
     return data;
 };
 

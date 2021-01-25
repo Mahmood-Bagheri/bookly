@@ -105,7 +105,7 @@ export const permissions = {
             submissionRequest: true,
         },
         users: {
-            read: true,
+            read: false,
             readSingle: true,
         },
         login: false,
