@@ -3,16 +3,16 @@ import React, { FC, useContext, useState, useEffect, useRef } from "react";
 import { Table, Input, Popconfirm, Form } from "antd";
 import { FormInstance } from "antd/lib/form";
 /* modules */
+import { useDeleteAuthor, useUpdateAuthor } from "hooks";
 /* helpers */
 /* assets */
 /* types */
-import { CategoryManagementTableProps } from "./CategoryManagementTable.types";
+import { AuthorManagementTableProps } from "./AuthorManagementTable.types";
 /* styles */
-import s from "./CategoryManagementTable.module.scss";
-import { useDeleteCategory, useUpdateCategory } from "hooks";
+import s from "./AuthorManagementTable.module.scss";
 
 const EditableContext = React.createContext<FormInstance<any> | null>(null);
-interface Item extends Category.Query.Result {}
+interface Item extends Author.Query.Result {}
 
 interface EditableRowProps {
     index: number;
@@ -97,41 +97,41 @@ const EditableCell: React.FC<EditableCellProps> = ({
 };
 type EditableTableProps = Parameters<typeof Table>[0];
 
-interface DataType extends Category.Query.Result {}
+interface DataType extends Author.Query.Result {}
 
 type ColumnTypes = Exclude<EditableTableProps["columns"], undefined>;
 
-export const CategoryManagementTable: FC<CategoryManagementTableProps> = ({
+export const AuthorManagementTable: FC<AuthorManagementTableProps> = ({
     className,
-    categories,
+    authors,
     ...restProps
 }) => {
-    const [updateCategory] = useUpdateCategory();
-    const [deleteCategory] = useDeleteCategory();
+    const [updateAuthor] = useUpdateAuthor();
+    const [deleteAuthor] = useDeleteAuthor();
     const basecolumns = [
         {
-            title: "عنوان",
-            dataIndex: "title",
+            title: "نام",
+            dataIndex: "name",
             editable: true,
-            render: (_: any, record: Category.Query.Result) => (
-                <div className="cursor-pointer">{record.title}</div>
+            render: (_: any, record: Author.Query.Result) => (
+                <div className="cursor-pointer">{record.name}</div>
             ),
         },
         {
-            title: "تعداد کتاب های ثبت شده در این دسته بندی",
+            title: "تعداد کتاب های ثبت شده برای این نویسنده",
             dataIndex: "title",
             editable: false,
-            render: (_: any, record: Category.Query.Result) => (
+            render: (_: any, record: Author.Query.Result) => (
                 <div>{record?.books?.length || 0}</div>
             ),
         },
         {
             title: "عملیات",
             dataIndex: "operation",
-            render: (_: any, record: Category.Query.Result) =>
-                categories?.length >= 1 ? (
+            render: (_: any, record: Author.Query.Result) =>
+                authors?.length >= 1 ? (
                     <Popconfirm
-                        title="برای حذف این دسته بندی مطمئن هستید ؟ کلیه کتاب های این دسته بندی حذف خواهند شد!"
+                        title="با حذف خواننده کل کتاب های ایشان نیز حذف خواهند شد"
                         onConfirm={() => handleDelete(record._id)}
                         okText="بله"
                         cancelText="خیر"
@@ -142,11 +142,11 @@ export const CategoryManagementTable: FC<CategoryManagementTableProps> = ({
         },
     ];
     const handleDelete = (id: string) => {
-        deleteCategory(id);
+        deleteAuthor(id);
     };
 
     const handleSave = (row: DataType) => {
-        updateCategory({ categoryId: row._id, categoryTitle: row.title });
+        updateAuthor({ authorId: row._id, name: row.name });
     };
 
     const components = {
@@ -174,7 +174,7 @@ export const CategoryManagementTable: FC<CategoryManagementTableProps> = ({
 
     return (
         <Table
-            dataSource={categories}
+            dataSource={authors}
             components={components}
             rowClassName={() => "editable-row"}
             columns={columns as ColumnTypes}

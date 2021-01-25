@@ -50,6 +50,13 @@ export const MainDrawer: FunctionComponent<MainDrawerComponentProps> = props => 
                         link={routeTo("userManagement")}
                         permission="management.user"
                     />
+
+                    <MenuBarItem
+                        className="mb-3"
+                        title="نویسنده ها"
+                        link={routeTo("authorManagement")}
+                        permission="management.author"
+                    />
                 </div>
             </Drawer>
         </div>

@@ -18,5 +18,6 @@ export const ROUTES = {
     categoryManagement: "/management/category",
     bookManagement: "/management/book",
     userManagement: "/management/users",
+    authorManagement: "/management/authors",
     error: "/error",
 };

@@ -24,6 +24,7 @@ import Author from "pages/Author";
 import CommentsManagement from "pages/CommentsManagement";
 import CategoryManagement from "pages/CategoryManagement";
 import BookManagement from "pages/BookManagement";
+import AuthorManagement from "pages/AuthorManagement";
 
 type Router = {
     path: string | string[];
@@ -224,7 +225,16 @@ export const routers: Router[] = [
             layout: { include: true, searchbar: false },
         },
     },
-
+    {
+        path: ROUTES.authorManagement,
+        component: AuthorManagement,
+        exact: true,
+        config: {
+            requireAuth: true,
+            permissionKey: "management.author",
+            layout: { include: true, searchbar: false },
+        },
+    },
     {
         path: ROUTES.error,
         component: Error,
