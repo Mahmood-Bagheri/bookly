@@ -1,4 +1,5 @@
 import { HTMLProps } from "react";
+import { Comment } from "types/comment";
 
 export type CommentManagementTableTypes = {
     comments: Comment.Query.Result[];

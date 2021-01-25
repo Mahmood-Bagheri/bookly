@@ -38,7 +38,7 @@ export const CategoryDetailsBox: FC<CategoryDetailsBoxProps> = ({
             {...restProps}
         >
             <div className="d-flex flex-column align-items-center">
-                <Image className={s.categoryImage} src={imageSrc} />
+                {/* <Image className={s.categoryImage} src={imageSrc} /> */}
                 {/*  <AclService permission="category.update">
                     <Typography.Paragraph
                         className={s.name}
@@ -54,7 +54,9 @@ export const CategoryDetailsBox: FC<CategoryDetailsBoxProps> = ({
                         {categoryTitle}
                     </Typography.Paragraph>
                 </AclService> */}
-                <Text className={s.name}>{categoryTitle}</Text>
+                <Text className={s.name}>
+                    دسته بندی کتاب های {categoryTitle}
+                </Text>
             </div>
             {/* <Text className={clsx(s.description)}>{description}</Text> */}
         </div>

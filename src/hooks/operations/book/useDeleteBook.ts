@@ -32,7 +32,7 @@ export const useDeleteBook = () => {
         onError: err => {
             notice.error(API_RESPONSE_MESSAGES.book.delete.error);
         },
-        onSuccess: newComment => {
+        onSuccess: () => {
             notice.success(API_RESPONSE_MESSAGES.book.delete.success);
         },
     });

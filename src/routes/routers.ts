@@ -1,5 +1,8 @@
 import { ComponentType } from "react";
 import { ROUTES } from "constants/routes";
+/* modules */
+import { Path } from "types/global";
+import { Permission } from "services/rbac";
 
 import Home from "pages/Home";
 import Login from "pages/Login";
@@ -19,10 +22,8 @@ import SubmitBook from "pages/SubmitBook";
 import Authors from "pages/Authors";
 import Author from "pages/Author";
 import CommentsManagement from "pages/CommentsManagement";
-
-import { Path } from "types/global";
-import { Permission } from "services/rbac";
 import CategoryManagement from "pages/CategoryManagement";
+import BookManagement from "pages/BookManagement";
 
 type Router = {
     path: string | string[];
@@ -222,6 +223,17 @@ export const routers: Router[] = [
             layout: { include: true, searchbar: false },
         },
     },
+    {
+        path: ROUTES.bookManagement,
+        component: BookManagement,
+        exact: true,
+        config: {
+            requireAuth: true,
+            permissionKey: "management.book",
+            layout: { include: true, searchbar: false },
+        },
+    },
+
     {
         path: ROUTES.error,
         component: Error,

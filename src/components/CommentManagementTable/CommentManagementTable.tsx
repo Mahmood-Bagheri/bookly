@@ -12,6 +12,7 @@ import { useDeleteComment, useUpdateComment } from "hooks";
 import { CommentManagementTableProps } from "./CommentManagementTable.types";
 /* styles */
 import s from "./CommentManagementTable.module.scss";
+import { Comment } from "types/comment";
 
 const columns = [
     {

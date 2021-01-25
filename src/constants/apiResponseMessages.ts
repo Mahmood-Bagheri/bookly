@@ -19,6 +19,10 @@ const API_RESPONSE_MESSAGES = {
             success: "کتاب با موفقیت لایک شد!",
             error: "مشکلی در لایک کردن کتاب پیش آمد",
         },
+        update: {
+            success: "کتاب با موفقیت به رزورسانی شد",
+            error: "مشکلی در به رزورسانی کتاب پیش آمد",
+        },
     },
     comment: {
         create: {

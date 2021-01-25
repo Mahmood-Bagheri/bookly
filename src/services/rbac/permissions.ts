@@ -55,6 +55,7 @@ export const permissions = {
         management: {
             comments: false,
             category: false,
+            book: false,
         },
     },
 
@@ -114,6 +115,7 @@ export const permissions = {
         management: {
             comments: false,
             category: false,
+            book: false,
         },
     },
 
@@ -173,6 +175,7 @@ export const permissions = {
         management: {
             comments: true,
             category: true,
+            book: true,
         },
     },
 };

@@ -7,6 +7,8 @@ import { Col } from "components/Col";
 import { uniqueId } from "helpers/uniqueId";
 import { useQueryString } from "hooks/useQueryString";
 import { checkInclusion } from "helpers/checkInclusion";
+import { filter } from "lodash/fp";
+
 /* types */
 import { BooksGridProps } from "./BooksGrid.types.d";
 /* styles */
@@ -25,7 +27,7 @@ export const BooksGrid: FC<BooksGridProps> = ({ books, loading = false }) => {
         <GenericGrid
             withRow
             filter={filterBooks}
-            items={books}
+            items={filter((book: Book.Query.Result) => book.isPublished)(books)}
             renderItem={renderBooks}
         />
     );

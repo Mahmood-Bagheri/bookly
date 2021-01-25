@@ -18,5 +18,6 @@ export const ROUTES = {
     updateBook: "/book/update/:bookId",
     commentsManagement: "/management/comments",
     categoryManagement: "/management/category",
+    bookManagement: "/management/book",
     error: "/error",
 };
