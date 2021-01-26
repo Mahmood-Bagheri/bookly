@@ -14,17 +14,18 @@ import clsx from 'classnames';
 import { useParams } from 'react-router-dom';
 import { useCategories, usePublishers, useAuthors } from 'hooks';
 /* helpers */
+import { map } from 'lodash/fp';
 /* assets */
 /* mock */
-import { publishersOptions, yearsOptions } from './mock';
+import { yearsOptions } from './mock';
 /* types */
 import { SubmitBookFormProps } from './SubmitBookForm.types';
+import { Publisher } from 'types/publisher';
+
 /* utils */
 import { getDropboxConfig, renderSubmitBookTitle } from './utils';
 /* styles */
 import s from './SubmitBookForm.module.scss';
-import { map } from 'lodash/fp';
-import { Publisher } from 'types/publisher';
 
 export const SubmitBookForm: FC<SubmitBookFormProps> = ({
     onSubmit,

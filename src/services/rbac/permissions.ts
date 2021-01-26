@@ -58,6 +58,7 @@ export const permissions = {
             book: false,
             user: false,
             author: false,
+            publisher: false,
         },
     },
 
@@ -120,6 +121,7 @@ export const permissions = {
             book: false,
             user: false,
             author: false,
+            publisher: false,
         },
     },
 
@@ -182,6 +184,7 @@ export const permissions = {
             book: true,
             user: true,
             author: true,
+            publisher: true,
         },
     },
 };

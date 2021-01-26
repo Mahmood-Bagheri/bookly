@@ -8,6 +8,7 @@ const API_URLS = {
     register: '/user',
     publishers: '/publisher',
     publisher: '/publisher',
+    attachImageToPublisher: '/publisher/attach-image',
     followPublisher: '/publisher/follow',
     unfollowPublisher: '/publisher/unfollow',
     category: '/category',

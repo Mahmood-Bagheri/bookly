@@ -25,6 +25,7 @@ import CommentsManagement from 'pages/CommentsManagement';
 import CategoryManagement from 'pages/CategoryManagement';
 import BookManagement from 'pages/BookManagement';
 import AuthorManagement from 'pages/AuthorManagement';
+import PublisherManagement from 'pages/PublisherManagement';
 
 type Router = {
     path: string | string[];
@@ -232,6 +233,16 @@ export const routers: Router[] = [
         config: {
             requireAuth: true,
             permissionKey: 'management.author',
+            layout: { include: true, searchbar: false },
+        },
+    },
+    {
+        path: ROUTES.publisherManagement,
+        component: PublisherManagement,
+        exact: true,
+        config: {
+            requireAuth: true,
+            permissionKey: 'management.publisher',
             layout: { include: true, searchbar: false },
         },
     },
