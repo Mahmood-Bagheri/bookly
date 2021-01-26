@@ -1,9 +1,9 @@
-import React from "react";
-import { CommentInputBox } from "components/Comment";
-import { useCreateComment } from "hooks";
-import { useParams } from "react-router-dom";
-import { AclService } from "services/rbac";
-import { FormInstance } from "antd/lib/form";
+import React from 'react';
+import { CommentInputBox } from 'components/Comment';
+import { useCreateComment } from 'hooks';
+import { useParams } from 'react-router-dom';
+import { AclService } from 'services/rbac';
+import { FormInstance } from 'antd/lib/form';
 
 export const LeaveCommentContainer = () => {
     const { bookId } = useParams<Book.Id>();
@@ -28,7 +28,7 @@ export const LeaveCommentContainer = () => {
     };
 
     return (
-        <AclService permission="comments.create">
+        <AclService permission='comments.create'>
             <CommentInputBox
                 loading={createCommentLoading}
                 onSubmit={handleSubmitComment}

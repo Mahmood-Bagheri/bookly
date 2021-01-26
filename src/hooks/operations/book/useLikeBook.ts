@@ -1,10 +1,10 @@
-import { useMutation } from "react-query";
+import { useMutation } from 'react-query';
 /* services */
-import apiService, { ApiServiceError } from "services/api/apiService";
+import apiService, { ApiServiceError } from 'services/api/apiService';
 /* constants */
-import API_URLS from "constants/apiUrls";
-import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
-import * as notice from "helpers/notice";
+import API_URLS from 'constants/apiUrls';
+import API_RESPONSE_MESSAGES from 'constants/apiResponseMessages';
+import * as notice from 'helpers/notice';
 
 export const likeBook = (data: Book.Mutation.Like.Variables) => {
     return apiService.patch(API_URLS.like, data);

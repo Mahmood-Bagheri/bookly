@@ -1,2 +1,2 @@
-export { default as Image } from "./Image";
-export * from "./Image.types.d";
+export { default as Image } from './Image';
+export * from './Image.types.d';

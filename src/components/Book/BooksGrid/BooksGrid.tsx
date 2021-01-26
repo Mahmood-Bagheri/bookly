@@ -1,16 +1,16 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { BookBox } from "components/Book";
-import { GenericGrid } from "components/GenericGrid";
-import { Col } from "components/Col";
+import { BookBox } from 'components/Book';
+import { GenericGrid } from 'components/GenericGrid';
+import { Col } from 'components/Col';
 /* helpers */
-import { uniqueId } from "helpers/uniqueId";
-import { useQueryString } from "hooks/useQueryString";
-import { checkInclusion } from "helpers/checkInclusion";
-import { filter } from "lodash/fp";
+import { uniqueId } from 'helpers/uniqueId';
+import { useQueryString } from 'hooks/useQueryString';
+import { checkInclusion } from 'helpers/checkInclusion';
+import { filter } from 'lodash/fp';
 
 /* types */
-import { BooksGridProps } from "./BooksGrid.types.d";
+import { BooksGridProps } from './BooksGrid.types.d';
 /* styles */
 
 export const BooksGrid: FC<BooksGridProps> = ({ books, loading = false }) => {
@@ -34,7 +34,7 @@ export const BooksGrid: FC<BooksGridProps> = ({ books, loading = false }) => {
 };
 
 const renderBooks = (book: Book.Query.Result) => (
-    <Col md={6} xl={4} className="mb-3" key={uniqueId()}>
+    <Col md={6} xl={4} className='mb-3' key={uniqueId()}>
         <BookBox.Component
             _id={book?._id}
             title={book?.title}

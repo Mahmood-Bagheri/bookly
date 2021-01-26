@@ -1,2 +1,2 @@
-export * from "./TextEditor";
-export * from "./TextEditor.types.d";
+export * from './TextEditor';
+export * from './TextEditor.types.d';

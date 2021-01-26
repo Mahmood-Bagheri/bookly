@@ -1,13 +1,13 @@
-import { useMutation } from "react-query";
-import API_URLS from "constants/apiUrls";
-import apiService from "services/api/apiService";
-import * as notice from "helpers/notice";
-import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
-import { queryCache } from "services/react-query/reactQueryService";
+import { useMutation } from 'react-query';
+import API_URLS from 'constants/apiUrls';
+import apiService from 'services/api/apiService';
+import * as notice from 'helpers/notice';
+import API_RESPONSE_MESSAGES from 'constants/apiResponseMessages';
+import { queryCache } from 'services/react-query/reactQueryService';
 
 type Dto = {
     bookId: string;
-    dto: Partial<Omit<Book.Query.Result, "_id">>;
+    dto: Partial<Omit<Book.Query.Result, '_id'>>;
 };
 
 export const updateBook = async ({ bookId, dto }: Dto) => {

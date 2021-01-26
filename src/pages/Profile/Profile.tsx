@@ -1,8 +1,8 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment } from 'react';
 /* components */
-import { DocumentTitle } from "components/DocumentTitle";
-import { ProfileForm } from "components/Profile";
-import { useProfile, useUpdateProfile } from "hooks";
+import { DocumentTitle } from 'components/DocumentTitle';
+import { ProfileForm } from 'components/Profile';
+import { useProfile, useUpdateProfile } from 'hooks';
 
 const Profile: FC = props => {
     const [updateProfile, { isLoading }] = useUpdateProfile();
@@ -14,7 +14,7 @@ const Profile: FC = props => {
 
     return (
         <Fragment>
-            <DocumentTitle title="پروفایل" />
+            <DocumentTitle title='پروفایل' />
             <ProfileForm
                 initialProfile={profile}
                 loading={profileLoading}

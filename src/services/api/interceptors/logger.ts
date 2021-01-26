@@ -1,5 +1,5 @@
-import { AxiosInstance, AxiosResponse, AxiosError } from "axios";
-import { ENV_CONFIG } from "constants/config";
+import { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
+import { ENV_CONFIG } from 'constants/config';
 
 export const applyLogger = (instance: AxiosInstance) => {
     // Add a response interceptor
@@ -23,7 +23,7 @@ export const applyLogger = (instance: AxiosInstance) => {
                 console.log(error.request);
             } else {
                 // Something happened in setting up the request that triggered an Error
-                console.log("Error", error.message);
+                console.log('Error', error.message);
             }
 
             return Promise.reject(error);

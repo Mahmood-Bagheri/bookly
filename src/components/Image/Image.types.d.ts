@@ -1,3 +1,3 @@
-import { ComponentPropsWithoutRef, HTMLProps } from "react";
+import { ComponentPropsWithoutRef, HTMLProps } from 'react';
 
-export type ImageComponentProps = ComponentPropsWithoutRef<"img">;
+export type ImageComponentProps = ComponentPropsWithoutRef<'img'>;

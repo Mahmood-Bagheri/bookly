@@ -1,2 +1,2 @@
-export * from "./MainDrawer";
-export * from "./MainDrawer.types.d";
+export * from './MainDrawer';
+export * from './MainDrawer.types.d';

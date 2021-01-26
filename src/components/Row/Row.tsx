@@ -1,13 +1,13 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* helpers */
 /* assets */
 /* types */
-import { RowProps } from "./Row.types";
+import { RowProps } from './Row.types';
 /* styles */
-import s from "./Row.module.scss";
+import s from './Row.module.scss';
 
 export const Row: FC<RowProps> = props => {
     const { className, ...restProps } = props;

@@ -1,18 +1,18 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 /* components */
-import { Form } from "antd";
-import { Input } from "components/Input";
-import { Button } from "components/Button";
+import { Form } from 'antd';
+import { Input } from 'components/Input';
+import { Button } from 'components/Button';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* helpers */
 /* assets */
 /* constants */
-import { LOGIN_FORM_VALIDATION_RULES } from "constants/validationRules";
+import { LOGIN_FORM_VALIDATION_RULES } from 'constants/validationRules';
 /* types */
-import { LoginFormComponentProps } from "./LoginForm.types";
+import { LoginFormComponentProps } from './LoginForm.types';
 /* styles */
-import s from "./LoginForm.module.scss";
+import s from './LoginForm.module.scss';
 
 export const LoginForm: FunctionComponent<LoginFormComponentProps> = ({
     onSubmit,
@@ -20,22 +20,22 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = ({
 }) => {
     return (
         <Form
-            layout="vertical"
-            name="basic"
+            layout='vertical'
+            name='basic'
             onFinish={onSubmit}
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
         >
             <Form.Item
-                label="ایمیل"
-                name="username"
+                label='ایمیل'
+                name='username'
                 rules={LOGIN_FORM_VALIDATION_RULES.email}
             >
                 <Input.Text />
             </Form.Item>
 
             <Form.Item
-                label="رمز عبور"
-                name="password"
+                label='رمز عبور'
+                name='password'
                 rules={LOGIN_FORM_VALIDATION_RULES.password}
             >
                 <Input.Password />
@@ -44,10 +44,10 @@ export const LoginForm: FunctionComponent<LoginFormComponentProps> = ({
             <Form.Item>
                 <Button
                     loading={loading}
-                    size="large"
-                    type="primary"
-                    htmlType="submit"
-                    className="mt-4"
+                    size='large'
+                    type='primary'
+                    htmlType='submit'
+                    className='mt-4'
                 >
                     ورود
                 </Button>

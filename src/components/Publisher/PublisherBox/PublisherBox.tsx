@@ -1,21 +1,21 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { Image } from "components/Image";
-import { Button } from "components/Button";
-import { Text } from "components/Text";
+import { Image } from 'components/Image';
+import { Button } from 'components/Button';
+import { Text } from 'components/Text';
 /* modules */
-import clsx from "classnames";
-import { Link, RouterLinkProps } from "components/Link";
+import clsx from 'classnames';
+import { Link, RouterLinkProps } from 'components/Link';
 /* helpers */
-import { conditionalText } from "helpers/conditionalText";
-import { routeTo } from "helpers/routeTo";
+import { conditionalText } from 'helpers/conditionalText';
+import { routeTo } from 'helpers/routeTo';
 /* assets */
-import PublisherImage from "assets/images/book.jpg";
+import PublisherImage from 'assets/images/book.jpg';
 /* types */
-import { PublisherBoxComponentProps } from "./PublisherBox.types";
+import { PublisherBoxComponentProps } from './PublisherBox.types';
 /* styles */
-import s from "./PublisherBox.module.scss";
-import { useFollowPublisher, useUnfollowPublisher } from "hooks";
+import s from './PublisherBox.module.scss';
+import { useFollowPublisher, useUnfollowPublisher } from 'hooks';
 
 const defaultOnFollow = (id: string) => {
     console.log(id);
@@ -54,13 +54,13 @@ export const PublisherBox: FC<PublisherBoxComponentProps> = props => {
 const PublisherBoxImage = ({
     _id: publisherId,
     image,
-}: Pick<PublisherBoxComponentProps, "image" | "_id">) => {
+}: Pick<PublisherBoxComponentProps, 'image' | '_id'>) => {
     return (
         <Link<RouterLinkProps>
-            permission="publisher.readSingle"
-            to={routeTo("publisher", { publisherId })}
+            permission='publisher.readSingle'
+            to={routeTo('publisher', { publisherId })}
         >
-            <div className="p-1">
+            <div className='p-1'>
                 <Image
                     className={s.image}
                     src={`${process.env.REACT_APP_API_URL}/${image?.filename}`}
@@ -77,7 +77,7 @@ export const PublisherBoxContent = ({
     _id: publisherId,
 }: Pick<
     PublisherBoxComponentProps,
-    "title" | "initialFollowingState" | "description" | "_id"
+    'title' | 'initialFollowingState' | 'description' | '_id'
 >) => {
     return (
         <div className={s.content}>
@@ -95,7 +95,7 @@ export const PublisherBoxContent = ({
 const PublisherBoxFollowButton = ({
     _id: publisherId,
     initialFollowingState = false,
-}: Pick<PublisherBoxComponentProps, "initialFollowingState" | "_id">) => {
+}: Pick<PublisherBoxComponentProps, 'initialFollowingState' | '_id'>) => {
     const [
         follow,
         { isLoading: followPublisherIsLoading },
@@ -108,17 +108,17 @@ const PublisherBoxFollowButton = ({
 
     const SubscriptionTextButtonText = conditionalText(
         initialFollowingState,
-        "لغو سابسکریپشن",
-        "دنبال کردن"
+        'لغو سابسکریپشن',
+        'دنبال کردن'
     );
 
     return (
         <Button
-            type={initialFollowingState ? "dashed" : "primary"}
-            className="mt-4"
+            type={initialFollowingState ? 'dashed' : 'primary'}
+            className='mt-4'
             danger={initialFollowingState}
             block
-            size="large"
+            size='large'
             onClick={
                 initialFollowingState
                     ? () => unfollow({ publisherId })

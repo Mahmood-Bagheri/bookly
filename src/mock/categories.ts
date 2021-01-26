@@ -1,52 +1,52 @@
-import { uniqueId } from "helpers/uniqueId";
+import { uniqueId } from 'helpers/uniqueId';
 
 export const categories: Category.Base[] = [
     {
         id: uniqueId(),
-        categoryTitle: "فلسفه",
+        categoryTitle: 'فلسفه',
     },
     {
         id: uniqueId(),
-        categoryTitle: "علمی",
+        categoryTitle: 'علمی',
     },
     {
         id: uniqueId(),
-        categoryTitle: "داستان",
+        categoryTitle: 'داستان',
     },
     {
         id: uniqueId(),
-        categoryTitle: "تخیلی",
+        categoryTitle: 'تخیلی',
     },
     {
         id: uniqueId(),
-        categoryTitle: "رُمان",
+        categoryTitle: 'رُمان',
     },
     {
         id: uniqueId(),
-        categoryTitle: "زیست شناسی",
+        categoryTitle: 'زیست شناسی',
     },
     {
         id: uniqueId(),
-        categoryTitle: "زمین شناسی",
+        categoryTitle: 'زمین شناسی',
     },
     {
         id: uniqueId(),
-        categoryTitle: "مباحث دیگر",
+        categoryTitle: 'مباحث دیگر',
     },
     {
         id: uniqueId(),
-        categoryTitle: "رُمان",
+        categoryTitle: 'رُمان',
     },
     {
         id: uniqueId(),
-        categoryTitle: "زیست شناسی",
+        categoryTitle: 'زیست شناسی',
     },
     {
         id: uniqueId(),
-        categoryTitle: "زمین شناسی",
+        categoryTitle: 'زمین شناسی',
     },
     {
         id: uniqueId(),
-        categoryTitle: "مباحث دیگر",
+        categoryTitle: 'مباحث دیگر',
     },
 ];

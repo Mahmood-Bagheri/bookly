@@ -1,3 +1,3 @@
-import { Text, Textarea, Password, Number } from "./Input";
+import { Text, Textarea, Password, Number } from './Input';
 export const Input = { Text, Textarea, Password, Number };
-export * from "./Input.types.d";
+export * from './Input.types.d';

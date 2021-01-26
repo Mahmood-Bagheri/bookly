@@ -1,28 +1,28 @@
-import React, { useRef } from "react";
+import React, { useRef } from 'react';
 /* components */
-import { LikeButton } from "components/LikeButton";
-import { Image } from "components/Image";
-import { DeleteButton } from "components/DeleteButton";
-import { Text } from "components/Text";
+import { LikeButton } from 'components/LikeButton';
+import { Image } from 'components/Image';
+import { DeleteButton } from 'components/DeleteButton';
+import { Text } from 'components/Text';
 /* modules */
-import { Link, RouterLinkProps } from "components/Link";
-import { routeTo } from "helpers/routeTo";
-import { useDeleteBook, useLikeBook } from "hooks/operations";
-import { useOverflow } from "hooks/useOverflow";
+import { Link, RouterLinkProps } from 'components/Link';
+import { routeTo } from 'helpers/routeTo';
+import { useDeleteBook, useLikeBook } from 'hooks/operations';
+import { useOverflow } from 'hooks/useOverflow';
 /* assets */
 /* types */
-import { BookProps } from "./BookBox.types";
+import { BookProps } from './BookBox.types';
 /* styles */
-import s from "./BookBox.module.scss";
-import { useRecoilState } from "recoil";
-import { userState } from "services/recoil/user/atoms";
+import s from './BookBox.module.scss';
+import { useRecoilState } from 'recoil';
+import { userState } from 'services/recoil/user/atoms';
 
 export const BookBox: React.FC<BookProps> = ({
     title,
     author,
     image,
     onDeleteBook,
-    _id: bookId = "Salam",
+    _id: bookId = 'Salam',
     // category,
     // comments,
     // createdAt,
@@ -57,8 +57,8 @@ export const BookBox: React.FC<BookProps> = ({
         <div className={`${s.box} shadow`}>
             <div
                 className={s.content}
-                id="content"
-                aria-details="contains the header of our bookbox"
+                id='content'
+                aria-details='contains the header of our bookbox'
             >
                 <Text
                     ref={titleRef}
@@ -84,10 +84,10 @@ export const BookBox: React.FC<BookProps> = ({
                     </Text>
                 </div>
             </div>
-            <div className="p-1">
+            <div className='p-1'>
                 <Link<RouterLinkProps>
-                    permission="books.readSingle"
-                    to={routeTo("book", { bookId })}
+                    permission='books.readSingle'
+                    to={routeTo('book', { bookId })}
                 >
                     <Image
                         className={s.image}
@@ -98,12 +98,12 @@ export const BookBox: React.FC<BookProps> = ({
 
             <div
                 className={s.actions}
-                id="actions"
-                aria-details="like and delete button of bookbox"
+                id='actions'
+                aria-details='like and delete button of bookbox'
             >
                 <LikeButton
-                    permission="books.like"
-                    data-testid="likeButton"
+                    permission='books.like'
+                    data-testid='likeButton'
                     onChange={likeState => handleLikeChange(likeState, bookId)}
                     initialLikeState={initialLikeState}
                     loading={likeIsLoading}
@@ -111,8 +111,8 @@ export const BookBox: React.FC<BookProps> = ({
 
                 <DeleteButton
                     permission={user.userId === submittedBy._id}
-                    data-testid="deleteButton"
-                    title="برای حذف کردن این کتاب مطمئن هستید ؟"
+                    data-testid='deleteButton'
+                    title='برای حذف کردن این کتاب مطمئن هستید ؟'
                     onConfirm={() => handleDeleteBook(bookId)}
                     className={s.deleteIcon}
                     loading={deleteBookIsLoading}

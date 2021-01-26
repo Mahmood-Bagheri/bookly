@@ -1,19 +1,19 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { DeleteButton } from "components/DeleteButton";
-import { Text } from "components/Text";
-import { Link, RouterLinkProps } from "components/Link";
+import { DeleteButton } from 'components/DeleteButton';
+import { Text } from 'components/Text';
+import { Link, RouterLinkProps } from 'components/Link';
 /* modules */
-import dayJs from "dayjs";
+import dayJs from 'dayjs';
 /* helpers */
-import { routeTo } from "helpers/routeTo";
-import { uniqueId } from "helpers/uniqueId";
+import { routeTo } from 'helpers/routeTo';
+import { uniqueId } from 'helpers/uniqueId';
 /* assets */
-import BookImage from "assets/images/book.jpg";
+import BookImage from 'assets/images/book.jpg';
 /* types */
-import { CommentBoxProps } from "./CommentBox.types";
+import { CommentBoxProps } from './CommentBox.types';
 /* styles */
-import s from "./CommentBox.module.scss";
+import s from './CommentBox.module.scss';
 
 export const CommentBox: FC<CommentBoxProps> = ({
     _id: commentId,
@@ -28,8 +28,8 @@ export const CommentBox: FC<CommentBoxProps> = ({
         <div className={s.box}>
             {/* navigating to user profile page */}
             <Link<RouterLinkProps>
-                permission="profile.readPublicUserProfile"
-                to={routeTo("publicUserProfile", { userId: author?._id })}
+                permission='profile.readPublicUserProfile'
+                to={routeTo('publicUserProfile', { userId: author?._id })}
             >
                 <img
                     className={s.profileImage}
@@ -40,21 +40,21 @@ export const CommentBox: FC<CommentBoxProps> = ({
             <div className={s.header}>
                 <p className={s.description}>
                     <Link<RouterLinkProps>
-                        permission="profile.readPublicUserProfile"
-                        to={routeTo("publicUserProfile", {
+                        permission='profile.readPublicUserProfile'
+                        to={routeTo('publicUserProfile', {
                             userId: uniqueId(),
                         })}
                     >
                         {author?.name} ({readableRole(author?.role)})
                     </Link>
-                    {"  "}
+                    {'  '}
                     {relativeFakeTime} پیش گفته
                 </p>
 
                 <DeleteButton
-                    permission="comments.delete"
+                    permission='comments.delete'
                     onConfirm={() => onDelete(commentId)}
-                    title="برای حذف کردن این نظر مطمئن هستید؟"
+                    title='برای حذف کردن این نظر مطمئن هستید؟'
                 />
             </div>
 
@@ -66,14 +66,14 @@ export const CommentBox: FC<CommentBoxProps> = ({
 const defaultOnDelete = () => {};
 const readableRole = (role: string) => {
     switch (role) {
-        case "ADMIN":
-            return "مدیر";
+        case 'ADMIN':
+            return 'مدیر';
 
-        case "USER":
-            return "کاربر";
+        case 'USER':
+            return 'کاربر';
 
-        case "AUTHOR":
-            return "نویسنده";
+        case 'AUTHOR':
+            return 'نویسنده';
 
         default:
             break;

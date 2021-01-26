@@ -1,8 +1,8 @@
-import { useMutation } from "react-query";
-import API_URLS from "constants/apiUrls";
-import apiService, { ApiServiceError } from "services/api/apiService";
-import * as notice from "helpers/notice";
-import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
+import { useMutation } from 'react-query';
+import API_URLS from 'constants/apiUrls';
+import apiService, { ApiServiceError } from 'services/api/apiService';
+import * as notice from 'helpers/notice';
+import API_RESPONSE_MESSAGES from 'constants/apiResponseMessages';
 
 export type RegisterMutationVariables = {
     name: string;

@@ -1,5 +1,5 @@
-import { Permission } from "services/rbac";
-import { Path } from "types/global";
+import { Permission } from 'services/rbac';
+import { Path } from 'types/global';
 
 export type MenuItem = {
     title: string;

@@ -1,2 +1,2 @@
-export { default as UploadDropbox } from "./UploadDropbox";
-export * from "./UploadDropbox.types.d";
+export { default as UploadDropbox } from './UploadDropbox';
+export * from './UploadDropbox.types.d';

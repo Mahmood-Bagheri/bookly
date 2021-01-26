@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 /* components */
-import { Container } from "components/Container";
+import { Container } from 'components/Container';
 // modules
-import { Router } from "react-router-dom";
+import { Router } from 'react-router-dom';
 /* main routes */
-import Routes from "routes";
+import Routes from 'routes';
 // helpers
-import { history } from "helpers/history";
+import { history } from 'helpers/history';
 
 const App: FunctionComponent = () => {
     return (

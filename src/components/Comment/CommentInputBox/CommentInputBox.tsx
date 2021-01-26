@@ -1,18 +1,18 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { Form } from "antd";
-import { Input } from "components/Input";
-import { Button } from "components/Button";
-import { Text } from "components/Text";
+import { Form } from 'antd';
+import { Input } from 'components/Input';
+import { Button } from 'components/Button';
+import { Text } from 'components/Text';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* constants */
-import { BOOK_COMMENT_VALIDATION_RULES } from "constants/validationRules";
+import { BOOK_COMMENT_VALIDATION_RULES } from 'constants/validationRules';
 /* types */
-import { Comment } from "types/comment";
-import { CommentInputBoxProps } from "./CommentInputBox.types";
+import { Comment } from 'types/comment';
+import { CommentInputBoxProps } from './CommentInputBox.types';
 /* styles */
-import s from "./CommentInputBox.module.scss";
+import s from './CommentInputBox.module.scss';
 
 export const CommentInputBox: FC<CommentInputBoxProps> = ({
     onSubmit,
@@ -27,23 +27,23 @@ export const CommentInputBox: FC<CommentInputBoxProps> = ({
     return (
         <div className={clsx(s.box, `shadow`)}>
             <Text className={s.title}>نظرتون در مورد این پست چیه؟</Text>
-            <Form form={form} layout="vertical" onFinish={handleSubmitForm}>
+            <Form form={form} layout='vertical' onFinish={handleSubmitForm}>
                 <Form.Item
-                    name="body"
+                    name='body'
                     rules={BOOK_COMMENT_VALIDATION_RULES.comment}
                 >
                     <Input.Textarea
-                        className="mt-2"
+                        className='mt-2'
                         rows={7}
-                        placeholder="مثلا: من این کتاب رو خیلی دوست دارم :)"
+                        placeholder='مثلا: من این کتاب رو خیلی دوست دارم :)'
                     />
                 </Form.Item>
 
                 <Button
                     loading={loading}
-                    htmlType="submit"
-                    className="mt-3"
-                    type="primary"
+                    htmlType='submit'
+                    className='mt-3'
+                    type='primary'
                 >
                     ارسال نظر
                 </Button>

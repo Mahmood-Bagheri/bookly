@@ -1,13 +1,13 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment } from 'react';
 /* components */
-import { TopBar } from "components/TopBar";
+import { TopBar } from 'components/TopBar';
 /* modules */
-import { useQueryString } from "hooks/useQueryString";
+import { useQueryString } from 'hooks/useQueryString';
 /* helpers */
 /* assets */
 /* constants */
 /* types */
-import { LayoutProps } from "./Layout.types";
+import { LayoutProps } from './Layout.types';
 /* styles */
 
 export const Layout: FC<LayoutProps> = ({ children, withSearchbar }) => {
@@ -16,7 +16,7 @@ export const Layout: FC<LayoutProps> = ({ children, withSearchbar }) => {
     return (
         <Fragment>
             <TopBar
-                onSearch={text => setQueryString("query", text)}
+                onSearch={text => setQueryString('query', text)}
                 withSearchbar={withSearchbar}
             />
             {children}

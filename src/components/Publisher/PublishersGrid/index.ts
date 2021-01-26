@@ -1,2 +1,2 @@
-export * from "./PublishersGrid";
-export * from "./PublishersGrid.types.d";
+export * from './PublishersGrid';
+export * from './PublishersGrid.types.d';

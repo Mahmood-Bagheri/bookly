@@ -1,2 +1,2 @@
-export * from './AuthorPageTitle'
-export * from './AuthorPageTitle.types.d'
+export * from './AuthorPageTitle';
+export * from './AuthorPageTitle.types.d';

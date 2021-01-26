@@ -1,2 +1,2 @@
-export * from './AuthorBox'
-export * from './AuthorBox.types.d'
+export * from './AuthorBox';
+export * from './AuthorBox.types.d';

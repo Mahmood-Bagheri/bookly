@@ -1,14 +1,14 @@
 /* services */
-import apiService from "services/api/apiService";
+import apiService from 'services/api/apiService';
 /* constants */
-import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
-import API_URLS from "constants/apiUrls";
+import API_RESPONSE_MESSAGES from 'constants/apiResponseMessages';
+import API_URLS from 'constants/apiUrls';
 /* react query */
-import { useMutation } from "react-query";
-import { queryCache } from "services/react-query/reactQueryService";
+import { useMutation } from 'react-query';
+import { queryCache } from 'services/react-query/reactQueryService';
 
 /* helpers */
-import * as notice from "helpers/notice";
+import * as notice from 'helpers/notice';
 
 type Props = {
     commentId: string;

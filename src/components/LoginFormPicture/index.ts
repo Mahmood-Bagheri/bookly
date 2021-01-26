@@ -1,2 +1,2 @@
-export * from "./LoginFormPicture";
-export * from "./LoginFormPicture.types.d";
+export * from './LoginFormPicture';
+export * from './LoginFormPicture.types.d';

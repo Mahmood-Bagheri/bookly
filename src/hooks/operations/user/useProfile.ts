@@ -1,6 +1,6 @@
-import { useQuery } from "react-query";
-import API_URLS from "constants/apiUrls";
-import apiService from "services/api/apiService";
+import { useQuery } from 'react-query';
+import API_URLS from 'constants/apiUrls';
+import apiService from 'services/api/apiService';
 
 export const readProfile = async () => {
     const { data } = await apiService.get(API_URLS.profile);

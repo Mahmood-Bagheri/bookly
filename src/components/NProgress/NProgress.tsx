@@ -1,9 +1,9 @@
 import NProgress, {
     NProgressOptions,
     NProgress as NProgressInstanceInterface,
-} from "nprogress";
+} from 'nprogress';
 
-import "nprogress/nprogress.css";
+import 'nprogress/nprogress.css';
 
 const NprogressConfig = {
     showSpinner: false,

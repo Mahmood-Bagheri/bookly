@@ -1,2 +1,2 @@
-export * from "./PublisherDetails";
-export * from "./PublisherDetails.types.d";
+export * from './PublisherDetails';
+export * from './PublisherDetails.types.d';

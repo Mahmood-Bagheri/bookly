@@ -1,11 +1,11 @@
 // Borrowed from https://usehooks.com ♥️
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from 'react';
 
 function useWindowSize(): {
     height: number | undefined;
     width: number | undefined;
 } {
-    const isClient = typeof window === "object";
+    const isClient = typeof window === 'object';
 
     function getSize(): {
         height: number | undefined;
@@ -28,9 +28,9 @@ function useWindowSize(): {
             setWindowSize(getSize());
         }
 
-        window.addEventListener("resize", handleResize);
+        window.addEventListener('resize', handleResize);
 
-        return (): void => window.removeEventListener("resize", handleResize);
+        return (): void => window.removeEventListener('resize', handleResize);
     }, []); // Empty array ensures that effect is only run on mount and unmount
 
     return windowSize;

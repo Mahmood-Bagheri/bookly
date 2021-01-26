@@ -1,16 +1,16 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { CategoryBox } from "components/Category";
-import { GenericGrid } from "components/GenericGrid";
-import { Col } from "components/Col";
+import { CategoryBox } from 'components/Category';
+import { GenericGrid } from 'components/GenericGrid';
+import { Col } from 'components/Col';
 /* modules */
-import { useQueryString } from "hooks/useQueryString";
+import { useQueryString } from 'hooks/useQueryString';
 /* helpers */
-import { checkInclusion } from "helpers/checkInclusion";
-import { uniqueId } from "lodash";
+import { checkInclusion } from 'helpers/checkInclusion';
+import { uniqueId } from 'lodash';
 /* assets */
 /* types */
-import { CategoriesGridProps } from "./CategoriesGrid.types.d";
+import { CategoriesGridProps } from './CategoriesGrid.types.d';
 /* styles */
 
 export const CategoriesGrid: FC<CategoriesGridProps> = ({
@@ -38,7 +38,7 @@ export const CategoriesGrid: FC<CategoriesGridProps> = ({
 
 const renderCategories = (category: Category.Query.Result) => {
     return (
-        <Col xl={4} sm={6} className="mb-3" key={category._id}>
+        <Col xl={4} sm={6} className='mb-3' key={category._id}>
             <CategoryBox.Component
                 _id={category._id}
                 title={category.title}

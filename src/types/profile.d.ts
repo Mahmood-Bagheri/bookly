@@ -1,6 +1,6 @@
-import { AxiosResponse } from "axios";
-import { RoleUnionType } from "components/UserBox";
-import { Image } from "./image";
+import { AxiosResponse } from 'axios';
+import { RoleUnionType } from 'components/UserBox';
+import { Image } from './image';
 
 declare namespace Profile {
     type Base = {

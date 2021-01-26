@@ -1,4 +1,4 @@
-import type { ModalProps as AntDesignModalProps } from "antd/lib/modal";
+import type { ModalProps as AntDesignModalProps } from 'antd/lib/modal';
 
 export type ModalProps = AntDesignModalProps;
 

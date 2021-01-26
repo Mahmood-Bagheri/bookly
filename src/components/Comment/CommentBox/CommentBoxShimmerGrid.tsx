@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 /* components */
-import { GenericGrid } from "components/GenericGrid";
-import { CommentBoxShimmer } from "./CommentBoxShimmer";
+import { GenericGrid } from 'components/GenericGrid';
+import { CommentBoxShimmer } from './CommentBoxShimmer';
 /* helpers */
-import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
-import { SHIMMERS_CONFIG } from "constants/config";
+import { fakeArrayGenerator } from 'helpers/fakeArrayGenerator';
+import { SHIMMERS_CONFIG } from 'constants/config';
 
 const renderShimmer = () => {
     return <CommentBoxShimmer />;

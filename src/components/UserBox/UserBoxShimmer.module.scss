@@ -54,7 +54,7 @@
 
 .collapsed {
     &:after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: 0;
         left: 0;
@@ -95,4 +95,4 @@
     margin-top: 20px;
 }
 
-@import "../../assets/styles/utils.scss";
+@import '../../assets/styles/utils.scss';

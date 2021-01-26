@@ -1,1 +1,1 @@
-export const containerPlaceholder = "containerPlaceholder";
+export const containerPlaceholder = 'containerPlaceholder';

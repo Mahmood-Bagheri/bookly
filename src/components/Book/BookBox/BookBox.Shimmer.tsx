@@ -1,5 +1,5 @@
-import React from "react";
-import s from "./BookBox.Shimmer.module.scss";
+import React from 'react';
+import s from './BookBox.Shimmer.module.scss';
 
 export const BookBoxShimmer = () => {
     return (
@@ -8,7 +8,7 @@ export const BookBoxShimmer = () => {
                 <div className={s.title} />
                 <div className={s.authorWrap} />
             </div>
-            <div className="p-1">
+            <div className='p-1'>
                 <div className={s.image} />
             </div>
             <div className={s.actions}>

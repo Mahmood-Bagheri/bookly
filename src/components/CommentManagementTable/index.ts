@@ -1,2 +1,2 @@
-export * from './CommentManagementTable'
-export * from './CommentManagementTable.types.d'
+export * from './CommentManagementTable';
+export * from './CommentManagementTable.types.d';

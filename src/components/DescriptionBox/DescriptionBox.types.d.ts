@@ -1,3 +1,3 @@
-import { ComponentPropsWithoutRef } from "react";
+import { ComponentPropsWithoutRef } from 'react';
 
-export type CommonProps = ComponentPropsWithoutRef<"div">;
+export type CommonProps = ComponentPropsWithoutRef<'div'>;

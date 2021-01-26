@@ -1,3 +1,3 @@
-import { HTMLProps } from "react";
+import { HTMLProps } from 'react';
 
-export type RegisterFormPictureProps = JSX.IntrinsicElements["svg"];
+export type RegisterFormPictureProps = JSX.IntrinsicElements['svg'];

@@ -1,2 +1,2 @@
-export * from "./UsersTable";
-export * from "./UsersTable.types.d";
+export * from './UsersTable';
+export * from './UsersTable.types.d';

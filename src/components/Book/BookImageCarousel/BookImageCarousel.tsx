@@ -1,19 +1,19 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { Image } from "components/Image";
+import { Image } from 'components/Image';
 /* modules */
-import SwiperCore, { Autoplay, SwiperOptions } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import clsx from "classnames";
+import SwiperCore, { Autoplay, SwiperOptions } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import clsx from 'classnames';
 /* helpers */
-import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
-import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
+import { fakeArrayGenerator } from 'helpers/fakeArrayGenerator';
+import { generateFakeImageUrl } from 'helpers/generateFakeImageUrl';
 /* assets */
 /* types */
-import { BookImageCarouselProps } from "./BookImageCarousel.types";
-import { $ElementProps } from "types/global";
+import { BookImageCarouselProps } from './BookImageCarousel.types';
+import { $ElementProps } from 'types/global';
 /* styles */
-import s from "./BookImageCarousel.module.scss";
+import s from './BookImageCarousel.module.scss';
 
 SwiperCore.use([Autoplay]);
 

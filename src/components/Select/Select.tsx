@@ -1,12 +1,12 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { Select as SelectComponent } from "antd";
+import { Select as SelectComponent } from 'antd';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* types */
-import { SelectProps } from "antd/lib/select";
+import { SelectProps } from 'antd/lib/select';
 /* styles */
-import s from "./Select.module.scss";
+import s from './Select.module.scss';
 
 export const Select = ({
     children,
@@ -17,7 +17,7 @@ export const Select = ({
         <SelectComponent
             allowClear
             showSearch
-            size="large"
+            size='large'
             className={clsx(s.select, className)}
             {...restProps}
         />

@@ -1,2 +1,2 @@
-export * from "./CommentInputBox";
-export * from "./CommentInputBox.types.d";
+export * from './CommentInputBox';
+export * from './CommentInputBox.types.d';

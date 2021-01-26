@@ -1,2 +1,2 @@
-export * from "./ProfileFormPicture";
-export * from "./ProfileFormPicture.types.d";
+export * from './ProfileFormPicture';
+export * from './ProfileFormPicture.types.d';

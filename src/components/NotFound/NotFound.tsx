@@ -1,18 +1,18 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 /* components */
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* helpers */
 /* assets */
-import { ReactComponent as NotFoundIcon } from "assets/icons/data.svg";
+import { ReactComponent as NotFoundIcon } from 'assets/icons/data.svg';
 /* types */
-import { NotFoundComponentProps } from "./NotFound.types";
+import { NotFoundComponentProps } from './NotFound.types';
 /* styles */
-import s from "./NotFound.module.scss";
+import s from './NotFound.module.scss';
 
 export const NotFound: FunctionComponent<NotFoundComponentProps> = ({
     icon: Icon = NotFoundIcon,
-    title = "پیدا نشد :(",
+    title = 'پیدا نشد :(',
     className,
     ...restProps
 }) => {

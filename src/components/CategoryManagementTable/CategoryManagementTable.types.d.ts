@@ -1,4 +1,4 @@
-import { TableProps } from "antd/lib/table";
+import { TableProps } from 'antd/lib/table';
 
 export type CategoryManagementTableTypes = {
     categories: Category.Query.Result[];

@@ -1,30 +1,30 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { Form } from "antd";
-import { Row } from "components/Row";
-import { Col } from "components/Col";
-import { UploadDropbox } from "components/UploadDropbox";
-import { Text } from "components/Text";
-import { Button } from "components/Button";
-import { Select } from "components/Select";
-import { Input } from "components/Input";
-import { ReadingBookSvg } from "components/ReadingBookSvg";
+import { Form } from 'antd';
+import { Row } from 'components/Row';
+import { Col } from 'components/Col';
+import { UploadDropbox } from 'components/UploadDropbox';
+import { Text } from 'components/Text';
+import { Button } from 'components/Button';
+import { Select } from 'components/Select';
+import { Input } from 'components/Input';
+import { ReadingBookSvg } from 'components/ReadingBookSvg';
 /* modules */
-import clsx from "classnames";
-import { useParams } from "react-router-dom";
-import { useCategories, usePublishers, useAuthors } from "hooks";
+import clsx from 'classnames';
+import { useParams } from 'react-router-dom';
+import { useCategories, usePublishers, useAuthors } from 'hooks';
 /* helpers */
 /* assets */
 /* mock */
-import { publishersOptions, yearsOptions } from "./mock";
+import { publishersOptions, yearsOptions } from './mock';
 /* types */
-import { SubmitBookFormProps } from "./SubmitBookForm.types";
+import { SubmitBookFormProps } from './SubmitBookForm.types';
 /* utils */
-import { getDropboxConfig, renderSubmitBookTitle } from "./utils";
+import { getDropboxConfig, renderSubmitBookTitle } from './utils';
 /* styles */
-import s from "./SubmitBookForm.module.scss";
-import { map } from "lodash/fp";
-import { Publisher } from "types/publisher";
+import s from './SubmitBookForm.module.scss';
+import { map } from 'lodash/fp';
+import { Publisher } from 'types/publisher';
 
 export const SubmitBookForm: FC<SubmitBookFormProps> = ({
     onSubmit,
@@ -46,19 +46,19 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
 
             <Form
                 form={form}
-                layout="vertical"
-                className="mt-3"
+                layout='vertical'
+                className='mt-3'
                 onFinish={onSubmit}
             >
                 <Row>
                     <Col lg={4}>
-                        <ReadingBookSvg className="d-block d-lg-none mb-2" />
+                        <ReadingBookSvg className='d-block d-lg-none mb-2' />
 
-                        <Form.Item name="title" label="نام کتاب">
+                        <Form.Item name='title' label='نام کتاب'>
                             <Input.Text />
                         </Form.Item>
 
-                        <Form.Item name="author" label="نویسنده">
+                        <Form.Item name='author' label='نویسنده'>
                             <Select
                                 options={map((author: Author.Query.Result) => ({
                                     value: author._id,
@@ -67,11 +67,11 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                             />
                         </Form.Item>
 
-                        <Form.Item name="releaseYear" label="سال نشر">
+                        <Form.Item name='releaseYear' label='سال نشر'>
                             <Select options={yearsOptions} allowClear />
                         </Form.Item>
 
-                        <Form.Item name="category" label="دسته بندی">
+                        <Form.Item name='category' label='دسته بندی'>
                             <Select
                                 options={map(
                                     (category: Category.Query.Result) => ({
@@ -83,10 +83,10 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                         </Form.Item>
                     </Col>
                     <Col lg={4}>
-                        <Form.Item name="description" label="توضیحات">
+                        <Form.Item name='description' label='توضیحات'>
                             <Input.Textarea />
                         </Form.Item>
-                        <Form.Item name="publisher" label="ناشر">
+                        <Form.Item name='publisher' label='ناشر'>
                             <Select
                                 options={map(
                                     (publisher: Publisher.Query.Result) => ({
@@ -98,25 +98,25 @@ export const SubmitBookForm: FC<SubmitBookFormProps> = ({
                         </Form.Item>
 
                         <Form.Item
-                            name="image"
-                            label="عکس کتاب"
-                            valuePropName="file"
+                            name='image'
+                            label='عکس کتاب'
+                            valuePropName='file'
                         >
                             <UploadDropbox {...getDropboxConfig(form)} />
                         </Form.Item>
                     </Col>
                     <Col
                         lg={4}
-                        className="d-flex flex-column justify-content-between align-items-end"
+                        className='d-flex flex-column justify-content-between align-items-end'
                     >
-                        <ReadingBookSvg className="d-none d-lg-block" />
+                        <ReadingBookSvg className='d-none d-lg-block' />
 
                         <Form.Item>
                             <Button
-                                className="mt-4"
-                                size="large"
-                                type="primary"
-                                htmlType="submit"
+                                className='mt-4'
+                                size='large'
+                                type='primary'
+                                htmlType='submit'
                                 loading={loading}
                             >
                                 {renderSubmitBookTitle(bookId)}

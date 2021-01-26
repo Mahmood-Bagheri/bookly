@@ -1,2 +1,2 @@
-export * from "./DeleteButton";
-export * from "./DeleteButton.types.d";
+export * from './DeleteButton';
+export * from './DeleteButton.types.d';

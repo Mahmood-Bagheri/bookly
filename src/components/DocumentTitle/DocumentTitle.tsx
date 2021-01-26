@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 /* constants */
-import { APP_TITLE } from "constants/config";
+import { APP_TITLE } from 'constants/config';
 /* types */
-import { DocumentTitleProps } from "./DocumentTitle.types";
+import { DocumentTitleProps } from './DocumentTitle.types';
 
 export const DocumentTitle: FC<DocumentTitleProps> = ({
     title: pageTitle,

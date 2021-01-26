@@ -1,16 +1,16 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { PopConfirm } from "components/PopConfirm";
-import { Spinner } from "components/Spinner";
-import { AclService } from "services/rbac";
+import { PopConfirm } from 'components/PopConfirm';
+import { Spinner } from 'components/Spinner';
+import { AclService } from 'services/rbac';
 /* types */
-import { DeleteButtonProps } from "./DeleteButton.types";
+import { DeleteButtonProps } from './DeleteButton.types';
 /* assets */
-import { ReactComponent as DeleteIcon } from "assets/icons/delete.svg";
+import { ReactComponent as DeleteIcon } from 'assets/icons/delete.svg';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* styles */
-import s from "./DeleteButton.module.scss";
+import s from './DeleteButton.module.scss';
 
 export const DeleteButton: FC<DeleteButtonProps> = ({
     className,

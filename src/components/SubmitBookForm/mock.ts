@@ -1,10 +1,10 @@
-import { LabeledValue } from "antd/lib/select";
-import { Publisher } from "components/Publisher";
-import { mock } from "helpers/mock";
-import { yearGenerator } from "helpers/yearGenerator";
+import { LabeledValue } from 'antd/lib/select';
+import { Publisher } from 'components/Publisher';
+import { mock } from 'helpers/mock';
+import { yearGenerator } from 'helpers/yearGenerator';
 
 export const categoryOptions: LabeledValue[] = mock<Category.Base>(
-    "categories",
+    'categories',
     10
 ).map(item => ({
     key: item.id,
@@ -13,7 +13,7 @@ export const categoryOptions: LabeledValue[] = mock<Category.Base>(
 }));
 
 export const publishersOptions: LabeledValue[] = mock<Publisher>(
-    "publishers",
+    'publishers',
     10
 ).map(item => ({
     key: item.id,

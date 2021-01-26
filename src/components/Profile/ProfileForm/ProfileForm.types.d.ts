@@ -1,5 +1,5 @@
-import { HTMLProps } from "react";
-import { Profile } from "types/profile";
+import { HTMLProps } from 'react';
+import { Profile } from 'types/profile';
 
 export type ProfileFormTypes<T> = {
     onSubmit: (values: T) => void;

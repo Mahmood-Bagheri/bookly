@@ -1,4 +1,4 @@
-import { KeyboardKeys } from "types/global";
+import { KeyboardKeys } from 'types/global';
 
 export const detectPressedKey = (
     e: React.KeyboardEvent<HTMLInputElement>,

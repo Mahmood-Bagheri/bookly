@@ -1,2 +1,2 @@
-export * from "./TagsInput";
-export * from "./TagsInput.types.d";
+export * from './TagsInput';
+export * from './TagsInput.types.d';

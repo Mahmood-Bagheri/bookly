@@ -1,15 +1,15 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment } from 'react';
 /* components */
-import { DocumentTitle } from "components/DocumentTitle";
-import { LoginForm } from "components/LoginForm";
-import { LoginFormPicture } from "components/LoginFormPicture";
-import { Row } from "components/Row";
-import { Col } from "components/Col";
+import { DocumentTitle } from 'components/DocumentTitle';
+import { LoginForm } from 'components/LoginForm';
+import { LoginFormPicture } from 'components/LoginFormPicture';
+import { Row } from 'components/Row';
+import { Col } from 'components/Col';
 /* modules */
-import { LoginMutationVariables, useLogin } from "hooks/operations";
-import * as LocalStorage from "helpers/localStorage";
-import { useRecoilState } from "recoil";
-import { userState } from "services/recoil/user/atoms";
+import { LoginMutationVariables, useLogin } from 'hooks/operations';
+import * as LocalStorage from 'helpers/localStorage';
+import { useRecoilState } from 'recoil';
+import { userState } from 'services/recoil/user/atoms';
 
 const Login: FC = props => {
     const [login, { isLoading: loginIsLoading }] = useLogin();
@@ -24,17 +24,17 @@ const Login: FC = props => {
                     token: res?.token,
                     userId: res?._id,
                 });
-                LocalStorage.setItem("token", res?.token);
-                LocalStorage.setItem("role", res?.role);
-                LocalStorage.setItem("userId", res?._id);
+                LocalStorage.setItem('token', res?.token);
+                LocalStorage.setItem('role', res?.role);
+                LocalStorage.setItem('userId', res?._id);
             }
         });
     };
     return (
         <Fragment>
-            <DocumentTitle title="ورود" />
-            <Row className="align-items-center justify-content-between">
-                <Col lg={4} className="order-1 order-lg-0">
+            <DocumentTitle title='ورود' />
+            <Row className='align-items-center justify-content-between'>
+                <Col lg={4} className='order-1 order-lg-0'>
                     <LoginForm
                         loading={loginIsLoading}
                         onSubmit={handleUSerLogin}

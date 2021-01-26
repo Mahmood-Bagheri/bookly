@@ -1,4 +1,4 @@
-import { HTMLProps, SVGProps } from "react";
+import { HTMLProps, SVGProps } from 'react';
 
 export type BaseLikeButtonProps = {
     initialLikeState: boolean;
@@ -8,7 +8,7 @@ export type BaseLikeButtonProps = {
 };
 
 export type LikeButtonComponentProps = Omit<
-    JSX.IntrinsicElements["svg"],
+    JSX.IntrinsicElements['svg'],
     keyof BaseLikeButtonProps
 > &
     BaseLikeButtonProps;

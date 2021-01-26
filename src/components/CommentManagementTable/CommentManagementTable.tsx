@@ -1,36 +1,36 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState } from 'react';
 /* components */
-import { Popconfirm, Space, Table, Tag as AntDesignTag } from "antd";
+import { Popconfirm, Space, Table, Tag as AntDesignTag } from 'antd';
 /* modules */
-import clsx from "classnames";
-import { map } from "lodash/fp";
-import { TagProps } from "antd/lib/tag";
-import { useDeleteComment, useUpdateComment } from "hooks";
+import clsx from 'classnames';
+import { map } from 'lodash/fp';
+import { TagProps } from 'antd/lib/tag';
+import { useDeleteComment, useUpdateComment } from 'hooks';
 /* helpers */
 /* assets */
 /* types */
-import { CommentManagementTableProps } from "./CommentManagementTable.types";
+import { CommentManagementTableProps } from './CommentManagementTable.types';
 /* styles */
-import s from "./CommentManagementTable.module.scss";
-import { Comment } from "types/comment";
+import s from './CommentManagementTable.module.scss';
+import { Comment } from 'types/comment';
 
 const columns = [
     {
-        title: "نویسنده",
-        dataIndex: "author",
-        key: "author",
+        title: 'نویسنده',
+        dataIndex: 'author',
+        key: 'author',
         render: (author: string) => <span>{author}</span>,
     },
     {
-        title: "متن نظر",
-        dataIndex: "body",
-        key: "body",
+        title: 'متن نظر',
+        dataIndex: 'body',
+        key: 'body',
     },
     {
-        title: "وضعیت",
-        key: "status",
+        title: 'وضعیت',
+        key: 'status',
         render: (_: any, comment: ReturnType<typeof mapComment>) => (
-            <Space size="middle">
+            <Space size='middle'>
                 <CustomTag commentId={comment._id} status={comment.status}>
                     منتظر شده
                 </CustomTag>
@@ -38,8 +38,8 @@ const columns = [
         ),
     },
     {
-        title: "عملیات",
-        key: "action",
+        title: 'عملیات',
+        key: 'action',
         render: (_: any, record: ReturnType<typeof mapComment>) => (
             <DeleteComment commentId={record._id} />
         ),
@@ -82,14 +82,14 @@ const CustomTag: FC<Tag> = ({ status, commentId, ...tagProps }) => {
 
     return (
         <AntDesignTag
-            color={status ? "green" : "red"}
+            color={status ? 'green' : 'red'}
             onClick={() =>
                 updateComment({ commentId, data: { isPublished: !status } })
             }
-            style={{ cursor: "pointer" }}
+            style={{ cursor: 'pointer' }}
             {...tagProps}
         >
-            {status ? "منتشر شده" : "در انتظار تایید"}
+            {status ? 'منتشر شده' : 'در انتظار تایید'}
         </AntDesignTag>
     );
 };
@@ -102,10 +102,10 @@ const DeleteComment: FC<DeleteCommentProps> = ({ commentId }) => {
     const [deleteComment] = useDeleteComment();
     return (
         <Popconfirm
-            title="برای حذف این نظر مطمئن هستید؟"
+            title='برای حذف این نظر مطمئن هستید؟'
             onConfirm={() => deleteComment(commentId)}
-            okText="بله"
-            cancelText="خیر"
+            okText='بله'
+            cancelText='خیر'
         >
             <button>حذف نظر</button>
         </Popconfirm>

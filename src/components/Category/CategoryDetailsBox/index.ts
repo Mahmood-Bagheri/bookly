@@ -1,2 +1,2 @@
-export * from "./CategoryDetailsBox";
-export * from "./CategoryDetailsBox.types.d";
+export * from './CategoryDetailsBox';
+export * from './CategoryDetailsBox.types.d';

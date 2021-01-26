@@ -1,13 +1,13 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment } from 'react';
 /* components */
-import { Row } from "components/Row";
-import { Col } from "components/Col";
-import { PublisherBox } from "components/Publisher";
-import { BooksGrid } from "components/Book";
-import { DescriptionBox } from "components/DescriptionBox";
-import { useSinglePublisher } from "hooks";
-import { useParams } from "react-router-dom";
-import { PublisherPageShimmer } from "./PublisherPageShimmer";
+import { Row } from 'components/Row';
+import { Col } from 'components/Col';
+import { PublisherBox } from 'components/Publisher';
+import { BooksGrid } from 'components/Book';
+import { DescriptionBox } from 'components/DescriptionBox';
+import { useSinglePublisher } from 'hooks';
+import { useParams } from 'react-router-dom';
+import { PublisherPageShimmer } from './PublisherPageShimmer';
 
 const Publisher: FC = props => {
     const { publisherId } = useParams<{ publisherId: string }>();
@@ -21,8 +21,8 @@ const Publisher: FC = props => {
 
     return (
         <Fragment>
-            <Row className="mb-3">
-                <Col md={6} lg={3} className="mb-3 ">
+            <Row className='mb-3'>
+                <Col md={6} lg={3} className='mb-3 '>
                     <PublisherBox.Component
                         _id={publisher?._id}
                         followers={publisher?.followers}
@@ -37,8 +37,8 @@ const Publisher: FC = props => {
                 <Col lg={9}>
                     <DescriptionBox
                         loading={loading}
-                        className="mb-3"
-                        title="مشخصات ناشر"
+                        className='mb-3'
+                        title='مشخصات ناشر'
                         description={publisher?.description}
                     />
                     <BooksGrid loading={loading} books={publisher.books} />

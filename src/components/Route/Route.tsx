@@ -1,16 +1,16 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment } from 'react';
 /* components */
-import { Layout } from "components/Layout";
+import { Layout } from 'components/Layout';
 /* modules */
 import {
     Redirect,
     Route as ReactRouterRoute,
     RouteProps,
-} from "react-router-dom";
-import { useCanPerform } from "hooks/useCanPerform";
-import { routeTo } from "helpers/routeTo";
-import { Permission } from "services/rbac";
-import { Path } from "types/global";
+} from 'react-router-dom';
+import { useCanPerform } from 'hooks/useCanPerform';
+import { routeTo } from 'helpers/routeTo';
+import { Permission } from 'services/rbac';
+import { Path } from 'types/global';
 /* types */
 
 export type CustomRouteComponentProps = RouteProps & {
@@ -39,5 +39,5 @@ export const Route: FC<CustomRouteComponentProps> = ({
         );
     }
 
-    return <Redirect to={routeTo("home")} />;
+    return <Redirect to={routeTo('home')} />;
 };

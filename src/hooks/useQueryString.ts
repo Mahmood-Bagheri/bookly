@@ -4,11 +4,11 @@ import {
     parse,
     stringify,
     StringifiableRecord,
-} from "query-string";
-import { useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
-import { History } from "history";
-import { QueryStringKeys } from "types/qs";
+} from 'query-string';
+import { useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import { History } from 'history';
+import { QueryStringKeys } from 'types/qs';
 
 const pushQueryString = (
     history: History,
@@ -16,7 +16,7 @@ const pushQueryString = (
     stringifyOptions?: StringifyOptions
 ) => {
     return history.push(
-        history.location.pathname + "?" + stringify(newQuery, stringifyOptions)
+        history.location.pathname + '?' + stringify(newQuery, stringifyOptions)
     );
 };
 

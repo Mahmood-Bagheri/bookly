@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef } from "react";
+import { ComponentPropsWithRef } from 'react';
 
 export type NotFoundGridProps = {
     title: string;
@@ -6,7 +6,7 @@ export type NotFoundGridProps = {
 };
 
 export type NotFoundComponentProps = Omit<
-    ComponentPropsWithRef<"div">,
+    ComponentPropsWithRef<'div'>,
     keyof NotFoundGridProps
 > &
     NotFoundGridProps;

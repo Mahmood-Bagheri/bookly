@@ -1,7 +1,7 @@
-import { get } from "lodash";
-import { isBoolean } from "lodash/fp";
-import { Permission, usePermissions } from "services/rbac";
-import { Path } from "types/global";
+import { get } from 'lodash';
+import { isBoolean } from 'lodash/fp';
+import { Permission, usePermissions } from 'services/rbac';
+import { Path } from 'types/global';
 
 export const useCanPerform = (permission: Path<Permission> | boolean) => {
     const { role, permissions } = usePermissions();
@@ -11,7 +11,7 @@ export const useCanPerform = (permission: Path<Permission> | boolean) => {
         return permission;
     }
     if (canPerform === undefined) {
-        throw new Error("Permission not found!");
+        throw new Error('Permission not found!');
     }
     return canPerform;
 };

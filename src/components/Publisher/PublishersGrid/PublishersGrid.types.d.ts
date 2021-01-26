@@ -1,4 +1,4 @@
-import { Publisher } from "components/Publisher";
+import { Publisher } from 'components/Publisher';
 
 export type PublishersGridProps = {
     loading?: boolean;

@@ -1,2 +1,2 @@
-export * from "./Dropdown";
-export * from "./Dropdown.types.d";
+export * from './Dropdown';
+export * from './Dropdown.types.d';

@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* types */
-import { ColComponentProps } from "./Col.types";
+import { ColComponentProps } from './Col.types';
 
 export const Col: FunctionComponent<ColComponentProps> = ({
     col,

@@ -1,2 +1,2 @@
-export * from "./RegisterFormPicture";
-export * from "./RegisterFormPicture.types.d";
+export * from './RegisterFormPicture';
+export * from './RegisterFormPicture.types.d';

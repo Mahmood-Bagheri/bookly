@@ -1,7 +1,7 @@
-import { atom } from "recoil";
-import * as LocalStorage from "helpers/localStorage";
+import { atom } from 'recoil';
+import * as LocalStorage from 'helpers/localStorage';
 
-export type RoleUnionType = "guest" | "ADMIN" | "USER" | "AUTHOR";
+export type RoleUnionType = 'guest' | 'ADMIN' | 'USER' | 'AUTHOR';
 
 type User = {
     role: RoleUnionType;
@@ -10,10 +10,10 @@ type User = {
 };
 
 export const userState = atom<User>({
-    key: "user",
+    key: 'user',
     default: {
-        role: (LocalStorage.getItem("role") as RoleUnionType) || "guest",
-        token: LocalStorage.getItem("token") || "",
-        userId: LocalStorage.getItem("userId") || "",
+        role: (LocalStorage.getItem('role') as RoleUnionType) || 'guest',
+        token: LocalStorage.getItem('token') || '',
+        userId: LocalStorage.getItem('userId') || '',
     },
 });

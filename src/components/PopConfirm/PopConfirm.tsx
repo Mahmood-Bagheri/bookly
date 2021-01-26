@@ -1,14 +1,14 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 /* components */
-import { Popconfirm as AntDesignPopConfirm } from "antd";
+import { Popconfirm as AntDesignPopConfirm } from 'antd';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* helpers */
 /* assets */
 /* types */
-import { PopConfirmComponentProps, PopconfirmProps } from "./PopConfirm.types";
+import { PopConfirmComponentProps, PopconfirmProps } from './PopConfirm.types';
 /* styles */
-import s from "./PopConfirm.module.scss";
+import s from './PopConfirm.module.scss';
 
 export const PopConfirm: FunctionComponent<PopConfirmComponentProps> = ({
     title,
@@ -16,9 +16,9 @@ export const PopConfirm: FunctionComponent<PopConfirmComponentProps> = ({
 }) => {
     const defaultPopConfirmProps: PopconfirmProps = {
         title: title,
-        okText: "بله",
-        cancelText: "خیر!",
-        placement: "bottomLeft",
+        okText: 'بله',
+        cancelText: 'خیر!',
+        placement: 'bottomLeft',
     };
     return <AntDesignPopConfirm {...defaultPopConfirmProps} {...restProps} />;
 };

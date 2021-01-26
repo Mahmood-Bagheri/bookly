@@ -1,11 +1,11 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment } from 'react';
 /* components */
-import { DocumentTitle } from "components/DocumentTitle";
-import { BooksGrid } from "components/Book";
-import { withUserLayout } from "components/UserLayout";
+import { DocumentTitle } from 'components/DocumentTitle';
+import { BooksGrid } from 'components/Book';
+import { withUserLayout } from 'components/UserLayout';
 /* modules */
-import { useBooks } from "hooks";
-import { mock } from "helpers/mock";
+import { useBooks } from 'hooks';
+import { mock } from 'helpers/mock';
 
 const Home: FC = props => {
     const { data, isLoading } = useBooks();
@@ -16,12 +16,12 @@ const Home: FC = props => {
 
     return (
         <Fragment>
-            <DocumentTitle title="خانه">
+            <DocumentTitle title='خانه'>
                 <meta
-                    name="description"
-                    content="لیست عکس های ثبت شده توسط کاربران"
+                    name='description'
+                    content='لیست عکس های ثبت شده توسط کاربران'
                 />
-                <meta name="keywords" content="book, scientific books" />
+                <meta name='keywords' content='book, scientific books' />
             </DocumentTitle>
             <BooksGrid books={data} loading={isLoading} />
         </Fragment>

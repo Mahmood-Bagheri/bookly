@@ -1,15 +1,15 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment } from 'react';
 /* components */
-import { DocumentTitle } from "components/DocumentTitle";
-import { UsersTable } from "components/UsersTable";
-import { useDeleteUser } from "hooks/operations";
+import { DocumentTitle } from 'components/DocumentTitle';
+import { UsersTable } from 'components/UsersTable';
+import { useDeleteUser } from 'hooks/operations';
 
 const Users: FC = props => {
     const [deleteUser] = useDeleteUser();
 
     return (
         <Fragment>
-            <DocumentTitle title="کاربران" />
+            <DocumentTitle title='کاربران' />
             <UsersTable onDeleteUser={deleteUser} />
         </Fragment>
     );

@@ -1,2 +1,2 @@
-export * from "./Modal";
-export * from "./Modal.types.d";
+export * from './Modal';
+export * from './Modal.types.d';

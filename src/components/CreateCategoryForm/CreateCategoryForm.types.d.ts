@@ -1,6 +1,6 @@
-import { CreateCategoryMutationVariables } from "hooks/operations/category/useCreateCategory";
-import { FormInstance } from "antd/lib/form";
-import { HTMLProps } from "react";
+import { CreateCategoryMutationVariables } from 'hooks/operations/category/useCreateCategory';
+import { FormInstance } from 'antd/lib/form';
+import { HTMLProps } from 'react';
 
 export type CreateCategoryFormTypes = {
     onSubmit: (

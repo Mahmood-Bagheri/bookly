@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 /* components */
-import { DescriptionBoxShimmer } from "./DescriptionBoxShimmer";
+import { DescriptionBoxShimmer } from './DescriptionBoxShimmer';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* helpers */
 /* assets */
 /* types */
-import { CommonProps } from "./DescriptionBox.types";
+import { CommonProps } from './DescriptionBox.types';
 /* styles */
-import s from "./DescriptionBox.module.scss";
+import s from './DescriptionBox.module.scss';
 
 type WithLoadingProps = CommonProps & {
     loading?: true;

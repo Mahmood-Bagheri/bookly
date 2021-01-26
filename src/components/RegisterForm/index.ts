@@ -1,2 +1,2 @@
-export * from "./RegisterForm";
-export * from "./RegisterForm.types.d";
+export * from './RegisterForm';
+export * from './RegisterForm.types.d';

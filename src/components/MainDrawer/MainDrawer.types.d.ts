@@ -1,3 +1,3 @@
-import { DrawerComponentProps } from "components/Drawer";
+import { DrawerComponentProps } from 'components/Drawer';
 
 export type MainDrawerComponentProps = DrawerComponentProps;

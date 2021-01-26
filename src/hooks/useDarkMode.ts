@@ -1,12 +1,12 @@
-import { useLocalStorage } from "helpers/useLocalStorage";
-import { useEffect } from "react";
-import { usePrefersDarkMode } from "./usePrefersDarkMode";
+import { useLocalStorage } from 'helpers/useLocalStorage';
+import { useEffect } from 'react';
+import { usePrefersDarkMode } from './usePrefersDarkMode';
 
 export function useDarkMode(): any {
     // Use our useLocalStorage hook to persist state through a page refresh.
     // Read the recipe for this hook to learn more: usehooks.com/useLocalStorage
     const [enabledState, setEnabledState] = useLocalStorage<boolean>(
-        "dark-mode-enabled",
+        'dark-mode-enabled',
         false
     );
 
@@ -21,7 +21,7 @@ export function useDarkMode(): any {
     // Fire off effect that add/removes dark mode class
     useEffect(
         () => {
-            const className = "dark-mode";
+            const className = 'dark-mode';
             const element = window.document.body;
             if (enabled) {
                 element.classList.add(className);

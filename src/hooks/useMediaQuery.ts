@@ -1,4 +1,4 @@
-import { useState, useEffect, ChangeEvent } from "react";
+import { useState, useEffect, ChangeEvent } from 'react';
 
 /**
  * React hook to check when a valid media-query-string changes

@@ -1,17 +1,17 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment } from 'react';
 /* components */
-import { DocumentTitle } from "components/DocumentTitle";
-import { BooksGrid } from "components/Book";
-import { Row } from "components/Row";
-import { Col } from "components/Col";
-import { CategoryDetailsBox } from "components/Category";
+import { DocumentTitle } from 'components/DocumentTitle';
+import { BooksGrid } from 'components/Book';
+import { Row } from 'components/Row';
+import { Col } from 'components/Col';
+import { CategoryDetailsBox } from 'components/Category';
 /* mocks */
-import { mock } from "helpers/mock";
+import { mock } from 'helpers/mock';
 /* modules */
-import { useParams } from "react-router-dom";
-import { useCategoryBooks } from "hooks";
+import { useParams } from 'react-router-dom';
+import { useCategoryBooks } from 'hooks';
 /* helpers */
-import { generateFakeImageUrl } from "helpers/generateFakeImageUrl";
+import { generateFakeImageUrl } from 'helpers/generateFakeImageUrl';
 
 const Category: FC = props => {
     const { categoryId } = useParams<{ categoryId: string }>();
@@ -23,7 +23,7 @@ const Category: FC = props => {
 
     return (
         <Fragment>
-            <DocumentTitle title="Category" />
+            <DocumentTitle title='Category' />
             <Row>
                 <Col lg={4}>
                     <CategoryDetailsBox

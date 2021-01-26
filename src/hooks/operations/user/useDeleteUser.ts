@@ -1,8 +1,8 @@
-import apiService from "services/api/apiService";
-import API_URLS from "constants/apiUrls";
-import { useMutation } from "react-query";
-import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
-import * as notice from "helpers/notice";
+import apiService from 'services/api/apiService';
+import API_URLS from 'constants/apiUrls';
+import { useMutation } from 'react-query';
+import API_RESPONSE_MESSAGES from 'constants/apiResponseMessages';
+import * as notice from 'helpers/notice';
 
 export type DeleteUserMutationVariables = {
     userId: string;

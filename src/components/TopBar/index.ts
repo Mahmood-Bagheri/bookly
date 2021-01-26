@@ -1,2 +1,2 @@
-export * from "./TopBar";
-export * from "./TopBar.types.d";
+export * from './TopBar';
+export * from './TopBar.types.d';

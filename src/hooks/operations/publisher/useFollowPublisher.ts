@@ -1,9 +1,9 @@
-import API_RESPONSE_MESSAGES from "constants/apiResponseMessages";
-import API_URLS from "constants/apiUrls";
-import { useMutation } from "react-query";
-import apiService from "services/api/apiService";
+import API_RESPONSE_MESSAGES from 'constants/apiResponseMessages';
+import API_URLS from 'constants/apiUrls';
+import { useMutation } from 'react-query';
+import apiService from 'services/api/apiService';
 /* helpers */
-import * as notice from "helpers/notice";
+import * as notice from 'helpers/notice';
 
 type FollowPublisherMutationVariables = {
     publisherId: string;

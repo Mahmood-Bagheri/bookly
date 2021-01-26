@@ -31,7 +31,7 @@ try {
  * @public
  */
 export function getWindow(rootElement?: Element | null): Window | undefined {
-    if (_isSSR || typeof _window === "undefined") {
+    if (_isSSR || typeof _window === 'undefined') {
         return undefined;
     } else {
         const el = rootElement as Element;

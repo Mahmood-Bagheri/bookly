@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
-import { Row } from "components/Row";
-import { isEmptyArray } from "helpers/isEmptyArray";
-import { EmptyGrid } from "components/EmptyGrid";
-import { useQueryString } from "hooks/useQueryString";
+import React, { Fragment } from 'react';
+import { Row } from 'components/Row';
+import { isEmptyArray } from 'helpers/isEmptyArray';
+import { EmptyGrid } from 'components/EmptyGrid';
+import { useQueryString } from 'hooks/useQueryString';
 
 type Props<T> = {
     items: T[];

@@ -1,2 +1,2 @@
-export * from './CategoryManagementTable'
-export * from './CategoryManagementTable.types.d'
+export * from './CategoryManagementTable';
+export * from './CategoryManagementTable.types.d';

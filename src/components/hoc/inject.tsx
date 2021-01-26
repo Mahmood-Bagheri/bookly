@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export function injectDefaultProps<TProps, TInjectedKeys extends keyof TProps>(
     Component: React.JSXElementConstructor<TProps>,

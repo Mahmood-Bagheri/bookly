@@ -1,18 +1,18 @@
-import React, { FunctionComponent, useRef, useState } from "react";
+import React, { FunctionComponent, useRef, useState } from 'react';
 /* components */
-import { Table } from "components/Table";
-import { ColumnsType } from "antd/lib/table";
+import { Table } from 'components/Table';
+import { ColumnsType } from 'antd/lib/table';
 /* modules */
 /* helpers */
-import { RenderActionsColumn, RenderColumnName } from "./columns";
+import { RenderActionsColumn, RenderColumnName } from './columns';
 /* assets */
 /* types */
-import { UsersTableComponentProps } from "./UsersTable.types";
-import { getColumnSearchProps } from "./lib";
-import { useChangeUserRole, useUsers } from "hooks";
-import { Profile } from "types/profile";
-import { RoleUnionType } from "components/UserBox";
-import { Select } from "components/Select";
+import { UsersTableComponentProps } from './UsersTable.types';
+import { getColumnSearchProps } from './lib';
+import { useChangeUserRole, useUsers } from 'hooks';
+import { Profile } from 'types/profile';
+import { RoleUnionType } from 'components/UserBox';
+import { Select } from 'components/Select';
 /* styles */
 /*
  * todo {
@@ -26,8 +26,8 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
 
     // const dataSource = mock("users", 20);
     const { data: users } = useUsers();
-    const [searchText, setSearchText] = useState("");
-    const [searchedColumn, setSearchedColumn] = useState("");
+    const [searchText, setSearchText] = useState('');
+    const [searchedColumn, setSearchedColumn] = useState('');
 
     const [changeRole, { isLoading: changeRoleLoading }] = useChangeUserRole();
     const inputRef = useRef<any>(null!);
@@ -43,7 +43,7 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
 
     const handleReset = (clearFilters: Function) => {
         clearFilters();
-        setSearchText("");
+        setSearchText('');
     };
     const handleChangeRole = (role: RoleUnionType, userId: string) => {
         changeRole({ role, userId });
@@ -51,11 +51,11 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
 
     const columns: ColumnsType<Profile.Query.Result> = [
         {
-            title: "نام",
-            dataIndex: "name",
-            key: "name",
+            title: 'نام',
+            dataIndex: 'name',
+            key: 'name',
             ...getColumnSearchProps(
-                "name",
+                'name',
                 handleReset,
                 handleSearch,
                 inputRef,
@@ -64,11 +64,11 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             ),
         },
         {
-            title: "آدرس ایمیل",
-            dataIndex: "email",
-            key: "email",
+            title: 'آدرس ایمیل',
+            dataIndex: 'email',
+            key: 'email',
             ...getColumnSearchProps(
-                "email",
+                'email',
                 handleReset,
                 handleSearch,
                 inputRef,
@@ -77,11 +77,11 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             ),
         } as any,
         {
-            title: "نقش",
-            dataIndex: "role",
-            key: "role",
+            title: 'نقش',
+            dataIndex: 'role',
+            key: 'role',
             ...getColumnSearchProps(
-                "role",
+                'role',
                 handleReset,
                 handleSearch,
                 inputRef,
@@ -92,10 +92,10 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
                 <Select
                     defaultValue={record.role}
                     style={{ width: 120 }}
-                    size="middle"
+                    size='middle'
                     options={[
-                        { value: "ADMIN", label: "مدیر" },
-                        { value: "USER", label: "کاربر" },
+                        { value: 'ADMIN', label: 'مدیر' },
+                        { value: 'USER', label: 'کاربر' },
                     ]}
                     showSearch={false}
                     onChange={role => handleChangeRole(role, record._id)}
@@ -104,9 +104,9 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
             ),
         },
         {
-            title: "عملیات",
-            dataIndex: "",
-            key: "x",
+            title: 'عملیات',
+            dataIndex: '',
+            key: 'x',
             render: (name, record, index) => (
                 <RenderActionsColumn<Profile.Query.Result>
                     name={name}
@@ -130,13 +130,13 @@ export const UsersTable: FunctionComponent<UsersTableComponentProps> = props => 
 
 const transformRole = (role: RoleUnionType) => {
     switch (role) {
-        case "ADMIN":
-            return "مدیر";
-        case "AUTHOR":
-            return "نویسنده";
-        case "USER":
-            return "کاربر";
+        case 'ADMIN':
+            return 'مدیر';
+        case 'AUTHOR':
+            return 'نویسنده';
+        case 'USER':
+            return 'کاربر';
         default:
-            return "بدون نقش!";
+            return 'بدون نقش!';
     }
 };

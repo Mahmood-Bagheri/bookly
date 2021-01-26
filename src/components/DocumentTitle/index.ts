@@ -1,2 +1,2 @@
-export * from "./DocumentTitle";
-export * from "./DocumentTitle.types.d";
+export * from './DocumentTitle';
+export * from './DocumentTitle.types.d';

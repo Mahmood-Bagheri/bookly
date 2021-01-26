@@ -1,2 +1,2 @@
-export * from "./EmptyGrid";
-export * from "./EmptyGrid.types.d";
+export * from './EmptyGrid';
+export * from './EmptyGrid.types.d';

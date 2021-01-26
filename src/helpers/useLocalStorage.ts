@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 // Hook
 export const useLocalStorage = <T>(key: string, initialValue: T) => {
     // State to store our value

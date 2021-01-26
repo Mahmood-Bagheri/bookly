@@ -1,8 +1,8 @@
-import { useMutation } from "react-query";
-import API_URLS from "constants/apiUrls";
-import apiService, { ApiServiceError } from "services/api/apiService";
-import { queryCache } from "services/react-query/reactQueryService";
-import * as notice from "helpers/notice";
+import { useMutation } from 'react-query';
+import API_URLS from 'constants/apiUrls';
+import apiService, { ApiServiceError } from 'services/api/apiService';
+import { queryCache } from 'services/react-query/reactQueryService';
+import * as notice from 'helpers/notice';
 
 export const updateAuthor = async (
     _: unknown,
@@ -51,7 +51,7 @@ export const useUpdateAuthor = () =>
             },
             onSuccess: () => {
                 queryCache.refetchQueries(API_URLS.author);
-                notice.success("نویسنده با موفقیت به روزرسانی شد");
+                notice.success('نویسنده با موفقیت به روزرسانی شد');
             },
         }
     );

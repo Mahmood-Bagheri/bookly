@@ -1,4 +1,4 @@
-import { BaseBookBoxProps, BookBox } from "components/Book";
+import { BaseBookBoxProps, BookBox } from 'components/Book';
 
 export type BooksGridProps = {
     title?: string;

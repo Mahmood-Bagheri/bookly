@@ -1,5 +1,5 @@
-import { AxiosInstance, AxiosResponse, AxiosError } from "axios";
-import { API_STATUS_CODES } from "constants/statusCodes";
+import { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
+import { API_STATUS_CODES } from 'constants/statusCodes';
 
 export const applyAccessTokenRevalidator = (instance: AxiosInstance) => {
     return instance.interceptors.response.use(

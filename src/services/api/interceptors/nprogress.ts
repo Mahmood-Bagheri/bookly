@@ -3,8 +3,8 @@ import {
     AxiosResponse,
     AxiosError,
     AxiosRequestConfig,
-} from "axios";
-import { NProgress } from "components/NProgress";
+} from 'axios';
+import { NProgress } from 'components/NProgress';
 
 export const applyNprogress = (instance: AxiosInstance) => {
     instance.interceptors.request.use(

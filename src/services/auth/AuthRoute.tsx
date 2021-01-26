@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 /* modules */
-import { Redirect, RouteComponentProps } from "react-router-dom";
-import { Route } from "components/Route";
-import { FunctionComponent, ComponentType } from "react";
+import { Redirect, RouteComponentProps } from 'react-router-dom';
+import { Route } from 'components/Route';
+import { FunctionComponent, ComponentType } from 'react';
 /* helpers */
-import { routeTo } from "helpers/routeTo";
+import { routeTo } from 'helpers/routeTo';
 /* types */
-import { $ElementProps } from "types/global";
-import { History } from "history";
+import { $ElementProps } from 'types/global';
+import { History } from 'history';
 
 type AuthRouteProps = $ElementProps<typeof Route> & {
     component: ComponentType;
@@ -20,7 +20,7 @@ export const AuthRoute: FunctionComponent<AuthRouteProps> = ({
     ...rest
 }) => {
     const UnauthorizedRedirectionConfig: History.LocationDescriptor = {
-        pathname: routeTo("login"),
+        pathname: routeTo('login'),
         state: { from: rest.location },
     };
 

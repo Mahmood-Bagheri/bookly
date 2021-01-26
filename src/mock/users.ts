@@ -1,6 +1,6 @@
 // import { UsersDataSourceType } from "components/UsersTable";
-import * as faker from "faker";
-import { uniqueId } from "helpers/uniqueId";
+import * as faker from 'faker';
+import { uniqueId } from 'helpers/uniqueId';
 type UsersDataSourceType = any;
 export const users: UsersDataSourceType[] = Array.from({ length: 20 }).map(
     () => ({

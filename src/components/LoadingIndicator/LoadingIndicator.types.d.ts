@@ -1,3 +1,3 @@
-import { SpinnerComponentProps } from "components/Spinner";
+import { SpinnerComponentProps } from 'components/Spinner';
 
 export type LoadingIndicatorProps = SpinnerComponentProps;

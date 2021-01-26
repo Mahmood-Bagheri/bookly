@@ -1,5 +1,5 @@
-import { Image } from "./image";
-import { Profile } from "./profile";
+import { Image } from './image';
+import { Profile } from './profile';
 
 declare namespace Publisher {
     declare namespace Query {

@@ -1,6 +1,5 @@
-import { HTMLProps } from "react";
+import { HTMLProps } from 'react';
 
 export type LogoutButtonTypes = {};
 
-export type LogoutButtonProps = HTMLProps<HTMLDivElement> &
-    LogoutButtonTypes;
+export type LogoutButtonProps = HTMLProps<HTMLDivElement> & LogoutButtonTypes;

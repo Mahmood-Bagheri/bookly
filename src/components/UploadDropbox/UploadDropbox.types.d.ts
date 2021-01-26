@@ -1,4 +1,4 @@
-import { DraggerProps } from "antd/lib/upload";
+import { DraggerProps } from 'antd/lib/upload';
 
 export type UploadDropboxBaseProps = {
     title?: string;

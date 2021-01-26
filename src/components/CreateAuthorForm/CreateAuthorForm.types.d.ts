@@ -1,6 +1,6 @@
-import { HTMLProps } from "react";
-import { CreateAuthorMutationVariables } from "hooks";
-import { FormInstance } from "antd/lib/form";
+import { HTMLProps } from 'react';
+import { CreateAuthorMutationVariables } from 'hooks';
+import { FormInstance } from 'antd/lib/form';
 
 export type CreateAuthorFormTypes = {
     onSubmit: (

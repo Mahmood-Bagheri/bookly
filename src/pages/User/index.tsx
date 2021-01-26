@@ -1,7 +1,7 @@
-import React from "react";
-import { loadable } from "helpers/loadable";
-import { LoadingIndicator } from "components/LoadingIndicator";
+import React from 'react';
+import { loadable } from 'helpers/loadable';
+import { LoadingIndicator } from 'components/LoadingIndicator';
 
-export default loadable(() => import("./User"), {
+export default loadable(() => import('./User'), {
     fallback: <LoadingIndicator />,
 });

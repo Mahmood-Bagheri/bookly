@@ -1,4 +1,4 @@
-import { Publisher as PublisherNameSpace } from "types/publisher";
+import { Publisher as PublisherNameSpace } from 'types/publisher';
 export type PublisherFunctions = {
     onFollow?: (id: string) => void;
     initialFollowingState?: boolean;

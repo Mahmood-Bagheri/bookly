@@ -1,2 +1,2 @@
-export * from "./ProfileImageDropBox";
-export * from "./ProfileImageDropBox.types.d";
+export * from './ProfileImageDropBox';
+export * from './ProfileImageDropBox.types.d';

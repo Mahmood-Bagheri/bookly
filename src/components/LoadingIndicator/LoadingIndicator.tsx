@@ -1,14 +1,14 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { Spinner } from "components/Spinner";
+import { Spinner } from 'components/Spinner';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* helpers */
 /* assets */
 /* types */
-import { LoadingIndicatorProps } from "./LoadingIndicator.types";
+import { LoadingIndicatorProps } from './LoadingIndicator.types';
 /* styles */
-import s from "./LoadingIndicator.module.scss";
+import s from './LoadingIndicator.module.scss';
 
 export const LoadingIndicator: FC<LoadingIndicatorProps> = props => {
     const { className, ...restProps } = props;

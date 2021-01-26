@@ -1,1 +1,1 @@
-export * from "./GenericGrid";
+export * from './GenericGrid';

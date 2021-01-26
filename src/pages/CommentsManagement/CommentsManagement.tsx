@@ -1,15 +1,15 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment } from 'react';
 /* components */
-import { DocumentTitle } from "components/DocumentTitle";
-import { CommentManagementTable } from "components/CommentManagementTable";
+import { DocumentTitle } from 'components/DocumentTitle';
+import { CommentManagementTable } from 'components/CommentManagementTable';
 /* modules */
-import { useComments } from "hooks";
+import { useComments } from 'hooks';
 
 const CommentsManagement: FC = () => {
     const { data: comments, isLoading: loading } = useComments();
     return (
         <Fragment>
-            <DocumentTitle title="مدیریت نظرات" />
+            <DocumentTitle title='مدیریت نظرات' />
             <CommentManagementTable comments={comments} />
         </Fragment>
     );

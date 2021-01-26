@@ -1,14 +1,14 @@
-import * as React from "react";
+import * as React from 'react';
 /* components */
-import { Input, InputNumber } from "antd";
+import { Input, InputNumber } from 'antd';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* styles */
-import s from "./Input.module.scss";
+import s from './Input.module.scss';
 /* types */
-import { InputProps, PasswordProps, TextAreaProps } from "antd/lib/input";
-import { TextAreaRef } from "antd/lib/input/TextArea";
-import { InputNumberProps } from "antd/lib/input-number";
+import { InputProps, PasswordProps, TextAreaProps } from 'antd/lib/input';
+import { TextAreaRef } from 'antd/lib/input/TextArea';
+import { InputNumberProps } from 'antd/lib/input-number';
 
 /* 
     TODO === 1- generalize this file, 2- remove all this any things
@@ -56,7 +56,7 @@ export const Number = React.forwardRef<any, InputNumberProps>(
     ({ className, style, ...restProps }, ref) => {
         return (
             <InputNumber
-                style={{ ...style, width: "100%" }}
+                style={{ ...style, width: '100%' }}
                 className={clsx(s.input, className)}
                 ref={ref}
                 {...restProps}

@@ -1,7 +1,7 @@
-import { useMutation } from "react-query";
-import API_URLS from "constants/apiUrls";
-import apiService, { ApiServiceError } from "services/api/apiService";
-import { queryCache } from "services/react-query/reactQueryService";
+import { useMutation } from 'react-query';
+import API_URLS from 'constants/apiUrls';
+import apiService, { ApiServiceError } from 'services/api/apiService';
+import { queryCache } from 'services/react-query/reactQueryService';
 export const updateCategory = async (
     _: unknown,
     categoryId: string,

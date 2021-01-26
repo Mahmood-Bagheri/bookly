@@ -186,4 +186,4 @@ export const permissions = {
     },
 };
 
-export type Permission = typeof permissions["ADMIN"];
+export type Permission = typeof permissions['ADMIN'];

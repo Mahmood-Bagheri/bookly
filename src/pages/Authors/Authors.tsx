@@ -1,8 +1,8 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment } from 'react';
 /* components */
-import { DocumentTitle } from "components/DocumentTitle";
-import { useAuthors } from "hooks";
-import { AuthorsGrid } from "components/AuthorsGrid";
+import { DocumentTitle } from 'components/DocumentTitle';
+import { useAuthors } from 'hooks';
+import { AuthorsGrid } from 'components/AuthorsGrid';
 
 const Authors: FC = () => {
     const { data: authors } = useAuthors();
@@ -13,7 +13,7 @@ const Authors: FC = () => {
 
     return (
         <Fragment>
-            <DocumentTitle title="Authors" />
+            <DocumentTitle title='Authors' />
             <AuthorsGrid authors={authors} />
         </Fragment>
     );

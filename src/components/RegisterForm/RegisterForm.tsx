@@ -1,51 +1,51 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 /* components */
-import { Form } from "antd";
-import { Input } from "components/Input";
-import { Button } from "components/Button";
+import { Form } from 'antd';
+import { Input } from 'components/Input';
+import { Button } from 'components/Button';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* helpers */
 /* assets */
 /* constants */
-import { REGISTER_FORM_VALIDATION_RULES } from "constants/validationRules";
+import { REGISTER_FORM_VALIDATION_RULES } from 'constants/validationRules';
 /* types */
-import { RegisterFormComponentProps } from "./RegisterForm.types";
+import { RegisterFormComponentProps } from './RegisterForm.types';
 /* styles */
-import s from "./RegisterForm.module.scss";
+import s from './RegisterForm.module.scss';
 
 export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
     onSubmit = defaultOnSubmit,
     loading = false,
 }) => {
     return (
-        <Form layout="vertical" onFinish={onSubmit} style={{ width: "100%" }}>
+        <Form layout='vertical' onFinish={onSubmit} style={{ width: '100%' }}>
             <Form.Item
-                label="ایمیل"
-                name="email"
+                label='ایمیل'
+                name='email'
                 rules={REGISTER_FORM_VALIDATION_RULES.email}
             >
                 <Input.Text />
             </Form.Item>
 
             <Form.Item
-                label="نام"
-                name="name"
+                label='نام'
+                name='name'
                 rules={REGISTER_FORM_VALIDATION_RULES.name}
             >
                 <Input.Text />
             </Form.Item>
 
             <Form.Item
-                label="رمز عبور"
-                name="password"
+                label='رمز عبور'
+                name='password'
                 rules={REGISTER_FORM_VALIDATION_RULES.password}
             >
                 <Input.Password />
             </Form.Item>
             <Form.Item
-                label="تکرار رمز عبور"
-                name="confirmPassword"
+                label='تکرار رمز عبور'
+                name='confirmPassword'
                 rules={REGISTER_FORM_VALIDATION_RULES.confirmPassword}
             >
                 <Input.Password />
@@ -53,10 +53,10 @@ export const RegisterForm: FunctionComponent<RegisterFormComponentProps> = ({
 
             <Form.Item>
                 <Button
-                    className="mt-4"
-                    size="large"
-                    type="primary"
-                    htmlType="submit"
+                    className='mt-4'
+                    size='large'
+                    type='primary'
+                    htmlType='submit'
                     loading={loading}
                 >
                     ثبت نام

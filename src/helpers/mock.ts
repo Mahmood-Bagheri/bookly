@@ -1,5 +1,5 @@
-import { get, shuffle } from "lodash";
-import * as mockData from "mock";
+import { get, shuffle } from 'lodash';
+import * as mockData from 'mock';
 
 // todo -> delete this any Shit
 /**

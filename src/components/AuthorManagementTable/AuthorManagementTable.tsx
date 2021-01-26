@@ -1,15 +1,15 @@
-import React, { FC, useContext, useState, useEffect, useRef } from "react";
+import React, { FC, useContext, useState, useEffect, useRef } from 'react';
 /* components */
-import { Table, Input, Popconfirm, Form } from "antd";
-import { FormInstance } from "antd/lib/form";
+import { Table, Input, Popconfirm, Form } from 'antd';
+import { FormInstance } from 'antd/lib/form';
 /* modules */
-import { useDeleteAuthor, useUpdateAuthor } from "hooks";
+import { useDeleteAuthor, useUpdateAuthor } from 'hooks';
 /* helpers */
 /* assets */
 /* types */
-import { AuthorManagementTableProps } from "./AuthorManagementTable.types";
+import { AuthorManagementTableProps } from './AuthorManagementTable.types';
 /* styles */
-import s from "./AuthorManagementTable.module.scss";
+import s from './AuthorManagementTable.module.scss';
 
 const EditableContext = React.createContext<FormInstance<any> | null>(null);
 interface Item extends Author.Query.Result {}
@@ -68,7 +68,7 @@ const EditableCell: React.FC<EditableCellProps> = ({
             toggleEdit();
             handleSave({ ...record, ...values });
         } catch (errInfo) {
-            console.log("Save failed:", errInfo);
+            console.log('Save failed:', errInfo);
         }
     };
 
@@ -99,7 +99,7 @@ type EditableTableProps = Parameters<typeof Table>[0];
 
 interface DataType extends Author.Query.Result {}
 
-type ColumnTypes = Exclude<EditableTableProps["columns"], undefined>;
+type ColumnTypes = Exclude<EditableTableProps['columns'], undefined>;
 
 export const AuthorManagementTable: FC<AuthorManagementTableProps> = ({
     className,
@@ -110,31 +110,31 @@ export const AuthorManagementTable: FC<AuthorManagementTableProps> = ({
     const [deleteAuthor] = useDeleteAuthor();
     const basecolumns = [
         {
-            title: "نام",
-            dataIndex: "name",
+            title: 'نام',
+            dataIndex: 'name',
             editable: true,
             render: (_: any, record: Author.Query.Result) => (
-                <div className="cursor-pointer">{record.name}</div>
+                <div className='cursor-pointer'>{record.name}</div>
             ),
         },
         {
-            title: "تعداد کتاب های ثبت شده برای این نویسنده",
-            dataIndex: "title",
+            title: 'تعداد کتاب های ثبت شده برای این نویسنده',
+            dataIndex: 'title',
             editable: false,
             render: (_: any, record: Author.Query.Result) => (
                 <div>{record?.books?.length || 0}</div>
             ),
         },
         {
-            title: "عملیات",
-            dataIndex: "operation",
+            title: 'عملیات',
+            dataIndex: 'operation',
             render: (_: any, record: Author.Query.Result) =>
                 authors?.length >= 1 ? (
                     <Popconfirm
-                        title="با حذف خواننده کل کتاب های ایشان نیز حذف خواهند شد"
+                        title='با حذف خواننده کل کتاب های ایشان نیز حذف خواهند شد'
                         onConfirm={() => handleDelete(record._id)}
-                        okText="بله"
-                        cancelText="خیر"
+                        okText='بله'
+                        cancelText='خیر'
                     >
                         <a>حذف</a>
                     </Popconfirm>
@@ -176,7 +176,7 @@ export const AuthorManagementTable: FC<AuthorManagementTableProps> = ({
         <Table
             dataSource={authors}
             components={components}
-            rowClassName={() => "editable-row"}
+            rowClassName={() => 'editable-row'}
             columns={columns as ColumnTypes}
             pagination={{ hideOnSinglePage: true }}
             bordered

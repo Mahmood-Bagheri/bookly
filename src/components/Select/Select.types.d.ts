@@ -1,4 +1,4 @@
-import { SelectProps } from "antd/lib/select";
+import { SelectProps } from 'antd/lib/select';
 
 export type OptionType = {
     value: string | number;

@@ -1,4 +1,4 @@
-import { LoginMutationVariables } from "hooks";
+import { LoginMutationVariables } from 'hooks';
 
 export type LoginFormProps<T> = {
     onSubmit: (values: T) => void;

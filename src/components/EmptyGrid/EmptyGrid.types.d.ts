@@ -1,7 +1,7 @@
-import { ComponentPropsWithRef } from "react";
+import { ComponentPropsWithRef } from 'react';
 
 export type EmptyGridTypes = {
     query?: string;
 };
 
-export type EmptyGridProps = ComponentPropsWithRef<"div"> & EmptyGridTypes;
+export type EmptyGridProps = ComponentPropsWithRef<'div'> & EmptyGridTypes;

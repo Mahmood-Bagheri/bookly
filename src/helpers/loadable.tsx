@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense } from 'react';
 
 type Props = {
     fallback?: React.ReactNode | null;

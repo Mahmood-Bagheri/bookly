@@ -1,4 +1,4 @@
-import { MenuItem } from "components/MenuBarItem";
+import { MenuItem } from 'components/MenuBarItem';
 export type MenuBarProps = {
     menu: MenuItem[];
 };

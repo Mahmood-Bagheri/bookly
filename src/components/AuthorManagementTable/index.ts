@@ -1,2 +1,2 @@
-export * from './AuthorManagementTable'
-export * from './AuthorManagementTable.types.d'
+export * from './AuthorManagementTable';
+export * from './AuthorManagementTable.types.d';

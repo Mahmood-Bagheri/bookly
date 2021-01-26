@@ -1,15 +1,15 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 /* components */
-import { Table as AntDesignTable } from "antd";
+import { Table as AntDesignTable } from 'antd';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* helpers */
 /* assets */
-import { ReactComponent as DataIcon } from "assets/icons/data.svg";
+import { ReactComponent as DataIcon } from 'assets/icons/data.svg';
 /* types */
-import { TableComponentProps, TableProps } from "./Table.types";
+import { TableComponentProps, TableProps } from './Table.types';
 /* styles */
-import s from "./Table.module.scss";
+import s from './Table.module.scss';
 
 export const Table: FunctionComponent<TableComponentProps> = props => {
     const { className, ...restProps } = props;

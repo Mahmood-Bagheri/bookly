@@ -1,15 +1,15 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment } from 'react';
 /* components */
-import { DocumentTitle } from "components/DocumentTitle";
-import { CategoryManagementTable } from "components/CategoryManagementTable";
-import { CreateCategoryForm } from "components/CreateCategoryForm";
+import { DocumentTitle } from 'components/DocumentTitle';
+import { CategoryManagementTable } from 'components/CategoryManagementTable';
+import { CreateCategoryForm } from 'components/CreateCategoryForm';
 /* modules */
 import {
     CreateCategoryMutationVariables,
     useCategories,
     useCreateCategory,
-} from "hooks";
-import { FormInstance } from "antd/lib/form";
+} from 'hooks';
+import { FormInstance } from 'antd/lib/form';
 
 const CategoryManagement: FC = () => {
     const { data: categories, isLoading: loading } = useCategories();
@@ -31,7 +31,7 @@ const CategoryManagement: FC = () => {
 
     return (
         <Fragment>
-            <DocumentTitle title="مدیریت دسته بندی ها" />
+            <DocumentTitle title='مدیریت دسته بندی ها' />
             <CreateCategoryForm
                 loading={createCategoryIsLoading}
                 onSubmit={handleCreate}

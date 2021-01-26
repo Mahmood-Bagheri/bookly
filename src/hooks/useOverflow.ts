@@ -1,6 +1,6 @@
-import { useState, RefObject, useLayoutEffect } from "react";
+import { useState, RefObject, useLayoutEffect } from 'react';
 
-import useWindowSize from "./useWindowSize";
+import useWindowSize from './useWindowSize';
 
 export function useOverflow(ref: RefObject<HTMLElement>) {
     // : [
@@ -77,10 +77,10 @@ export function useOverflow(ref: RefObject<HTMLElement>) {
             }
         };
 
-        ref.current.addEventListener("scroll", handleScroll);
+        ref.current.addEventListener('scroll', handleScroll);
 
         return (): void =>
-            ref.current?.removeEventListener("scroll", handleScroll);
+            ref.current?.removeEventListener('scroll', handleScroll);
     }, [ref, size.width]); // Empty array ensures that effect is only run on mount and unmount
 
     // return {

@@ -1,15 +1,15 @@
-import React, { FC, useContext, useState, useEffect, useRef } from "react";
+import React, { FC, useContext, useState, useEffect, useRef } from 'react';
 /* components */
-import { Table, Input, Popconfirm, Form } from "antd";
-import { FormInstance } from "antd/lib/form";
+import { Table, Input, Popconfirm, Form } from 'antd';
+import { FormInstance } from 'antd/lib/form';
 /* modules */
 /* helpers */
 /* assets */
 /* types */
-import { CategoryManagementTableProps } from "./CategoryManagementTable.types";
+import { CategoryManagementTableProps } from './CategoryManagementTable.types';
 /* styles */
-import s from "./CategoryManagementTable.module.scss";
-import { useDeleteCategory, useUpdateCategory } from "hooks";
+import s from './CategoryManagementTable.module.scss';
+import { useDeleteCategory, useUpdateCategory } from 'hooks';
 
 const EditableContext = React.createContext<FormInstance<any> | null>(null);
 interface Item extends Category.Query.Result {}
@@ -68,7 +68,7 @@ const EditableCell: React.FC<EditableCellProps> = ({
             toggleEdit();
             handleSave({ ...record, ...values });
         } catch (errInfo) {
-            console.log("Save failed:", errInfo);
+            console.log('Save failed:', errInfo);
         }
     };
 
@@ -99,7 +99,7 @@ type EditableTableProps = Parameters<typeof Table>[0];
 
 interface DataType extends Category.Query.Result {}
 
-type ColumnTypes = Exclude<EditableTableProps["columns"], undefined>;
+type ColumnTypes = Exclude<EditableTableProps['columns'], undefined>;
 
 export const CategoryManagementTable: FC<CategoryManagementTableProps> = ({
     className,
@@ -110,31 +110,31 @@ export const CategoryManagementTable: FC<CategoryManagementTableProps> = ({
     const [deleteCategory] = useDeleteCategory();
     const basecolumns = [
         {
-            title: "عنوان",
-            dataIndex: "title",
+            title: 'عنوان',
+            dataIndex: 'title',
             editable: true,
             render: (_: any, record: Category.Query.Result) => (
-                <div className="cursor-pointer">{record.title}</div>
+                <div className='cursor-pointer'>{record.title}</div>
             ),
         },
         {
-            title: "تعداد کتاب های ثبت شده در این دسته بندی",
-            dataIndex: "title",
+            title: 'تعداد کتاب های ثبت شده در این دسته بندی',
+            dataIndex: 'title',
             editable: false,
             render: (_: any, record: Category.Query.Result) => (
                 <div>{record?.books?.length || 0}</div>
             ),
         },
         {
-            title: "عملیات",
-            dataIndex: "operation",
+            title: 'عملیات',
+            dataIndex: 'operation',
             render: (_: any, record: Category.Query.Result) =>
                 categories?.length >= 1 ? (
                     <Popconfirm
-                        title="برای حذف این دسته بندی مطمئن هستید ؟ کلیه کتاب های این دسته بندی حذف خواهند شد!"
+                        title='برای حذف این دسته بندی مطمئن هستید ؟ کلیه کتاب های این دسته بندی حذف خواهند شد!'
                         onConfirm={() => handleDelete(record._id)}
-                        okText="بله"
-                        cancelText="خیر"
+                        okText='بله'
+                        cancelText='خیر'
                     >
                         <a>حذف</a>
                     </Popconfirm>
@@ -176,7 +176,7 @@ export const CategoryManagementTable: FC<CategoryManagementTableProps> = ({
         <Table
             dataSource={categories}
             components={components}
-            rowClassName={() => "editable-row"}
+            rowClassName={() => 'editable-row'}
             columns={columns as ColumnTypes}
             pagination={{ hideOnSinglePage: true }}
             bordered

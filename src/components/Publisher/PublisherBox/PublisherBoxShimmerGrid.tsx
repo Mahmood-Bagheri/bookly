@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 /* components */
-import { GenericGrid } from "components/GenericGrid";
-import { PublisherBoxShimmer } from "./PublisherBoxShimmer";
-import { Col } from "components/Col";
+import { GenericGrid } from 'components/GenericGrid';
+import { PublisherBoxShimmer } from './PublisherBoxShimmer';
+import { Col } from 'components/Col';
 /* helpers */
-import { fakeArrayGenerator } from "helpers/fakeArrayGenerator";
-import { uniqueId } from "helpers/uniqueId";
+import { fakeArrayGenerator } from 'helpers/fakeArrayGenerator';
+import { uniqueId } from 'helpers/uniqueId';
 /* constants */
-import { SHIMMERS_CONFIG } from "constants/config";
+import { SHIMMERS_CONFIG } from 'constants/config';
 
 const renderShimmer = () => {
     return (
-        <Col xl={4} sm={6} className="mb-3" key={uniqueId()}>
+        <Col xl={4} sm={6} className='mb-3' key={uniqueId()}>
             <PublisherBoxShimmer />
         </Col>
     );

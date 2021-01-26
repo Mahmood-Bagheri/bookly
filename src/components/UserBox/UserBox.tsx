@@ -1,19 +1,19 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { Text } from "components/Text";
-import { Image } from "components/Image";
-import { UserBoxShimmer } from "./UserBoxShimmer";
+import { Text } from 'components/Text';
+import { Image } from 'components/Image';
+import { UserBoxShimmer } from './UserBoxShimmer';
 /* modules */
-import clsx from "classnames";
-import dayJs from "dayjs";
-import { useToggle } from "hooks/useToggle";
+import clsx from 'classnames';
+import dayJs from 'dayjs';
+import { useToggle } from 'hooks/useToggle';
 /* helpers */
 /* assets */
-import { ReactComponent as ArrowLeft } from "assets/icons/arrow-left.svg";
+import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg';
 /* types */
-import { UserBoxProps, RoleUnionType } from "./UserBox.types";
+import { UserBoxProps, RoleUnionType } from './UserBox.types';
 /* styles */
-import s from "./UserBox.module.scss";
+import s from './UserBox.module.scss';
 
 export const UserBox: FC<UserBoxProps> = ({
     className,
@@ -34,7 +34,7 @@ export const UserBox: FC<UserBoxProps> = ({
             className={clsx(s.box, `shadow p-4 mb-4`, className)}
             {...restProps}
         >
-            <div className="d-flex align-items-center">
+            <div className='d-flex align-items-center'>
                 <Image
                     className={s.profileImage}
                     src={`${process.env.REACT_APP_API_URL}/${image.filename}`}
@@ -64,13 +64,13 @@ export const UserBox: FC<UserBoxProps> = ({
 
 const transformRole = (role: RoleUnionType) => {
     switch (role) {
-        case "ADMIN":
-            return "مدیر";
-        case "AUTHOR":
-            return "نویسنده";
-        case "USER":
-            return "کاربر";
+        case 'ADMIN':
+            return 'مدیر';
+        case 'AUTHOR':
+            return 'نویسنده';
+        case 'USER':
+            return 'کاربر';
         default:
-            return "بدون نقش!";
+            return 'بدون نقش!';
     }
 };

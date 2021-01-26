@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 /* components */
-import { Input } from "antd";
+import { Input } from 'antd';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* helpers */
 /* assets */
 /* types */
-import { PasswordComponentProps } from "./Password.types";
+import { PasswordComponentProps } from './Password.types';
 /* styles */
-import s from "./Password.module.scss";
+import s from './Password.module.scss';
 
 export const Password = React.forwardRef<any, PasswordComponentProps>(
     ({ className, ...restProps }, ref) => {

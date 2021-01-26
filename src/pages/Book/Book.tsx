@@ -1,15 +1,15 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment } from 'react';
 /* components */
-import { Col } from "components/Col";
-import { Row } from "components/Row";
-import { DocumentTitle } from "components/DocumentTitle";
-import { useCreateComment, useDeleteComment, useSingleBook } from "hooks";
-import { useParams } from "react-router-dom";
-import { BookDetailsBox } from "components/Book";
-import { AclService } from "services/rbac";
-import { FormInstance } from "antd/lib/form";
-import { CommentInputBox, CommentsGrid } from "components/Comment";
-import { DescriptionBox } from "components/DescriptionBox";
+import { Col } from 'components/Col';
+import { Row } from 'components/Row';
+import { DocumentTitle } from 'components/DocumentTitle';
+import { useCreateComment, useDeleteComment, useSingleBook } from 'hooks';
+import { useParams } from 'react-router-dom';
+import { BookDetailsBox } from 'components/Book';
+import { AclService } from 'services/rbac';
+import { FormInstance } from 'antd/lib/form';
+import { CommentInputBox, CommentsGrid } from 'components/Comment';
+import { DescriptionBox } from 'components/DescriptionBox';
 
 /* modules */
 
@@ -50,7 +50,7 @@ const Book: FC = () => {
     return (
         <Fragment>
             <Row>
-                <DocumentTitle title="کتاب" />
+                <DocumentTitle title='کتاب' />
                 <Col xl={4}>
                     <BookDetailsBox
                         id={bookId}
@@ -59,7 +59,7 @@ const Book: FC = () => {
                         author={book?.author?.name}
                         imageSrc={`${process.env.REACT_APP_API_URL}/${book?.image?.filename}`}
                     />
-                    <AclService permission="comments.create">
+                    <AclService permission='comments.create'>
                         <CommentInputBox
                             loading={createCommentLoading}
                             onSubmit={handleSubmitComment}
@@ -67,12 +67,12 @@ const Book: FC = () => {
                     </AclService>
                 </Col>
 
-                <Col xl={8} className="mt-3 mt-xl-0">
+                <Col xl={8} className='mt-3 mt-xl-0'>
                     <DescriptionBox
-                        title="توضیحات"
+                        title='توضیحات'
                         description={book.description}
                     />
-                    <AclService permission="comments.read">
+                    <AclService permission='comments.read'>
                         <CommentsGrid
                             loading={isLoading}
                             onDelete={handleDeleteComment}

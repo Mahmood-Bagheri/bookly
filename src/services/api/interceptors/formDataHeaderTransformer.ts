@@ -1,4 +1,4 @@
-import { AxiosInstance, AxiosResponse, ApiServiceError } from "axios";
+import { AxiosInstance, AxiosResponse, ApiServiceError } from 'axios';
 
 /* todo -> transform headers */
 export const appleFormDataHeaderTransformer = (instance: AxiosInstance) => {

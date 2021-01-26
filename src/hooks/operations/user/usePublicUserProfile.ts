@@ -1,10 +1,10 @@
-import { useQuery } from "react-query";
-import API_URLS from "constants/apiUrls";
+import { useQuery } from 'react-query';
+import API_URLS from 'constants/apiUrls';
 import apiService, {
     ApiServiceError,
     AxiosRequestConfig,
-} from "services/api/apiService";
-import { Profile } from "types/profile";
+} from 'services/api/apiService';
+import { Profile } from 'types/profile';
 
 export const readPublicUserProfile = async (_: unknown, userId: string) => {
     const { data } = await apiService.get(

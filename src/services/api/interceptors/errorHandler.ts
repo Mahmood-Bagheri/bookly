@@ -1,4 +1,4 @@
-import { AxiosInstance, AxiosResponse, ApiServiceError } from "axios";
+import { AxiosInstance, AxiosResponse, ApiServiceError } from 'axios';
 
 // todo -> make somthing to handle errors globally
 export const applyErrorHandler = (instance: AxiosInstance) => {

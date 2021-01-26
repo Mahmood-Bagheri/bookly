@@ -1,14 +1,14 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 /* components */
-import { Input } from "components/Input";
+import { Input } from 'components/Input';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* helpers */
 /* assets */
 /* types */
-import { TextEditorComponentProps } from "./TextEditor.types";
+import { TextEditorComponentProps } from './TextEditor.types';
 /* styles */
-import s from "./TextEditor.module.scss";
+import s from './TextEditor.module.scss';
 
 export const TextEditor: FunctionComponent<TextEditorComponentProps> = props => {
     const { className, ...restProps } = props;

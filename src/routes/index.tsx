@@ -1,9 +1,9 @@
-import React from "react";
-import { routers } from "./routers";
-import { Redirect, Switch, useLocation } from "react-router-dom";
-import { AuthRoute } from "services/auth/AuthRoute";
-import { Route } from "components/Route";
-import { uniqueId } from "helpers/uniqueId";
+import React from 'react';
+import { routers } from './routers';
+import { Redirect, Switch, useLocation } from 'react-router-dom';
+import { AuthRoute } from 'services/auth/AuthRoute';
+import { Route } from 'components/Route';
+import { uniqueId } from 'helpers/uniqueId';
 
 const Router = () => {
     const location = useLocation();

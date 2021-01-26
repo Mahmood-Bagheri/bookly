@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 type CommonProps = {
     children: React.ReactNode;
     miscProps?: any;
@@ -15,7 +15,7 @@ export function ExpandableText(
     props: CommonProps & { truncate?: boolean; expanded?: boolean }
 ) {
     const { children, truncate, expanded, ...otherProps } = props;
-    const classNames = truncate ? ".truncate" : "";
+    const classNames = truncate ? '.truncate' : '';
     return (
         <div className={classNames} aria-expanded={!!expanded} {...otherProps}>
             {children}

@@ -1,10 +1,10 @@
 /* constants */
-import API_URLS from "constants/apiUrls";
+import API_URLS from 'constants/apiUrls';
 /* modules */
-import { useMutation } from "react-query";
+import { useMutation } from 'react-query';
 /* services */
-import { queryCache } from "services/react-query/reactQueryService";
-import apiService from "services/api/apiService";
+import { queryCache } from 'services/react-query/reactQueryService';
+import apiService from 'services/api/apiService';
 
 export const deleteAuthor = async (authorId: string) => {
     const { data } = await apiService.delete(`${API_URLS.author}/${authorId}`);

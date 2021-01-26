@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from "react";
-import { message } from "antd";
+import React, { FunctionComponent } from 'react';
+import { message } from 'antd';
 
 /* modules */
-import { QueryCache, ReactQueryCacheProvider } from "react-query";
+import { QueryCache, ReactQueryCacheProvider } from 'react-query';
 
 const mutationConfig = {
     mutations: {

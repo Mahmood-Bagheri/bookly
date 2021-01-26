@@ -1,22 +1,22 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 /* components */
-import { CategoryDetailsBoxShimmer } from "./CategoryDetailsBoxShimmer";
-import { Text } from "components/Text";
-import { Image } from "components/Image";
-import { Typography } from "antd";
+import { CategoryDetailsBoxShimmer } from './CategoryDetailsBoxShimmer';
+import { Text } from 'components/Text';
+import { Image } from 'components/Image';
+import { Typography } from 'antd';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* helpers */
 /* assets */
 /* types */
-import { CategoryDetailsBoxProps } from "./CategoryDetailsBox.types";
+import { CategoryDetailsBoxProps } from './CategoryDetailsBox.types';
 /* styles */
-import s from "./CategoryDetailsBox.module.scss";
-import { AclService } from "services/rbac";
-import { useUpdateCategory } from "hooks";
-import { useParams } from "react-router-dom";
-import { queryCache } from "services/react-query/reactQueryService";
-import API_URLS from "constants/apiUrls";
+import s from './CategoryDetailsBox.module.scss';
+import { AclService } from 'services/rbac';
+import { useUpdateCategory } from 'hooks';
+import { useParams } from 'react-router-dom';
+import { queryCache } from 'services/react-query/reactQueryService';
+import API_URLS from 'constants/apiUrls';
 
 export const CategoryDetailsBox: FC<CategoryDetailsBoxProps> = ({
     className,
@@ -37,7 +37,7 @@ export const CategoryDetailsBox: FC<CategoryDetailsBoxProps> = ({
             className={clsx(s.box, `shadow p-4 mb-4`, className)}
             {...restProps}
         >
-            <div className="d-flex flex-column align-items-center">
+            <div className='d-flex flex-column align-items-center'>
                 {/* <Image className={s.categoryImage} src={imageSrc} /> */}
                 {/*  <AclService permission="category.update">
                     <Typography.Paragraph

@@ -1,2 +1,2 @@
-export * from "./SwitchButton";
-export * from "./SwitchButton.types.d";
+export * from './SwitchButton';
+export * from './SwitchButton.types.d';

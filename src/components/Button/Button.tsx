@@ -1,14 +1,14 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef } from 'react';
 /* components */
-import { Button as Btn } from "antd";
+import { Button as Btn } from 'antd';
 /* modules */
-import clsx from "classnames";
+import clsx from 'classnames';
 /* helpers */
 /* assets */
 /* types */
-import { Props, Ref } from "./Button.types";
+import { Props, Ref } from './Button.types';
 /* styles */
-import s from "./Button.module.scss";
+import s from './Button.module.scss';
 
 export const Button = forwardRef<Ref, Props>(
     ({ className, ...restProps }, ref) => (

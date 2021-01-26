@@ -1,5 +1,5 @@
-import { TableProps } from "antd/lib/table";
-import { HTMLProps } from "react";
+import { TableProps } from 'antd/lib/table';
+import { HTMLProps } from 'react';
 
 export type BookManagementTableTypes = {
     books: Book.Query.Result[];

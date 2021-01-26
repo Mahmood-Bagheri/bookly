@@ -1,2 +1,2 @@
-export * from "./NotFound";
-export * from "./NotFound.types.d";
+export * from './NotFound';
+export * from './NotFound.types.d';

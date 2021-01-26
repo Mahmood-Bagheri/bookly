@@ -1,1 +1,1 @@
-export type QueryStringKeys = "query" | "app";
+export type QueryStringKeys = 'query' | 'app';

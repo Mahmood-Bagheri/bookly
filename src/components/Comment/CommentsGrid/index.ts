@@ -1,2 +1,2 @@
-export * from "./CommentsGrid";
-export * from "./CommentsGrid.types.d";
+export * from './CommentsGrid';
+export * from './CommentsGrid.types.d';
