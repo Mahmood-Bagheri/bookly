@@ -3,15 +3,9 @@ import React, { FC, Fragment } from 'react';
 import { DocumentTitle } from 'components/DocumentTitle';
 import { CategoriesGrid } from 'components/Category';
 import { useCategories } from 'hooks';
-import { mock } from 'helpers/mock';
 
 const Categories: FC = () => {
-    const { data: categories, isLoading, isFetched } = useCategories({
-        refetchOnMount: false,
-        refetchOnWindowFocus: false,
-        refetchOnReconnect: false,
-    });
-    console.log(categories);
+    const { data: categories, isLoading, isFetched } = useCategories();
 
     return (
         <Fragment>

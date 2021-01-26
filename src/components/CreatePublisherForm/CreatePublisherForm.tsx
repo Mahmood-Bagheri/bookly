@@ -53,10 +53,7 @@ export const CreatePublisherForm: FC<CreatePublisherFormProps> = ({
                         <Input.Textarea rows={9} />
                     </Form.Item>
                 </Col>
-                <Col
-                    lg={1}
-                    className='d-flex align-items-end justify-content-end'
-                >
+                <Col lg={1} className='d-flex justify-content-start'>
                     <Button htmlType='submit' loading={loading} type='primary'>
                         افرودن ناشر
                     </Button>

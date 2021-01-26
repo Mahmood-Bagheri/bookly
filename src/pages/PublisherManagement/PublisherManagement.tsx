@@ -40,10 +40,10 @@ const PublisherManagement: FC = () => {
                 loading={createPublisherIsLoading}
                 onSubmit={handleCreate}
             />
-            {/*    <PublisherManagementTable
-                loading={fetchPublisherIsLoading}
-                categories={publishers!}
-            /> */}
+            <PublisherManagementTable
+                loading={fetchPublisherIsLoading || createPublisherIsLoading}
+                publishers={publishers!}
+            />
         </Fragment>
     );
 };

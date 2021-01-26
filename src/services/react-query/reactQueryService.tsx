@@ -14,7 +14,7 @@ const mutationConfig = {
 };
 const queryConfig = {
     // todo -> make retry true
-    queries: { retry: false, refetchOnWindowFocus: false },
+    queries: { retry: false, refetchOnWindowFocus: true },
 };
 
 export const queryCache = new QueryCache({

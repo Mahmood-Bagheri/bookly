@@ -33,6 +33,8 @@ export const useDeleteBook = () => {
             notice.error(API_RESPONSE_MESSAGES.book.delete.error);
         },
         onSuccess: () => {
+            queryCache.refetchQueries(API_URLS.book);
+            queryCache.refetchQueries(API_URLS.categories);
             notice.success(API_RESPONSE_MESSAGES.book.delete.success);
         },
     });

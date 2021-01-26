@@ -4,7 +4,7 @@ import API_URLS from 'constants/apiUrls';
 /* apiService */
 import apiService, { AxiosResponse } from 'services/api/apiService';
 /* helpers */
-import { omit } from 'lodash/fp';
+import { merge, omit } from 'lodash/fp';
 /* modules */
 import { queryCache } from 'services/react-query/reactQueryService';
 /* types */
@@ -53,20 +53,6 @@ export const createPublisher = async (
 
 export const useCreatePublisher = () =>
     useMutation(createPublisher, {
-        onMutate: newPublisher => {
-            const oldPublishers:
-                | Publisher.Query.Result[]
-                | undefined = queryCache.getQueryData(API_URLS.publishers);
-
-            /* FIXME fix this any  */
-            const newPublishers = oldPublishers?.push(newPublisher as any);
-
-            queryCache.setQueryData(API_URLS.publishers, newPublishers);
-
-            return () =>
-                queryCache.setQueryData(API_URLS.publishers, oldPublishers);
-        },
-
         onSuccess: () => {
             queryCache.refetchQueries(API_URLS.publisher);
         },
